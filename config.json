@@ -46,6 +46,14 @@
   },
   "depoimentos": [
     {
+      "id": 1782675637327,
+      "nome": "Patricia Spina",
+      "cargo": "HR Head",
+      "texto": "\"Foi excelente. Superou minhas expectativas.”\n\n- Patty, profissional de T&D - Primeira aluna do IAieu GO",
+      "foto": "",
+      "linkedin": "https://www.linkedin.com/in/patriciaspina/"
+    },
+    {
       "id": 1,
       "nome": "Nome do Aluno",
       "cargo": "Profissão · Empresa",
