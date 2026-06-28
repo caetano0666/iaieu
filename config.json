@@ -40,24 +40,16 @@
     "titulo": "Pronto para dizer \"Eu consigo\"?",
     "subtitulo": "Manda uma mensagem. Sem compromisso. Só uma conversa para entender se o IAieu GO faz sentido pra você agora.",
     "whatsapp": "17542525245",
-    "botao": "Falar pelo WhatsApp",
     "mensagem": "Olá! Vi o site do Instituto IAieu e gostaria de saber mais sobre o IAieu GO.",
+    "botao": "Falar pelo WhatsApp",
     "nota": "iaieu.com · Vagas limitadas"
   },
   "depoimentos": [
     {
-      "id": 1782675637327,
+      "id": 1,
       "nome": "Patricia Spina",
       "cargo": "HR Head",
-      "texto": "\"Foi excelente. Superou minhas expectativas.”\n\n- Patty, profissional de T&D - Primeira aluna do IAieu GO",
-      "foto": "",
-      "linkedin": "https://www.linkedin.com/in/patriciaspina/"
-    },
-    {
-      "id": 1,
-      "nome": "Nome do Aluno",
-      "cargo": "Profissão · Empresa",
-      "texto": "Cole aqui o depoimento do aluno.",
+      "texto": "Foi excelente. Superou minhas expectativas. - Patty, profissional de T&D - Primeira aluna do IAieu GO",
       "foto": "",
       "linkedin": ""
     }
