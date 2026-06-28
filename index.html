@@ -628,10 +628,11 @@ function draw(){
 draw();
 
 // Load publications from posts.json
-fetch('posts.json')
-  .then(r => r.json())
+fetch('posts.json?t=' + Date.now())
+  .then(r => r.ok ? r.json() : [])
   .then(posts => {
     const grid = document.getElementById('pub-grid');
+    if (!posts.length) { grid.innerHTML = ''; return; }
     grid.innerHTML = posts.map(p => `
       <div class="pub-card">
         <p class="pub-data">${p.data}</p>
