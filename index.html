@@ -244,6 +244,27 @@ footer{
   #flyer-wrap{padding:0 20px 64px}
 }
 
+
+/* ── DEPOIMENTOS ── */
+#dep-wrap{background:linear-gradient(180deg,rgba(124,58,237,0.05) 0%,transparent 100%)}
+.dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px}
+.dep-card{
+  border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px 28px;
+  background:rgba(255,255,255,0.02);position:relative;
+  transition:border-color 0.3s,box-shadow 0.3s;
+}
+.dep-card:hover{border-color:rgba(124,58,237,0.3);box-shadow:0 0 30px rgba(124,58,237,0.08)}
+.dep-aspas{font-size:48px;line-height:1;color:var(--roxo);opacity:0.4;margin-bottom:8px;font-family:Georgia,serif}
+.dep-texto{font-size:15px;color:var(--cinza);line-height:1.8;font-weight:300;font-style:italic;margin-bottom:24px}
+.dep-autor{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.06);padding-top:20px}
+.dep-foto{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(124,58,237,0.3);flex-shrink:0}
+.dep-foto-placeholder{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+.dep-info{flex:1}
+.dep-nome{font-size:14px;font-weight:600;color:#fff;margin-bottom:2px}
+.dep-cargo{font-size:12px;color:var(--cinza);font-weight:300}
+.dep-li{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--azul);text-decoration:none;margin-top:4px;font-weight:500;opacity:0.8;transition:opacity 0.2s}
+.dep-li:hover{opacity:1}
+
 /* ── PUBLICAÇÕES ── */
 #pub-wrap{background:linear-gradient(180deg,rgba(37,99,235,0.04) 0%,transparent 100%)}
 .pub-grid{display:flex;flex-direction:column;gap:24px;margin-top:48px}
@@ -484,6 +505,19 @@ footer{
 <div class="divider"></div>
 
 
+
+<!-- DEPOIMENTOS -->
+<div id="dep-wrap" class="sec-wrap">
+  <section id="depoimentos" style="max-width:1100px;margin:0 auto">
+    <span class="section-label">Depoimentos</span>
+    <h2 class="section-title">O que dizem<br>os alunos.</h2>
+    <div class="dep-grid" id="dep-grid">
+      <p style="color:var(--cinza);font-size:14px">Carregando...</p>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
 <!-- PUBLICAÇÕES -->
 <div id="pub-wrap" class="sec-wrap">
   <svg class="geo-bg" style="right:-80px;top:40%;transform:translateY(-50%);width:400px;height:400px;opacity:0.05" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">

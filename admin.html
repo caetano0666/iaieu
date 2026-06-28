@@ -9,123 +9,106 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --preto:#0A0A0F;--branco:#FFFFFF;--roxo:#7C3AED;--azul:#2563EB;
-  --cinza:#A0A0B8;--surface:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.09);
+  --cinza:#A0A0B8;--surf:rgba(255,255,255,0.04);--bord:rgba(255,255,255,0.09);
   --grad:linear-gradient(135deg,#7C3AED,#2563EB);
 }
-body{background:var(--preto);color:var(--branco);font-family:'Inter',sans-serif;min-height:100vh;padding:0}
+body{background:var(--preto);color:var(--branco);font-family:'Inter',sans-serif;min-height:100vh}
 
 /* HEADER */
-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:20px 40px;border-bottom:1px solid var(--border);
-  background:rgba(10,10,15,0.9);position:sticky;top:0;z-index:10;
-}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 36px;border-bottom:1px solid var(--bord);background:rgba(10,10,15,0.95);position:sticky;top:0;z-index:100}
 .logo{display:flex;flex-direction:column;line-height:1}
-.logo .ia{font-size:18px;font-weight:900;color:#fff;letter-spacing:-1px}
-.logo .ieu{font-size:14px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.header-tag{font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--cinza);background:var(--surface);border:1px solid var(--border);padding:5px 12px;border-radius:100px}
+.logo .ia{font-size:17px;font-weight:900;color:#fff;letter-spacing:-1px}
+.logo .ieu{font-size:13px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.h-tag{font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--cinza);background:var(--surf);border:1px solid var(--bord);padding:4px 12px;border-radius:100px}
+.h-link{font-size:12px;color:var(--cinza);text-decoration:none;transition:color 0.2s}
+.h-link:hover{color:#fff}
+
+/* TABS */
+.tabs{display:flex;gap:4px;padding:20px 36px 0;border-bottom:1px solid var(--bord);background:rgba(10,10,15,0.6);overflow-x:auto}
+.tab{padding:10px 18px;font-size:13px;font-weight:500;color:var(--cinza);cursor:pointer;border-radius:8px 8px 0 0;border:1px solid transparent;border-bottom:none;transition:all 0.2s;white-space:nowrap;background:none}
+.tab:hover{color:#fff;background:var(--surf)}
+.tab.active{color:#fff;background:var(--surf);border-color:var(--bord);border-bottom-color:var(--preto);position:relative;bottom:-1px}
 
 /* LAYOUT */
-.main{display:grid;grid-template-columns:1fr 380px;gap:32px;padding:40px;max-width:1200px;margin:0 auto}
+.content{padding:32px 36px;max-width:900px}
+.panel{display:none}
+.panel.active{display:block}
 
-/* FORM */
-.form-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px}
-.form-title{font-size:22px;font-weight:700;margin-bottom:8px;letter-spacing:-0.02em}
-.form-sub{font-size:14px;color:var(--cinza);margin-bottom:32px;font-weight:300}
+/* CARDS */
+.card{background:var(--surf);border:1px solid var(--bord);border-radius:16px;padding:28px;margin-bottom:24px}
+.card-title{font-size:15px;font-weight:700;margin-bottom:20px;padding-bottom:14px;border-bottom:1px solid var(--bord);display:flex;align-items:center;gap:8px}
+.card-title span{font-size:18px}
 
-.field{margin-bottom:24px}
-label{display:block;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--cinza);margin-bottom:8px}
-input[type=text],input[type=url],textarea,select{
-  width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--border);
-  border-radius:10px;padding:12px 16px;color:#fff;font-family:inherit;font-size:14px;
+/* FIELDS */
+.field{margin-bottom:20px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--cinza);margin-bottom:7px}
+input[type=text],input[type=url],input[type=tel],textarea,select{
+  width:100%;background:rgba(255,255,255,0.05);border:1px solid var(--bord);
+  border-radius:10px;padding:11px 14px;color:#fff;font-family:inherit;font-size:14px;
   transition:border-color 0.2s,box-shadow 0.2s;outline:none;
 }
-input[type=text]:focus,input[type=url]:focus,textarea:focus{
-  border-color:rgba(124,58,237,0.6);box-shadow:0 0 0 3px rgba(124,58,237,0.12);
-}
-textarea{resize:vertical;min-height:200px;line-height:1.7}
-input::placeholder,textarea::placeholder{color:rgba(160,160,184,0.5)}
-
-/* IMAGE UPLOAD */
-.img-upload{
-  border:2px dashed rgba(124,58,237,0.3);border-radius:12px;
-  padding:32px;text-align:center;cursor:pointer;
-  transition:border-color 0.2s,background 0.2s;position:relative;
-}
-.img-upload:hover{border-color:rgba(124,58,237,0.6);background:rgba(124,58,237,0.05)}
-.img-upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
-.upload-icon{font-size:32px;margin-bottom:10px}
-.upload-text{font-size:14px;color:var(--cinza);font-weight:300}
-.upload-text strong{color:#fff;font-weight:600}
-.img-preview{width:100%;border-radius:8px;margin-top:16px;display:none;border:1px solid var(--border)}
-.img-name{font-size:12px;color:var(--roxo);margin-top:8px;display:none;font-weight:500}
+input:focus,textarea:focus{border-color:rgba(124,58,237,0.6);box-shadow:0 0 0 3px rgba(124,58,237,0.1)}
+textarea{resize:vertical;min-height:120px;line-height:1.7}
+input::placeholder,textarea::placeholder{color:rgba(160,160,184,0.4)}
 
 /* BUTTONS */
-.btn-publish{
-  width:100%;background:var(--grad);color:#fff;border:none;
-  padding:16px;border-radius:12px;font-size:15px;font-weight:700;
-  cursor:pointer;transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
-  box-shadow:0 0 30px rgba(124,58,237,0.3);margin-top:8px;
-  font-family:inherit;letter-spacing:0.01em;
-}
-.btn-publish:hover{opacity:0.88;transform:translateY(-1px);box-shadow:0 0 50px rgba(124,58,237,0.5)}
-.btn-publish:disabled{opacity:0.4;cursor:not-allowed;transform:none}
+.btn{padding:11px 22px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:all 0.2s;border:none}
+.btn-primary{background:var(--grad);color:#fff;box-shadow:0 0 20px rgba(124,58,237,0.25)}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--cinza);border:1px solid var(--bord)}
+.btn-secondary:hover{color:#fff;border-color:rgba(255,255,255,0.3)}
+.btn-danger{background:rgba(255,107,107,0.1);color:#ff6b6b;border:1px solid rgba(255,107,107,0.2)}
+.btn-danger:hover{background:rgba(255,107,107,0.2)}
+.btn-save{display:flex;align-items:center;gap:8px;margin-top:8px}
 
-.btn-download{
-  width:100%;background:transparent;color:#fff;
-  border:1px solid rgba(124,58,237,0.5);
-  padding:14px;border-radius:12px;font-size:14px;font-weight:600;
-  cursor:pointer;transition:all 0.2s;margin-top:12px;
-  font-family:inherit;display:none;
-}
-.btn-download:hover{background:rgba(124,58,237,0.1);border-color:var(--roxo)}
+/* IMAGE UPLOAD */
+.img-upload{border:2px dashed rgba(124,58,237,0.3);border-radius:10px;padding:24px;text-align:center;cursor:pointer;transition:all 0.2s;position:relative}
+.img-upload:hover{border-color:rgba(124,58,237,0.6);background:rgba(124,58,237,0.04)}
+.img-upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.img-upload-text{font-size:13px;color:var(--cinza);font-weight:300}
+.img-upload-text strong{color:#fff}
+.img-preview-thumb{width:80px;height:80px;border-radius:8px;object-fit:cover;margin-top:10px;display:none;border:1px solid var(--bord)}
+.img-fname{font-size:11px;color:var(--roxo);margin-top:6px;display:none;font-weight:500}
 
-/* SIDEBAR — POSTS LIST */
-.sidebar{}
-.sidebar-title{font-size:16px;font-weight:700;margin-bottom:20px;letter-spacing:-0.01em}
-.posts-list{display:flex;flex-direction:column;gap:12px}
-.post-item{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:12px;padding:16px 18px;position:relative;
-  border-left:3px solid var(--roxo);
-}
-.post-item-data{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--roxo);margin-bottom:6px}
-.post-item-preview{font-size:13px;color:var(--cinza);line-height:1.5;font-weight:300;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.post-item-actions{display:flex;gap:8px;margin-top:12px}
-.btn-delete{
-  font-size:11px;color:#ff6b6b;background:rgba(255,107,107,0.08);
-  border:1px solid rgba(255,107,107,0.2);border-radius:6px;
-  padding:4px 10px;cursor:pointer;font-family:inherit;font-weight:500;
-  transition:all 0.2s;
-}
-.btn-delete:hover{background:rgba(255,107,107,0.15);border-color:rgba(255,107,107,0.4)}
-.post-item-img{font-size:10px;color:var(--azul);margin-top:4px;font-weight:500}
+/* LISTA DE ITEMS (depoimentos, posts) */
+.item-list{display:flex;flex-direction:column;gap:12px;margin-top:20px}
+.item-card{background:rgba(255,255,255,0.03);border:1px solid var(--bord);border-radius:12px;padding:16px 18px;border-left:3px solid var(--roxo)}
+.item-card-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.item-card-nome{font-size:14px;font-weight:600;color:#fff;margin-bottom:4px}
+.item-card-sub{font-size:12px;color:var(--cinza);font-weight:300}
+.item-card-preview{font-size:13px;color:var(--cinza);font-weight:300;margin-top:8px;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item-card-img{font-size:11px;color:var(--azul);margin-top:6px;font-weight:500}
+.item-actions{display:flex;gap:6px;flex-shrink:0}
 
-/* SUCCESS STATE */
-.success-box{
-  background:rgba(37,211,102,0.08);border:1px solid rgba(37,211,102,0.25);
-  border-radius:12px;padding:16px 20px;margin-top:16px;
-  font-size:14px;color:#4ade80;display:none;text-align:center;font-weight:500;
+/* DOWNLOAD BAR */
+.download-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(10,10,15,0.97);border-top:1px solid rgba(124,58,237,0.3);
+  padding:16px 36px;display:flex;align-items:center;justify-content:space-between;
+  transform:translateY(100%);transition:transform 0.3s;z-index:200;
+  backdrop-filter:blur(12px);
 }
+.download-bar.show{transform:translateY(0)}
+.download-bar-text{font-size:14px;color:var(--cinza);font-weight:300}
+.download-bar-text strong{color:#fff}
+.download-btns{display:flex;gap:10px}
+
+/* SUCCESS TOAST */
+.toast{
+  position:fixed;top:80px;right:24px;
+  background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);
+  color:#4ade80;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:500;
+  transform:translateX(120%);transition:transform 0.3s;z-index:300;
+}
+.toast.show{transform:translateX(0)}
 
 /* EMPTY */
-.empty{text-align:center;padding:40px 20px;color:var(--cinza);font-size:14px;font-weight:300}
-.empty-icon{font-size:32px;margin-bottom:12px;opacity:0.4}
+.empty{text-align:center;padding:32px;color:var(--cinza);font-size:13px}
 
-/* INSTRUCTIONS */
-.instructions{
-  background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.2);
-  border-radius:12px;padding:20px;margin-top:24px;
-}
-.instructions h4{font-size:13px;font-weight:600;color:var(--azul);margin-bottom:10px;letter-spacing:0.05em;text-transform:uppercase}
-.instructions ol{padding-left:18px;display:flex;flex-direction:column;gap:6px}
-.instructions li{font-size:13px;color:var(--cinza);font-weight:300;line-height:1.5}
-.instructions li strong{color:#fff;font-weight:500}
-
-@media(max-width:768px){
-  .main{grid-template-columns:1fr;padding:20px}
-  header{padding:16px 20px}
+@media(max-width:600px){
+  header,tabs,.content{padding-left:16px;padding-right:16px}
+  .field-row{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -133,192 +116,452 @@ input::placeholder,textarea::placeholder{color:rgba(160,160,184,0.5)}
 
 <header>
   <div class="logo"><span class="ia">IA</span><span class="ieu">ieu.</span></div>
-  <span class="header-tag">Painel de Publicações</span>
+  <div style="display:flex;align-items:center;gap:16px">
+    <a href="/" target="_blank" class="h-link">← Ver site</a>
+    <span class="h-tag">Admin</span>
+  </div>
 </header>
 
-<div class="main">
+<div class="tabs" id="tabs">
+  <div class="tab active" onclick="trocarAba('hero',this)">🏠 Hero</div>
+  <div class="tab" onclick="trocarAba('origem',this)">📖 A Origem</div>
+  <div class="tab" onclick="trocarAba('curso',this)">🎓 IAieu GO</div>
+  <div class="tab" onclick="trocarAba('cta',this)">💬 CTA</div>
+  <div class="tab" onclick="trocarAba('depoimentos',this)">⭐ Depoimentos</div>
+  <div class="tab" onclick="trocarAba('posts',this)">📝 Publicações</div>
+</div>
 
-  <!-- FORMULÁRIO -->
-  <div>
-    <div class="form-card">
-      <h1 class="form-title">Nova publicação</h1>
-      <p class="form-sub">Preencha os campos e clique em Gerar posts.json.</p>
+<div class="content">
 
-      <div class="field">
-        <label>Texto do post</label>
-        <textarea id="texto" placeholder="Cola aqui o texto do LinkedIn..."></textarea>
-      </div>
-
-      <div class="field">
-        <label>Imagem (opcional)</label>
-        <div class="img-upload" id="uploadArea">
-          <input type="file" id="imgInput" accept="image/*">
-          <div class="upload-icon">🖼</div>
-          <p class="upload-text"><strong>Clica para escolher</strong> ou arrasta a imagem aqui</p>
-          <img id="imgPreview" class="img-preview" alt="Preview">
-          <p id="imgName" class="img-name"></p>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Link do LinkedIn</label>
-        <input type="url" id="url" placeholder="https://www.linkedin.com/feed/update/...">
-      </div>
-
-      <div class="field">
-        <label>Mês de publicação</label>
-        <input type="text" id="data" placeholder="ex: 2026-06">
-      </div>
-
-      <button class="btn-publish" id="btnPublish" onclick="gerarJSON()">
-        ✦ Gerar posts.json
-      </button>
-
-      <button class="btn-download" id="btnDownload" onclick="baixarJSON()">
-        ↓ Baixar posts.json
-      </button>
-
-      <div class="success-box" id="successBox">
-        ✓ posts.json gerado! Baixe o arquivo e suba no GitHub.
-      </div>
-
-      <div class="instructions">
-        <h4>Como publicar</h4>
-        <ol>
-          <li>Preencha o formulário e clique em <strong>Gerar posts.json</strong></li>
-          <li>Clique em <strong>Baixar posts.json</strong></li>
-          <li>Se tiver imagem, suba a imagem também no GitHub</li>
-          <li>Acesse <strong>github.com/caetano0666/iaieu</strong></li>
-          <li>Clique em <strong>+</strong> → <strong>Upload files</strong></li>
-          <li>Sobe o <strong>posts.json</strong> (e a imagem se tiver)</li>
-          <li>Clique em <strong>Commit changes</strong> — pronto!</li>
-        </ol>
-      </div>
+  <!-- HERO -->
+  <div class="panel active" id="panel-hero">
+    <div class="card">
+      <p class="card-title"><span>🏠</span> Seção Hero</p>
+      <div class="field"><label>Badge (topo)</label><input type="text" id="hero-badge"></div>
+      <div class="field"><label>Linha 1 do título</label><input type="text" id="hero-h1"></div>
+      <div class="field"><label>Linha 2 do título (destaque em gradiente)</label><input type="text" id="hero-h2"></div>
+      <div class="field"><label>Subtítulo</label><textarea id="hero-sub" style="min-height:80px"></textarea></div>
+      <div class="field"><label>Texto do botão</label><input type="text" id="hero-btn"></div>
+      <div class="btn-save"><button class="btn btn-primary" onclick="salvar()">Salvar Hero</button></div>
     </div>
   </div>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <p class="sidebar-title">Posts atuais</p>
-    <div class="posts-list" id="postsList"></div>
+  <!-- ORIGEM -->
+  <div class="panel" id="panel-origem">
+    <div class="card">
+      <p class="card-title"><span>📖</span> Seção A Origem</p>
+      <div class="field-row">
+        <div class="field"><label>Label (pequeno)</label><input type="text" id="origem-label"></div>
+        <div class="field"><label>Título</label><input type="text" id="origem-titulo"></div>
+      </div>
+      <div class="field"><label>Texto (parágrafos separados por linha em branco)</label><textarea id="origem-texto" style="min-height:160px"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Stat 1 — Número</label><input type="text" id="stat1-num"></div>
+        <div class="field"><label>Stat 1 — Descrição</label><input type="text" id="stat1-label"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Stat 2 — Número</label><input type="text" id="stat2-num"></div>
+        <div class="field"><label>Stat 2 — Descrição</label><input type="text" id="stat2-label"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Stat 3 — Número</label><input type="text" id="stat3-num"></div>
+        <div class="field"><label>Stat 3 — Descrição</label><input type="text" id="stat3-label"></div>
+      </div>
+      <div class="btn-save"><button class="btn btn-primary" onclick="salvar()">Salvar A Origem</button></div>
+    </div>
+  </div>
+
+  <!-- CURSO -->
+  <div class="panel" id="panel-curso">
+    <div class="card">
+      <p class="card-title"><span>🎓</span> IAieu GO — Sessões</p>
+      <div class="field-row">
+        <div class="field"><label>Label</label><input type="text" id="curso-label"></div>
+        <div class="field"><label>Título</label><input type="text" id="curso-titulo"></div>
+      </div>
+      <div class="field"><label>Subtítulo</label><textarea id="curso-sub" style="min-height:60px"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Sessão 1 — Título</label><input type="text" id="s1-titulo"></div>
+        <div class="field"><label>Sessão 1 — Descrição</label><input type="text" id="s1-desc"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Sessão 2 — Título</label><input type="text" id="s2-titulo"></div>
+        <div class="field"><label>Sessão 2 — Descrição</label><input type="text" id="s2-desc"></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Sessão 3 — Título</label><input type="text" id="s3-titulo"></div>
+        <div class="field"><label>Sessão 3 — Descrição</label><input type="text" id="s3-desc"></div>
+      </div>
+    </div>
+    <div class="card">
+      <p class="card-title"><span>💰</span> Preço e itens</p>
+      <div class="field-row">
+        <div class="field"><label>Preço (só o número)</label><input type="text" id="preco"></div>
+        <div class="field"><label>Descrição do preço</label><input type="text" id="preco-desc"></div>
+      </div>
+      <div class="field"><label>Item 1</label><input type="text" id="item1"></div>
+      <div class="field"><label>Item 2</label><input type="text" id="item2"></div>
+      <div class="field"><label>Item 3</label><input type="text" id="item3"></div>
+      <div class="field"><label>Item 4</label><input type="text" id="item4"></div>
+      <div class="field"><label>Item 5</label><input type="text" id="item5"></div>
+      <div class="field"><label>Item 6</label><input type="text" id="item6"></div>
+      <div class="btn-save"><button class="btn btn-primary" onclick="salvar()">Salvar IAieu GO</button></div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="panel" id="panel-cta">
+    <div class="card">
+      <p class="card-title"><span>💬</span> Seção CTA / WhatsApp</p>
+      <div class="field"><label>Título</label><input type="text" id="cta-titulo"></div>
+      <div class="field"><label>Subtítulo</label><textarea id="cta-sub" style="min-height:80px"></textarea></div>
+      <div class="field-row">
+        <div class="field"><label>Número WhatsApp (só números, com DDI)</label><input type="tel" id="cta-wa" placeholder="17542525245"></div>
+        <div class="field"><label>Texto do botão</label><input type="text" id="cta-btn"></div>
+      </div>
+      <div class="field"><label>Mensagem pré-preenchida</label><input type="text" id="cta-msg"></div>
+      <div class="field"><label>Nota de rodapé</label><input type="text" id="cta-nota"></div>
+      <div class="btn-save"><button class="btn btn-primary" onclick="salvar()">Salvar CTA</button></div>
+    </div>
+  </div>
+
+  <!-- DEPOIMENTOS -->
+  <div class="panel" id="panel-depoimentos">
+    <div class="card">
+      <p class="card-title"><span>⭐</span> Novo depoimento</p>
+      <div class="field-row">
+        <div class="field"><label>Nome do aluno</label><input type="text" id="dep-nome" placeholder="Maria Silva"></div>
+        <div class="field"><label>Cargo · Empresa</label><input type="text" id="dep-cargo" placeholder="Advogada · Escritório XYZ"></div>
+      </div>
+      <div class="field"><label>Depoimento</label><textarea id="dep-texto" placeholder="O que o aluno disse..."></textarea></div>
+      <div class="field"><label>LinkedIn do aluno (opcional)</label><input type="url" id="dep-linkedin" placeholder="https://www.linkedin.com/in/..."></div>
+      <div class="field">
+        <label>Foto do aluno (opcional)</label>
+        <div class="img-upload" id="depUploadArea">
+          <input type="file" id="dep-foto-input" accept="image/*">
+          <p class="img-upload-text"><strong>Clica para escolher</strong> ou arrasta a foto aqui</p>
+          <img id="dep-foto-preview" class="img-preview-thumb" alt="">
+          <p id="dep-foto-name" class="img-fname"></p>
+        </div>
+      </div>
+      <div class="btn-save"><button class="btn btn-primary" onclick="adicionarDep()">+ Adicionar depoimento</button></div>
+    </div>
+    <div class="card">
+      <p class="card-title"><span>📋</span> Depoimentos atuais</p>
+      <div id="dep-lista"><div class="empty">Nenhum depoimento ainda.</div></div>
+    </div>
+  </div>
+
+  <!-- POSTS -->
+  <div class="panel" id="panel-posts">
+    <div class="card">
+      <p class="card-title"><span>✍️</span> Nova publicação</p>
+      <div class="field"><label>Texto do post</label><textarea id="post-texto" style="min-height:180px" placeholder="Cola aqui o texto do LinkedIn..."></textarea></div>
+      <div class="field">
+        <label>Imagem (opcional)</label>
+        <div class="img-upload">
+          <input type="file" id="post-foto-input" accept="image/*">
+          <p class="img-upload-text"><strong>Clica para escolher</strong> ou arrasta a imagem aqui</p>
+          <img id="post-foto-preview" class="img-preview-thumb" alt="">
+          <p id="post-foto-name" class="img-fname"></p>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Link do LinkedIn</label><input type="url" id="post-url" placeholder="https://www.linkedin.com/feed/update/..."></div>
+        <div class="field"><label>Mês (ex: 2026-06)</label><input type="text" id="post-data" placeholder="2026-06"></div>
+      </div>
+      <div class="btn-save"><button class="btn btn-primary" onclick="adicionarPost()">+ Adicionar publicação</button></div>
+    </div>
+    <div class="card">
+      <p class="card-title"><span>📋</span> Publicações atuais</p>
+      <div id="posts-lista"><div class="empty">Nenhuma publicação ainda.</div></div>
+    </div>
   </div>
 
 </div>
 
-<script>
-// Estado
-let posts = [];
-let imagemSelecionada = null;
-let imagemNome = '';
+<!-- DOWNLOAD BAR -->
+<div class="download-bar" id="downloadBar">
+  <div class="download-bar-text">Alterações prontas. <strong>Baixe os arquivos e suba no GitHub.</strong></div>
+  <div class="download-btns">
+    <button class="btn btn-secondary" onclick="baixarConfig()">↓ config.json</button>
+    <button class="btn btn-secondary" onclick="baixarPosts()">↓ posts.json</button>
+    <button class="btn btn-primary" onclick="baixarTudo()">↓ Baixar tudo</button>
+  </div>
+</div>
 
-// Carrega posts do posts.json do site
-async function carregarPosts() {
+<!-- TOAST -->
+<div class="toast" id="toast">✓ Salvo!</div>
+
+<script>
+let config = {};
+let posts = [];
+let depFotoNome = '';
+let postFotoNome = '';
+let alterado = false;
+
+// INIT
+async function init() {
   try {
-    const r = await fetch('posts.json?t=' + Date.now());
-    posts = await r.json();
-    renderPosts();
-  } catch(e) {
-    posts = [];
-    renderPosts();
-  }
+    const rc = await fetch('config.json?t='+Date.now());
+    config = await rc.json();
+  } catch(e) { config = {hero:{},origem:{},curso:{},cta:{},depoimentos:[]}; }
+
+  try {
+    const rp = await fetch('posts.json?t='+Date.now());
+    posts = await rp.json();
+  } catch(e) { posts = []; }
+
+  preencherFormularios();
+  renderDeps();
+  renderPosts();
+}
+
+function preencherFormularios() {
+  const h = config.hero || {};
+  set('hero-badge', h.badge); set('hero-h1', h.headline1);
+  set('hero-h2', h.headline2); set('hero-sub', h.subtitulo); set('hero-btn', h.botao);
+
+  const o = config.origem || {};
+  set('origem-label', o.label); set('origem-titulo', o.titulo); set('origem-texto', o.texto);
+  set('stat1-num', o.stat1_num); set('stat1-label', o.stat1_label);
+  set('stat2-num', o.stat2_num); set('stat2-label', o.stat2_label);
+  set('stat3-num', o.stat3_num); set('stat3-label', o.stat3_label);
+
+  const c = config.curso || {};
+  set('curso-label', c.label); set('curso-titulo', c.titulo); set('curso-sub', c.subtitulo);
+  set('s1-titulo', c.sessao1_titulo); set('s1-desc', c.sessao1_desc);
+  set('s2-titulo', c.sessao2_titulo); set('s2-desc', c.sessao2_desc);
+  set('s3-titulo', c.sessao3_titulo); set('s3-desc', c.sessao3_desc);
+  set('preco', c.preco); set('preco-desc', c.preco_desc);
+  ['item1','item2','item3','item4','item5','item6'].forEach(k => set(k, c[k]));
+
+  const ct = config.cta || {};
+  set('cta-titulo', ct.titulo); set('cta-sub', ct.subtitulo);
+  set('cta-wa', ct.whatsapp); set('cta-btn', ct.botao);
+  set('cta-msg', ct.mensagem); set('cta-nota', ct.nota);
+}
+
+function set(id, val) {
+  const el = document.getElementById(id);
+  if (el && val !== undefined) el.value = val || '';
+}
+function get(id) {
+  const el = document.getElementById(id);
+  return el ? el.value.trim() : '';
+}
+
+// SALVAR CONFIG
+function salvar() {
+  config.hero = {
+    badge: get('hero-badge'), headline1: get('hero-h1'),
+    headline2: get('hero-h2'), subtitulo: get('hero-sub'), botao: get('hero-btn')
+  };
+  config.origem = {
+    label: get('origem-label'), titulo: get('origem-titulo'), texto: get('origem-texto'),
+    stat1_num: get('stat1-num'), stat1_label: get('stat1-label'),
+    stat2_num: get('stat2-num'), stat2_label: get('stat2-label'),
+    stat3_num: get('stat3-num'), stat3_label: get('stat3-label')
+  };
+  config.curso = {
+    label: get('curso-label'), titulo: get('curso-titulo'), subtitulo: get('curso-sub'),
+    sessao1_titulo: get('s1-titulo'), sessao1_desc: get('s1-desc'),
+    sessao2_titulo: get('s2-titulo'), sessao2_desc: get('s2-desc'),
+    sessao3_titulo: get('s3-titulo'), sessao3_desc: get('s3-desc'),
+    preco: get('preco'), preco_desc: get('preco-desc'),
+    item1: get('item1'), item2: get('item2'), item3: get('item3'),
+    item4: get('item4'), item5: get('item5'), item6: get('item6')
+  };
+  config.cta = {
+    titulo: get('cta-titulo'), subtitulo: get('cta-sub'),
+    whatsapp: get('cta-wa'), botao: get('cta-btn'),
+    mensagem: get('cta-msg'), nota: get('cta-nota')
+  };
+  alterado = true;
+  mostrarBar();
+  mostrarToast('✓ Pronto! Baixe o config.json');
+}
+
+// DEPOIMENTOS
+function adicionarDep() {
+  const nome = get('dep-nome');
+  const texto = get('dep-texto');
+  if (!nome || !texto) { alert('Nome e depoimento são obrigatórios.'); return; }
+
+  const novo = {
+    id: Date.now(),
+    nome, cargo: get('dep-cargo'),
+    texto, foto: depFotoNome,
+    linkedin: get('dep-linkedin')
+  };
+
+  if (!config.depoimentos) config.depoimentos = [];
+  config.depoimentos.unshift(novo);
+
+  document.getElementById('dep-nome').value = '';
+  document.getElementById('dep-cargo').value = '';
+  document.getElementById('dep-texto').value = '';
+  document.getElementById('dep-linkedin').value = '';
+  document.getElementById('dep-foto-preview').style.display = 'none';
+  document.getElementById('dep-foto-name').style.display = 'none';
+  depFotoNome = '';
+
+  renderDeps();
+  alterado = true;
+  mostrarBar();
+  mostrarToast('✓ Depoimento adicionado!');
+}
+
+function deletarDep(id) {
+  if (!confirm('Remover este depoimento?')) return;
+  config.depoimentos = config.depoimentos.filter(d => d.id !== id);
+  renderDeps();
+  alterado = true;
+  mostrarBar();
+}
+
+function renderDeps() {
+  const lista = document.getElementById('dep-lista');
+  const deps = config.depoimentos || [];
+  if (!deps.length) { lista.innerHTML = '<div class="empty">Nenhum depoimento ainda.</div>'; return; }
+  lista.innerHTML = '<div class="item-list">' + deps.map(d => `
+    <div class="item-card">
+      <div class="item-card-header">
+        <div>
+          <p class="item-card-nome">${d.nome}</p>
+          <p class="item-card-sub">${d.cargo || ''}</p>
+          <p class="item-card-preview">"${d.texto}"</p>
+          ${d.foto ? `<p class="item-card-img">🖼 ${d.foto}</p>` : ''}
+          ${d.linkedin ? `<p class="item-card-img">🔗 LinkedIn</p>` : ''}
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-danger" onclick="deletarDep(${d.id})">✕</button>
+        </div>
+      </div>
+    </div>
+  `).join('') + '</div>';
+}
+
+// POSTS
+function adicionarPost() {
+  const texto = get('post-texto');
+  const data = get('post-data');
+  if (!texto) { alert('O texto é obrigatório.'); return; }
+  if (!data) { alert('O mês é obrigatório. Ex: 2026-06'); return; }
+
+  const novo = {
+    id: (posts.length ? Math.max(...posts.map(p=>p.id)) : 0) + 1,
+    data, texto, imagem: postFotoNome, url: get('post-url')
+  };
+  posts.unshift(novo);
+  posts.forEach((p,i) => p.id = posts.length - i);
+
+  document.getElementById('post-texto').value = '';
+  document.getElementById('post-data').value = '';
+  document.getElementById('post-url').value = '';
+  document.getElementById('post-foto-preview').style.display = 'none';
+  document.getElementById('post-foto-name').style.display = 'none';
+  postFotoNome = '';
+
+  renderPosts();
+  alterado = true;
+  mostrarBar();
+  mostrarToast('✓ Post adicionado!');
+}
+
+function deletarPost(id) {
+  if (!confirm('Remover este post?')) return;
+  posts = posts.filter(p => p.id !== id);
+  posts.forEach((p,i) => p.id = posts.length - i);
+  renderPosts();
+  alterado = true;
+  mostrarBar();
 }
 
 function renderPosts() {
-  const lista = document.getElementById('postsList');
-  if (!posts.length) {
-    lista.innerHTML = '<div class="empty"><div class="empty-icon">📭</div><p>Nenhum post ainda.</p></div>';
-    return;
-  }
-  lista.innerHTML = posts.map((p, i) => `
-    <div class="post-item">
-      <p class="post-item-data">${p.data}</p>
-      <p class="post-item-preview">${p.texto}</p>
-      ${p.imagem ? `<p class="post-item-img">🖼 ${p.imagem}</p>` : ''}
-      <div class="post-item-actions">
-        <button class="btn-delete" onclick="deletarPost(${i})">✕ Remover</button>
+  const lista = document.getElementById('posts-lista');
+  if (!posts.length) { lista.innerHTML = '<div class="empty">Nenhuma publicação ainda.</div>'; return; }
+  lista.innerHTML = '<div class="item-list">' + posts.map(p => `
+    <div class="item-card">
+      <div class="item-card-header">
+        <div>
+          <p class="item-card-sub">${p.data}</p>
+          <p class="item-card-preview">${p.texto}</p>
+          ${p.imagem ? `<p class="item-card-img">🖼 ${p.imagem}</p>` : ''}
+        </div>
+        <div class="item-actions">
+          <button class="btn btn-danger" onclick="deletarPost(${p.id})">✕</button>
+        </div>
       </div>
     </div>
-  `).join('');
+  `).join('') + '</div>';
 }
 
-function deletarPost(i) {
-  if (!confirm('Remover este post?')) return;
-  posts.splice(i, 1);
-  // Reordenar IDs
-  posts.forEach((p, idx) => p.id = posts.length - idx);
-  renderPosts();
-  mostrarDownload();
-}
-
-// Preview da imagem
-document.getElementById('imgInput').addEventListener('change', function(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  imagemNome = file.name;
-  imagemSelecionada = file;
-
-  const preview = document.getElementById('imgPreview');
-  const nome = document.getElementById('imgName');
+// IMAGE UPLOADS
+document.getElementById('dep-foto-input').addEventListener('change', function(e) {
+  const file = e.target.files[0]; if (!file) return;
+  depFotoNome = file.name;
   const reader = new FileReader();
   reader.onload = ev => {
-    preview.src = ev.target.result;
-    preview.style.display = 'block';
-    nome.textContent = '✓ ' + file.name;
-    nome.style.display = 'block';
+    const img = document.getElementById('dep-foto-preview');
+    img.src = ev.target.result; img.style.display = 'block';
+    const n = document.getElementById('dep-foto-name');
+    n.textContent = '✓ ' + file.name; n.style.display = 'block';
   };
   reader.readAsDataURL(file);
 });
 
-function gerarJSON() {
-  const texto = document.getElementById('texto').value.trim();
-  const url = document.getElementById('url').value.trim();
-  const data = document.getElementById('data').value.trim();
-
-  if (!texto) { alert('O texto é obrigatório.'); return; }
-  if (!data) { alert('O mês é obrigatório. Ex: 2026-06'); return; }
-
-  const novoPost = {
-    id: (posts.length > 0 ? Math.max(...posts.map(p => p.id)) : 0) + 1,
-    data: data,
-    texto: texto,
-    imagem: imagemNome || '',
-    url: url || ''
+document.getElementById('post-foto-input').addEventListener('change', function(e) {
+  const file = e.target.files[0]; if (!file) return;
+  postFotoNome = file.name;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const img = document.getElementById('post-foto-preview');
+    img.src = ev.target.result; img.style.display = 'block';
+    const n = document.getElementById('post-foto-name');
+    n.textContent = '✓ ' + file.name; n.style.display = 'block';
   };
+  reader.readAsDataURL(file);
+});
 
-  // Adiciona no início (mais recente primeiro)
-  posts.unshift(novoPost);
-  // Reordenar IDs decrescente
-  posts.forEach((p, idx) => p.id = posts.length - idx);
-
-  renderPosts();
-  mostrarDownload();
-
-  // Limpar formulário
-  document.getElementById('texto').value = '';
-  document.getElementById('url').value = '';
-  document.getElementById('data').value = '';
-  document.getElementById('imgPreview').style.display = 'none';
-  document.getElementById('imgName').style.display = 'none';
-  imagemSelecionada = null;
-  imagemNome = '';
+// DOWNLOADS
+function baixarConfig() {
+  salvar();
+  const blob = new Blob([JSON.stringify(config, null, 2)], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'config.json'; a.click();
 }
 
-function mostrarDownload() {
-  document.getElementById('btnDownload').style.display = 'block';
-  document.getElementById('successBox').style.display = 'block';
+function baixarPosts() {
+  const blob = new Blob([JSON.stringify(posts, null, 2)], {type:'application/json'});
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+  a.download = 'posts.json'; a.click();
 }
 
-function baixarJSON() {
-  const json = JSON.stringify(posts, null, 2);
-  const blob = new Blob([json], {type: 'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'posts.json';
-  a.click();
+function baixarTudo() {
+  setTimeout(baixarConfig, 100);
+  setTimeout(baixarPosts, 600);
 }
 
-// Init
-carregarPosts();
+// UI HELPERS
+function trocarAba(id, el) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('panel-'+id).classList.add('active');
+}
+
+function mostrarBar() {
+  document.getElementById('downloadBar').classList.add('show');
+}
+
+function mostrarToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+init();
 </script>
 </body>
 </html>
