@@ -1,118 +1,558 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>IA i eu. | Mentoria Online</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instituto IAieu — O poder das nossas escolhas</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #0a0a0f; color: #e8e8f0; }
-.page { min-height: 100vh; padding: 48px; background: radial-gradient(circle at 20% 28%, rgba(124,58,237,0.32), transparent 26%), radial-gradient(circle at 80% 28%, rgba(37,99,235,0.30), transparent 28%), radial-gradient(circle at 50% 10%, rgba(168,85,247,0.16), transparent 35%), #0a0a0f; overflow: hidden; }
-.container { max-width: 1180px; margin: 0 auto; }
-.hero { text-align: center; padding: 10px 0 42px; position: relative; }
-.badge { display: inline-flex; align-items: center; gap: 12px; padding: 10px 24px; border-radius: 999px; background: linear-gradient(90deg, #6c3fc7, #2f6bff); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; box-shadow: 0 0 28px rgba(124,58,237,0.45); }
-.badge::before { content: ""; width: 10px; height: 10px; background: #d8b4fe; border-radius: 50%; box-shadow: 0 0 16px #d8b4fe; }
-.logo { margin: 36px auto 20px; line-height: 0.82; letter-spacing: -6px; }
-.logo .ia { display: block; font-size: clamp(96px,15vw,190px); font-weight: 900; color: #fff; text-shadow: 0 0 18px rgba(255,255,255,0.18); }
-.logo .ieu { display: block; margin-top: 28px; font-size: clamp(64px,10vw,120px); font-weight: 900; color: #a78bfa; letter-spacing: -4px; text-shadow: 0 0 28px rgba(167,139,250,0.45); }
-.wave { height: 80px; margin: -28px auto 10px; max-width: 980px; background: linear-gradient(90deg, transparent, rgba(168,85,247,.7), rgba(34,211,238,.7), transparent); filter: blur(22px); opacity: .42; }
-.subtitle { color: #a0a0c0; font-size: 14px; font-weight: 600; letter-spacing: 8px; text-transform: uppercase; margin-bottom: 22px; }
-.tagline { max-width: 650px; margin: 0 auto; font-size: 21px; line-height: 1.55; color: #e8e8f0; }
-.tagline strong { color: #c4b5fd; font-weight: 800; }
-.divider { height: 1px; background: linear-gradient(90deg, transparent, #1e1e32, transparent); margin: 30px 0; }
-.section-label { text-align: center; font-size: 13px; color: #8d8da8; letter-spacing: 7px; font-weight: 700; margin-bottom: 24px; }
-.cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
-.card { background: rgba(18,18,30,0.82); border: 1px solid #2a2a45; border-radius: 16px; padding: 24px; min-height: 260px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
-.card::before { content: ""; position: absolute; top: 0; left: 0; height: 4px; width: 100%; }
-.card.one::before { background: linear-gradient(90deg,#7c3aed,#a855f7); }
-.card.two::before { background: linear-gradient(90deg,#2563eb,#60a5fa); }
-.card.three::before { background: linear-gradient(90deg,#0891b2,#22d3ee); }
-.session { font-size: 12px; font-weight: 800; letter-spacing: 4px; margin-bottom: 14px; }
-.one .session { color: #a78bfa; } .two .session { color: #60a5fa; } .three .session { color: #22d3ee; }
-.card h3 { color: #fff; font-size: 24px; margin-bottom: 18px; }
-.card p { color: #d6d6e2; font-size: 16px; line-height: 1.65; text-align: justify; }
-.card-footer { margin-top: auto; padding-top: 18px; border-top: 1px solid #2a2a45; color: #d6d6e2; font-size: 16px; }
-.one .card-footer strong { color: #a78bfa; } .two .card-footer strong { color: #60a5fa; } .three .card-footer strong { color: #22d3ee; }
-.bottom { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; margin-top: 20px; }
-.how, .price { background: rgba(18,18,30,0.82); border: 1px solid #2a2a45; border-radius: 18px; padding: 26px; }
-.how h4, .price h4 { color: #a78bfa; font-size: 14px; letter-spacing: 6px; margin-bottom: 20px; }
-.pills { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
-.pill { border: 1px solid #2a2a45; background: #12121e; border-radius: 999px; padding: 12px 16px; color: #a0a0c0; display: flex; align-items: center; gap: 10px; font-size: 15px; }
-.dot { width: 9px; height: 9px; border-radius: 50%; background: #7c3aed; box-shadow: 0 0 14px #7c3aed; flex-shrink: 0; }
-.price { text-align: center; box-shadow: 0 0 36px rgba(124,58,237,0.24); }
-.price h4 { text-align: center; }
-.price-value { color: #fff; font-size: 72px; font-weight: 900; line-height: 1; margin-bottom: 14px; }
-.price p { color: #6b6b8a; font-size: 17px; }
-.footer { display: flex; justify-content: space-between; align-items: center; padding-top: 34px; color: #6b6b8a; font-size: 16px; }
-.footer-logo { font-size: 32px; font-weight: 900; color: #a78bfa; }
-.footer-logo span { color: #fff; }
-@media (max-width: 900px) {
-  .page { padding: 32px 20px; }
-  .cards, .bottom { grid-template-columns: 1fr; }
-  .pills { grid-template-columns: repeat(2,1fr); }
-  .footer { flex-direction: column; gap: 12px; }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --preto:#0A0A0F;
+  --branco:#FFFFFF;
+  --roxo:#7C3AED;
+  --azul:#2563EB;
+  --ciano:#00B4FF;
+  --cinza:#A0A0B8;
+  --grad:linear-gradient(135deg,#7C3AED,#2563EB);
+  --grad3:linear-gradient(135deg,#7C3AED,#2563EB,#00B4FF);
+}
+html{scroll-behavior:smooth}
+body{background:var(--preto);color:var(--branco);font-family:'Inter','Helvetica Neue',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* ── CANVAS PARTICLES ── */
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.35}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 48px;
+  background:rgba(10,10,15,0.8);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(124,58,237,0.2);
+}
+.nav-logo{display:flex;flex-direction:column;line-height:1}
+.nav-logo .ia{font-size:20px;font-weight:900;color:#fff;letter-spacing:-1px}
+.nav-logo .ieu{font-size:16px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--cinza);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.04em;transition:color 0.2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--grad);color:#fff!important;padding:9px 20px;border-radius:8px;font-weight:600!important}
+
+/* ── HERO ── */
+#hero{
+  min-height:100vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;text-align:center;
+  padding:120px 24px 80px;position:relative;overflow:hidden;
+}
+.hero-glow-left{
+  position:absolute;left:-200px;top:30%;width:600px;height:600px;
+  background:radial-gradient(ellipse, rgba(124,58,237,0.25) 0%, transparent 65%);
+  pointer-events:none;animation:floatL 8s ease-in-out infinite;
+}
+.hero-glow-right{
+  position:absolute;right:-200px;top:40%;width:600px;height:600px;
+  background:radial-gradient(ellipse, rgba(37,99,235,0.2) 0%, transparent 65%);
+  pointer-events:none;animation:floatR 10s ease-in-out infinite;
+}
+.hero-glow-center{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:700px;height:700px;
+  background:radial-gradient(ellipse, rgba(124,58,237,0.12) 0%, transparent 60%);
+  pointer-events:none;
+}
+@keyframes floatL{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+@keyframes floatR{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(20px) scale(1.08)}}
+
+/* ondas SVG */
+.wave-left,.wave-right{position:absolute;top:0;height:100%;width:50%;pointer-events:none;opacity:0.5}
+.wave-left{left:0}.wave-right{right:0;transform:scaleX(-1)}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11px;font-weight:600;letter-spacing:0.18em;color:#fff;
+  text-transform:uppercase;margin-bottom:28px;
+  padding:7px 18px;border-radius:100px;
+  border:1px solid rgba(124,58,237,0.5);
+  background:rgba(124,58,237,0.1);
+  backdrop-filter:blur(8px);
+  position:relative;z-index:1;
+}
+.badge-dot{width:7px;height:7px;border-radius:50%;background:var(--roxo);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1;box-shadow:0 0 6px var(--roxo)}50%{opacity:0.4;box-shadow:none}}
+
+.hero-logo{position:relative;z-index:1;margin-bottom:32px;filter:drop-shadow(0 0 40px rgba(124,58,237,0.4))}
+.hero-logo .IA{display:block;font-size:clamp(90px,16vw,170px);font-weight:900;color:#fff;line-height:0.85;letter-spacing:-4px;text-shadow:0 0 60px rgba(255,255,255,0.15)}
+.hero-logo .ieu-dot{
+  display:block;font-size:clamp(72px,13vw,140px);font-weight:800;
+  background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;letter-spacing:-3px;
+}
+.hero-headline{font-size:clamp(18px,2.5vw,28px);font-weight:300;color:#fff;max-width:580px;margin:0 auto 14px;letter-spacing:-0.02em;line-height:1.35;position:relative;z-index:1}
+.hero-headline strong{font-weight:700;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:15px;color:var(--cinza);max-width:440px;margin:0 auto 44px;font-weight:300;position:relative;z-index:1;line-height:1.7}
+.btn-primary{
+  display:inline-block;background:var(--grad);color:#fff;
+  text-decoration:none;padding:15px 38px;border-radius:10px;
+  font-size:15px;font-weight:600;position:relative;z-index:1;
+  box-shadow:0 0 30px rgba(124,58,237,0.4);
+  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
+}
+.btn-primary:hover{opacity:0.88;transform:translateY(-2px);box-shadow:0 0 50px rgba(124,58,237,0.6)}
+.scroll-line{width:1px;height:40px;background:var(--grad);opacity:0.5;margin:60px auto 0;animation:pulse 2s ease-in-out infinite;position:relative;z-index:1}
+@keyframes pulse{0%,100%{opacity:0.2}50%{opacity:0.8}}
+
+/* ── DIVIDER ── */
+.divider{height:1px;background:linear-gradient(90deg,transparent,#7C3AED,#2563EB,transparent);opacity:0.5}
+
+/* ── SEÇÕES ── */
+.sec-wrap{position:relative;overflow:hidden}
+.geo-bg{position:absolute;pointer-events:none;opacity:0.06}
+
+section{padding:96px 48px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.section-label{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--roxo);margin-bottom:18px;display:block}
+.section-title{font-size:clamp(30px,4.5vw,50px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:22px}
+.section-body{font-size:17px;color:var(--cinza);font-weight:300;line-height:1.8;max-width:660px}
+.section-body p+p{margin-top:18px}
+
+/* ── ORIGEM ── */
+#origem-wrap{background:linear-gradient(180deg,rgba(124,58,237,0.04) 0%,transparent 100%)}
+#origem{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.stat-block{
+  padding:28px;border-radius:14px;margin-bottom:16px;
+  border:1px solid rgba(124,58,237,0.2);
+  background:rgba(124,58,237,0.05);
+  transition:border-color 0.3s,box-shadow 0.3s;
+}
+.stat-block:hover{border-color:rgba(124,58,237,0.5);box-shadow:0 0 20px rgba(124,58,237,0.15)}
+.stat-number{font-size:44px;font-weight:900;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:6px}
+.stat-label{font-size:13px;color:var(--cinza);font-weight:400}
+.fitem{display:flex;gap:12px;margin-bottom:20px;align-items:flex-start}
+.fdot{width:6px;height:6px;border-radius:50%;background:var(--roxo);margin-top:8px;flex-shrink:0;box-shadow:0 0 6px var(--roxo)}
+.ftext{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.65}
+.ftext strong{color:#fff;font-weight:600}
+
+/* ── CURSO ── */
+#curso-wrap{background:rgba(124,58,237,0.03)}
+.sessoes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:52px 0}
+.sessao-card{
+  border-radius:18px;padding:32px 24px;position:relative;overflow:hidden;
+  background:rgba(255,255,255,0.02);
+  transition:transform 0.3s,box-shadow 0.3s;
+}
+.sessao-card:hover{transform:translateY(-5px)}
+.sessao-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.s1::before{background:linear-gradient(90deg,#7C3AED,#9B5CF6)}
+.s2::before{background:linear-gradient(90deg,#2563EB,#3B82F6)}
+.s3::before{background:linear-gradient(90deg,#00B4FF,#2563EB)}
+.s1{border:1px solid rgba(124,58,237,0.25);box-shadow:inset 0 0 60px rgba(124,58,237,0.05)}
+.s2{border:1px solid rgba(37,99,235,0.25);box-shadow:inset 0 0 60px rgba(37,99,235,0.05)}
+.s3{border:1px solid rgba(0,180,255,0.25);box-shadow:inset 0 0 60px rgba(0,180,255,0.05)}
+.s1:hover{box-shadow:0 0 30px rgba(124,58,237,0.2),inset 0 0 60px rgba(124,58,237,0.05)}
+.s2:hover{box-shadow:0 0 30px rgba(37,99,235,0.2),inset 0 0 60px rgba(37,99,235,0.05)}
+.s3:hover{box-shadow:0 0 30px rgba(0,180,255,0.2),inset 0 0 60px rgba(0,180,255,0.05)}
+.sessao-num{font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:14px}
+.s1 .sessao-num{color:#9B5CF6}.s2 .sessao-num{color:#3B82F6}.s3 .sessao-num{color:#00B4FF}
+.sessao-titulo{font-size:21px;font-weight:700;color:#fff;margin-bottom:10px;letter-spacing:-0.02em}
+.sessao-desc{font-size:13px;color:var(--cinza);line-height:1.65;margin-bottom:22px;font-weight:300}
+.sessao-arco{font-size:12px;color:var(--cinza)}
+.s1 .dest{color:#9B5CF6;font-weight:700}.s2 .dest{color:#3B82F6;font-weight:700}.s3 .dest{color:#00B4FF;font-weight:700}
+
+/* COMO FUNCIONA */
+.como-grid{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px}
+.como-item{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;padding:10px 16px;
+  font-size:13px;color:var(--cinza);font-weight:400;
+}
+.como-icon{font-size:16px}
+
+/* PREÇO */
+.preco-bloco{
+  display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;
+  padding:44px;border-radius:20px;
+  border:1px solid rgba(124,58,237,0.35);
+  background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(37,99,235,0.06));
+  box-shadow:0 0 60px rgba(124,58,237,0.1);
+}
+.preco-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--roxo);border:1px solid rgba(124,58,237,0.4);padding:5px 12px;border-radius:100px;margin-bottom:18px}
+.preco-star{color:#FFD700}
+.preco-valor{font-size:68px;font-weight:900;letter-spacing:-3px;color:#fff;line-height:1;margin-bottom:6px;text-shadow:0 0 40px rgba(124,58,237,0.4)}
+.preco-valor sup{font-size:24px;font-weight:600;vertical-align:super;letter-spacing:0}
+.preco-desc{font-size:13px;color:var(--cinza);font-weight:300}
+.preco-itens{list-style:none;display:flex;flex-direction:column;gap:12px}
+.preco-itens li{font-size:14px;color:var(--cinza);display:flex;align-items:center;gap:10px;font-weight:300}
+.preco-itens li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--roxo);box-shadow:0 0 4px var(--roxo);flex-shrink:0}
+
+/* ── FILOSOFIA ── */
+#filosofia-wrap{background:linear-gradient(180deg,transparent,rgba(37,99,235,0.05),transparent)}
+#filosofia{text-align:center;max-width:800px}
+.frase-grande{font-size:clamp(26px,3.5vw,42px);font-weight:700;line-height:1.25;letter-spacing:-0.03em;margin-bottom:32px}
+.frase-grande em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.valores{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-top:44px}
+.valor{font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--cinza)}
+
+/* ── FLYER SECTION ── */
+#flyer-wrap{padding:0 48px 96px;max-width:1100px;margin:0 auto}
+#flyer-wrap .section-label{margin-bottom:16px}
+#flyer-wrap h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;letter-spacing:-0.03em;margin-bottom:40px}
+.flyer-img{
+  width:100%;border-radius:16px;display:block;
+  box-shadow:0 0 60px rgba(124,58,237,0.3),0 0 120px rgba(37,99,235,0.15);
+  border:1px solid rgba(124,58,237,0.2);
+}
+
+/* ── CTA ── */
+#contato-wrap{background:linear-gradient(180deg,transparent,rgba(124,58,237,0.06))}
+#contato{text-align:center;max-width:680px}
+.cta-titulo{font-size:clamp(30px,4.5vw,50px);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:18px}
+.cta-sub{font-size:17px;color:var(--cinza);font-weight:300;margin-bottom:44px;line-height:1.65}
+.btn-whatsapp{
+  display:inline-flex;align-items:center;gap:12px;
+  background:#25D366;color:#fff;text-decoration:none;
+  padding:16px 40px;border-radius:12px;font-size:16px;font-weight:700;
+  box-shadow:0 0 30px rgba(37,211,102,0.3);
+  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
+  margin-bottom:16px;
+}
+.btn-whatsapp:hover{opacity:0.88;transform:translateY(-2px);box-shadow:0 0 50px rgba(37,211,102,0.4)}
+.btn-whatsapp svg{width:22px;height:22px;fill:white}
+.cta-nota{font-size:12px;color:var(--cinza);opacity:0.5;font-weight:300}
+
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding:36px 48px;display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;color:var(--cinza);opacity:0.55;
+}
+.foot-logo .ia{font-weight:900;color:#fff;display:block;font-size:14px}
+.foot-logo .ieu{font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;font-size:12px}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  section{padding:64px 20px}
+  #origem{grid-template-columns:1fr;gap:36px}
+  .sessoes{grid-template-columns:1fr}
+  .preco-bloco{grid-template-columns:1fr;padding:28px 20px}
+  .como-grid{gap:8px}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:28px 20px}
+  #flyer-wrap{padding:0 20px 64px}
 }
 </style>
 </head>
 <body>
-  <main class="page">
-    <div class="container">
-      <section class="hero">
-        <div class="badge">Mentoria online ao vivo</div>
-        <div class="logo">
-          <span class="ia">IA</span>
-          <span class="ieu">i eu.</span>
-        </div>
-        <div class="wave"></div>
-        <div class="subtitle">3 sessões · 1 hora cada</div>
-        <p class="tagline">Você não precisa ser técnico para usar inteligência artificial. Precisa só de <strong>curiosidade</strong> — e de alguém que explique direito.</p>
-      </section>
-      <div class="divider"></div>
-      <div class="section-label">O QUE VOCÊ VAI APRENDER</div>
-      <section class="cards">
-        <div class="card one">
-          <div class="session">SESSÃO 01</div>
-          <h3>Não tenha medo</h3>
-          <p>Entenda o que é IA de verdade — sem jargão, sem papo técnico. Você usa na prática no mesmo dia.</p>
-          <div class="card-footer">Medo → <strong>primeiro uso</strong></div>
-        </div>
-        <div class="card two">
-          <div class="session">SESSÃO 02</div>
-          <h3>Aprenda a perguntar</h3>
-          <p>A IA só funciona bem se você souber pedir. Aprenda a fórmula que transforma qualquer dúvida em resposta útil.</p>
-          <div class="card-footer">Confusão → <strong>habilidade</strong></div>
-        </div>
-        <div class="card three">
-          <div class="session">SESSÃO 03</div>
-          <h3>IA na sua rotina</h3>
-          <p>E-mails, trabalho, saúde. Você sai com IA funcionando no que já faz todo dia — economizando horas.</p>
-          <div class="card-footer">Conhecimento → <strong>autonomia</strong></div>
-        </div>
-      </section>
-      <section class="bottom">
-        <div class="how">
-          <h4>COMO FUNCIONA</h4>
-          <div class="pills">
-            <div class="pill"><span class="dot"></span>Online ao vivo</div>
-            <div class="pill"><span class="dot"></span>Google Meet</div>
-            <div class="pill"><span class="dot"></span>1h por sessão</div>
-            <div class="pill"><span class="dot"></span>Você pratica na hora</div>
-            <div class="pill"><span class="dot"></span>Sem conhecimento técnico</div>
-            <div class="pill"><span class="dot"></span>Ritmo no seu tempo</div>
-          </div>
-        </div>
-        <div class="price">
-          <h4>✦ LANÇAMENTO</h4>
-          <div class="price-value">R$249</div>
-          <p>pacote completo · 3 sessões</p>
-        </div>
-      </section>
-      <footer class="footer">
-        <div class="footer-logo"><span>IA</span> i eu.</div>
-        <div>Mentoria online · Vagas limitadas</div>
-      </footer>
+
+<!-- PARTICLES BG -->
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span class="ia">IA</span><span class="ieu">ieu.</span></div>
+  <ul class="nav-links">
+    <li><a href="#origem-wrap">A Origem</a></li>
+    <li><a href="#curso-wrap">IAieu GO</a></li>
+    <li><a href="#contato-wrap" class="nav-cta">Quero começar</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero">
+  <div class="hero-glow-left"></div>
+  <div class="hero-glow-right"></div>
+  <div class="hero-glow-center"></div>
+
+  <!-- Ondas laterais SVG -->
+  <svg class="wave-left" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="wg1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M-100,200 Q100,300 50,500 Q0,700 150,750" stroke="url(#wg1)" stroke-width="2" fill="none"/>
+    <path d="M-50,150 Q150,280 80,480 Q20,680 180,720" stroke="url(#wg1)" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M0,100 Q180,250 120,450 Q60,650 200,700" stroke="url(#wg1)" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M-80,300 Q80,400 40,580 Q-20,760 120,790" stroke="#00B4FF" stroke-width="1" fill="none" opacity="0.3"/>
+  </svg>
+  <svg class="wave-right" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="wg2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#2563EB" stop-opacity="0.8"/>
+        <stop offset="100%" stop-color="#00B4FF" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path d="M-100,200 Q100,300 50,500 Q0,700 150,750" stroke="url(#wg2)" stroke-width="2" fill="none"/>
+    <path d="M-50,150 Q150,280 80,480 Q20,680 180,720" stroke="url(#wg2)" stroke-width="1.5" fill="none" opacity="0.6"/>
+    <path d="M0,100 Q180,250 120,450 Q60,650 200,700" stroke="url(#wg2)" stroke-width="1" fill="none" opacity="0.3"/>
+  </svg>
+
+  <!-- Geometria sagrada no hero -->
+  <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;opacity:0.08;pointer-events:none;z-index:0" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7C3AED"/>
+        <stop offset="50%" stop-color="#2563EB"/>
+        <stop offset="100%" stop-color="#00B4FF"/>
+      </linearGradient>
+    </defs>
+    <!-- Flor da Vida simplificada -->
+    <g stroke="url(#gg)" stroke-width="1" fill="none">
+      <circle cx="250" cy="250" r="80"/>
+      <circle cx="330" cy="250" r="80"/>
+      <circle cx="170" cy="250" r="80"/>
+      <circle cx="290" cy="181" r="80"/>
+      <circle cx="210" cy="181" r="80"/>
+      <circle cx="290" cy="319" r="80"/>
+      <circle cx="210" cy="319" r="80"/>
+      <!-- anel externo -->
+      <circle cx="250" cy="250" r="160"/>
+      <circle cx="410" cy="250" r="80"/>
+      <circle cx="90" cy="250" r="80"/>
+      <circle cx="330" cy="111" r="80"/>
+      <circle cx="170" cy="111" r="80"/>
+      <circle cx="330" cy="389" r="80"/>
+      <circle cx="170" cy="389" r="80"/>
+      <!-- estrela de 6 pontas -->
+      <polygon points="250,130 310,235 390,235 330,320 350,425 250,370 150,425 170,320 110,235 190,235" stroke-width="0.8" opacity="0.6"/>
+      <circle cx="250" cy="250" r="230"/>
+    </g>
+  </svg>
+
+  <p class="hero-badge"><span class="badge-dot"></span>Mentoria Online ao Vivo</p>
+  <div class="hero-logo">
+    <span class="IA">IA</span>
+    <span class="ieu-dot">ieu.</span>
+  </div>
+  <h1 class="hero-headline">Você não precisa ser técnico.<br>Precisa de <strong>alguém que explique direito.</strong></h1>
+  <p class="hero-sub">Uma mentoria online criada para profissionais experientes que querem usar IA com confiança — sem jargão, sem complicação.</p>
+  <a href="#contato-wrap" class="btn-primary">Quero começar agora</a>
+  <div class="scroll-line"></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ORIGEM -->
+<div id="origem-wrap" class="sec-wrap">
+  <!-- geometria sagrada de fundo -->
+  <svg class="geo-bg" style="right:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#2563EB"/></linearGradient></defs>
+    <g stroke="url(#gg2)" stroke-width="1" fill="none">
+      <circle cx="250" cy="250" r="80"/><circle cx="330" cy="250" r="80"/><circle cx="170" cy="250" r="80"/>
+      <circle cx="290" cy="181" r="80"/><circle cx="210" cy="181" r="80"/>
+      <circle cx="290" cy="319" r="80"/><circle cx="210" cy="319" r="80"/>
+      <circle cx="250" cy="250" r="160"/><circle cx="250" cy="250" r="230"/>
+    </g>
+  </svg>
+
+  <section id="origem">
+    <div>
+      <span class="section-label">A Origem</span>
+      <h2 class="section-title">Nasce de quem<br>percorreu o caminho.</h2>
+      <div class="section-body">
+        <p>O Instituto IAieu não nasceu de um laboratório ou de uma universidade. Nasceu de mais de quarenta anos resolvendo problemas reais — em empresas, setores e países diferentes.</p>
+        <p>Sempre existiu um mesmo padrão: quanto mais complexo parecia o problema, maior era a necessidade de alguém capaz de transformá-lo em algo simples. A Inteligência Artificial apenas ampliou essa capacidade.</p>
+        <p>A IA chegou rápido. E muitos profissionais experientes sentiram, pela primeira vez, que o mundo passou por eles sem avisar. O Instituto IAieu nasceu exatamente para reduzir essa distância.</p>
+      </div>
+      <div style="margin-top:40px">
+        <div class="fitem"><div class="fdot"></div><span class="ftext"><strong>Toda nova tecnologia faz barulho antes de fazer sentido.</strong> Estamos aqui para transformar esse barulho em clareza.</span></div>
+        <div class="fitem"><div class="fdot"></div><span class="ftext"><strong>A tela é sempre do aluno.</strong> O mentor guia pela voz. O aluno executa. Isso não é detalhe técnico — é filosofia.</span></div>
+        <div class="fitem"><div class="fdot"></div><span class="ftext"><strong>A IA é o meio. A confiança é o produto.</strong> A autonomia é o resultado.</span></div>
+      </div>
     </div>
-  </main>
+    <div>
+      <div class="stat-block"><div class="stat-number">40+</div><div class="stat-label">anos de experiência resolvendo problemas reais</div></div>
+      <div class="stat-block"><div class="stat-number">3</div><div class="stat-label">sessões ao vivo, 1 hora cada, 100% online via Google Meet</div></div>
+      <div class="stat-block"><div class="stat-number">1</div><div class="stat-label">resultado que importa — o aluno sai dizendo: "Eu consigo."</div></div>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- CURSO -->
+<div id="curso-wrap" class="sec-wrap">
+  <!-- geometria de fundo -->
+  <svg class="geo-bg" style="left:-80px;top:50%;transform:translateY(-50%);width:450px;height:450px" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gg3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#00B4FF"/></linearGradient></defs>
+    <g stroke="url(#gg3)" stroke-width="1" fill="none">
+      <polygon points="250,50 450,375 50,375"/><polygon points="250,450 50,125 450,125"/>
+      <circle cx="250" cy="250" r="200"/><circle cx="250" cy="250" r="140"/><circle cx="250" cy="250" r="80"/>
+    </g>
+  </svg>
+
+  <section id="curso">
+    <span class="section-label">IAieu GO — Primeiro Produto Oficial</span>
+    <h2 class="section-title">Três sessões.<br>Uma transformação.</h2>
+    <p class="section-body">Mentoria online ao vivo. Você compartilha sua tela. O mentor guia pela voz. Uma hora por sessão. Você termina usando IA de verdade — no trabalho, na saúde, na vida.</p>
+
+    <div class="sessoes">
+      <div class="sessao-card s1">
+        <p class="sessao-num">Sessão 01</p>
+        <h3 class="sessao-titulo">Não tenha medo</h3>
+        <p class="sessao-desc">Entenda o que é IA de verdade — sem jargão, sem papo técnico. Você usa na prática no mesmo dia. Primeira pergunta, primeiro resultado.</p>
+        <p class="sessao-arco">Medo → Curiosidade → <span class="dest">Primeiro uso</span></p>
+      </div>
+      <div class="sessao-card s2">
+        <p class="sessao-num">Sessão 02</p>
+        <h3 class="sessao-titulo">Aprenda a conversar</h3>
+        <p class="sessao-desc">A IA só funciona bem se você souber pedir. Aprenda a Fórmula IAieu — 4 ingredientes que transformam qualquer dúvida em resposta útil.</p>
+        <p class="sessao-arco">Confusão → Clareza → <span class="dest">Habilidade</span></p>
+      </div>
+      <div class="sessao-card s3">
+        <p class="sessao-num">Sessão 03</p>
+        <h3 class="sessao-titulo">IA na sua rotina</h3>
+        <p class="sessao-desc">E-mails, trabalho, saúde. Você sai com IA funcionando no que já faz todo dia — economizando horas, reduzindo atrito.</p>
+        <p class="sessao-arco">Conhecimento → Aplicação → <span class="dest">Autonomia</span></p>
+      </div>
+    </div>
+
+    <p style="font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--cinza);margin-bottom:16px">Como funciona</p>
+    <div class="como-grid">
+      <div class="como-item"><span class="como-icon">📡</span> Online ao vivo</div>
+      <div class="como-item"><span class="como-icon">🎥</span> Google Meet</div>
+      <div class="como-item"><span class="como-icon">⏱</span> 1h por sessão</div>
+      <div class="como-item"><span class="como-icon">✏️</span> Você pratica na hora</div>
+      <div class="como-item"><span class="como-icon">🎯</span> Ritmo no seu tempo</div>
+      <div class="como-item"><span class="como-icon">✅</span> Sem conhecimento técnico</div>
+    </div>
+
+    <div class="preco-bloco">
+      <div>
+        <p class="preco-badge"><span class="preco-star">✦</span> Preço de Lançamento</p>
+        <div class="preco-valor"><sup>R$</sup>249</div>
+        <p class="preco-desc">Pacote completo · 3 sessões ao vivo</p>
+      </div>
+      <ul class="preco-itens">
+        <li>3 sessões de 1 hora cada, via Google Meet</li>
+        <li>Você sempre na tela — aprendendo fazendo</li>
+        <li>Sem conhecimento técnico necessário</li>
+        <li>Ritmo no seu tempo, exemplos da sua vida</li>
+        <li>Acompanhamento entre as sessões por WhatsApp</li>
+        <li>Vagas limitadas por turma</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- FILOSOFIA -->
+<div id="filosofia-wrap" class="sec-wrap">
+  <svg class="geo-bg" style="left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;opacity:0.04" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gg4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="50%" stop-color="#2563EB"/><stop offset="100%" stop-color="#00B4FF"/></linearGradient></defs>
+    <g stroke="url(#gg4)" stroke-width="1" fill="none">
+      <circle cx="250" cy="250" r="60"/><circle cx="310" cy="250" r="60"/><circle cx="190" cy="250" r="60"/>
+      <circle cx="280" cy="198" r="60"/><circle cx="220" cy="198" r="60"/>
+      <circle cx="280" cy="302" r="60"/><circle cx="220" cy="302" r="60"/>
+      <circle cx="250" cy="250" r="120"/><circle cx="250" cy="250" r="180"/><circle cx="250" cy="250" r="240"/>
+    </g>
+  </svg>
+  <section id="filosofia" style="margin:0 auto">
+    <span class="section-label" style="display:block;text-align:center">Nossa Crença</span>
+    <p class="frase-grande">"O complexo não deveria ser complicado."<br><em>Aprender continua sendo humano.</em></p>
+    <p class="section-body" style="margin:0 auto;text-align:center">Não vendemos tecnologia. Não prometemos atalhos. Não criamos dependência. Devolvemos às pessoas o que sempre foi delas: a confiança de aprender.</p>
+    <div class="valores">
+      <span class="valor">Clareza</span>
+      <span class="valor">Elegância</span>
+      <span class="valor">Confiança</span>
+      <span class="valor">Calma</span>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- FLYER -->
+<div class="sec-wrap">
+  <div id="flyer-wrap">
+    <span class="section-label">IAieu GO</span>
+    <h2>A mentoria em uma imagem.</h2>
+    <img src="FLYER_curso_IAieu.png" alt="Flyer IAieu GO — Mentoria Online ao Vivo" class="flyer-img">
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<div id="contato-wrap" class="sec-wrap">
+  <section id="contato" style="margin:0 auto;text-align:center;padding-bottom:120px">
+    <span class="section-label" style="display:block;margin-bottom:14px">Próximo passo</span>
+    <h2 class="cta-titulo">Pronto para<br>dizer "Eu consigo"?</h2>
+    <p class="cta-sub">Manda uma mensagem. Sem compromisso. Só uma conversa para entender se o IAieu GO faz sentido pra você agora.</p>
+    <a href="https://wa.me/17542525245?text=Olá!%20Vi%20o%20site%20do%20Instituto%20IAieu%20e%20gostaria%20de%20saber%20mais%20sobre%20o%20IAieu%20GO." class="btn-whatsapp" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Falar pelo WhatsApp
+    </a>
+    <p class="cta-nota">iaieu.com &nbsp;·&nbsp; contato@institutoiaieu.com.br &nbsp;·&nbsp; Vagas limitadas</p>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo"><span class="ia">IA</span><span class="ieu">ieu.</span></div>
+  <span>Instituto IAieu · O poder das nossas escolhas. · iaieu.com</span>
+  <span>© 2026</span>
+</footer>
+
+<script>
+// Partículas flutuantes
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let W, H, pts = [];
+
+function resize(){
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const colors = ['rgba(124,58,237,', 'rgba(37,99,235,', 'rgba(0,180,255,'];
+for(let i=0;i<60;i++){
+  pts.push({
+    x: Math.random()*2000, y: Math.random()*1200,
+    r: Math.random()*1.5+0.3,
+    vx: (Math.random()-0.5)*0.3,
+    vy: (Math.random()-0.5)*0.2,
+    c: colors[Math.floor(Math.random()*colors.length)],
+    a: Math.random()*0.6+0.2
+  });
+}
+
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0)p.x=W; if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H; if(p.y>H)p.y=0;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=p.c+p.a+')';
+    ctx.fill();
+  });
+  // linhas entre partículas próximas
+  for(let i=0;i<pts.length;i++){
+    for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<120){
+        ctx.beginPath();
+        ctx.moveTo(pts[i].x,pts[i].y);
+        ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle='rgba(124,58,237,'+(0.08*(1-d/120))+')';
+        ctx.lineWidth=0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
 </body>
 </html>
