@@ -243,6 +243,22 @@ footer{
   footer{flex-direction:column;gap:12px;text-align:center;padding:28px 20px}
   #flyer-wrap{padding:0 20px 64px}
 }
+
+/* ── PUBLICAÇÕES ── */
+#pub-wrap{background:linear-gradient(180deg,rgba(37,99,235,0.04) 0%,transparent 100%)}
+.pub-grid{display:flex;flex-direction:column;gap:24px;margin-top:48px}
+.pub-card{
+  border:1px solid rgba(255,255,255,0.07);border-radius:16px;padding:32px 36px;
+  background:rgba(255,255,255,0.02);position:relative;overflow:hidden;
+  transition:border-color 0.3s,box-shadow 0.3s;
+}
+.pub-card:hover{border-color:rgba(124,58,237,0.35);box-shadow:0 0 30px rgba(124,58,237,0.1)}
+.pub-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--grad)}
+.pub-data{font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--roxo);margin-bottom:14px}
+.pub-texto{font-size:15px;color:var(--cinza);line-height:1.8;font-weight:300;white-space:pre-line}
+.pub-img{width:100%;border-radius:10px;margin:20px 0;display:block;border:1px solid rgba(124,58,237,0.15);max-height:500px;object-fit:cover}
+.pub-link{display:inline-flex;align-items:center;gap:6px;margin-top:20px;font-size:12px;font-weight:600;color:var(--roxo);text-decoration:none;letter-spacing:0.05em;opacity:0.8;transition:opacity 0.2s}
+.pub-link:hover{opacity:1}
 </style>
 </head>
 <body>
@@ -467,6 +483,27 @@ footer{
 
 <div class="divider"></div>
 
+
+<!-- PUBLICAÇÕES -->
+<div id="pub-wrap" class="sec-wrap">
+  <svg class="geo-bg" style="right:-80px;top:40%;transform:translateY(-50%);width:400px;height:400px;opacity:0.05" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="gg5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#00B4FF"/></linearGradient></defs>
+    <g stroke="url(#gg5)" stroke-width="1" fill="none">
+      <circle cx="250" cy="250" r="80"/><circle cx="330" cy="250" r="80"/><circle cx="170" cy="250" r="80"/>
+      <circle cx="290" cy="181" r="80"/><circle cx="210" cy="181" r="80"/>
+      <circle cx="250" cy="250" r="160"/><circle cx="250" cy="250" r="230"/>
+    </g>
+  </svg>
+  <section id="publicacoes" style="max-width:800px;margin:0 auto">
+    <span class="section-label">Publicações</span>
+    <h2 class="section-title">Reflexões do<br>caminho.</h2>
+    <div class="pub-grid" id="pub-grid">
+      <p style="color:var(--cinza);font-size:14px">Carregando...</p>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
 <!-- FLYER -->
 <div class="sec-wrap">
   <div id="flyer-wrap">
@@ -553,6 +590,25 @@ function draw(){
   requestAnimationFrame(draw);
 }
 draw();
+
+// Load publications from posts.json
+fetch('posts.json')
+  .then(r => r.json())
+  .then(posts => {
+    const grid = document.getElementById('pub-grid');
+    grid.innerHTML = posts.map(p => `
+      <div class="pub-card">
+        <p class="pub-data">${p.data}</p>
+        <p class="pub-texto">${p.texto}</p>
+        ${p.imagem ? `<img src="${p.imagem}" alt="" class="pub-img">` : ''}
+        <a href="${p.url}" target="_blank" class="pub-link">Ver no LinkedIn →</a>
+      </div>
+    `).join('');
+  })
+  .catch(() => {
+    document.getElementById('pub-grid').innerHTML = '';
+  });
+
 </script>
 </body>
 </html>
