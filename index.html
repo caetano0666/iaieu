@@ -721,6 +721,20 @@ fetch('posts.json?t=' + Date.now())
     document.getElementById('pub-grid').innerHTML = '';
   });
 
+// ── Scroll suave para links âncora (#secao) ──
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const id = link.getAttribute('href');
+    if (id.length < 2) return;
+    const alvo = document.querySelector(id);
+    if (alvo) {
+      e.preventDefault();
+      alvo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', id);
+    }
+  });
+});
+
 // ── CADASTRO → Google Sheets ──
 // Cole aqui a URL do seu Web App do Google Apps Script (termina em /exec)
 const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxe7jSUIZzd-pIKifNQpEV649s982U4KGRDmQVSNqGCNY8kpgXQbKRq8cSI851azku2_A/exec';
