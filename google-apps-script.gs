@@ -10,7 +10,14 @@
  *        - Quem pode acessar: Qualquer pessoa
  *  5. Copie a URL gerada (termina em /exec) e cole no index.html
  *     na constante SHEETS_URL.
+ *
+ * IMPORTANTE: ao editar este código depois, é preciso reimplantar:
+ *   Implantar → Gerenciar implantações → ✏️ editar → Versão: "Nova versão" → Implantar.
+ *   (a URL /exec continua a mesma)
  */
+
+// E-mail que recebe o aviso de cada novo cadastro. Deixe vazio ('') para não notificar.
+var EMAIL_NOTIFICACAO = 'czamma@gmail.com';
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
@@ -36,6 +43,21 @@ function doPost(e) {
       p.cidade || '',
       p.telefone || ''
     ]);
+
+    // Notifica por e-mail a cada novo cadastro
+    if (EMAIL_NOTIFICACAO) {
+      MailApp.sendEmail({
+        to: EMAIL_NOTIFICACAO,
+        subject: '🔔 Novo cadastro IAieu — ' + (p.nome || 'sem nome'),
+        body:
+          'Um novo cadastro chegou pelo site:\n\n' +
+          'Nome: ' + (p.nome || '') + '\n' +
+          'E-mail: ' + (p.email || '') + '\n' +
+          'Cidade: ' + (p.cidade || '') + '\n' +
+          'Telefone: ' + (p.telefone || '') + '\n\n' +
+          'Planilha: ' + ss.getUrl()
+      });
+    }
 
     return ContentService
       .createTextOutput(JSON.stringify({ result: 'success' }))
