@@ -79,3 +79,13 @@ function doGet() {
     .createTextOutput('IAieu — endpoint de cadastro ativo.')
     .setMimeType(ContentService.MimeType.TEXT);
 }
+
+// Rode esta função UMA vez no editor para autorizar o envio de e-mail.
+// Ela envia um e-mail de teste para o endereço configurado acima.
+function autorizarEmail() {
+  MailApp.sendEmail(
+    EMAIL_NOTIFICACAO,
+    'Teste de autorização — IAieu',
+    'Se você recebeu este e-mail, a notificação de novos cadastros está funcionando! ✅'
+  );
+}
