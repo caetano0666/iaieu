@@ -13,14 +13,14 @@
     "stat1_num": "40+",
     "stat1_label": "anos de experiência resolvendo problemas reais",
     "stat2_num": "3",
-    "stat2_label": "sessões ao vivo, 1 hora cada, 100% online via Google Meet",
+    "stat2_label": "sessões ao vivo, 45 minutos cada, 100% online via Google Meet",
     "stat3_num": "1",
     "stat3_label": "resultado que importa — o aluno sai dizendo: \"Eu consigo.\""
   },
   "curso": {
     "label": "IAieu GO — Primeiro Produto Oficial",
     "titulo": "Três sessões. Uma transformação.",
-    "subtitulo": "Mentoria online ao vivo. Você compartilha sua tela. O mentor guia pela voz. Uma hora por sessão.",
+    "subtitulo": "Mentoria online ao vivo. Você compartilha sua tela. O mentor guia pela voz. 45 minutos por sessão. Você termina usando IA de verdade — o Claude, da Anthropic — no trabalho, na saúde, na vida.",
     "sessao1_titulo": "Não tenha medo",
     "sessao1_desc": "Entenda o que é IA de verdade — sem jargão, sem papo técnico. Você usa na prática no mesmo dia.",
     "sessao2_titulo": "Aprenda a conversar",
@@ -29,12 +29,12 @@
     "sessao3_desc": "E-mails, trabalho, saúde. Você sai com IA funcionando no que já faz todo dia — economizando horas.",
     "preco": "249",
     "preco_desc": "Pacote completo · 3 sessões ao vivo",
-    "item1": "3 sessões de 1 hora cada, via Google Meet",
-    "item2": "Você sempre na tela — aprendendo fazendo",
-    "item3": "Sem conhecimento técnico necessário",
-    "item4": "Ritmo no seu tempo, exemplos da sua vida",
-    "item5": "Acompanhamento entre as sessões por WhatsApp",
-    "item6": "Vagas limitadas por turma"
+    "item1": "3 sessões de 45 minutos cada, via Google Meet",
+    "item2": "Pagamento em até 10x no cartão",
+    "item3": "Você sempre na tela — aprendendo fazendo",
+    "item4": "Sem conhecimento técnico necessário",
+    "item5": "Ritmo no seu tempo, exemplos da sua vida",
+    "item6": "Acompanhamento entre as sessões por WhatsApp"
   },
   "cta": {
     "titulo": "Pronto para dizer \"Eu consigo\"?",
