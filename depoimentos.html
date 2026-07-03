@@ -93,12 +93,12 @@
 <section>
   <div class="form-card">
     <h2 class="form-titulo">Deixe o seu depoimento</h2>
-    <p class="form-sub">Foi atendido pelo IAieu? Conte como foi. Depois de uma conferência rápida, seu depoimento entra aqui no site.</p>
+    <p class="form-sub">Foi atendido pelo IAieu? Conte como foi. Ao enviar, abre o WhatsApp com o seu depoimento já escrito, é só apertar enviar.</p>
     <form id="dep-form" novalidate>
       <div class="form-group"><label for="nome">Nome</label><input type="text" id="nome" name="nome" placeholder="Seu nome" autocomplete="name" required></div>
       <div class="form-group"><label for="profissao">Profissão</label><input type="text" id="profissao" name="profissao" placeholder="O que você faz" required></div>
       <div class="form-group"><label for="depoimento">Depoimento</label><textarea id="depoimento" name="depoimento" placeholder="Conte como o IAieu te ajudou..." required></textarea></div>
-      <button type="submit" class="btn-submit" id="btn-submit">Enviar depoimento</button>
+      <button type="submit" class="btn-submit" id="btn-submit">Enviar pelo WhatsApp</button>
       <p class="form-msg" id="form-msg"></p>
       <p class="form-nota">Seu depoimento passa por uma conferência antes de aparecer no site.</p>
     </form>
@@ -166,12 +166,11 @@ fetch('config.json?t=' + Date.now())
     document.getElementById('dep-grid').innerHTML = '<p style="color:var(--cinza);font-size:14px">Em breve, depoimentos de quem já foi atendido.</p>';
   });
 
-// ---- Envio do formulário para o Google Sheets ----
-const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbxypibetpgr_el_SbMij-zvE9C9T39h4azNRUNsxOB2UX6dxUOYYVfYqbGOMv6zp9s/exec';
+// ---- Envio do depoimento direto pelo WhatsApp (sem backend, sem Google) ----
+const WHATSAPP = '17542525245';
 const depForm = document.getElementById('dep-form');
-depForm.addEventListener('submit', async (e) => {
+depForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  const btn = document.getElementById('btn-submit');
   const msg = document.getElementById('form-msg');
   if (!depForm.checkValidity()) {
     msg.textContent = 'Por favor, preencha todos os campos.';
@@ -179,24 +178,19 @@ depForm.addEventListener('submit', async (e) => {
     depForm.reportValidity();
     return;
   }
-  btn.disabled = true;
-  btn.textContent = 'Enviando...';
-  msg.textContent = '';
-  msg.className = 'form-msg';
-  try {
-    const dados = new FormData(depForm);
-    dados.append('tipo', 'depoimento');
-    await fetch(SHEETS_URL, { method: 'POST', mode: 'no-cors', body: dados });
-    msg.textContent = '✓ Obrigado! Seu depoimento foi enviado para conferência.';
-    msg.className = 'form-msg ok';
-    depForm.reset();
-  } catch (err) {
-    msg.textContent = 'Ops, algo deu errado. Tente novamente ou fale pelo WhatsApp.';
-    msg.className = 'form-msg erro';
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Enviar depoimento';
-  }
+  const nome = document.getElementById('nome').value.trim();
+  const profissao = document.getElementById('profissao').value.trim();
+  const depoimento = document.getElementById('depoimento').value.trim();
+  const texto =
+    'Olá! Quero deixar um depoimento para o IAieu.\n\n' +
+    'Nome: ' + nome + '\n' +
+    'Profissão: ' + profissao + '\n' +
+    'Depoimento: ' + depoimento;
+  const url = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto);
+  window.open(url, '_blank');
+  msg.textContent = '✓ Abrindo o WhatsApp... é só apertar enviar na conversa que abriu.';
+  msg.className = 'form-msg ok';
+  depForm.reset();
 });
 </script>
 </body>
