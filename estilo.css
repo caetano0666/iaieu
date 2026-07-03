@@ -1,0 +1,168 @@
+/* ============================================================
+   IAieu — Estilo compartilhado por todas as páginas
+   Cores oficiais:
+   Fundo #0A0A0F · Roxo #7C3AED · Azul #2563EB · Branco #FFFFFF · Cinza #A0A0B8
+   Tipografia: Inter (Google Fonts)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --preto:#0A0A0F;
+  --branco:#FFFFFF;
+  --roxo:#7C3AED;
+  --azul:#2563EB;
+  --cinza:#A0A0B8;
+  --verde:#25D366;
+  --grad:linear-gradient(135deg,#7C3AED,#2563EB);
+  --grad3:linear-gradient(135deg,#7C3AED,#2563EB,#3B82F6);
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--preto);
+  color:var(--branco);
+  font-family:'Inter','Helvetica Neue',sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+/* Brilhos de fundo suaves (sem imagens, leve) */
+.glow{position:fixed;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0}
+.glow-a{top:-160px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(124,58,237,0.18),transparent 70%)}
+.glow-b{bottom:-200px;right:-140px;width:560px;height:560px;background:radial-gradient(circle,rgba(37,99,235,0.16),transparent 70%)}
+
+a{color:inherit}
+img{max-width:100%;display:block}
+
+/* Logos com fundo preto: o "screen" faz o preto sumir no fundo escuro do site */
+.blend{mix-blend-mode:screen}
+
+/* ============================================================
+   NAV — menu fixo no topo (em todas as páginas)
+   ============================================================ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;padding:14px 40px;
+  background:rgba(10,10,15,0.82);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(124,58,237,0.2);
+}
+.nav-logo{display:inline-flex;align-items:center;text-decoration:none}
+.nav-logo img{height:30px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{
+  color:var(--cinza);text-decoration:none;font-size:14px;font-weight:500;
+  letter-spacing:0.02em;transition:color 0.2s;white-space:nowrap;
+}
+.nav-links a:hover,.nav-links a.ativo{color:#fff}
+.nav-links a.ativo{font-weight:700}
+.nav-cta{
+  background:var(--grad);color:#fff!important;
+  padding:9px 20px;border-radius:9px;font-weight:600!important;
+}
+.nav-cta:hover{opacity:0.9}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn-wa{
+  display:inline-flex;align-items:center;gap:11px;
+  background:var(--verde);color:#fff;text-decoration:none;
+  padding:15px 34px;border-radius:12px;font-size:16px;font-weight:700;
+  box-shadow:0 0 30px rgba(37,211,102,0.3);
+  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
+  border:none;cursor:pointer;font-family:inherit;
+}
+.btn-wa:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 0 46px rgba(37,211,102,0.45)}
+.btn-wa svg{width:21px;height:21px;fill:#fff;flex-shrink:0}
+
+.btn-grad{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--grad);color:#fff;text-decoration:none;
+  padding:15px 34px;border-radius:12px;font-size:16px;font-weight:700;
+  box-shadow:0 0 30px rgba(124,58,237,0.35);
+  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
+  border:none;cursor:pointer;font-family:inherit;
+}
+.btn-grad:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 0 46px rgba(124,58,237,0.55)}
+
+/* ============================================================
+   BOTÃO WHATSAPP FLUTUANTE — fixo no canto inferior direito
+   ============================================================ */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:300;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--verde);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,0.45);
+  transition:transform 0.2s,box-shadow 0.2s;
+  animation:waPulse 2.6s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(37,211,102,0.6)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.45)}50%{box-shadow:0 6px 34px rgba(37,211,102,0.7)}}
+
+/* ============================================================
+   SEÇÕES / TÍTULOS
+   ============================================================ */
+main{position:relative;z-index:1}
+section{padding:88px 40px;max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.rotulo{
+  font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--roxo);margin-bottom:16px;display:block;
+}
+.titulo{font-size:clamp(28px,4.4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px}
+.titulo em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitulo{font-size:17px;color:var(--cinza);font-weight:300;line-height:1.7;max-width:640px}
+
+.divisor{height:1px;max-width:1120px;margin:0 auto;background:linear-gradient(90deg,transparent,#7C3AED,#2563EB,transparent);opacity:0.45}
+
+/* ============================================================
+   RODAPÉ — em todas as páginas
+   ============================================================ */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding:56px 40px 40px;
+  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;align-items:start;
+  max-width:1200px;margin:0 auto;
+}
+.foot-brand{display:flex;flex-direction:column;gap:16px}
+.foot-logo{height:34px;width:auto}
+.foot-slogan{font-size:14px;color:var(--cinza);font-weight:300}
+.foot-slogan b{color:#fff;font-weight:600}
+.foot-col h4{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cinza);margin-bottom:16px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{color:var(--cinza);text-decoration:none;font-size:14px;transition:color 0.2s}
+.foot-col a:hover{color:#fff}
+.foot-meta{display:flex;flex-direction:column;gap:12px}
+.foot-simbolo{width:40px;height:40px}
+.foot-meta a{color:var(--cinza);text-decoration:none;font-size:14px;transition:color 0.2s}
+.foot-meta a:hover{color:#fff}
+.foot-base{
+  max-width:1200px;margin:0 auto;padding:20px 40px 44px;
+  font-size:12px;color:var(--cinza);opacity:0.6;text-align:center;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media(max-width:820px){
+  nav{flex-direction:column;gap:10px;padding:12px 18px}
+  .nav-links{gap:16px 18px;width:100%;justify-content:center}
+  .nav-links a{font-size:13px}
+  section{padding:64px 20px}
+  footer{grid-template-columns:1fr;gap:28px;padding:44px 22px 28px}
+}
+@media(max-width:480px){
+  .nav-links{gap:12px 14px}
+  .nav-links a{font-size:12px}
+  .nav-cta{padding:7px 14px}
+  .wa-float{width:54px;height:54px;bottom:18px;right:18px}
+  .wa-float svg{width:28px;height:28px}
+}
