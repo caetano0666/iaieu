@@ -54,6 +54,12 @@ nav{
 }
 .nav-logo{display:inline-flex;align-items:center;text-decoration:none}
 .nav-logo img{height:30px;width:auto}
+
+/* Wordmark "IAieu." em texto (vetorial, sempre nítido em qualquer tamanho) */
+.wordmark{font-family:'Inter',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.045em;line-height:1;white-space:nowrap;display:inline-block}
+.wordmark .w1{color:#fff}
+.wordmark .w2{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.foot-wordmark{font-size:27px}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
 .nav-links a{
   color:var(--cinza);text-decoration:none;font-size:14px;font-weight:500;
