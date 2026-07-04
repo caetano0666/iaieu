@@ -46,6 +46,14 @@
   },
   "depoimentos": [
     {
+      "id": 2,
+      "nome": "Sharon Cohen Cagiali",
+      "cargo": "Psicóloga clínica",
+      "texto": "Superou minhas expectativas! Fácil, super didático. Me mostrou um mundo de possibilidades. Recomendo!",
+      "foto": "",
+      "linkedin": ""
+    },
+    {
       "id": 1,
       "nome": "Patricia Spina",
       "cargo": "HR Head",
