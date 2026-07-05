@@ -71,6 +71,12 @@
 #go-wrap{background:linear-gradient(180deg,transparent,rgba(37,99,235,0.06),transparent)}
 #go-teaser{text-align:center;max-width:720px}
 #go-teaser .subtitulo{margin:0 auto 32px}
+
+/* ---- Flyer de fechamento (rosto do Instituto) ---- */
+#rosto{text-align:center}
+.flyer-home-link{display:inline-block}
+.flyer-home-img{max-width:440px;width:100%;border-radius:22px;box-shadow:0 0 60px rgba(124,58,237,0.22);border:1px solid rgba(124,58,237,0.25);transition:transform .3s,box-shadow .3s}
+.flyer-home-link:hover .flyer-home-img{transform:translateY(-5px);box-shadow:0 0 74px rgba(124,58,237,0.38)}
 </style>
 </head>
 <body>
@@ -83,6 +89,7 @@
   <a class="nav-logo" href="index.html"><span class="wordmark"><span class="w1">IA</span><span class="w2">ieu.</span></span></a>
   <ul class="nav-links">
     <li><a href="index.html" class="ativo">IAieu+</a></li>
+    <li><a href="iaieu-cash.html">IAieu Cash</a></li>
     <li><a href="iaieu-go.html">IAieu GO</a></li>
     <li><a href="sobre.html">Sobre</a></li>
     <li><a href="depoimentos.html">Depoimentos</a></li>
@@ -189,6 +196,15 @@
 </section>
 </div>
 
+<div class="divisor"></div>
+
+<!-- SEÇÃO 7 — O ROSTO DO INSTITUTO (flyer, clicável para o IAieu GO) -->
+<section id="rosto">
+  <a class="flyer-home-link" href="iaieu-go.html" aria-label="Conhecer o IAieu GO">
+    <img src="flyer-home.jpg" alt="Instituto IAieu — e desde quando a IA tem um rosto? O Instituto IAieu tem. Muito prazer." class="flyer-home-img">
+  </a>
+</section>
+
 </main>
 
 <!-- SEÇÃO 6 — RODAPÉ -->
@@ -201,6 +217,7 @@
     <h4>Navegação</h4>
     <ul>
       <li><a href="index.html">IAieu+</a></li>
+      <li><a href="iaieu-cash.html">IAieu Cash</a></li>
       <li><a href="iaieu-go.html">IAieu GO</a></li>
       <li><a href="sobre.html">Sobre</a></li>
       <li><a href="depoimentos.html">Depoimentos</a></li>
