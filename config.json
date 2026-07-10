@@ -9,7 +9,7 @@
   "origem": {
     "label": "A Origem",
     "titulo": "Nasce de quem percorreu o caminho.",
-    "texto": "O Instituto IAieu não nasceu de um laboratório ou de uma universidade. Nasceu de mais de quarenta anos resolvendo problemas reais — em empresas, setores e países diferentes.\n\nSempre existiu um mesmo padrão: quanto mais complexo parecia o problema, maior era a necessidade de alguém capaz de transformá-lo em algo simples. A Inteligência Artificial apenas ampliou essa capacidade.\n\nA IA chegou rápido. E muitos profissionais experientes sentiram, pela primeira vez, que o mundo passou por eles sem avisar. O Instituto IAieu nasceu exatamente para reduzir essa distância.",
+    "texto": "A IAieu não nasceu de um laboratório ou de uma universidade. Nasceu de mais de quarenta anos resolvendo problemas reais, em empresas, setores e países diferentes.\n\nSempre existiu um mesmo padrão: quanto mais complexo parecia o problema, maior era a necessidade de alguém capaz de transformá-lo em algo simples. A capacidade apenas foi ampliada.\n\nMuitos profissionais experientes sentiram, pela primeira vez, que o mundo passou por eles sem avisar. A IAieu nasceu exatamente para reduzir essa distância.",
     "stat1_num": "40+",
     "stat1_label": "anos de experiência resolvendo problemas reais",
     "stat2_num": "3",
@@ -40,7 +40,7 @@
     "titulo": "Pronto para dizer \"Eu consigo\"?",
     "subtitulo": "Manda uma mensagem. Sem compromisso. Só uma conversa para entender se o IAieu GO faz sentido pra você agora.",
     "whatsapp": "17542525245",
-    "mensagem": "Olá! Vi o site do Instituto IAieu e gostaria de saber mais sobre o IAieu GO.",
+    "mensagem": "Olá! Vi o site da IAieu e gostaria de saber mais sobre o IAieu GO.",
     "botao": "Falar pelo WhatsApp",
     "nota": "iaieu.com · Vagas limitadas"
   },
