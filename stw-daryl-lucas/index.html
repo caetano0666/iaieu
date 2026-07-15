@@ -52,7 +52,7 @@
   .carrinho b{color:var(--vermelho);}
 
   /* ===== hero ===== */
-  .hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:82vh;border-bottom:1px solid var(--borda);}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;height:clamp(540px,80vh,760px);border-bottom:1px solid var(--borda);}
   .hero-texto{display:flex;flex-direction:column;justify-content:center;padding:56px 6% 56px 5%;}
   .hero-tag{color:var(--vermelho);font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:18px;}
   .hero h1{font-size:clamp(38px,4.6vw,62px);line-height:1.04;font-weight:850;letter-spacing:-.01em;text-wrap:balance;}
@@ -151,7 +151,7 @@
   .atl{background:var(--preto2);border:1px solid var(--borda);border-radius:6px;overflow:hidden;transition:transform .18s ease,border-color .2s;}
   .atl:hover{transform:translateY(-4px);border-color:var(--vermelho);}
   .atl .af{aspect-ratio:3/4;overflow:hidden;position:relative;}
-  .tarja{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(10,10,12,.72);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.14);color:#c9c9d2;font-size:8.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:3px;white-space:nowrap;z-index:2;}
+  .tarja{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);max-width:94%;background:rgba(10,10,12,.78);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.14);color:#c9c9d2;font-size:7.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 8px;border-radius:3px;white-space:nowrap;overflow:hidden;text-overflow:clip;z-index:2;}
   .nota-imagem{color:#6d6d76;font-size:12.5px;margin-top:18px;line-height:1.6;}
   .atl img{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform .3s ease;}
   .atl:hover img{transform:scale(1.05);}
@@ -199,7 +199,7 @@
   }
   @media(max-width:900px){
     nav{display:none;}
-    .hero{grid-template-columns:1fr;min-height:unset;}
+    .hero{grid-template-columns:1fr;height:auto;}
     .hero-foto{order:-1;max-height:62vh;}
     .hero-foto::after{background:linear-gradient(0deg,var(--preto) 0%,transparent 30%);}
     .hero-texto{padding:34px 6% 46px;}
