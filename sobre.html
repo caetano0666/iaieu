@@ -40,7 +40,12 @@
 
 .mf-cta{text-align:center;padding-top:8px}
 
-@media(max-width:820px){.topo{padding-top:180px}.mf-final{padding:36px 24px}}
+/* Foto do topo (avatar circular com brilho) */
+.sobre-foto{position:relative;display:flex;justify-content:center;margin:46px auto 0}
+.sobre-foto::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:120%;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.32),rgba(37,99,235,0.16) 54%,transparent 72%);filter:blur(36px);z-index:0;pointer-events:none}
+.sobre-foto img{position:relative;z-index:1;width:min(390px,80vw);height:auto;border-radius:50%;display:block}
+
+@media(max-width:820px){.topo{padding-top:180px}.mf-final{padding:36px 24px}.sobre-foto{margin-top:34px}}
 </style>
 </head>
 <body>
@@ -69,6 +74,7 @@
   <span class="rotulo" style="text-align:center">Sobre</span>
   <h1 class="titulo">O que o <em>IAieu faz.</em></h1>
   <p class="subtitulo">A tecnologia mudou tudo, menos o que realmente importa. E é aí que eu entro.</p>
+  <div class="sobre-foto"><img src="cae-avatar-iaieu.png" alt="Caetano · IAieu eVc"></div>
 </section>
 
 <!-- MANIFESTO -->
