@@ -314,6 +314,17 @@ section[id]{scroll-margin-top:96px}
 .faixa-analogia .analogia b{color:#fff;font-weight:600}
 .faixa-analogia .analogia p+p{margin-top:16px}
 
+/* ---------- Faixa artística da frase (home) ---------- */
+.home-quote{text-align:center;position:relative;opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
+.home-quote.in{opacity:1;transform:none}
+.home-quote::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72%;height:170%;background:radial-gradient(ellipse at center,rgba(124,58,237,0.16),rgba(37,99,235,0.08) 55%,transparent 72%);filter:blur(50px);z-index:0;pointer-events:none}
+.home-quote>*{position:relative;z-index:1}
+.hq-text{font-size:clamp(24px,3.6vw,42px);font-weight:800;line-height:1.3;letter-spacing:-0.02em;color:#fff;max-width:920px;margin:0 auto;text-wrap:balance}
+.hq-text em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hq-mark{font-family:Georgia,serif;color:var(--roxo);opacity:.5;margin-right:2px}
+.hq-fim{margin-top:22px;font-size:clamp(15px,1.8vw,19px);color:var(--cinza);font-weight:400}
+@media(prefers-reduced-motion:reduce){.home-quote{transition:none}}
+
 /* ---------- IAieu eVc · destaque máximo ---------- */
 #evc{
   border:1px solid rgba(124,58,237,0.28);border-radius:28px;
@@ -601,6 +612,14 @@ section[id]{scroll-margin-top:96px}
       <p>Transformo a confusão numa sequência simples de decisões, pronta para executar.</p>
     </div>
   </div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- FAIXA ARTÍSTICA · a frase -->
+<section class="home-quote" id="frase">
+  <p class="hq-text"><span class="hq-mark">&ldquo;</span>A inteligência artificial responde perguntas. O IAieu ajuda você a descobrir <em>quais perguntas fazer para a IA</em> e chegar nas <em>respostas que você precisa</em>.</p>
+  <p class="hq-fim">E é dessa diferença que nasce todo o valor.</p>
 </section>
 
 <div class="divisor"></div>
@@ -896,6 +915,14 @@ function depLBopen(src){
   lb.querySelector('img').src=src; lb.hidden=false; document.body.style.overflow='hidden';
 }
 function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidden=true; document.body.style.overflow=''; } }
+
+// Faixa da frase: surge ao rolar
+(function(){
+  var el=document.getElementById('frase'); if(!el) return;
+  if(!('IntersectionObserver' in window)){ el.classList.add('in'); return; }
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){el.classList.add('in');io.disconnect();}});},{threshold:0.25});
+  io.observe(el);
+})();
 </script>
 </body>
 </html>
