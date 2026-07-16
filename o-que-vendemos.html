@@ -49,10 +49,16 @@
 .mf-final .frase em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .mf-final .resto{font-size:16px;color:var(--cinza);font-weight:400}
 
+/* Bloco da analogia (consultório) */
+.analogia-box{max-width:720px;margin:6px auto 30px;border:1px solid rgba(124,58,237,0.28);border-radius:20px;background:rgba(124,58,237,0.06);padding:32px 34px}
+.analogia-box .fala{font-size:clamp(18px,2.1vw,22px);font-weight:600;color:#fff;line-height:1.5;font-style:italic;margin:0 0 16px}
+.analogia-box p{font-size:clamp(16px,1.8vw,18px);color:#c8c8d8;font-weight:300;line-height:1.75;margin:0}
+.analogia-box p+p{margin-top:12px}
+
 /* CTA */
 .mf-cta{text-align:center;padding-top:8px}
 
-@media(max-width:820px){.topo{padding-top:180px}.mf-final{padding:36px 24px}}
+@media(max-width:820px){.topo{padding-top:180px}.mf-final{padding:36px 24px}.analogia-box{padding:26px 22px}}
 </style>
 </head>
 <body>
@@ -83,90 +89,88 @@
   <p class="subtitulo">Informação todo mundo tem. O que falta é clareza para decidir o próximo passo.</p>
 </section>
 
-<!-- ENSAIO: O QUE EU VENDO -->
+<!-- O QUE EU VENDO (frases curtas) -->
 <section style="padding-top:0">
   <div class="mf">
-    <p>Vivemos cercados por informação. Nunca foi tão fácil aprender alguma coisa. Nunca tivemos acesso a tantas ferramentas, cursos, vídeos, especialistas e inteligência artificial. Ainda assim, nunca vimos tanta gente paralisada sem conseguir sair do lugar.</p>
+    <p>Se alguém me perguntasse o que eu vendo, provavelmente esperaria ouvir palavras como inteligência artificial, consultoria, estratégia, automação ou tecnologia.</p>
 
-    <p>Isso acontece porque informação não resolve problemas. Informação apenas amplia as possibilidades. E, quanto maior o número de possibilidades, maior a dificuldade de decidir qual caminho seguir.</p>
+    <p>Nenhuma dessas respostas estaria completamente errada. Mas todas perderiam o ponto principal.</p>
 
-    <p>É por isso que eu acredito que o verdadeiro valor hoje não está em produzir mais conteúdo, ensinar mais uma ferramenta ou criar mais um método. O verdadeiro valor está em reduzir a complexidade. Está em olhar para uma situação confusa, separar o que realmente importa do que é apenas ruído e transformar um problema aparentemente grande em uma sequência clara de decisões.</p>
-
-    <p>Foi exatamente isso que eu fiz durante toda a minha vida profissional. Construí operações do zero, reorganizei empresas, recuperei negócios, formei equipes, implementei processos e resolvi problemas que, para quem estava dentro deles, pareciam impossíveis. A tecnologia mudou, os mercados mudaram e as ferramentas mudaram, mas a essência do trabalho permaneceu exatamente a mesma: entender rapidamente o que realmente está acontecendo, identificar a causa do problema e construir o caminho mais simples para resolvê-lo.</p>
-
-    <p>Hoje a inteligência artificial potencializa esse processo de uma forma que nunca existiu antes. Ela acelera análises, organiza informações, produz documentos e executa tarefas em minutos. Mas ela continua sendo apenas uma ferramenta. Sozinha, ela não entende contexto, não define prioridades e não decide o que realmente faz sentido para cada pessoa ou para cada empresa.</p>
-
-    <p class="aspa">É justamente nesse espaço que eu trabalho.</p>
-
-    <p>Meu papel não é impressionar ninguém com inteligência artificial. Meu papel é transformar a IA em utilidade. É combinar experiência prática com tecnologia para entregar aquilo que realmente importa: clareza.</p>
-
-    <p>Quando alguém chega até mim, normalmente não está procurando um prompt melhor. Está procurando alguém que consiga organizar um pensamento, estruturar um projeto, posicionar uma carreira, desenhar uma estratégia, validar uma ideia ou simplesmente mostrar qual é o próximo passo. Muitas vezes a pessoa já sabe muito sobre o assunto. O que ela não consegue é enxergar a própria situação de forma organizada.</p>
-
-    <p>Eu não vendo respostas prontas. Eu construo respostas específicas para cada contexto. Escuto, organizo, simplifico e entrego uma direção que possa ser executada imediatamente. Em alguns casos isso significa criar um plano de negócios. Em outros, estruturar uma operação, desenvolver um produto, reposicionar um profissional ou organizar uma empresa inteira. O formato muda. O princípio permanece o mesmo.</p>
-
-    <p>No final, o que entrego não é um documento, uma apresentação ou um conjunto de prompts. Esses são apenas os formatos. O verdadeiro produto é a tranquilidade que nasce quando alguém finalmente entende o problema que tem nas mãos e sabe exatamente o que fazer a seguir.</p>
-
-    <p>É por isso que eu digo que não vendo inteligência artificial. Também não vendo consultoria no sentido tradicional da palavra.</p>
-
-    <p class="beat">Eu vendo direção.</p>
-    <p class="beat">Eu vendo clareza.</p>
-    <p class="beat">Eu vendo tempo recuperado.</p>
-    <p class="beat last">Eu vendo a capacidade de transformar meses de dúvidas em poucas horas de trabalho estruturado.</p>
-
-    <p class="aspa">Porque, quando existe clareza, a execução deixa de ser um obstáculo e passa a ser apenas uma consequência.</p>
+    <p class="beat">Eu não vendo inteligência artificial.</p>
+    <p class="beat">Também não vendo horas de consultoria.</p>
+    <p class="beat last">Eu vendo a capacidade de transformar um problema confuso em um caminho claro.</p>
   </div>
-</section>
 
-<div class="divisor"></div>
-
-<!-- MANIFESTO: Por que o IAieu existe -->
-<section>
-  <div class="bloco-head">
-    <span class="rotulo">Manifesto</span>
-    <h2 class="titulo" style="font-size:clamp(24px,3.6vw,38px)">Por que o <em>IAieu existe.</em></h2>
+  <div class="analogia-box">
+    <p class="fala">Imagine ligar para marcar uma consulta e a secretária responder: &ldquo;Antes de agendar, vou ensinar você a usar o Google Calendar.&rdquo;</p>
+    <p>Não faz sentido. Você não queria aprender uma ferramenta. Queria apenas marcar um compromisso.</p>
+    <p>Com a inteligência artificial acontece exatamente isso. Muita gente compra curso para aprender a usar a ferramenta, quando, na verdade, só queria resolver um problema.</p>
   </div>
+
   <div class="mf">
-    <p>Antes de falar sobre inteligência artificial, marketing ou produtividade, eu precisei responder uma pergunta muito mais importante:</p>
+    <p>Vivemos uma época em que praticamente qualquer pessoa consegue acessar as mesmas ferramentas. Todos podem conversar com uma inteligência artificial, criar documentos, analisar dados, produzir imagens ou escrever textos em poucos minutos. A tecnologia deixou de ser um privilégio.</p>
 
-    <p class="pergunta"><em>Por que o IAieu existe?</em></p>
+    <p class="beat">O problema nunca foi a falta de ferramentas.</p>
+    <p class="beat last">O problema sempre foi saber o que fazer com elas.</p>
 
-    <p>Demorei para perceber que a resposta nunca foi tecnologia.</p>
+    <p>Todos os dias encontro pessoas extremamente competentes que passam semanas, às vezes meses, tentando resolver um único problema. Elas pesquisam, estudam, conversam com especialistas, assistem vídeos, testam soluções diferentes e, quanto mais informação acumulam, mais difícil se torna decidir.</p>
 
-    <p>Ao longo da minha carreira, trabalhei em hotelaria, carga aérea, logística, varejo, manutenção e operações, no Brasil e nos Estados Unidos. Os mercados eram completamente diferentes. Mas o problema era sempre o mesmo.</p>
+    <p class="aspa">É exatamente isso que eu vendo.</p>
 
-    <p class="beat">Empresas travadas.</p>
-    <p class="beat">Projetos parados.</p>
-    <p class="beat last">Processos confusos.</p>
+    <p>Eu vendo a experiência de alguém que consegue olhar para uma situação complexa, separar aquilo que realmente importa do que é apenas ruído e organizar um caminho que faça sentido.</p>
 
-    <p>Pessoas sabendo que existia um problema, mas sem conseguir responder à pergunta mais simples de todas:</p>
+    <p>Durante mais de trinta anos eu fiz exatamente isso.</p>
 
-    <p class="aspa">&ldquo;Por onde eu começo?&rdquo;</p>
+    <p class="beat">Construí operações onde elas não existiam.</p>
+    <p class="beat">Reorganizei empresas que haviam perdido eficiência.</p>
+    <p class="beat">Resolvi problemas operacionais.</p>
+    <p class="beat last">Comecei do zero mais de uma vez.</p>
 
-    <p>Foi aí que entendi que eu nunca vendi operação. Nunca vendi consultoria. E agora também não vendo inteligência artificial.</p>
+    <p class="beat">Os mercados eram diferentes.</p>
+    <p class="beat">As empresas eram diferentes.</p>
+    <p class="beat last">As tecnologias eram diferentes.</p>
 
-    <p class="beat last"><strong>A IA é uma ferramenta.</strong></p>
+    <p class="beat last">O padrão era sempre o mesmo.</p>
 
-    <p>O meu trabalho continua sendo exatamente o mesmo de trinta anos atrás: entrar onde existe um bloqueio, identificar a causa raiz, organizar a complexidade e transformar um problema confuso em uma solução executável.</p>
+    <p class="beat">Quase ninguém precisava de mais informação.</p>
+    <p class="beat last">Precisava de alguém que organizasse o problema da maneira correta.</p>
 
-    <p>Quando isso acontece, algo interessante acontece também.</p>
+    <p>Hoje faço exatamente a mesma coisa. A única diferença é que agora utilizo inteligência artificial para acelerar o processo.</p>
 
-    <p class="beat">O cliente não compra um texto.</p>
-    <p class="beat">Não compra um site.</p>
-    <p class="beat last">Não compra uma automação.</p>
+    <p class="beat">Ela escreve mais rápido do que eu.</p>
+    <p class="beat">Pesquisa mais rápido do que eu.</p>
+    <p class="beat last">Organiza informações mais rápido do que eu.</p>
 
-    <p class="beat">Ele recupera tempo.</p>
-    <p class="beat">Recupera foco.</p>
-    <p class="beat last">Recupera a capacidade de decidir.</p>
+    <p>Mas continua não sabendo distinguir o que realmente importa para aquela pessoa, naquele contexto, naquele momento.</p>
 
-    <p>No fim das contas, talvez a melhor definição para o IAieu seja esta:</p>
+    <p class="beat last">Essa parte continua sendo humana.</p>
+
+    <p>É por isso que eu não vendo prompts. Essas são apenas ferramentas.</p>
+
+    <p class="beat">O que eu vendo é clareza.</p>
+    <p class="beat">Clareza para decidir.</p>
+    <p class="beat">Clareza para estruturar uma empresa.</p>
+    <p class="beat">Clareza para posicionar uma carreira.</p>
+    <p class="beat">Clareza para criar um produto.</p>
+    <p class="beat last">Clareza para transformar uma ideia em execução.</p>
+
+    <p>No final, pouco importa se o resultado será um documento, uma estratégia, um plano de ação, uma marca, um posicionamento profissional ou uma operação reorganizada.</p>
+
+    <p class="beat">Essas são apenas as entregas.</p>
+    <p class="beat last">O produto sempre é o mesmo.</p>
+
+    <p class="beat">Você chega com um problema.</p>
+    <p class="beat last">E entrego um caminho que possa ser executado imediatamente.</p>
+
+    <p class="aspa">É por isso que eu costumo dizer que não vendo inteligência artificial. Porque, quando existe clareza, a execução deixa de ser difícil. Ela simplesmente acontece.</p>
   </div>
 </section>
 
 <!-- FECHO -->
 <section style="padding-top:0">
   <div class="mf-final">
-    <p class="lead">A melhor definição do IAieu</p>
-    <p class="frase">Nós transformamos problemas confusos<br>em <em>caminhos claros.</em></p>
+    <p class="lead">No fim das contas</p>
+    <p class="frase">Quando existe clareza, a execução<br><em>simplesmente acontece.</em></p>
     <p class="resto">O resto é só ferramenta.</p>
   </div>
 </section>
