@@ -46,20 +46,86 @@
   },
   "depoimentos": [
     {
+      "id": 10,
+      "google": true,
+      "nota": "5,0",
+      "qtd": "115",
+      "empresa": "Marc Cycling",
+      "sub": "Mobile Bike & e-Bike Repair · Flórida, EUA",
+      "texto": "A mesma pessoa por trás do IAieu. Nota máxima de quem contrata o serviço.",
+      "link": "https://www.google.com/maps/place/Marc+Cycling+%7C+Mobile+Bicycle,+e-Bike+%26+e-Dirt+Bike+Repair/@25.9974503,-80.4379836,51126m/data=!3m2!1e3!4b1!4m6!3m5!1s0x88d90bb72be11c67:0x1565c8814e0f3430!8m2!3d25.9972355!4d-80.272828!16s%2Fg%2F11qpx64yj0"
+    },
+    {
+      "id": 3,
+      "nome": "Andréa Paula Galletti",
+      "cargo": "Estratégia Comercial e Distribuição · Hotelaria · LATAM",
+      "texto": "Conheço o Caetano desde 1983, quando trabalhamos juntos no Maksoud Plaza (um dos hotéis mais exigentes do Brasil na época). Já ali ficava claro o que o define até hoje: dedicação total à operação, sangue-frio sob pressão e um cuidado raro com a execução, do detalhe ao todo. Quatro décadas depois, vejo a mesma pessoa aplicando isso em logística e carga aérea, agora entre Brasil e EUA. Caetano é daqueles profissionais que você quer ter ao lado quando a operação aperta, e o mais raro: continua sendo a mesma pessoa íntegra que conheci há 40 anos. Recomendo muito!",
+      "linkedin": true,
+      "print": "depo-andrea.png"
+    },
+    {
+      "id": 4,
+      "nome": "Joaquim (Jack) Servera Jr.",
+      "cargo": "Ex-chefe de Caetano na United e Continental Airlines",
+      "texto": "Foi um privilégio conhecer e trabalhar ao lado dele ao longo desses anos. Suas conquistas profissionais são impressionantes, mas o que sempre me chamou mais atenção foi o tipo de pessoa que ele é. Tem uma iniciativa incrível, uma curiosidade que não para de aprender e crescer, e uma resiliência que o faz encarar os desafios com determinação e otimismo. O que eu mais valorizo, porém, é o caráter dele. É alguém cuja lealdade e integridade nunca vacilam. Ele conquista confiança de forma natural, porque é genuíno, confiável e sempre cumpre o que promete. Seja num projeto difícil ou numa conversa em busca de um conselho honesto, é o tipo de pessoa que você sabe que vai estar lá por você. Trabalhar com ele foi gratificante e inspirador. Ele traz o melhor das pessoas ao redor com sua atitude positiva, sua ética de trabalho e um respeito sincero pelo outro. Sou grato pela oportunidade de ter trabalhado com ele, e não tenho dúvida de que qualquer um que tiver essa chance vai reconhecer rápido o profissional excepcional, e a pessoa ainda mais excepcional, que ele é.",
+      "linkedin": true,
+      "print": "depo-jack.png"
+    },
+    {
+      "id": 5,
+      "nome": "Fabio Melo",
+      "cargo": "Diretor de Vendas LATAM · Parceiro comercial",
+      "texto": "Quando conheci o Cae, ele estava iniciando uma nova etapa em sua trajetória profissional, empreendendo após uma sólida carreira no setor da aviação. Desde o início, ficou evidente seu profissionalismo, dedicação e capacidade de gerar valor para o mercado. Ao longo de aproximadamente 13 ou 14 anos de parceria, tivemos a oportunidade de realizar negócios, desenvolver estratégias e acompanhar o crescimento de nossas empresas. Nesse período, pude testemunhar sua competência, ética, visão estratégica e habilidade para construir relacionamentos duradouros. O Cae é um grande exemplo de superação e reinvenção profissional. Fez uma transição de carreira bem-sucedida da aviação para o empreendedorismo e, pelo que acompanho atualmente em sua trajetória, segue se reinventando e buscando novos desafios com a mesma determinação que sempre o caracterizou. Parabéns, Cae, pela sua resiliência, coragem e capacidade de adaptação. Desejo muita saúde e sucesso.",
+      "linkedin": true,
+      "print": "depo-fabio.png"
+    },
+    {
+      "id": 6,
+      "nome": "Marcelo Penna",
+      "cargo": "Executivo de Cargas e Operações · Cliente na Tri-Star",
+      "texto": "Conheci o Caetano em 2023, quando eu já trabalhava na Air Canada Cargo em Miami, através do nosso parceiro GHA, a Tristar Airport Handling. Desde então, acompanho de perto o trabalho exemplar dele e o comprometimento constante com a excelência na operação. O Caetano demonstra muito profissionalismo, responsabilidade e atenção aos detalhes, garantindo que os equipamentos de GSE estejam sempre em perfeitas condições para atender as companhias aéreas com segurança, eficiência e confiabilidade. A atitude proativa dele, junto com uma forte capacidade operacional e um padrão de execução elevado, faz dele um profissional extremamente confiável e uma peça valiosa para qualquer equipe. Recomendo o Caetano com total confiança, certo de que ele vai continuar somando muito a qualquer operação da qual fizer parte.",
+      "linkedin": true,
+      "print": "depo-marcelo.png"
+    },
+    {
+      "id": 7,
+      "nome": "Celso Luiz Squilanti",
+      "cargo": "Customs General Manager · Azul Linhas Aéreas · Cliente na Tri-Star",
+      "texto": "Profissional dedicado e confiável, com grande comprometimento nas operações de cargas internacionais, garantindo excelência e agilidade nos processos.",
+      "linkedin": true,
+      "print": "depo-celso.png"
+    },
+    {
+      "id": 8,
+      "nome": "Mariana Ferreira Boff",
+      "cargo": "BDR · Novos Negócios · Estratégia de Vendas",
+      "texto": "As pessoas que escolhem a área esportiva, mais especificamente o ciclismo e suas vertentes possuem uma coragem e resiliência únicas. Habilidades essas que abrem caminhos e são capazes de construir em meio ao caos e a desordem. Em tempos de tantas incertezas e mudanças profundas poder contar com profissionais resilientes e com senso de direção valem mais do que ouro. Além do propósito claro o senso de direção importa tanto ou até mais. Conte com a experiência e resiliência do Caetano para construir uma trajetória sólida.",
+      "linkedin": true,
+      "print": "depo-mariana.png"
+    },
+    {
+      "id": 9,
+      "nome": "Vanessa Srna",
+      "cargo": "Marketing Intelligence · Analytics · GTM",
+      "texto": "Trabalhei com o Cae na época da Proparts e, se pudesse resumir sua atuação, diria que é um profissional extremamente prático e orientado à execução. Tem muita facilidade para entender rapidamente o que precisa ser feito e transformar isso em ação, entregando soluções com agilidade e consistência no dia a dia da operação. Além disso, é um profissional de muita parceria e lealdade, alguém em quem se pode confiar na operação e que realmente joga junto para fazer as coisas acontecerem. É direto, resolve com velocidade e mantém o foco no que realmente importa. Recomendo fortemente o Cae!",
+      "linkedin": true,
+      "print": "depo-vanessa.png"
+    },
+    {
       "id": 2,
       "nome": "Sharon Cohen Cagiali",
       "cargo": "Psicóloga clínica",
       "texto": "Superou minhas expectativas! Fácil, super didático. Me mostrou um mundo de possibilidades. Recomendo!",
       "foto": "",
-      "linkedin": ""
+      "linkedin": false
     },
     {
       "id": 1,
       "nome": "Patricia Spina",
-      "cargo": "HR Head",
-      "texto": "Foi excelente. Superou minhas expectativas. - Patricia, profissional de T&D - Primeira aluna do IAieu GO",
+      "cargo": "HR Head · Primeira aluna do IAieu GO",
+      "texto": "Foi excelente. Superou minhas expectativas.",
       "foto": "",
-      "linkedin": ""
+      "linkedin": false
     }
   ]
 }
