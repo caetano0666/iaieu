@@ -72,6 +72,13 @@ nav{
   padding:9px 20px;border-radius:9px;font-weight:600!important;
 }
 .nav-cta:hover{opacity:0.9}
+/* Botão "Fale comigo" (pílula contornada) — padronizado em todas as páginas */
+.nav-cta-out{
+  border:1px solid rgba(124,58,237,0.55);color:#fff!important;
+  padding:9px 20px;border-radius:999px;font-weight:600!important;
+  transition:background .2s,border-color .2s;
+}
+.nav-cta-out:hover{background:rgba(124,58,237,0.16);border-color:var(--roxo)}
 
 /* ============================================================
    BOTÕES
