@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conteúdos · IAieu</title>
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#0A0A0F">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Conteúdos · IAieu">
+<meta property="og:description" content="Notícias e artigos do mercado que provam uma ideia simples. O valor não está na ferramenta de IA. Está em quem sabe usar.">
+<meta property="og:image" content="https://iaieu.com/og-image.png">
+<meta property="og:url" content="https://iaieu.com/conteudos.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Curadoria do IAieu. Comento notícias e artigos do mercado que provam que o valor não está na ferramenta, e sim em quem sabe usar.">
+
+<link rel="stylesheet" href="estilo.css">
+<style>
+.topo{padding-top:150px;text-align:center;max-width:820px}
+.topo .subtitulo{margin:0 auto}
+
+/* ====== Lista de conteúdos ====== */
+.conteudos{max-width:760px;margin:0 auto;padding-top:8px}
+
+/* Um post (o modelo) */
+.post{padding-bottom:6px}
+.post + .post{border-top:1px solid rgba(255,255,255,0.09);margin-top:56px;padding-top:56px}
+
+.post-titulo{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-0.025em;line-height:1.15;color:#fff;margin-bottom:28px}
+.post-titulo em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+
+.post-corpo p{font-size:clamp(17px,1.9vw,19px);color:#c8c8d8;font-weight:300;line-height:1.85;margin:0 0 22px}
+.post-corpo strong{color:#fff;font-weight:600}
+.post-corpo .aspa{border-left:3px solid var(--roxo);padding-left:22px;font-style:italic;color:#fff;font-weight:500}
+
+/* Bloco de fonte (sempre no fim de cada post) */
+.post-fonte{margin-top:40px;border:1px solid rgba(124,58,237,0.25);border-radius:16px;padding:24px 26px;background:rgba(124,58,237,0.05)}
+.fonte-label{display:block;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--roxo);margin-bottom:12px}
+.post-fonte p{font-size:14.5px;color:var(--cinza);line-height:1.65;margin:0 0 6px}
+.post-fonte .ftit{color:#fff}
+.post-fonte .ftit em{font-style:italic}
+.fonte-link{display:inline-block;margin-top:14px;font-size:15px;font-weight:600;color:var(--roxo);text-decoration:none}
+.fonte-link:hover{opacity:.8}
+
+/* ====== Arte de fundo: rosa dos ventos cósmica (minimalista, fixa) ====== */
+.pg-art{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.pg-art .halo{position:absolute;inset:0;background:
+  radial-gradient(32% 44% at 99% 48%,rgba(124,58,237,0.15),transparent 70%),
+  radial-gradient(22% 26% at 93% 98%,rgba(45,143,232,0.08),transparent 72%)}
+.pg-compass{position:absolute;right:-26vw;top:50%;transform:translateY(-50%);width:min(88vh,960px);height:min(88vh,960px);opacity:.22}
+@media(max-width:900px){.pg-compass{opacity:.12;right:-52vw}.pg-art .halo{opacity:.5}}
+
+@media(max-width:820px){.topo{padding-top:180px}}
+</style>
+</head>
+<body>
+
+<div class="glow glow-a"></div>
+<div class="glow glow-b"></div>
+
+<!-- ARTE DE FUNDO: rosa dos ventos cósmica -->
+<div class="pg-art" aria-hidden="true">
+  <div class="halo"></div>
+  <svg class="pg-compass" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="cg" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#7C3AED"/>
+        <stop offset="1" stop-color="#2D8FE8"/>
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#cg)" stroke-width="1.1" stroke-linejoin="round" stroke-linecap="round">
+      <circle cx="200" cy="200" r="150"/>
+      <circle cx="200" cy="200" r="192"/>
+      <circle cx="200" cy="200" r="7"/>
+      <polygon points="200,15 215,163 267,133 237,185 385,200 237,215 267,267 215,237 200,385 185,237 133,267 163,215 15,200 163,185 133,133 185,163"/>
+    </g>
+  </svg>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html"><span class="wordmark"><span class="w1">IA</span><span class="w2">ieu.</span></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#como-funciona">Como funciona</a></li>
+    <li><a href="index.html#para-quem">Para quem é</a></li>
+    <li><a href="index.html#casos">Casos reais</a></li>
+    <li><a href="o-que-vendemos.html">O que vendemos</a></li>
+    <li><a href="depoimentos.html">Depoimentos</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="index.html#cta" class="nav-cta-out">Fale comigo →</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- TOPO -->
+<section class="topo">
+  <span class="rotulo" style="text-align:center">Conteúdos</span>
+  <h1 class="titulo">O valor não está na ferramenta. <em>Está em quem sabe usar.</em></h1>
+  <p class="subtitulo">Guardo aqui notícias e artigos do mercado que provam essa ideia. Não republico o texto dos outros. Eu comento, resumo e deixo o link pra fonte original.</p>
+</section>
+
+<!-- ============================================================
+     LISTA DE CONTEÚDOS
+
+     MODELO DE POST (copie o bloco <article class="post"> inteiro
+     para cada novo conteúdo, sempre nesta ordem):
+       1. post-titulo   -> o título
+       2. post-corpo    -> os parágrafos do seu comentário
+                           (use <p class="aspa"> para uma citação em destaque, opcional)
+       3. post-fonte    -> veículo, data, título original e o link (abre em nova aba)
+     Poste sempre o mais novo no topo da lista.
+     ============================================================ -->
+<section style="padding-top:0">
+  <div class="conteudos">
+
+    <!-- ===== POST ===== -->
+    <article class="post">
+      <h2 class="post-titulo">Botaram 1,5 bilhão de dólares pra dizer <em>o que eu já falo aqui</em></h2>
+
+      <div class="post-corpo">
+        <p>Vou compartilhar uma notícia que saiu no TechCrunch, porque ela diz, com dinheiro grande, uma coisa que eu venho falando faz tempo.</p>
+        <p>A Anthropic, dona do Claude, junto com a Blackstone e mais um time de peso, botou 1,5 bilhão de dólares numa empresa nova chamada Ode. Cem engenheiros. E o trabalho dela não é fazer IA melhor. É instalar IA dentro das empresas.</p>
+        <p>Repara na diferença. Eles não apostaram no robô. Apostaram em quem senta do lado da empresa e faz a IA funcionar no lugar certo.</p>
+        <p>O chefe de tecnologia deles resumiu assim: “escolher o modelo importa, mas não é onde a maior parte do esforço vai”. A tradução é minha, o original em inglês está no link no fim. Ou seja, a ferramenta é só um pedaço. O trabalho de verdade é entender o problema da empresa e encaixar a solução. Isso é humano.</p>
+        <p>É exatamente isso que eu faço no IAieu.</p>
+        <p>Meu trabalho não é te vender IA. É pegar uma situação confusa, achar a causa, organizar o pensamento e te entregar um caminho claro pra executar hoje. A IA acelera. O discernimento é meu.</p>
+        <p>A Ode faz isso pra banco, seguradora, indústria gigante, com um exército de engenheiro. Eu faço pro profissional e pra empresa pequena, que precisam da mesma direção e não têm 1,5 bilhão nem cem engenheiros.</p>
+        <p>Camada diferente. Mesma ideia.</p>
+        <p>Guardo essa notícia aqui porque ela prova, com quem tem dinheiro pra errar, uma coisa simples: o valor não está na ferramenta. Está em quem sabe usar. Seu problema quase nunca está sem solução. Está sem direção.</p>
+      </div>
+
+      <div class="post-fonte">
+        <span class="fonte-label">Fonte</span>
+        <p>TechCrunch, 15 de julho de 2026.</p>
+        <p class="ftit">Título original: <em>Anthropic, Blackstone bet the next trillion-dollar AI business is implementation, not just models.</em></p>
+        <a class="fonte-link" href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/" target="_blank" rel="noopener">Ler o artigo original no TechCrunch →</a>
+      </div>
+    </article>
+    <!-- ===== fim do POST ===== -->
+
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- CTA -->
+<section class="mf-cta" style="text-align:center">
+  <span class="rotulo" style="text-align:center">Comece por aqui</span>
+  <h2 class="titulo" style="font-size:clamp(24px,3.6vw,38px)">Tem um problema confuso? <em>Eu devolvo direção.</em></h2>
+  <p class="subtitulo" style="margin:0 auto 30px">Me conta a situação. Você sai com o próximo passo.</p>
+  <a class="btn-wa" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20os%20conte%C3%BAdos%20do%20IAieu%20e%20quero%20conversar%20sobre%20um%20problema." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Falar no WhatsApp
+  </a>
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="foot-brand">
+    <span class="wordmark foot-wordmark"><span class="w1">IA</span><span class="w2">ieu.</span></span>
+    <p class="foot-slogan"><b>A inteligência sempre será sua.</b></p>
+  </div>
+  <div class="foot-col">
+    <h4>Navegação</h4>
+    <ul>
+      <li><a href="o-que-vendemos.html">O que vendemos</a></li>
+      <li><a href="conteudos.html">Conteúdos</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li><a href="depoimentos.html">Depoimentos</a></li>
+      <li><a href="index.html#cta">Contato</a></li>
+    </ul>
+  </div>
+  <div class="foot-meta">
+    <img src="favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
+    <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: @iaieu.evc</a>
+    <a href="https://iaieu.com">iaieu.com</a>
+  </div>
+</footer>
+<div class="foot-base">© 2026 IAieu · A inteligência sempre será sua.</div>
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a class="wa-float" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20o%20site%20do%20IAieu%20e%20quero%20falar%20com%20voc%C3%AAs." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+</body>
+</html>
