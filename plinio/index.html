@@ -1,152 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plínio Marcos, repórter de um tempo mau</title>
-<meta name="description" content="Plínio Marcos, repórter de um tempo mau. A vida, o teatro, os livros e a luta contra a censura do dramaturgo nascido em Santos, 1935, e falecido em São Paulo, 1999.">
-<link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plínio Marcos — repórter de um tempo mau</title>
+<meta name="description" content="Acervo de Plínio Marcos (Santos, 1935 — São Paulo, 1999): dramaturgo, jornalista e cronista do avesso do Brasil. Teatro, livros, cinema, imprensa, prêmios e fotos.">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-od-id="page-inicio">
 
-<!-- TOPBAR -->
-<header class="topbar topbar--hero" id="topbar">
-  <a class="brand" href="index.html">PLÍNIO&nbsp;MARCOS<span class="dot">.</span></a>
-  <nav class="nav-desktop" aria-label="Seções">
-    <ul>
-      <li><a href="index.html" aria-current="page">Início</a></li>
-      <li><a href="biografia.html">Biografia</a></li>
-      <li><a href="teatro.html">Teatro</a></li>
-      <li class="has-drop">
-        <button class="nav-drop-toggle" aria-haspopup="true" aria-expanded="false">A obra<span class="caret">▾</span></button>
-        <ul class="nav-drop">
-          <li><a href="livros.html">Livros</a></li>
-          <li><a href="cinema.html">Cinema</a></li>
-          <li><a href="televisao.html">Televisão</a></li>
-          <li><a href="jornais.html">Jornais e Revistas</a></li>
-        </ul>
-      </li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="premios.html">Prêmios</a></li>
-      <li><a href="album.html">Fotos</a></li>
-      <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
-  <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
-    <span></span><span></span><span></span>
-  </button>
+<div class="topbar">
+  <div class="wrap">
+    <span>Acervo</span>
+    <span class="mid">Plínio Marcos · 1935–1999</span>
+    <span class="r">Santos · São Paulo · Brasil</span>
+  </div>
+</div>
+
+<header class="nav" data-od-id="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Plínio Marcos — início">
+      <span class="mark">PM</span>
+      <span><b>Plínio Marcos</b><small>Acervo</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a href="index.html" aria-current="page">Início</a>
+      <a href="biografia.html">Biografia</a>
+      <a href="teatro.html">Teatro</a>
+      <a href="obra.html">A obra</a>
+      <a href="blog.html">Blog</a>
+      <a href="premios.html">Prêmios</a>
+      <a href="fotos.html">Fotos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="navtoggle" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
-<!-- MENU MOBILE -->
-<nav class="nav-mobile" id="menu-mobile" aria-label="Menu">
-  <ul>
-    <li><a href="index.html" aria-current="page">Início</a></li>
-    <li><a href="biografia.html">Biografia</a></li>
-    <li><a href="teatro.html">Teatro</a></li>
-    <li class="grp">A obra</li>
-    <li><a href="livros.html">Livros</a></li>
-    <li><a href="cinema.html">Cinema</a></li>
-    <li><a href="televisao.html">Televisão</a></li>
-    <li><a href="jornais.html">Jornais e Revistas</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="premios.html">Prêmios</a></li>
-    <li><a href="album.html">Fotos</a></li>
-    <li><a href="contato.html">Contato</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <img class="hero__img" src="img/plinio-hero.jpg" alt="Retrato de Plínio Marcos">
-  <div class="hero__scrim"></div>
-  <div class="hero__inner">
-    <h1 class="manchete hero__name"><span>Plínio</span><span>Marcos</span></h1>
-    <p class="hero__tag">repórter de um tempo mau</p>
-    <p class="hero__dates">Santos, 1935. São Paulo, 1999.</p>
-  </div>
-  <a class="scroll-cue" href="#comeco" aria-label="Rolar para baixo">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v15M6 13l6 6 6-6"/></svg>
-  </a>
-</section>
-
-<!-- DESTAQUES -->
-<main id="comeco">
-<section class="destaques" aria-label="Destaques">
-  <div class="wrap">
-
-    <a class="destaque" href="biografia.html">
-      <div class="destaque__media"><img src="img/album/05.jpg" alt="Plínio Marcos"></div>
-      <div class="destaque__body">
-        <p class="destaque__kicker">A vida</p>
-        <h2 class="destaque__title">Quem foi</h2>
-        <p class="destaque__text">Palhaço de circo, camelô, funileiro, jornalista. Virou o maior dramaturgo do avesso do Brasil. Contava a vida de quem ninguém quer ver.</p>
-        <span class="btn">Ver a biografia</span>
+<main>
+  <section class="hero" data-od-id="hero">
+    <div class="wrap hero-grid">
+      <div data-reveal>
+        <span class="kicker">Dramaturgo · Jornalista · Cronista</span>
+        <h1 class="dotend">Plínio<br>Marcos</h1>
+        <p class="years">repórter de um tempo mau</p>
+        <p class="lead" style="margin-top:22px">Santos, 1935. São Paulo, 1999. De palhaço de circo a maior dramaturgo
+          do avesso do Brasil — contava a vida de quem ninguém quer ver.</p>
+        <div class="hero-cta">
+          <a href="biografia.html" class="btn arrow">A vida</a>
+          <a href="teatro.html" class="btn ghost">O teatro</a>
+        </div>
       </div>
-    </a>
-
-    <a class="destaque" href="teatro.html">
-      <div class="destaque__media"><img src="img/teatro/teatro-barrela-cena1.jpg" alt="Cena de Barrela"></div>
-      <div class="destaque__body">
-        <p class="destaque__kicker">O teatro</p>
-        <h2 class="destaque__title">A obra</h2>
-        <p class="destaque__text">Barrela, Navalha na Carne, Dois Perdidos numa Noite Suja. Peças escritas com a fala da cadeia, do porto, do puteiro. Teatro sem enfeite.</p>
-        <span class="btn">Ver o teatro</span>
+      <div class="hero-portrait" data-reveal data-delay="120">
+        <img src="assets/img/plinio-hero.jpg" alt="Plínio Marcos, retrato" loading="eager">
+        <span class="stamp">Acervo</span>
       </div>
-    </a>
+    </div>
+  </section>
 
-    <a class="destaque" href="biografia.html#censura">
-      <div class="destaque__media destaque__media--contain"><img src="img/censura_plinio-paco.jpg" alt="Plínio Marcos de punho erguido"></div>
-      <div class="destaque__body">
-        <p class="destaque__kicker">21 anos proibido</p>
-        <h2 class="destaque__title">A censura</h2>
-        <p class="destaque__text">Barrela ficou vinte e um anos proibida. Peça atrás de peça, a ditadura calou o autor. Ele não recuou, não pediu perdão, não mudou de assunto.</p>
-        <span class="btn">Ler sobre a censura</span>
+  <hr class="rule">
+
+  <section class="section" data-od-id="blocos">
+    <div class="wrap">
+      <div class="blocks">
+
+        <article class="block" data-reveal data-od-id="bloco-quemfoi">
+          <div class="block-media"><img src="assets/img/album/05.jpg" alt="Plínio Marcos" loading="lazy"></div>
+          <div class="block-body">
+            <span class="idx">A vida</span>
+            <h2 class="dotend">Quem foi</h2>
+            <p>Palhaço de circo, camelô, funileiro, jornalista. Virou o maior dramaturgo do avesso do Brasil.
+              Contava a vida de quem ninguém quer ver.</p>
+            <a href="biografia.html">Ler a biografia →</a>
+          </div>
+        </article>
+
+        <article class="block" data-reveal data-od-id="bloco-obra">
+          <div class="block-media"><img src="assets/img/teatro/teatro-barrela-cena1.jpg" alt="Cena de Barrela" loading="lazy"></div>
+          <div class="block-body">
+            <span class="idx">O teatro</span>
+            <h2 class="dotend">A obra</h2>
+            <p>Barrela, Navalha na Carne, Dois Perdidos numa Noite Suja. Peças escritas com a fala da cadeia,
+              do porto, do puteiro. Teatro sem enfeite.</p>
+            <a href="teatro.html">Ver as peças →</a>
+          </div>
+        </article>
+
+        <article class="block" data-reveal data-od-id="bloco-censura">
+          <div class="block-media"><img src="assets/img/censura_plinio-paco.jpg" alt="Plínio de punho erguido" loading="lazy"></div>
+          <div class="block-body">
+            <span class="idx">21 anos proibido</span>
+            <h2 class="dotend">A censura</h2>
+            <p>Barrela ficou vinte e um anos proibida. Peça atrás de peça, a ditadura calou o autor. Ele não
+              recuou, não pediu perdão, não mudou de assunto.</p>
+            <a href="biografia.html#censura">A luta contra a censura →</a>
+          </div>
+        </article>
+
+        <article class="block" data-reveal data-od-id="bloco-livros">
+          <div class="block-media"><img src="assets/img/dadosbiograficos/bienaldolivro.jpg" alt="Plínio na bienal do livro" loading="lazy"></div>
+          <div class="block-body">
+            <span class="idx">A literatura</span>
+            <h2 class="dotend">Os livros</h2>
+            <p>Quando proibiram o palco, ele foi pro papel. Querô, Nas Quebradas do Mundaréu. Vendia os próprios
+              livros na rua, camelô da literatura.</p>
+            <a href="livros.html">Os livros →</a>
+          </div>
+        </article>
+
+        <article class="block" data-reveal data-od-id="bloco-reporter">
+          <div class="block-media"><img src="assets/img/jornais/naredacao.jpg" alt="Plínio na redação" loading="lazy"></div>
+          <div class="block-body">
+            <span class="idx">A imprensa</span>
+            <h2 class="dotend">O repórter</h2>
+            <p>Coluna diária, crônica de futebol, cobertura de Carnaval. Escrevia teatro em forma de reportagem
+              e reportagem com alma de teatro.</p>
+            <a href="jornais.html">As colunas →</a>
+          </div>
+        </article>
+
+        <article class="block" data-reveal data-od-id="bloco-album">
+          <div class="block-media"><img src="assets/img/album/casamento-walderez.jpg" alt="Casamento com Walderez, 1963" loading="lazy"></div>
+          <div class="block-body">
+            <span class="idx">As fotografias</span>
+            <h2 class="dotend">O álbum</h2>
+            <p>Fora da briga, um homem de casa. Walderez, os filhos, os netos, os amigos. As fotos de família
+              de quem quase não parava quieto.</p>
+            <a href="fotos.html">Ver o álbum →</a>
+          </div>
+        </article>
+
       </div>
-    </a>
+    </div>
+  </section>
 
-    <a class="destaque" href="livros.html">
-      <div class="destaque__media"><img src="img/dadosbiograficos/bienaldolivro.jpg" alt="Plínio Marcos vendendo livros"></div>
-      <div class="destaque__body">
-        <p class="destaque__kicker">A literatura</p>
-        <h2 class="destaque__title">Os livros</h2>
-        <p class="destaque__text">Quando proibiram o palco, ele foi pro papel. Querô, Nas Quebradas do Mundaréu. Vendia os próprios livros na rua, camelô da literatura.</p>
-        <span class="btn">Ver os livros</span>
+  <section class="quote" data-od-id="destaque">
+    <div class="wrap">
+      <div data-reveal>
+        <span class="kicker" style="color:var(--accent)">A obra</span>
+        <blockquote style="margin-top:22px">Eu sempre escrevi em forma de reportagem. As minhas peças não têm ficção. Eu escrevo, desde Barrela, reportagens.</blockquote>
+        <p class="attr">Plínio Marcos</p>
       </div>
-    </a>
-
-    <a class="destaque" href="jornais.html">
-      <div class="destaque__media"><img src="img/jornais/naredacao.jpg" alt="Plínio Marcos na redação"></div>
-      <div class="destaque__body">
-        <p class="destaque__kicker">A imprensa</p>
-        <h2 class="destaque__title">O repórter</h2>
-        <p class="destaque__text">Coluna diária, crônica de futebol, cobertura de Carnaval. Escrevia teatro em forma de reportagem e reportagem com alma de teatro.</p>
-        <span class="btn">Ver jornais e revistas</span>
-      </div>
-    </a>
-
-    <a class="destaque" href="album.html">
-      <div class="destaque__media"><img src="img/album/casamento-walderez.jpg" alt="Plínio Marcos e a família"></div>
-      <div class="destaque__body">
-        <p class="destaque__kicker">As fotografias</p>
-        <h2 class="destaque__title">O álbum</h2>
-        <p class="destaque__text">Fora da briga, um homem de casa. Walderez, os filhos, os netos, os amigos. As fotos de família de quem quase não parava quieto.</p>
-        <span class="btn">Ver o álbum</span>
-      </div>
-    </a>
-
-  </div>
-</section>
+    </div>
+  </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="site-footer">
+<footer class="footer" data-od-id="footer">
   <div class="wrap">
-    <span class="foot-name">Plínio Marcos</span>
-    <p>Acervo de Plínio Marcos. Direitos e curadoria: Ricardo Martins de Barros. Contato: <a href="mailto:pliniomarcosoficial1@gmail.com">pliniomarcosoficial1@gmail.com</a>. Produção e desenvolvimento: IAieu eVc.</p>
-    <p class="foot-copy">© 2026 Plínio Marcos. Todos os direitos reservados.</p>
+    <div class="footcols">
+      <div class="footbrand">
+        <b>Plínio Marcos</b>
+        <p>Acervo dedicado à vida e à obra do dramaturgo, jornalista e cronista brasileiro. Santos, 1935 — São Paulo, 1999.</p>
+      </div>
+      <div>
+        <h4>Acervo</h4>
+        <a href="biografia.html">Biografia</a>
+        <a href="teatro.html">Teatro</a>
+        <a href="obra.html">A obra</a>
+      </div>
+      <div>
+        <h4>A obra</h4>
+        <a href="livros.html">Livros</a>
+        <a href="cinema.html">Cinema</a>
+        <a href="jornais.html">Jornais</a>
+        <a href="televisao.html">Televisão</a>
+      </div>
+      <div>
+        <h4>Explorar</h4>
+        <a href="premios.html">Prêmios</a>
+        <a href="fotos.html">Fotos</a>
+        <a href="contato.html">Contato</a>
+      </div>
+    </div>
+    <div class="mega">PLÍNIO <em>MARCOS</em></div>
+    <div class="footmeta">
+      <span>© <span data-year>2026</span> Acervo Plínio Marcos · Direitos e curadoria: Ricardo Martins de Barros</span>
+      <span>Santos · São Paulo · Brasil</span>
+    </div>
   </div>
 </footer>
 
-<script src="assets/js/site.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

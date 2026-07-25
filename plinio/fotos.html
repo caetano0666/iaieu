@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O álbum — Plínio Marcos</title>
+<meta name="description" content="Álbum de fotografias de Plínio Marcos: Walderez, os filhos, os netos, os amigos, o Gigeto. Fora da briga, um homem de casa.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-od-id="page-fotos">
+<div class="topbar"><div class="wrap"><span>Acervo</span><span class="mid">Plínio Marcos · 1935–1999</span><span class="r">Fotos</span></div></div>
+<header class="nav" data-od-id="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Plínio Marcos — início"><span class="mark">PM</span><span><b>Plínio Marcos</b><small>Acervo</small></span></a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a href="index.html">Início</a><a href="biografia.html">Biografia</a><a href="teatro.html">Teatro</a><a href="obra.html">A obra</a><a href="blog.html">Blog</a><a href="premios.html">Prêmios</a><a href="fotos.html" aria-current="page">Fotos</a><a href="contato.html">Contato</a>
+    </nav>
+    <button class="navtoggle" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="pagehead" data-od-id="pagehead">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Início</a> &nbsp;/&nbsp; Fotos</p>
+      <span class="num" style="display:block;margin-top:18px">Álbum de fotografias</span>
+      <h1 class="dotend">O álbum</h1>
+      <p class="lead narrow">Fora da briga, um homem de casa. Walderez, os filhos, os netos, os amigos, o Gigeto. Toque numa foto para ampliar.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="gallery" id="album" data-gallery data-od-id="album"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" data-od-id="footer">
+  <div class="wrap">
+    <div class="footcols">
+      <div class="footbrand"><b>Plínio Marcos</b><p>Acervo dedicado à vida e à obra do dramaturgo, jornalista e cronista brasileiro. Santos, 1935 — São Paulo, 1999.</p></div>
+      <div><h4>Acervo</h4><a href="biografia.html">Biografia</a><a href="teatro.html">Teatro</a><a href="obra.html">A obra</a></div>
+      <div><h4>A obra</h4><a href="livros.html">Livros</a><a href="cinema.html">Cinema</a><a href="jornais.html">Jornais</a><a href="televisao.html">Televisão</a></div>
+      <div><h4>Explorar</h4><a href="premios.html">Prêmios</a><a href="fotos.html">Fotos</a><a href="contato.html">Contato</a></div>
+    </div>
+    <div class="mega">PLÍNIO <em>MARCOS</em></div>
+    <div class="footmeta"><span>© <span data-year>2026</span> Acervo Plínio Marcos · Direitos e curadoria: Ricardo Martins de Barros</span><span>Santos · São Paulo · Brasil</span></div>
+  </div>
+</footer>
+
+<script>
+/* Álbum: [arquivo, legenda] — do manifesto do acervo (assets/img/album/…) */
+var PHOTOS = [
+  ["019.jpg","O bebê"],["09.jpg","Adolescência"],["07.jpg","1958"],["03.jpg","1959"],["010.jpg","1959"],
+  ["1967.jpg","1967"],["flavio-marcia.jpg","Flávio, Márcia, tias e mãe"],["016.jpg","Com o time do CAP"],
+  ["02.jpg","Em seu show"],["05.jpg","No Bar Redondo"],["1986.jpg","1986"],["1996.jpg","1996"],
+  ["camisa-jabaquara.jpg","Com a camisa do Jabaquara"],["023.jpg","1998"],["gigeto.jpg","No Gigeto"],
+  ["casa-pontapraia.jpg","Casa na Ponta da Praia"],["casamento-walderez.jpg","Casamento com Walderez, 1963"],
+  ["01.jpg","Com Walderez e os filhos Kiko e Léo"],["com-walderez1969.jpg","Com Walderez, 1969"],
+  ["06.jpg","Com os filhos Kiko, Léo e Ana"],["017.jpg","Sentimento F.C., seu time, com amigos"],
+  ["com-nelsonrodrigues.jpg","Com Nélson Rodrigues"],["024.jpg","Em seu sítio"],["025.jpg","Em seu sítio"],
+  ["com-walderezfilhos-redacao.jpg","Com Walderez e filhos na redação"],
+  ["walderez-kiko-leo-ana.jpg","Com Walderez, Kiko, Léo e Ana"],["adonirambarbosa.jpg","Com Adoniran Barbosa"],
+  ["mae-irmaos.jpg","Com a mãe e os irmãos"],["neto-marcia.jpg","Com Neto, Márcia, Cláudio, Hermínia e Sérgio"],
+  ["020.jpg","Com os netos Rafaela, Catherine e Guilherme"],["gigeto-filhaana.jpg","Com a filha Ana"],
+  ["veraartaxo-paris.jpg","Com Vera Artaxo, em Paris"],["veraartaxo.jpg","Com Vera Artaxo"],
+  ["cinconetos.jpg","Com cinco netos: Catherine, Rafaela, Bruno, Veridiana e Guilherme"],
+  ["021.jpg","Com Kiko, Léo, Ana e Tiago Artaxo"],["022.jpg","Recebendo homenagem em Santos, com os filhos"],
+  ["vera-filho.jpg","Com Vera Artaxo e o filho dela, Tiago"],["carlao-1999.jpg","Com Carlão, 1999"],
+  ["vera-amigos.jpg","Com Vera Artaxo e amigos, no Gigeto"],["tonia-lancamento.jpg","Com Tônia, em lançamento de livro no Gigeto"],
+  ["gigeto-lancamento.jpg","No Gigeto, lançamento de O Truque dos Espelhos"]
+];
+(function () {
+  var root = document.getElementById('album');
+  PHOTOS.forEach(function (p) {
+    var src = 'assets/img/album/' + p[0];
+    var fig = document.createElement('figure');
+    fig.innerHTML = '<img class="lb tall" src="' + src + '" data-full="' + src +
+      '" data-cap="' + p[1] + '" alt="' + p[1] + '" loading="lazy">' +
+      '<figcaption>' + p[1] + '</figcaption>';
+    root.appendChild(fig);
+  });
+})();
+</script>
+<script src="app.js"></script>
+</body>
+</html>

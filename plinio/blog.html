@@ -1,91 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Blog, Plínio Marcos</title>
-<meta name="description" content="Blog do acervo de Plínio Marcos.">
-<link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Plínio Marcos</title>
+<meta name="description" content="Notas, histórias e achados do acervo de Plínio Marcos.">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<header class="topbar" id="topbar">
-  <a class="brand" href="index.html">PLÍNIO&nbsp;MARCOS<span class="dot">.</span></a>
-  <nav class="nav-desktop" aria-label="Seções">
-    <ul>
-    <li><a href="index.html">Início</a></li>
-    <li><a href="biografia.html">Biografia</a></li>
-    <li><a href="teatro.html">Teatro</a></li>
-    <li class="has-drop">
-      <button class="nav-drop-toggle" aria-haspopup="true" aria-expanded="false">A obra<span class="caret">▾</span></button>
-      <ul class="nav-drop">
-        <li><a href="livros.html">Livros</a></li>
-        <li><a href="cinema.html">Cinema</a></li>
-        <li><a href="televisao.html">Televisão</a></li>
-        <li><a href="jornais.html">Jornais e Revistas</a></li>
-      </ul>
-    </li>
-    <li><a href="blog.html" aria-current="page">Blog</a></li>
-    <li><a href="premios.html">Prêmios</a></li>
-    <li><a href="album.html">Fotos</a></li>
-    <li><a href="contato.html">Contato</a></li>
-    </ul>
-  </nav>
-  <button class="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-mobile">
-    <span></span><span></span><span></span>
-  </button>
-</header>
-<nav class="nav-mobile" id="menu-mobile" aria-label="Menu">
-  <ul>
-    <li><a href="index.html">Início</a></li>
-    <li><a href="biografia.html">Biografia</a></li>
-    <li><a href="teatro.html">Teatro</a></li>
-    <li class="grp">A obra</li>
-    <li><a href="livros.html">Livros</a></li>
-    <li><a href="cinema.html">Cinema</a></li>
-    <li><a href="televisao.html">Televisão</a></li>
-    <li><a href="jornais.html">Jornais e Revistas</a></li>
-    <li><a href="blog.html" aria-current="page">Blog</a></li>
-    <li><a href="premios.html">Prêmios</a></li>
-    <li><a href="album.html">Fotos</a></li>
-    <li><a href="contato.html">Contato</a></li>
-  </ul>
-</nav>
-<main>
+<body data-od-id="page-blog">
+<div class="topbar"><div class="wrap"><span>Acervo</span><span class="mid">Plínio Marcos · 1935–1999</span><span class="r">Blog</span></div></div>
+<header class="nav" data-od-id="site-nav">
   <div class="wrap">
-    <div class="page-head">
-      <p class="eyebrow">Blog</p>
-      <h1 class="page-title manchete">Blog</h1>
-      <p class="lede">Notas, histórias e achados do acervo de Plínio Marcos. Textos novos entram aqui, do mais recente para o mais antigo.</p>
-    </div>
+    <a class="brand" href="index.html" aria-label="Plínio Marcos — início"><span class="mark">PM</span><span><b>Plínio Marcos</b><small>Acervo</small></span></a>
+    <nav class="menu" id="menu" aria-label="Menu principal">
+      <a href="index.html">Início</a><a href="biografia.html">Biografia</a><a href="teatro.html">Teatro</a><a href="obra.html">A obra</a><a href="blog.html" aria-current="page">Blog</a><a href="premios.html">Prêmios</a><a href="fotos.html">Fotos</a><a href="contato.html">Contato</a>
+    </nav>
+    <button class="navtoggle" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
+</header>
+
+<main>
+  <section class="pagehead" data-od-id="pagehead">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Início</a> &nbsp;/&nbsp; Blog</p>
+      <span class="num" style="display:block;margin-top:18px">Do acervo</span>
+      <h1 class="dotend">Blog</h1>
+      <p class="lead narrow">Notas, histórias e achados do acervo de Plínio Marcos. Textos novos entram aqui, do mais recente para o mais antigo.</p>
+    </div>
+  </section>
+
   <section class="section">
-    <div class="post-list">
-    <a class="post-item" href="blog/o-reporter-de-um-tempo-mau.html">
-      <div class="post-item__media"><img src="img/jornais/naredacao.jpg" alt="Plínio Marcos na redação" loading="lazy"></div>
-      <div class="post-item__body">
-        <p class="post-item__date">24 de julho de 2026</p>
-        <h2 class="post-item__title">O repórter de um tempo mau</h2>
-        <p class="post-item__excerpt">Antes e depois do palco, Plínio foi jornalista de rua. Coluna diária, crônica de futebol, cobertura de Carnaval. Ele dizia que escrevia teatro em forma de reportagem.</p>
+    <div class="wrap">
+      <div class="posts" data-od-id="lista-posts">
+        <a class="post" href="jornais.html" data-reveal>
+          <span class="date">24 jul 2026</span>
+          <div><span class="cat">O repórter</span><h3 style="margin-top:6px">O repórter de um tempo mau</h3><p>Antes e depois do palco, Plínio foi jornalista de rua. Coluna diária, crônica de futebol, cobertura de Carnaval. Ele dizia que escrevia teatro em forma de reportagem.</p></div>
+          <span class="btn ghost sm arrow" style="align-self:center">Ler</span>
+        </a>
+        <a class="post" href="teatro.html" data-reveal data-delay="70">
+          <span class="date">18 jul 2026</span>
+          <div><span class="cat">Teatro</span><h3 style="margin-top:6px">Barrela, vinte e um anos proibida</h3><p>A primeira peça de Plínio nasceu de um caso real que o abalou em Santos. Foi proibida pela Censura Federal e só pôde estrear vinte e um anos depois.</p></div>
+          <span class="btn ghost sm arrow" style="align-self:center">Ler</span>
+        </a>
       </div>
-    </a>
-    <a class="post-item" href="blog/barrela-vinte-e-um-anos-proibida.html">
-      <div class="post-item__media"><img src="img/teatro/teatro-barrela-cena1.jpg" alt="Cena de Barrela" loading="lazy"></div>
-      <div class="post-item__body">
-        <p class="post-item__date">18 de julho de 2026</p>
-        <h2 class="post-item__title">Barrela, vinte e um anos proibida</h2>
-        <p class="post-item__excerpt">A primeira peça de Plínio nasceu de um caso real que o abalou em Santos. Foi proibida pela Censura Federal e só pôde estrear vinte e um anos depois.</p>
-      </div>
-    </a>
+      <p class="muted" style="margin-top:22px;font-size:14px">Novos textos serão adicionados aqui. Para contribuir com o acervo, use a <a href="contato.html" style="color:var(--accent)">página de contato</a>.</p>
     </div>
   </section>
 </main>
-<footer class="site-footer">
+
+<footer class="footer" data-od-id="footer">
   <div class="wrap">
-    <span class="foot-name">Plínio Marcos</span>
-    <p>Acervo de Plínio Marcos. Direitos e curadoria: Ricardo Martins de Barros. Contato: <a href="mailto:pliniomarcosoficial1@gmail.com">pliniomarcosoficial1@gmail.com</a>. Produção e desenvolvimento: IAieu eVc.</p>
-    <p class="foot-copy">© 2026 Plínio Marcos. Todos os direitos reservados.</p>
+    <div class="footcols">
+      <div class="footbrand"><b>Plínio Marcos</b><p>Acervo dedicado à vida e à obra do dramaturgo, jornalista e cronista brasileiro. Santos, 1935 — São Paulo, 1999.</p></div>
+      <div><h4>Acervo</h4><a href="biografia.html">Biografia</a><a href="teatro.html">Teatro</a><a href="obra.html">A obra</a></div>
+      <div><h4>A obra</h4><a href="livros.html">Livros</a><a href="cinema.html">Cinema</a><a href="jornais.html">Jornais</a><a href="televisao.html">Televisão</a></div>
+      <div><h4>Explorar</h4><a href="premios.html">Prêmios</a><a href="fotos.html">Fotos</a><a href="contato.html">Contato</a></div>
+    </div>
+    <div class="mega">PLÍNIO <em>MARCOS</em></div>
+    <div class="footmeta"><span>© <span data-year>2026</span> Acervo Plínio Marcos · Direitos e curadoria: Ricardo Martins de Barros</span><span>Santos · São Paulo · Brasil</span></div>
   </div>
 </footer>
-<script src="assets/js/site.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
