@@ -10,6 +10,7 @@
 :root{
   --bg:#F4EFE6;          /* creme quente */
   --bg-2:#EFE9DD;        /* leve variação p/ raras faixas */
+  --frame:#E3D7C0;       /* bege um tom mais escuro p/ molduras de foto */
   --ink:#1A1A1A;         /* quase preto */
   --muted:#6E675C;       /* secundário quente */
   --faint:#9A9284;       /* terciário */
@@ -141,7 +142,6 @@ body.menu-open{overflow:hidden}
   font-size:clamp(1rem,4.6vw,1.7rem);letter-spacing:.05em;color:#fff;margin:.15em 0 .55em}
 .hero__dates{font-family:var(--serif);font-style:italic;color:rgba(255,255,255,.82);
   font-size:clamp(.9rem,3.6vw,1.05rem);letter-spacing:.02em}
-.hero__dates::before{content:"";display:inline-block;width:34px;height:1px;background:rgba(255,255,255,.55);vertical-align:middle;margin-right:.6em}
 .scroll-cue{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);z-index:3;color:#fff;opacity:.85;animation:bob 2s ease-in-out infinite}
 .scroll-cue svg{width:26px;height:26px;display:block}
 @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,7px)}}
@@ -171,6 +171,10 @@ body.menu-open{overflow:hidden}
 .destaque__media img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;
   filter:grayscale(1) contrast(1.08);transition:transform .5s ease}
 .destaque:hover .destaque__media img{transform:scale(1.03)}
+/* foto vertical mostrada inteira, com moldura bege (ex.: A censura) */
+.destaque__media--contain{background:var(--frame)}
+.destaque__media--contain img{object-fit:contain;object-position:50% 50%}
+.destaque:hover .destaque__media--contain img{transform:none}
 .destaque__body{padding:1.2rem 0 0}
 .destaque__kicker{font-family:var(--cond);font-weight:600;text-transform:uppercase;letter-spacing:.2em;
   font-size:.72rem;color:var(--faint);margin:0 0 .45rem}
@@ -254,7 +258,7 @@ body.menu-open{overflow:hidden}
    FOTOS (álbum)
    ========================================================= */
 .album-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.5rem,2vw,1rem)}
-.album-grid button{appearance:none;border:0;padding:0;margin:0;background:var(--bg-2);cursor:pointer;
+.album-grid button{appearance:none;border:0;padding:0;margin:0;background:var(--frame);cursor:pointer;
   display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;overflow:hidden}
 .album-grid img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;filter:grayscale(1) contrast(1.06);transition:transform .4s ease}
 .album-grid button:hover img{transform:scale(1.04)}
@@ -324,6 +328,7 @@ body.menu-open{overflow:hidden}
 .site-footer a{color:var(--ink)}
 .site-footer a:hover{color:var(--red)}
 .site-footer .foot-name{font-family:var(--cond);text-transform:uppercase;letter-spacing:.16em;color:var(--ink);font-size:.82rem;margin-bottom:.7rem;display:block}
+.site-footer .foot-copy{color:var(--faint);font-size:.78rem;margin-top:.9rem}
 
 /* =========================================================
    DESKTOP
