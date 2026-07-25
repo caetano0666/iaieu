@@ -1,4 +1,4 @@
-/* Acervo Plínio Marcos — comportamento compartilhado
+/* Acervo Plínio Marcos, comportamento compartilhado
    Nav Headroom (esconde ao rolar pra baixo), menu mobile, scroll-reveal. */
 (function () {
   'use strict';
