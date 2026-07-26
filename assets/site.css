@@ -401,7 +401,7 @@ footer.compact{padding-block:56px}
   .hero{min-height:0;display:block;background:none}
   .hero .pad{padding-block:clamp(40px,8vw,72px)}
   .hero-copy{max-width:none}
-  .hero-art-m{display:block;aspect-ratio:16/10;background:url("img/cae-hero-wide.png") 72% center/cover no-repeat}
+  .hero-art-m{display:block;min-height:clamp(220px,60vw,460px);aspect-ratio:16/10;background:url("img/cae-hero-wide.png") 72% center/cover no-repeat}
 }
 @media(min-width:921px) and (max-width:1120px){
   .hero{background-position:78% center}
