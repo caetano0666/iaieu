@@ -1,454 +1,1022 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IAieu · Seu problema não está sem solução. Está sem direção.</title>
-<meta name="description" content="Você não compra inteligência artificial. Compra tempo, tranquilidade e direção. O IAieu transforma o problema confuso em um caminho claro." />
-<meta property="og:title" content="IAieu · A inteligência sempre será sua." />
-<meta property="og:description" content="Seu problema não está sem solução. Está sem direção." />
-<meta property="og:image" content="https://iaieu.com/assets/img/og-image.png" />
-<link rel="icon" href="assets/img/favcom.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="assets/site.css" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=3">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
+<meta name="theme-color" content="#0A0A0F">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="IAieu · Seu problema não está sem solução. Está sem direção.">
+<meta property="og:description" content="Você não compra inteligência artificial. Compra tempo, tranquilidade e direção. A IA é só a ferramenta que torna isso possível.">
+<meta property="og:image" content="https://iaieu.com/site4.png">
+<meta property="og:image:width" content="1672">
+<meta property="og:image:height" content="941">
+<meta property="og:url" content="https://iaieu.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Seu problema não está sem solução. Está sem direção. Meu trabalho é transformar isso em um caminho claro.">
+
+<style>
+/* ============================================================
+   IAieu · Estilo base (embutido para a home ser auto-suficiente)
+   Cores: Fundo #0A0A0F · Roxo #7C3AED · Azul #2563EB · Branco · Cinza #A0A0B8
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --preto:#0A0A0F;
+  --branco:#FFFFFF;
+  --roxo:#7C3AED;
+  --azul:#2563EB;
+  --cinza:#A0A0B8;
+  --verde:#25D366;
+  --grad:linear-gradient(135deg,#7C3AED,#2563EB);
+  --grad3:linear-gradient(135deg,#7C3AED,#2563EB,#3B82F6);
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--preto);
+  color:var(--branco);
+  font-family:'Inter','Helvetica Neue',sans-serif;
+  line-height:1.6;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+.glow{position:fixed;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0}
+.glow-a{top:-160px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(124,58,237,0.18),transparent 70%)}
+.glow-b{bottom:-200px;right:-140px;width:560px;height:560px;background:radial-gradient(circle,rgba(37,99,235,0.16),transparent 70%)}
+
+a{color:inherit}
+img{max-width:100%;display:block}
+.blend{mix-blend-mode:screen}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:20px;padding:14px 40px;
+  background:rgba(10,10,15,0.82);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(124,58,237,0.2);
+}
+.nav-logo{display:inline-flex;align-items:center;text-decoration:none}
+.nav-logo img{height:30px;width:auto}
+.wordmark{font-family:'Inter',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.045em;line-height:1;white-space:nowrap;display:inline-block}
+.wordmark .w1{color:#fff}
+.wordmark .w2{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.foot-wordmark{font-size:27px}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{
+  color:var(--cinza);text-decoration:none;font-size:14px;font-weight:500;
+  letter-spacing:0.02em;transition:color 0.2s;white-space:nowrap;
+}
+.nav-links a:hover,.nav-links a.ativo{color:#fff}
+.nav-links a.ativo{font-weight:700}
+.nav-cta{
+  background:var(--grad);color:#fff!important;
+  padding:9px 20px;border-radius:9px;font-weight:600!important;
+}
+.nav-cta:hover{opacity:0.9}
+
+/* BOTÕES */
+.btn-wa{
+  display:inline-flex;align-items:center;gap:11px;
+  background:var(--verde);color:#fff;text-decoration:none;
+  padding:15px 34px;border-radius:12px;font-size:16px;font-weight:700;
+  box-shadow:0 0 30px rgba(37,211,102,0.3);
+  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
+  border:none;cursor:pointer;font-family:inherit;
+}
+.btn-wa:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 0 46px rgba(37,211,102,0.45)}
+.btn-wa svg{width:21px;height:21px;fill:#fff;flex-shrink:0}
+
+.btn-grad{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--grad);color:#fff;text-decoration:none;
+  padding:15px 34px;border-radius:12px;font-size:16px;font-weight:700;
+  box-shadow:0 0 30px rgba(124,58,237,0.35);
+  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
+  border:none;cursor:pointer;font-family:inherit;
+}
+.btn-grad:hover{opacity:0.9;transform:translateY(-2px);box-shadow:0 0 46px rgba(124,58,237,0.55)}
+.btn-grad svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
+
+/* BOTÃO WHATSAPP FLUTUANTE */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:300;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--verde);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 24px rgba(37,211,102,0.45);
+  transition:transform 0.2s,box-shadow 0.2s;
+  animation:waPulse 2.6s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 8px 32px rgba(37,211,102,0.6)}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.45)}50%{box-shadow:0 6px 34px rgba(37,211,102,0.7)}}
+
+/* SEÇÕES / TÍTULOS */
+main{position:relative;z-index:1}
+section{padding:88px 40px;max-width:1120px;margin:0 auto;position:relative;z-index:1}
+.rotulo{
+  font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--roxo);margin-bottom:16px;display:block;
+}
+.titulo{font-size:clamp(28px,4.4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px}
+.titulo em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.subtitulo{font-size:17px;color:var(--cinza);font-weight:300;line-height:1.7;max-width:640px}
+.divisor{height:1px;max-width:1120px;margin:0 auto;background:linear-gradient(90deg,transparent,#7C3AED,#2563EB,transparent);opacity:0.45}
+
+/* RODAPÉ */
+footer{
+  position:relative;z-index:1;
+  border-top:1px solid rgba(255,255,255,0.07);
+  padding:56px 40px 40px;
+  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;align-items:start;
+  max-width:1200px;margin:0 auto;
+}
+.foot-brand{display:flex;flex-direction:column;gap:16px}
+.foot-logo{height:34px;width:auto}
+.foot-slogan{font-size:14px;color:var(--cinza);font-weight:300}
+.foot-slogan b{color:#fff;font-weight:600}
+.foot-col h4{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cinza);margin-bottom:16px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.foot-col a{color:var(--cinza);text-decoration:none;font-size:14px;transition:color 0.2s}
+.foot-col a:hover{color:#fff}
+.foot-meta{display:flex;flex-direction:column;gap:12px}
+.foot-simbolo{width:40px;height:40px}
+.foot-meta a{color:var(--cinza);text-decoration:none;font-size:14px;transition:color 0.2s}
+.foot-meta a:hover{color:#fff}
+.foot-base{
+  max-width:1200px;margin:0 auto;padding:20px 40px 44px;
+  font-size:12px;color:var(--cinza);opacity:0.6;text-align:center;
+}
+
+/* RESPONSIVO base */
+@media(max-width:820px){
+  nav{flex-direction:column;gap:10px;padding:12px 18px}
+  .nav-links{gap:16px 18px;width:100%;justify-content:center}
+  .nav-links a{font-size:13px}
+  section{padding:64px 20px}
+  footer{grid-template-columns:1fr;gap:28px;padding:44px 22px 28px}
+}
+@media(max-width:480px){
+  .nav-links{gap:12px 14px}
+  .nav-links a{font-size:12px}
+  .nav-cta{padding:7px 14px}
+  .wa-float{width:54px;height:54px;bottom:18px;right:18px}
+  .wa-float svg{width:28px;height:28px}
+}
+
+/* ============================================================
+   SINGLE PAGE · estilos específicos da home IAieu
+   ============================================================ */
+
+/* Âncoras param abaixo do menu fixo */
+section[id]{scroll-margin-top:96px}
+@media(max-width:820px){section[id]{scroll-margin-top:120px}}
+
+/* Menu: logo "eVc" e botão contornado */
+.wordmark .w3{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:600}
+.nav-cta-out{
+  border:1px solid rgba(124,58,237,0.55);color:#fff!important;
+  padding:9px 20px;border-radius:999px;font-weight:600!important;
+  transition:background .2s,border-color .2s;
+}
+.nav-cta-out:hover{background:rgba(124,58,237,0.16);border-color:var(--roxo)}
+
+/* ---------- HERO (arte final: foto + bússola + pilares) ---------- */
+#hero{position:relative;min-height:100vh;max-width:none;margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column}
+.hero-top{position:relative;flex:1 1 auto;display:flex;align-items:center;padding:120px 0 28px}
+.hero-inner{width:100%;max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
+.hero-copy{max-width:590px}
+.hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:var(--roxo);margin-bottom:22px}
+.hero-title{font-size:clamp(30px,4.2vw,50px);font-weight:800;line-height:1.1;letter-spacing:-0.035em;color:#fff;text-wrap:balance}
+.hero-sub{font-size:clamp(21px,2.9vw,34px);font-weight:800;line-height:1.2;letter-spacing:-0.03em;margin-top:14px;text-wrap:balance;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hero-rule{width:64px;height:3px;border-radius:2px;background:var(--grad);margin:30px 0 24px}
+.hero-lead2{font-size:clamp(16px,1.6vw,19px);line-height:1.7;color:var(--cinza);font-weight:300;max-width:430px;margin-bottom:34px}
+.hero-actions{display:flex;align-items:center;gap:14px 28px;flex-wrap:wrap}
+.hero-cta{display:inline-flex;border-radius:999px;padding:20px 46px;font-size:19px;box-shadow:0 0 50px rgba(124,58,237,0.55)}
+.hero-cta:hover{box-shadow:0 0 66px rgba(124,58,237,0.75)}
+.hero-link{color:var(--cinza);text-decoration:none;font-size:15px;font-weight:600;transition:color .2s}
+.hero-link:hover{color:#fff}
+
+/* arte à direita (foto + bússola + luz) */
+.hero-photo{position:absolute;top:0;right:0;bottom:0;width:60%;z-index:1;pointer-events:none}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:100% 46%;z-index:2;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%);
+  mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%);}
+
+/* 5 pilares na base do hero */
+.hero-pilares{position:relative;z-index:3;width:100%;max-width:1280px;margin:0 auto;
+  padding:22px 40px 30px;border-top:1px solid rgba(255,255,255,0.09);
+  display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
+.pilar{display:flex;align-items:flex-start;gap:14px}
+.pilar-n{font-size:30px;font-weight:800;line-height:1;color:var(--roxo);flex-shrink:0;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;margin-top:-2px}
+.pilar-t{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#fff}
+.pilar-s{font-size:12.5px;color:var(--cinza);font-weight:300;margin-top:4px;line-height:1.4}
+@media(max-width:960px){.hero-pilares{grid-template-columns:repeat(2,1fr);gap:18px 22px}}
+@media(max-width:520px){.hero-pilares{grid-template-columns:1fr}}
+
+@media(max-width:900px){
+  #hero{min-height:auto}
+  .hero-top{padding:128px 0 22px}
+  .hero-photo{width:100%;opacity:0.30}
+  .hero-photo img{object-fit:cover;object-position:60% 28%;-webkit-mask-image:linear-gradient(to bottom,#000 18%,transparent 86%);mask-image:linear-gradient(to bottom,#000 18%,transparent 86%)}
+  .hero-copy{max-width:100%}
+  .hero-inner{padding:0 22px}
+}
+
+/* ---------- Blocos de narrativa ---------- */
+.big-lead{font-size:clamp(17px,1.9vw,20px);line-height:1.85;color:#c8c8d8;font-weight:300;max-width:760px;margin-top:8px}
+.big-lead p+p{margin-top:22px}
+.big-lead strong{color:#fff;font-weight:500}
+.narr-chips{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
+.narr-chips span{
+  font-size:13px;font-weight:400;color:var(--cinza);
+  border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:8px 16px;
+}
+
+/* ---------- Para quem é ---------- */
+#para-quem{position:relative;overflow:hidden}
+#para-quem::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-paraquem.png') center/cover no-repeat;opacity:0.24}
+#para-quem::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#0A0A0F 34%,rgba(10,10,15,0.45) 100%)}
+#para-quem>*{position:relative;z-index:1}
+.pq-lista{list-style:none;max-width:660px;margin:26px 0 8px;display:flex;flex-direction:column;gap:15px}
+.pq-lista li{display:flex;gap:14px;align-items:flex-start;font-size:clamp(15px,1.6vw,18px);color:#c8c8d8;font-weight:300;line-height:1.6}
+.pq-lista li::before{content:"";flex-shrink:0;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--grad)}
+.pq-lista strong{color:#fff;font-weight:500}
+.pq-close{font-size:clamp(18px,2.3vw,25px);font-weight:600;color:#fff;margin-top:32px;max-width:660px;line-height:1.4;letter-spacing:-0.01em}
+.pq-close b{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
+
+/* ---------- Como funciona (3 passos) ---------- */
+#como-funciona{position:relative;overflow:hidden}
+#como-funciona::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-comofunciona.png') center/cover no-repeat;opacity:0.14}
+#como-funciona>*{position:relative;z-index:1}
+.cf-passos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.cf-passo{border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:38px 32px;background:rgba(255,255,255,0.03);transition:border-color .3s,transform .3s}
+.cf-passo:hover{border-color:rgba(124,58,237,0.32);transform:translateY(-4px)}
+.cf-num{font-size:34px;font-weight:900;line-height:1;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:16px}
+.cf-passo h3{font-size:22px;font-weight:700;letter-spacing:-0.02em;color:#fff;margin-bottom:10px}
+.cf-passo p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.7}
+.cf-nota{font-size:clamp(17px,2vw,22px);font-weight:600;color:#fff;margin-top:32px;max-width:660px;line-height:1.4}
+.cf-nota strong{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
+@media(max-width:820px){.cf-passos{grid-template-columns:1fr}}
+
+/* ---------- Sobre: fundo espiral ---------- */
+#sobre{position:relative;overflow:hidden}
+#sobre::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-sobre.png') right center/cover no-repeat;opacity:0.20;-webkit-mask-image:linear-gradient(to left,#000,transparent 66%);mask-image:linear-gradient(to left,#000,transparent 66%)}
+#sobre>*{position:relative;z-index:1}
+
+/* ---------- Bloco 3: Como eu trabalho ---------- */
+#processo{position:relative;overflow:hidden}
+#processo::before{content:"";position:absolute;inset:0;z-index:0;
+  background:url('bg-metodo.png') center 46%/contain no-repeat;opacity:0.16}
+#processo::after{content:"";position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse 70% 60% at center,transparent 30%,rgba(10,10,15,0.85) 82%)}
+#processo>*{position:relative;z-index:1}
+.processo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.passo{
+  border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:40px 34px;
+  background:rgba(255,255,255,0.02);transition:border-color .3s,transform .3s;
+}
+.passo:hover{border-color:rgba(124,58,237,0.32);transform:translateY(-4px)}
+.passo .ico{width:32px;height:32px;margin-bottom:22px;color:var(--roxo)}
+.passo .ico svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.passo h3{font-size:23px;font-weight:700;letter-spacing:-0.02em;color:#fff;margin-bottom:10px}
+.passo p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.72}
+@media(max-width:820px){.processo-grid{grid-template-columns:1fr}}
+
+/* ---------- Frase destaque grande ---------- */
+.destaque-quote{
+  font-size:clamp(23px,3.4vw,40px);font-weight:600;line-height:1.35;
+  letter-spacing:-0.02em;max-width:940px;margin:0 auto;text-wrap:balance;
+}
+.destaque-quote b{
+  display:block;margin-top:12px;font-weight:800;
+  background:var(--grad3);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+}
+
+/* ---------- Faixa da analogia (curso x direção) ---------- */
+.faixa-analogia{text-align:center}
+.faixa-analogia .destaque-quote{max-width:880px}
+.faixa-analogia .analogia{max-width:680px;margin:34px auto 0;font-size:clamp(16px,1.9vw,19px);line-height:1.8;color:#c8c8d8;font-weight:300}
+.faixa-analogia .analogia b{color:#fff;font-weight:600}
+.faixa-analogia .analogia p+p{margin-top:16px}
+
+/* ---------- Faixa artística da frase (home) ---------- */
+.home-quote{text-align:center;position:relative}
+.home-quote::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72%;height:170%;background:radial-gradient(ellipse at center,rgba(124,58,237,0.16),rgba(37,99,235,0.08) 55%,transparent 72%);filter:blur(50px);z-index:0;pointer-events:none}
+.home-quote>*{position:relative;z-index:1}
+.hq-text{font-size:clamp(24px,3.6vw,42px);font-weight:800;line-height:1.3;letter-spacing:-0.02em;color:#fff;max-width:920px;margin:0 auto;text-wrap:balance}
+.hq-text em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.hq-mark{font-family:Georgia,serif;color:var(--roxo);opacity:.5;margin-right:2px}
+.hq-fim{margin-top:22px;font-size:clamp(15px,1.8vw,19px);color:var(--cinza);font-weight:400}
+
+/* ---------- Carrossel (do correio ao e-mail) ---------- */
+.carrossel-sec{text-align:center}
+.carrossel-sec .subtitulo{margin:0 auto}
+.carousel{position:relative;margin-top:40px}
+.car-track{
+  display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;padding:4px 2px;
+  -ms-overflow-style:none;scrollbar-width:none;
+}
+.car-track::-webkit-scrollbar{display:none}
+.car-slide{
+  scroll-snap-align:center;flex:0 0 min(80%,420px);
+  width:min(80%,420px);height:auto;border-radius:20px;
+  border:1px solid rgba(255,255,255,0.08);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.car-nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);
+  background:rgba(10,10,15,0.72);backdrop-filter:blur(8px);
+  color:#fff;font-size:26px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity .2s,transform .2s,background .2s;
+}
+.car-nav:hover{background:var(--roxo);transform:translateY(-50%) scale(1.06)}
+.car-prev{left:-8px}
+.car-next{right:-8px}
+.car-nav:disabled{opacity:.28;cursor:default;pointer-events:none}
+@media(max-width:820px){.car-nav{display:none}}
+.car-dots{display:flex;justify-content:center;gap:9px;margin-top:26px}
+.car-dot{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.22);transition:background .2s,width .2s}
+.car-dot.on{background:var(--grad);width:22px;border-radius:5px}
+
+/* ---------- IAieu eVc · destaque máximo ---------- */
+#evc{
+  border:1px solid rgba(124,58,237,0.28);border-radius:28px;
+  background:linear-gradient(180deg,rgba(124,58,237,0.07),rgba(37,99,235,0.03));
+  box-shadow:0 0 80px rgba(124,58,237,0.1);
+  padding:72px 60px;margin-top:20px;margin-bottom:20px;
+}
+#evc .titulo{font-size:clamp(38px,6vw,64px)}
+.evc-body{font-size:17px;color:var(--cinza);font-weight:300;line-height:1.85;max-width:760px;margin:22px 0}
+.evc-body strong{color:#fff;font-weight:600}
+.andrea-box{
+  border-left:3px solid var(--roxo);border-radius:0 16px 16px 0;
+  background:rgba(255,255,255,0.03);padding:26px 30px;margin:30px 0;max-width:760px;
+}
+.andrea-box .rot{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--roxo);margin-bottom:12px;display:block}
+.andrea-box p{font-size:16px;color:var(--cinza);font-weight:300;line-height:1.8;font-style:italic}
+.andrea-box strong{color:#fff;font-style:normal;font-weight:600}
+.evc-detalhes{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 6px}
+.evc-detalhes span{
+  font-size:13px;font-weight:500;color:var(--cinza);
+  border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:8px 16px;
+}
+.ref-link{display:inline-block;margin:18px 0 30px;font-size:14px;font-weight:600;color:var(--roxo);text-decoration:none}
+.ref-link:hover{opacity:0.8}
+.evc-cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:8px}
+
+/* ---------- IAieu+ e IAieu GO · cards de segundo plano ---------- */
+.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.mini{
+  border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:42px 38px;
+  background:rgba(255,255,255,0.02);transition:border-color .3s,box-shadow .3s,transform .3s;
+  display:flex;flex-direction:column;
+}
+.mini:hover{border-color:rgba(124,58,237,0.4);box-shadow:0 0 40px rgba(124,58,237,0.12);transform:translateY(-4px)}
+.mini h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;letter-spacing:-0.03em;margin-bottom:6px}
+.mini .sub{font-size:16px;color:#fff;font-weight:600;margin-bottom:16px}
+.mini p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.75}
+.mini .fecho{font-size:clamp(19px,2.2vw,24px);margin:20px 0 26px}
+.mini .btn-wa{margin-top:auto;align-self:flex-start}
+@media(max-width:820px){.mini-grid{grid-template-columns:1fr}}
+
+/* ---------- Fecho reutilizável (cards de produto) ---------- */
+.fecho{font-size:clamp(20px,2.7vw,30px);font-weight:700;letter-spacing:-0.02em;line-height:1.3;margin-top:8px}
+.fecho b{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
+
+/* ---------- Casos Reais ---------- */
+.casos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.caso{
+  border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;
+  background:rgba(255,255,255,0.02);transition:border-color .3s,box-shadow .3s,transform .3s;
+  display:flex;flex-direction:column;
+}
+.caso:hover{border-color:rgba(37,99,235,0.4);box-shadow:0 0 34px rgba(37,99,235,0.12);transform:translateY(-4px)}
+.caso .quem{font-size:19px;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:4px}
+.caso .papel{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--roxo);margin-bottom:18px}
+.caso-num{font-size:clamp(34px,4.4vw,44px);font-weight:900;line-height:1.02;letter-spacing:-0.03em;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:16px}
+.caso-num small{display:block;font-size:13px;font-weight:600;letter-spacing:0.01em;color:var(--cinza);-webkit-text-fill-color:var(--cinza);margin-top:8px;line-height:1.4}
+.caso-quote{font-size:clamp(21px,2.7vw,27px);font-weight:800;line-height:1.25;letter-spacing:-0.02em;color:#fff;margin-bottom:16px}
+.caso p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.72}
+.caso .fecho{font-size:19px;margin-top:20px}
+@media(max-width:820px){.casos-grid{grid-template-columns:1fr}}
+
+/* ---------- Depoimentos ---------- */
+.dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:44px}
+.dep-card{border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px 28px;background:rgba(255,255,255,0.02);transition:border-color .3s,box-shadow .3s}
+.dep-card:hover{border-color:rgba(124,58,237,0.3);box-shadow:0 0 30px rgba(124,58,237,0.08)}
+.dep-aspas{font-size:46px;line-height:1;color:var(--roxo);opacity:0.4;font-family:Georgia,serif;margin-bottom:6px}
+.dep-texto{font-size:15px;color:var(--cinza);line-height:1.75;font-weight:300;font-style:italic;margin-bottom:22px}
+.dep-autor{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.07);padding-top:18px}
+.dep-ini{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+.dep-nome{font-size:14px;font-weight:600;color:#fff}
+.dep-cargo{font-size:12px;color:var(--cinza);font-weight:300}
+.dep-cta{text-align:center;margin-top:38px}
+.dep-mais{background:none;border:none;padding:0;margin-left:2px;color:var(--roxo);font-family:inherit;font-size:inherit;font-style:normal;font-weight:600;cursor:pointer}
+.dep-mais:hover{text-decoration:underline}
+.dep-li{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:11px;font-weight:600;color:#70a8ff}
+.dep-li svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
+.dep-print{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12.5px;font-weight:600;color:var(--roxo);background:none;border:none;padding:0;cursor:pointer;font-family:inherit}
+.dep-print:hover{text-decoration:underline}
+.dep-print svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
+.dep-lb{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;backdrop-filter:blur(4px)}
+.dep-lb[hidden]{display:none}
+.dep-lb img{max-width:min(920px,94vw);max-height:90vh;width:auto;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,0.6)}
+.dep-lb-x{position:fixed;top:16px;right:22px;background:none;border:none;color:#fff;font-size:34px;line-height:1;cursor:pointer;opacity:.85}
+.dep-lb-x:hover{opacity:1}
+.dep-google{background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))}
+.dep-g-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.dep-g-head svg{width:34px;height:34px;flex-shrink:0}
+.dep-g-nota{font-size:24px;font-weight:800;color:#fff;display:flex;align-items:center;gap:8px;line-height:1}
+.dep-stars{color:#FBBC04;font-size:16px;letter-spacing:1px}
+.dep-g-qtd{font-size:12.5px;color:var(--cinza);margin-top:5px}
+.dep-g-emp{font-size:18px;font-weight:700;color:#fff;letter-spacing:-0.01em}
+.dep-g-sub{font-size:12.5px;color:var(--cinza);margin-top:3px;margin-bottom:16px}
+.dep-g-txt{font-style:normal!important;margin-bottom:0}
+.dep-google .dep-print svg{width:16px;height:16px}
+
+/* ---------- Sobre ---------- */
+#sobre .sobre-body{font-size:clamp(17px,1.9vw,20px);color:#c8c8d8;font-weight:300;line-height:1.85;max-width:760px;margin:22px 0}
+#sobre .sobre-body p+p{margin-top:20px}
+#sobre .sobre-body strong{color:#fff;font-weight:500}
+.sobre-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 30px;margin:42px 0 6px;padding:44px 40px;border-radius:26px;border:1px solid rgba(124,58,237,0.22);background:linear-gradient(135deg,rgba(124,58,237,0.09),rgba(37,99,235,0.04));box-shadow:0 0 70px rgba(124,58,237,0.1)}
+.sobre-stat{border:none;background:none;border-radius:0;padding:0}
+.sobre-stat .n{font-size:clamp(52px,7.5vw,78px);font-weight:900;line-height:1;letter-spacing:-0.03em;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:12px}
+.sobre-stat .l{font-size:14px;color:var(--cinza);font-weight:400;line-height:1.55}
+@media(max-width:820px){.sobre-stats{padding:34px 26px}}
+@media(max-width:820px){.sobre-stats{grid-template-columns:1fr}}
+
+/* ---------- Textura de constelação (site5) em "O que entrego" ---------- */
+#entrego{position:relative;overflow:hidden}
+#entrego::before{content:"";position:absolute;inset:0;z-index:0;
+  background:url('site5.png') right center/cover no-repeat;opacity:0.20;
+  -webkit-mask-image:linear-gradient(to left,#000,transparent 68%);mask-image:linear-gradient(to left,#000,transparent 68%)}
+#entrego>*{position:relative;z-index:1}
+
+/* ---------- Conteúdos ---------- */
+#conteudos{position:relative;overflow:hidden}
+#conteudos::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-conteudos.png') center/cover no-repeat;opacity:0.16}
+#conteudos>*{position:relative;z-index:1}
+.cont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.cont-card{border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:36px 30px;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
+.cont-card:hover{border-color:rgba(124,58,237,0.32);transform:translateY(-4px)}
+.cont-ic{width:30px;height:30px;color:var(--roxo);margin-bottom:18px}
+.cont-ic svg{width:100%;height:100%;fill:currentColor}
+.cont-card h3{font-size:20px;font-weight:700;color:#fff;letter-spacing:-0.02em;margin-bottom:8px}
+.cont-card p{font-size:14.5px;color:var(--cinza);font-weight:300;line-height:1.65;flex:1}
+.cont-link{margin-top:20px;align-self:flex-start;font-size:14px;font-weight:600;color:var(--roxo);text-decoration:none}
+.cont-link:hover{opacity:.8}
+.cont-card.breve{opacity:.7}
+.cont-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--cinza);border:1px solid rgba(255,255,255,0.16);border-radius:999px;padding:5px 12px;margin-top:20px;align-self:flex-start}
+@media(max-width:820px){.cont-grid{grid-template-columns:1fr}}
+
+/* ---------- CTA Final (fecho cinematográfico site4) ---------- */
+#cta-wrap{position:relative;overflow:hidden;background:#0A0A0F}
+#cta-wrap::before{content:"";position:absolute;inset:0;z-index:0;
+  background:url('site4.png') center 62%/cover no-repeat;opacity:0.62}
+#cta-wrap::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,#0A0A0F 0%,rgba(10,10,15,0.60) 38%,rgba(10,10,15,0.28) 74%,rgba(10,10,15,0.82) 100%)}
+#cta-wrap>*{position:relative;z-index:2}
+#cta{text-align:center;max-width:940px}
+#cta .titulo{margin-bottom:12px}
+#cta .subtitulo{margin:0 auto 36px;font-size:18px}
+.cta-extra{margin-top:40px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
+.cta-extra a{color:var(--cinza);text-decoration:none;font-size:15px;transition:color .2s}
+.cta-extra a:hover{color:#fff}
+.cta-extra b{color:#fff;font-weight:600}
+</style>
 </head>
-<body id="topo">
+<body>
 
-<!-- ============================ TOPBAR ============================ -->
-<div class="topbar" data-od-id="topbar">
-  <div class="wrap">
-    <span>IAieu <span class="tb-dot">·</span> Edição 2026</span>
-    <span class="tb-hide">Clareza <span class="tb-dot">·</span> Direção <span class="tb-dot">·</span> Transformação</span>
-    <span>A inteligência sempre será sua<span class="tb-dot">.</span></span>
-  </div>
-</div>
+<div class="glow glow-a"></div>
+<div class="glow glow-b"></div>
 
-<!-- ============================ NAV ============================ -->
-<nav class="nav" id="nav" data-od-id="nav">
-  <div class="wrap">
-    <a class="brand" href="#topo" aria-label="IAieu">
-      <img class="brand-logo" src="assets/img/logo-iaieu-claro.png" alt="IAieu" />
-      <span class="b-evc">eVc.</span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <div class="nav-links" id="navLinks">
-      <a href="o-que-vendemos.html">O que vendemos</a>
-      <a href="sobre.html">O IAieu</a>
-      <a href="projetos.html">Projetos</a>
-      <a href="conteudos.html">Conteúdos</a>
-      <a href="depoimentos.html">Depoimentos</a>
-      <a class="nav-cta" href="#cta">Fale comigo →</a>
-    </div>
-  </div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#topo"><span class="wordmark"><span class="w1">IA</span><span class="w2">ieu</span><span class="w3">&nbsp;eVc.</span></span></a>
+  <ul class="nav-links">
+    <li><a href="o-que-vendemos.html">O que vendemos</a></li>
+    <li><a href="sobre.html">O IAieu</a></li>
+    <li><a href="projetos.html">Projetos</a></li>
+    <li><a href="conteudos.html">Conteúdos</a></li>
+    <li><a href="depoimentos.html">Depoimentos</a></li>
+    <li><a href="#cta" class="nav-cta-out">Fale comigo →</a></li>
+  </ul>
 </nav>
 
-<!-- ============================ HERO ============================ -->
-<header class="hero" data-od-id="hero" role="img" aria-label="Caetano · IAieu">
-  <div class="wrap pad hero-inner">
-    <div class="hero-copy">
-      <span class="kicker" data-reveal>Clareza abre caminhos.</span>
-      <h1 class="display" data-reveal data-d="1">Seu problema não está <em>sem solução</em>. Está <em>sem direção</em><span class="pt">.</span></h1>
-      <p class="lead" data-reveal data-d="2">Meu trabalho é transformar isso em um caminho claro.</p>
-      <p class="hero-lead-2" data-reveal data-d="2">Você não compra inteligência artificial. Compra tempo, tranquilidade e direção. A IA é só a ferramenta que torna isso possível.</p>
-      <div class="hero-cta" data-reveal data-d="3">
-        <a class="btn btn--purple" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20um%20caminho%20claro%20(IAieu)." target="_blank" rel="noopener">Quero um caminho claro <span class="arw">→</span></a>
-        <a class="btn" href="#processo">Veja como eu trabalho <span class="arw">→</span></a>
-      </div>
-    </div>
-  </div>
-</header>
-<div class="hero-art-m" aria-hidden="true"></div>
+<main>
 
-<section class="wrap">
-  <div class="idx" data-od-id="hero-index">
-    <div class="idx-item" data-reveal><div class="idx-num">01</div><h4>Clareza</h4><p>Para enxergar o problema real.</p></div>
-    <div class="idx-item" data-reveal data-d="1"><div class="idx-num">02</div><h4>Direção</h4><p>Para saber o próximo passo.</p></div>
-    <div class="idx-item" data-reveal data-d="1"><div class="idx-num">03</div><h4>Tempo</h4><p>Meses viram horas.</p></div>
-    <div class="idx-item" data-reveal data-d="2"><div class="idx-num">04</div><h4>Tranquilidade</h4><p>Saber o que fazer.</p></div>
-    <div class="idx-item" data-reveal data-d="2"><div class="idx-num">05</div><h4>Execução</h4><p>O caminho já sai pronto.</p></div>
-  </div>
-</section>
-
-<hr class="rule rule--wrap" />
-
-<!-- ============================ PARA QUEM É ============================ -->
-<section class="pad wrap" data-od-id="para-quem">
-  <div class="two">
-    <div class="sec-head" data-reveal>
-      <span class="kicker">Para quem é <span class="roman">· I</span></span>
-      <h2 class="display" style="margin-top:20px">Para quem tem informação demais e clareza <em>de menos</em><span class="pt">.</span></h2>
-    </div>
-    <div data-reveal data-d="1">
-      <p class="lead" style="max-width:46ch">Você já pesquisou, estudou, testou. Não falta informação. Falta clareza para decidir.</p>
-      <ul class="who-list">
-        <li>Uma empresa que perdeu o rumo e não sabe o que resolver primeiro.</li>
-        <li>Você sabe muito, mas trava na hora de mostrar o seu valor.</li>
-        <li>Tem uma ideia na cabeça que <i>não sai do lugar</i>.</li>
-        <li>Pesquisou tanto sobre um problema que já não enxerga a saída.</li>
-      </ul>
-      <p class="who-close">Se você se reconheceu em alguma dessas linhas, <b>a gente precisa conversar.</b></p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ FAIXA · analogia curso x direção ============================ -->
-<section class="band pad" data-od-id="faixa-curso">
-  <div class="wrap">
-    <span class="kicker" data-reveal>Curso × Direção</span>
-    <div class="prose" style="margin-top:26px">
-      <p class="big" data-reveal data-d="1">Quando você compra um curso, paga para aprender a ferramenta. Só que a ferramenta nunca foi o seu problema. <em>O que falta é direção.</em></p>
-      <p data-reveal data-d="2" style="margin-top:24px;max-width:70ch">Ninguém entra numa padaria para aprender a fazer um bolo. Entra porque quer sair com o bolo pronto.</p>
-      <p data-reveal data-d="2" style="max-width:70ch">Com inteligência artificial acontece a mesma coisa. Muita gente compra curso para aprender a usar a ferramenta. Mas, na maioria das vezes, o problema nunca foi a ferramenta. Foi não saber exatamente o que precisava ser feito.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============================ COMO FUNCIONA ============================ -->
-<section class="pad wrap" id="processo" data-od-id="como-funciona">
-  <div class="sec-head" data-reveal>
-    <span class="kicker">Como funciona <span class="roman">· II</span></span>
-    <h2 class="display" style="margin-top:20px">Simples para você. O trabalho pesado <em>é meu</em><span class="pt">.</span></h2>
-  </div>
-  <div class="steps">
-    <div class="step" data-reveal><div class="n">01</div><h4>Você traz o problema</h4><p>Me conta a situação confusa, por áudio ou numa conversa. Sem formulário. Sem tela em branco.</p></div>
-    <div class="step" data-reveal data-d="1"><div class="n">02</div><h4>Eu organizo</h4><p>Separo o que importa do que é ruído e acho a causa. A inteligência artificial acelera. A direção é minha.</p></div>
-    <div class="step" data-reveal data-d="2"><div class="n">03</div><h4>Você sai sabendo o que fazer</h4><p>Você recebe um caminho claro, pronto para executar. Sem depender de mim a cada passo.</p></div>
-  </div>
-  <div class="tags" data-reveal>
-    <span class="tag">Presença no LinkedIn</span>
-    <span class="tag">Posicionamento</span>
-    <span class="tag">Plano de negócio</span>
-    <span class="tag">Estrutura de operação</span>
-    <span class="tag">Marca</span>
-    <span class="tag">Campanha</span>
-  </div>
-  <p class="tags-note" data-reveal>O formato muda conforme o seu problema. O que eu entrego é sempre o mesmo. <b>Clareza.</b></p>
-</section>
-
-<hr class="rule rule--wrap" />
-
-<!-- ============================ O MÉTODO ============================ -->
-<section class="pad wrap" data-od-id="metodo">
-  <div class="sec-head" data-reveal>
-    <span class="kicker">O método <span class="roman">· III</span></span>
-    <h2 class="display" style="margin-top:20px">Antes da resposta, eu entendo <em>o problema</em><span class="pt">.</span></h2>
-  </div>
-  <div class="steps">
-    <div class="step" data-reveal><div class="n">I</div><h4>Entendo o contexto</h4><p>O que está realmente acontecendo. Não o que parece à primeira vista.</p></div>
-    <div class="step" data-reveal data-d="1"><div class="n">II</div><h4>Acho a causa</h4><p>Separo causa de sintoma. É aí que o problema começa a se resolver.</p></div>
-    <div class="step" data-reveal data-d="2"><div class="n">III</div><h4>Organizo o caminho</h4><p>Transformo a confusão numa sequência simples de decisões, pronta para executar.</p></div>
-  </div>
-</section>
-
-<!-- ============================ CARROSSEL INSTAGRAM ============================ -->
-<section class="band pad" data-od-id="carrossel-instagram">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <span class="kicker">Direto do @iaieu.evc</span>
-      <h2 class="display" style="margin-top:20px">Do correio ao e-mail. Agora, <em>a IA</em><span class="pt">.</span></h2>
-      <p class="lead" style="margin-top:16px;max-width:52ch">Arraste as artes. É o mesmo carrossel que eu postei lá no @iaieu.evc.</p>
-    </div>
-    <div class="carousel" data-reveal data-d="1" style="margin-top:36px">
-      <div class="car-frame">
-        <div class="car-track" id="carTrack">
-          <div class="car-slide"><img src="assets/img/correio-1.jpeg" alt="Uma pergunta: você ainda trabalha como quem envia cartas ou como quem envia e-mails?" /></div>
-          <div class="car-slide"><img src="assets/img/correio-2.jpeg" alt="Quem não usa inteligência artificial escreve, apaga, reescreve, revisa e corrige tudo sozinho. É como escrever uma carta e ir ao correio." /></div>
-          <div class="car-slide"><img src="assets/img/correio-3.jpeg" alt="Quem usa inteligência artificial pensa, conversa, refina. Em poucos minutos o trabalho está pronto. É como escrever um e-mail e clicar em enviar." /></div>
-          <div class="car-slide"><img src="assets/img/correio-4.jpeg" alt="Os dois chegam ao mesmo destino. Mas um leva dias e o outro leva segundos." /></div>
-          <div class="car-slide"><img src="assets/img/correio-5.jpeg" alt="A inteligência artificial não muda apenas a velocidade. Ela muda a forma como você trabalha." /></div>
-          <div class="car-slide"><img src="assets/img/correio-6.jpeg" alt="A pergunta é: você quer continuar trabalhando como quem envia cartas ou como quem envia e-mails? Escolha a direção." /></div>
-          <div class="car-slide"><img src="assets/img/correio-7.jpeg" alt="IAieu. A inteligência sempre será sua. Clareza, direção, transformação." /></div>
+<!-- HERO -->
+<section id="hero" name="topo"><a id="topo"></a>
+  <div class="hero-top">
+    <div class="hero-photo"><img src="hero-visual.png" alt="Caetano · IAieu eVc"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Clareza abre caminhos.</p>
+        <h1 class="hero-title">Seu problema não está sem solução. Está sem direção.</h1>
+        <p class="hero-sub">Meu trabalho é transformar isso em um caminho claro.</p>
+        <div class="hero-rule"></div>
+        <p class="hero-lead2">Você não compra inteligência artificial. Compra tempo, tranquilidade e direção. A IA é só a ferramenta que torna isso possível.</p>
+        <div class="hero-actions">
+          <a class="btn-grad hero-cta" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20um%20caminho%20claro%20(IAieu)." target="_blank" rel="noopener">Quero um caminho claro →</a>
+          <a class="hero-link" href="#processo">Veja como eu trabalho →</a>
         </div>
       </div>
-      <div class="car-ctrl">
-        <div class="car-btns">
-          <button class="car-btn" id="carPrev" aria-label="Anterior">‹</button>
-          <button class="car-btn" id="carNext" aria-label="Próximo">›</button>
-        </div>
-        <div class="car-dots" id="carDots"></div>
-        <div class="car-count" id="carCount">01 / 07</div>
-      </div>
+    </div>
+  </div>
+  <div class="hero-pilares">
+    <div class="pilar">
+      <span class="pilar-n">01</span>
+      <div><div class="pilar-t">Clareza</div><div class="pilar-s">Para enxergar o problema real.</div></div>
+    </div>
+    <div class="pilar">
+      <span class="pilar-n">02</span>
+      <div><div class="pilar-t">Direção</div><div class="pilar-s">Para saber o próximo passo.</div></div>
+    </div>
+    <div class="pilar">
+      <span class="pilar-n">03</span>
+      <div><div class="pilar-t">Tempo</div><div class="pilar-s">Meses viram horas.</div></div>
+    </div>
+    <div class="pilar">
+      <span class="pilar-n">04</span>
+      <div><div class="pilar-t">Tranquilidade</div><div class="pilar-s">Saber o que fazer.</div></div>
+    </div>
+    <div class="pilar">
+      <span class="pilar-n">05</span>
+      <div><div class="pilar-t">Execução</div><div class="pilar-s">O caminho já sai pronto.</div></div>
     </div>
   </div>
 </section>
 
-<!-- ============================ FAIXA ARTÍSTICA · a frase ============================ -->
-<section class="artline pad" data-od-id="frase">
-  <div class="wrap">
-    <p class="quote" data-reveal>
-      <span class="qmark">“</span>
-      A inteligência artificial responde perguntas. O IAieu ajuda você a descobrir <em>quais perguntas fazer para a IA</em> e chegar nas <em>respostas que você precisa</em>. E é dessa diferença que nasce todo o valor.
-    </p>
+<div class="divisor"></div>
+
+<!-- PARA QUEM É -->
+<section id="para-quem">
+  <span class="rotulo">Para quem é</span>
+  <h2 class="titulo">Para quem tem informação demais e <em>clareza de menos.</em></h2>
+  <div class="big-lead">
+    <p>Você já pesquisou, estudou, testou. Não falta informação. Falta clareza para decidir.</p>
+  </div>
+  <ul class="pq-lista">
+    <li>Uma empresa que perdeu o rumo e não sabe o que resolver primeiro.</li>
+    <li>Você sabe muito, mas trava na hora de mostrar o seu valor.</li>
+    <li>Tem uma ideia na cabeça que <strong>não sai do lugar</strong>.</li>
+    <li>Pesquisou tanto sobre um problema que já não enxerga a saída.</li>
+  </ul>
+  <p class="pq-close">Se você se reconheceu em alguma dessas linhas, <b>a gente precisa conversar.</b></p>
+</section>
+
+<div class="divisor"></div>
+
+<!-- FAIXA · analogia curso x direção -->
+<section class="faixa-analogia">
+  <p class="destaque-quote">Quando você compra um curso, paga para aprender a ferramenta. Só que a ferramenta nunca foi o seu problema. <b>O que falta é direção.</b></p>
+  <div class="analogia">
+    <p>Ninguém entra numa padaria para aprender a fazer um bolo. Entra porque quer sair com o bolo pronto.</p>
+    <p>Com inteligência artificial acontece a mesma coisa. Muita gente compra curso para aprender a usar a ferramenta. Mas, na maioria das vezes, o problema nunca foi a ferramenta. Foi não saber exatamente o que precisava ser feito.</p>
   </div>
 </section>
 
-<!-- ============================ SOBRE ============================ -->
-<section class="pad wrap" data-od-id="sobre">
-  <div class="two">
-    <div class="sec-head" data-reveal>
-      <span class="kicker">Sobre <span class="roman">· IV</span></span>
-      <h2 class="display" style="margin-top:20px">O trabalho é o mesmo <em>há trinta anos</em><span class="pt">.</span></h2>
+<div class="divisor"></div>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona">
+  <span class="rotulo">Como funciona</span>
+  <h2 class="titulo">Simples para você. <em>O trabalho pesado é meu.</em></h2>
+  <div class="cf-passos">
+    <div class="cf-passo">
+      <div class="cf-num">01</div>
+      <h3>Você traz o problema</h3>
+      <p>Me conta a situação confusa, por áudio ou numa conversa. Sem formulário. Sem tela em branco.</p>
     </div>
-    <div class="prose" data-reveal data-d="1">
-      <p>Trabalhei em hotelaria, carga aérea, logística, varejo e operações. No Brasil e nos Estados Unidos. Construí operações do zero, reorganizei empresas, formei equipes, recuperei negócios.</p>
-      <p>Os setores mudavam. Os países mudavam. As tecnologias mudavam. O padrão era sempre o mesmo. Quase ninguém precisava de mais informação.</p>
-      <p class="em-line">Precisava de alguém para organizar o problema do jeito certo.</p>
-      <p>Hoje eu faço a mesma coisa. A diferença é que agora a inteligência artificial acelera. A direção continua sendo minha.</p>
+    <div class="cf-passo">
+      <div class="cf-num">02</div>
+      <h3>Eu organizo</h3>
+      <p>Separo o que importa do que é ruído e acho a causa. A inteligência artificial acelera. A direção é minha.</p>
+    </div>
+    <div class="cf-passo">
+      <div class="cf-num">03</div>
+      <h3>Você sai sabendo o que fazer</h3>
+      <p>Você recebe um caminho claro, pronto para executar. Sem depender de mim a cada passo.</p>
     </div>
   </div>
-  <div class="stats">
-    <div class="stat" data-reveal><div class="num">30+</div><p>anos resolvendo problemas reais</p></div>
-    <div class="stat" data-reveal data-d="1"><div class="num">2</div><p>países, Brasil e Estados Unidos</p></div>
-    <div class="stat" data-reveal data-d="2"><div class="num">1</div><p>produto de verdade: o problema confuso vira caminho claro</p></div>
+  <div class="narr-chips">
+    <span>Presença no LinkedIn</span><span>Posicionamento</span><span>Plano de negócio</span><span>Estrutura de operação</span><span>Marca</span><span>Campanha</span>
   </div>
-  <p style="margin-top:32px" data-reveal><a class="tlink" href="sobre.html">Leia o que o IAieu faz →</a></p>
+  <p class="cf-nota">O formato muda conforme o seu problema. <strong>O que eu entrego é sempre o mesmo. Clareza.</strong></p>
 </section>
 
-<!-- ============================ O QUE ENTREGO ============================ -->
-<section class="deliver pad" data-od-id="o-que-entrego">
-  <div class="wrap two">
-    <div class="sec-head" data-reveal>
-      <span class="kicker">O que entrego</span>
-      <h2 class="display" style="margin-top:20px">No fim, você não leva <em>um documento</em><span class="pt">.</span></h2>
+<div class="divisor"></div>
+
+<!-- BLOCO 3 · Como eu trabalho -->
+<section id="processo">
+  <span class="rotulo">O método</span>
+  <h2 class="titulo">Antes da resposta, <em>eu entendo o problema.</em></h2>
+  <div class="processo-grid">
+    <div class="passo">
+      <div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></div>
+      <h3>Entendo o contexto</h3>
+      <p>O que está realmente acontecendo. Não o que parece à primeira vista.</p>
     </div>
-    <div class="prose" data-reveal data-d="1" style="align-self:center">
-      <p>Pode ser um plano, uma marca, um posicionamento ou uma operação reorganizada. Esses são só os formatos.</p>
-      <p class="em-line" style="font-family:var(--font-display);font-style:italic;font-size:1.3rem">O que você leva de verdade é a tranquilidade de entender o problema que tem na mão e saber exatamente o que fazer a seguir.</p>
+    <div class="passo">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg></div>
+      <h3>Acho a causa</h3>
+      <p>Separo causa de sintoma. É aí que o problema começa a se resolver.</p>
+    </div>
+    <div class="passo">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.5 7.2L3 21l1.9-6.4A8 8 0 1 1 21 12Z"/></svg></div>
+      <h3>Organizo o caminho</h3>
+      <p>Transformo a confusão numa sequência simples de decisões, pronta para executar.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================ SERVIÇOS ============================ -->
-<section class="pad wrap" id="evc" data-od-id="servicos">
-  <div class="sec-head" data-reveal>
-    <span class="kicker">Na prática <span class="roman">· V</span></span>
-    <h2 class="display" style="margin-top:20px">Os formatos que esse trabalho <em>pode ter</em><span class="pt">.</span></h2>
-    <p class="lead" style="margin-top:16px;max-width:56ch">Um único trabalho, três jeitos de começar. Você escolhe o que faz mais sentido pra agora.</p>
-  </div>
+<div class="divisor"></div>
 
-  <!-- IAieu eVc · destaque máximo -->
-  <div class="svc-evc">
-    <div class="body" data-reveal>
-      <span class="kicker" style="margin-bottom:14px">IAieu eVc <span class="roman">· destaque</span></span>
-      <h3 class="serif" style="font-size:clamp(1.7rem,3vw,2.4rem);margin:.3em 0 .6em">Sua presença no LinkedIn e no Instagram, escrita na <em style="font-style:italic;color:var(--purple)">sua voz</em>.</h3>
-      <p>Para pessoas e empresas. Hoje é no LinkedIn e no Instagram que as pessoas te procuram: clientes, recrutadores, parceiros, seguidores.</p>
-      <p>Se o seu perfil está parado ou não mostra quem você é de verdade, oportunidade boa passa sem você nem perceber.</p>
-      <p>Eu cuido disso pra você. Você me conta a sua história falando, em áudios, no seu tempo. Eu escrevo e monto o conteúdo com a sua cara, do jeito que você mesmo diria. Você só lê e aprova antes de publicar.</p>
-      <p class="em-line">Falo na sua voz e te entrego o conteúdo pronto.</p>
-      <p>Serve pra profissional que quer aparecer, pra empresa que quer ser lembrada e também pra atleta ou influenciador que precisa postar direto e não tem tempo de escrever. É o que chamam de ghostwriting: eu escrevo por você, como se fosse você.</p>
-      <p>E quando o assunto é currículo, monto o seu também, sempre baseado só em fatos verificados. Nada inventado, nada inflado.</p>
-      <div class="svc-badge">
-        <span>Serviço mensal</span><span>Contrato mínimo de 3 meses</span><span>Vagas limitadas</span>
-      </div>
-      <div class="svc-cta">
-        <a class="btn btn--purple" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20o%20IAieu%20eVc%20(presen%C3%A7a%20no%20LinkedIn)." target="_blank" rel="noopener">Quero conversar <span class="arw">→</span></a>
-        <a class="btn" href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">Referência viva no LinkedIn <span class="arw">→</span></a>
-      </div>
+<!-- CARROSSEL · do correio ao e-mail (analogia da IA) -->
+<section id="carrossel-ia" class="carrossel-sec">
+  <span class="rotulo">Direto do @iaieu.evc</span>
+  <h2 class="titulo">Do correio ao e-mail. <em>Agora, a IA.</em></h2>
+  <p class="subtitulo">Arraste as artes. É o mesmo carrossel que eu postei lá no @iaieu.evc.</p>
+  <div class="carousel">
+    <button class="car-nav car-prev" type="button" aria-label="Arte anterior">&lsaquo;</button>
+    <div class="car-track" id="car-ia">
+      <img class="car-slide" src="correio-1.jpeg" width="1254" height="1254" loading="lazy" alt="Uma pergunta: você ainda trabalha como quem envia cartas ou como quem envia e-mails?">
+      <img class="car-slide" src="correio-2.jpeg" width="1254" height="1254" loading="lazy" alt="Quem não usa inteligência artificial escreve, apaga, reescreve, revisa e corrige tudo sozinho. É como escrever uma carta e ir ao correio.">
+      <img class="car-slide" src="correio-3.jpeg" width="1254" height="1254" loading="lazy" alt="Quem usa inteligência artificial pensa, conversa, refina. Em poucos minutos o trabalho está pronto. É como escrever um e-mail e clicar em enviar.">
+      <img class="car-slide" src="correio-4.jpeg" width="1254" height="1254" loading="lazy" alt="Os dois chegam ao mesmo destino. Mas um leva dias e o outro leva segundos.">
+      <img class="car-slide" src="correio-5.jpeg" width="1254" height="1254" loading="lazy" alt="A inteligência artificial não muda apenas a velocidade. Ela muda a forma como você trabalha.">
+      <img class="car-slide" src="correio-6.jpeg" width="1254" height="1254" loading="lazy" alt="A pergunta é: você quer continuar trabalhando como quem envia cartas ou como quem envia e-mails? Escolha a direção.">
+      <img class="car-slide" src="correio-7.jpeg" width="1254" height="1254" loading="lazy" alt="IAieu. A inteligência sempre será sua. Clareza, direção, transformação.">
     </div>
-    <aside class="svc-hero-card" data-reveal data-d="1">
-      <div class="tagbig">IAieu eVc<span class="pt">.</span></div>
-      <p>Falo na sua voz e te entrego o conteúdo pronto. Você só lê e aprova antes de publicar.</p>
-      <div class="mini">
-        <div><b>LinkedIn + Instagram</b>: na sua voz, com a sua cara.</div>
-        <div><b>Ghostwriting</b>: eu escrevo por você, como se fosse você.</div>
-        <div><b>Currículo</b>: só fatos verificados. Nada inflado.</div>
-      </div>
-    </aside>
+    <button class="car-nav car-next" type="button" aria-label="Próxima arte">&rsaquo;</button>
+  </div>
+  <div class="car-dots" id="car-ia-dots"></div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- FAIXA ARTÍSTICA · a frase -->
+<section class="home-quote" id="frase">
+  <p class="hq-text"><span class="hq-mark">&ldquo;</span>A inteligência artificial responde perguntas. O IAieu ajuda você a descobrir <em>quais perguntas fazer para a IA</em> e chegar nas <em>respostas que você precisa</em>.</p>
+  <p class="hq-fim">E é dessa diferença que nasce todo o valor.</p>
+</section>
+
+<div class="divisor"></div>
+
+<!-- BLOCO 5 · Sobre / O IAieu nasceu da minha própria história -->
+<section id="sobre">
+  <span class="rotulo">Sobre</span>
+  <h2 class="titulo">O trabalho é o mesmo <em>há trinta anos.</em></h2>
+  <div class="sobre-body">
+    <p>Trabalhei em hotelaria, carga aérea, logística, varejo e operações. No Brasil e nos Estados Unidos. Construí operações do zero, reorganizei empresas, formei equipes, recuperei negócios.</p>
+    <p>Os setores mudavam. Os países mudavam. As tecnologias mudavam. O padrão era sempre o mesmo. Quase ninguém precisava de mais informação. <strong>Precisava de alguém para organizar o problema do jeito certo.</strong></p>
+    <p>Hoje eu faço a mesma coisa. A diferença é que agora a inteligência artificial acelera. A direção continua sendo minha.</p>
+  </div>
+  <div class="sobre-stats">
+    <div class="sobre-stat"><div class="n">30+</div><div class="l">anos resolvendo problemas reais</div></div>
+    <div class="sobre-stat"><div class="n">2</div><div class="l">países, Brasil e Estados Unidos</div></div>
+    <div class="sobre-stat"><div class="n">1</div><div class="l">produto de verdade: o problema confuso vira caminho claro</div></div>
+  </div>
+  <p style="margin-top:30px"><a href="sobre.html" style="color:var(--roxo);font-weight:600;text-decoration:none;font-size:16px">Leia o que o IAieu faz →</a></p>
+</section>
+
+<div class="divisor"></div>
+
+<!-- BLOCO 6 · O que realmente entrego -->
+<section id="entrego">
+  <h2 class="titulo">No fim, você não <em>leva um documento.</em></h2>
+  <div class="big-lead">
+    <p>Pode ser um plano, uma marca, um posicionamento ou uma operação reorganizada. <strong>Esses são só os formatos.</strong></p>
+    <p>O que você leva de verdade é a tranquilidade de entender o problema que tem na mão e saber exatamente o que fazer a seguir.</p>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- TRANSIÇÃO PARA OS SERVIÇOS -->
+<section id="servicos">
+  <span class="rotulo">Na prática</span>
+  <h2 class="titulo">Os formatos que esse <em>trabalho pode ter.</em></h2>
+  <p class="subtitulo">Um único trabalho, três jeitos de começar. Você escolhe o que faz mais sentido pra agora.</p>
+</section>
+
+<!-- IAieu eVc · destaque máximo -->
+<section id="evc">
+  <span class="rotulo">IAieu eVc</span>
+  <h2 class="titulo">IAieu <em>eVc</em></h2>
+  <p class="subtitulo">Sua presença no LinkedIn e no Instagram, escrita na sua voz. Para pessoas e empresas.</p>
+
+  <p class="evc-body">
+    Hoje é no LinkedIn e no Instagram que as pessoas te procuram: clientes, recrutadores, parceiros, seguidores.
+    <strong>Se o seu perfil está parado ou não mostra quem você é de verdade, oportunidade boa passa sem você nem perceber.</strong>
+  </p>
+  <p class="evc-body">
+    Eu cuido disso pra você. Você me conta a sua história falando, em áudios, no seu tempo. Eu escrevo e monto o conteúdo com a sua cara, do jeito que você mesmo diria. Você só lê e aprova antes de publicar. <strong>Falo na sua voz e te entrego o conteúdo pronto.</strong>
+  </p>
+  <p class="evc-body">
+    Serve pra profissional que quer aparecer, pra empresa que quer ser lembrada e também pra atleta ou influenciador que precisa postar direto e não tem tempo de escrever. É o que chamam de ghostwriting: eu escrevo por você, como se fosse você.
+  </p>
+  <p class="evc-body">
+    E quando o assunto é currículo, monto o seu também, sempre baseado só em fatos verificados. Nada inventado, nada inflado.
+  </p>
+
+  <div class="evc-detalhes">
+    <span>Serviço mensal</span>
+    <span>Contrato mínimo de 3 meses</span>
+    <span>Vagas limitadas</span>
   </div>
 
-  <!-- IAieu+ e IAieu GO -->
-  <div class="svc-two">
-    <article class="svc-card" id="mais" data-reveal data-od-id="svc-mais">
-      <h3 class="serif">IAieu+<span class="pt">.</span></h3>
+  <a class="ref-link" href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">Veja uma referência viva no LinkedIn →</a>
+
+  <div class="evc-cta">
+    <a class="btn-grad" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20o%20IAieu%20eVc%20(presen%C3%A7a%20no%20LinkedIn)." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Quero conversar
+    </a>
+  </div>
+</section>
+
+<div class="divisor"></div>
+
+<!-- IAieu+ e IAieu GO -->
+<section id="mais">
+  <div class="mini-grid">
+
+    <div class="mini" id="mais-card">
+      <h2>IAieu+</h2>
       <p class="sub">Você traz o problema. Eu entrego a solução pronta.</p>
       <p>Aquelas tarefas repetitivas e burocráticas que tomam o seu tempo e toda a sua disposição? Eu resolvo, de um jeito simples e rápido. Sabe quando você pensa em gastar um domingo de folga pra organizar aquela gaveta bagunçada e não sabe nem por onde começar? É esse tipo de coisa. Entrevista, contas, divulgar o negócio, tirar uma ideia do papel. Você me conta o que precisa, eu te mostro o caminho e devolvo pronto pra usar, sem você ter que aprender ferramenta nenhuma.</p>
-      <p class="relief">Isso é <b>alívio.</b></p>
-      <p style="margin-top:auto"><a class="tlink" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20IAieu%2B." target="_blank" rel="noopener">Saiba mais →</a></p>
-    </article>
-    <article class="svc-card" id="go" data-reveal data-d="1" data-od-id="svc-go">
-      <h3 class="serif">IAieu GO<span class="pt">.</span></h3>
+      <p class="fecho">Isso é <b>alívio.</b></p>
+      <a class="btn-grad" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20IAieu%2B." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Saiba mais
+      </a>
+    </div>
+
+    <div class="mini" id="go">
+      <h2>IAieu GO</h2>
       <p class="sub">Uma hora ao vivo. Você traz o problema, a gente resolve junto.</p>
       <p>Marque horas comigo, ao vivo, pela internet. Pode ser aula para aprender, monitoria para eu te acompanhar enquanto você faz, consultoria para decidir um caminho ou coordenação para eu tocar um projeto junto com você. Você escolhe o formato, a gente combina quantas horas, e o valor é cobrado por hora.</p>
-      <p class="relief">Ter alguém do lado também é <b>alívio.</b></p>
-      <p style="margin-top:auto"><a class="tlink" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20IAieu%20GO." target="_blank" rel="noopener">Saiba mais →</a></p>
-    </article>
+      <p class="fecho">Ter alguém do lado também é <b>alívio.</b></p>
+      <a class="btn-grad" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20IAieu%20GO." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Saiba mais
+      </a>
+    </div>
+
   </div>
 </section>
 
-<hr class="rule rule--wrap" />
+<div class="divisor"></div>
 
-<!-- ============================ CASOS REAIS ============================ -->
-<section class="pad wrap" id="casos" data-od-id="casos-reais">
-  <div class="sec-head" data-reveal>
-    <span class="kicker">Casos Reais <span class="roman">· VI</span></span>
-    <h2 class="display" style="margin-top:20px">Da confusão <em>pro resultado</em><span class="pt">.</span></h2>
-  </div>
-  <div class="cases">
-    <article class="case" data-reveal data-od-id="caso-bruno">
-      <span class="who">Bruno · Lançamento em 24 horas</span>
-      <div class="tit">130 inscritos<small>em menos de 24h, rumo à meta de 300 em 40 dias</small></div>
+<!-- CASOS REAIS -->
+<section id="casos">
+  <span class="rotulo">Casos Reais</span>
+  <h2 class="titulo">Da confusão <em>pro resultado.</em></h2>
+
+  <div class="casos-grid">
+    <div class="caso">
+      <div class="quem">Bruno</div>
+      <div class="papel">Lançamento em 24 horas</div>
+      <div class="caso-num">130 inscritos<small>em menos de 24h, rumo à meta de 300 em 40 dias</small></div>
       <p>A campanha completa saiu do zero e ficou pronta para publicar em menos de um dia.</p>
-      <p class="relief">Isso é <b>alívio.</b></p>
-    </article>
-    <article class="case" data-reveal data-d="1" data-od-id="caso-marc">
-      <span class="who">Marc Cycling · Minha empresa nos EUA</span>
-      <div class="tit">115 avaliações 5★<small>nota 5,0 no Google, na Flórida</small></div>
+      <p class="fecho">Isso é <b>alívio.</b></p>
+    </div>
+    <div class="caso">
+      <div class="quem">Marc Cycling</div>
+      <div class="papel">Minha empresa nos EUA</div>
+      <div class="caso-num">115 avaliações 5★<small>nota 5,0 no Google, na Flórida</small></div>
       <p>Uma operação de conserto de bikes montada do zero. Prova de que faço o que falo.</p>
-      <p class="relief">Faço o que <b>falo.</b></p>
-    </article>
-    <article class="case" data-reveal data-d="2" data-od-id="caso-patricia">
-      <span class="who">Patricia · Primeira aluna do IAieu GO</span>
-      <div class="tit" style="font-size:1.5rem;line-height:1.2">“Superou minhas expectativas.”</div>
+      <p class="fecho">Faço o que <b>falo.</b></p>
+    </div>
+    <div class="caso">
+      <div class="quem">Patricia</div>
+      <div class="papel">Primeira aluna do IAieu GO</div>
+      <div class="caso-quote">&ldquo;Superou minhas expectativas.&rdquo;</div>
       <p>Uma hora ao vivo e ela saiu com o caminho pronto para executar.</p>
-      <p class="relief">Isso é <b>alívio.</b></p>
-    </article>
+      <p class="fecho">Isso é <b>alívio.</b></p>
+    </div>
   </div>
 </section>
 
-<!-- ============================ DEPOIMENTOS ============================ -->
-<section class="band pad" id="depoimentos" data-od-id="depoimentos">
-  <div class="wrap">
-    <div class="sec-head" data-reveal>
-      <span class="kicker">Depoimentos <span class="roman">· VII</span></span>
-      <h2 class="display" style="margin-top:20px">O que <em>dizem</em><span class="pt">.</span></h2>
-    </div>
-    <div class="tst">
-      <article class="tcard" data-reveal data-od-id="depo-jack">
-        <p class="q">Foi um privilégio conhecer e trabalhar ao lado dele ao longo desses anos. É alguém cuja lealdade e integridade nunca vacilam. Ele conquista confiança de forma natural, porque é genuíno, confiável e sempre cumpre o que promete.</p>
-        <div class="who"><b>Joaquim (Jack) Servera Jr.</b><span>Ex-chefe de Caetano na United e Continental Airlines</span>
-          <button class="seeorig" data-modal="depo-jack.png">Ver recomendação original →</button></div>
-      </article>
-      <article class="tcard" data-reveal data-d="1" data-od-id="depo-andrea">
-        <p class="q">Conheço o Caetano desde 1983. Já ali ficava claro o que o define até hoje: dedicação total à operação, sangue-frio sob pressão e um cuidado raro com a execução. Quatro décadas depois, continua sendo a mesma pessoa íntegra que conheci há 40 anos. Recomendo muito!</p>
-        <div class="who"><b>Andréa Paula Galletti</b><span>Estratégia Comercial e Distribuição · Hotelaria · LATAM</span>
-          <button class="seeorig" data-modal="depo-andrea.png">Ver recomendação original →</button></div>
-      </article>
-      <article class="tcard" data-reveal data-d="2" data-od-id="depo-fabio">
-        <p class="q">Desde o início, ficou evidente seu profissionalismo, dedicação e capacidade de gerar valor. O Cae é um grande exemplo de superação e reinvenção profissional. Segue se reinventando e buscando novos desafios com a mesma determinação que sempre o caracterizou.</p>
-        <div class="who"><b>Fabio Melo</b><span>Diretor de Vendas LATAM · Parceiro comercial</span>
-          <button class="seeorig" data-modal="depo-fabio.png">Ver recomendação original →</button></div>
-      </article>
-    </div>
-    <p style="margin-top:32px" data-reveal><a class="tlink" href="depoimentos.html">Deixe seu depoimento →</a></p>
+<!-- DEPOIMENTOS (secao escondida ate existir depoimento aprovado) -->
+<section id="depoimentos" style="display:none">
+  <span class="rotulo">Depoimentos</span>
+  <h2 class="titulo">O que <em>dizem.</em></h2>
+  <div class="dep-grid" id="dep-grid">
+    <p style="color:var(--cinza);font-size:14px">Carregando...</p>
+  </div>
+  <div class="dep-cta">
+    <a class="btn-grad" href="depoimentos.html">Deixe seu depoimento →</a>
   </div>
 </section>
 
-<!-- ============================ CONTEÚDOS ============================ -->
-<section class="pad wrap" data-od-id="conteudos">
-  <div class="sec-head" data-reveal>
-    <span class="kicker">Conteúdos <span class="roman">· VIII</span></span>
-    <h2 class="display" style="margin-top:20px">Não acredite em mim. Veja <em>por si</em><span class="pt">.</span></h2>
-    <p class="lead" style="margin-top:16px;max-width:52ch">O melhor jeito de entender o que eu faço é ver de perto.</p>
-  </div>
+<div class="divisor"></div>
+
+<!-- CONTEÚDOS -->
+<section id="conteudos">
+  <span class="rotulo">Conteúdos</span>
+  <h2 class="titulo">Não acredite em mim. <em>Veja por si.</em></h2>
+  <p class="subtitulo">O melhor jeito de entender o que eu faço é ver de perto.</p>
   <div class="cont-grid">
-    <div class="cont" data-reveal>
-      <h4>Meu LinkedIn</h4>
+    <div class="cont-card">
+      <div class="cont-ic"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21 8.75 22 10.9 22 14v7h-4v-6.2c0-1.5-.03-3.4-2.1-3.4-2.1 0-2.4 1.6-2.4 3.3V21h-4z"/></svg></div>
+      <h3>Meu LinkedIn</h3>
       <p>O meu próprio perfil é o exemplo vivo do que eu faço pelos clientes. Dá uma olhada.</p>
-      <a class="tlink" href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">Ver no LinkedIn →</a>
+      <a class="cont-link" href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">Ver no LinkedIn →</a>
     </div>
-    <div class="cont" data-reveal data-d="1">
-      <h4>@iaieu.evc</h4>
+    <div class="cont-card">
+      <div class="cont-ic"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c2.7 0 3 .01 4.1.06 1.05.05 1.8.22 2.4.47.65.25 1.2.6 1.75 1.15.55.55.9 1.1 1.15 1.75.25.6.42 1.35.47 2.4.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.05-.22 1.8-.47 2.4-.25.65-.6 1.2-1.15 1.75-.55.55-1.1.9-1.75 1.15-.6.25-1.35.42-2.4.47-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.05-.05-1.8-.22-2.4-.47a4.9 4.9 0 01-1.75-1.15 4.9 4.9 0 01-1.15-1.75c-.25-.6-.42-1.35-.47-2.4C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.05.22-1.8.47-2.4.25-.65.6-1.2 1.15-1.75.55-.55 1.1-.9 1.75-1.15.6-.25 1.35-.42 2.4-.47C9 2.01 9.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.25-.88a1.13 1.13 0 100 2.26 1.13 1.13 0 000-2.26z"/></svg></div>
+      <h3>@iaieu.evc</h3>
       <p>Todo dia, exemplos simples de como sair da confusão e chegar na clareza. O jeito mais fácil de acompanhar o que eu faço.</p>
-      <a class="tlink" href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Seguir no Instagram →</a>
+      <a class="cont-link" href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Seguir no Instagram →</a>
     </div>
-    <div class="cont" data-reveal data-d="2">
-      <h4>Materiais pra você</h4>
+    <div class="cont-card">
+      <div class="cont-ic"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5L14 3.5zM7.5 12h9v1.5h-9zm0 3h9v1.5h-9zm0-6h4v1.5h-4z"/></svg></div>
+      <h3>Materiais pra você</h3>
       <p>Notícias e artigos do mercado, com o meu comentário. Provas de que o valor não está na ferramenta, e sim em quem sabe usar.</p>
-      <a class="tlink" href="conteudos.html">Ver os conteúdos →</a>
+      <a class="cont-link" href="conteudos.html">Ver os conteúdos →</a>
     </div>
   </div>
 </section>
 
-<!-- ============================ CTA FINAL ============================ -->
-<section class="cta pad" id="cta" data-od-id="cta-final">
-  <div class="wrap">
-    <span class="kicker" data-reveal>Você já perdeu tempo demais tentando resolver sozinho.</span>
-    <h2 class="display" data-reveal data-d="1" style="margin-top:22px">Problema confuso hoje. Caminho claro <em>amanhã</em><span class="pt">.</span></h2>
-    <p class="lead" data-reveal data-d="2">Me traz o problema. Você sai com o próximo passo. Uma conversa já é o começo da direção.</p>
-    <div class="row" data-reveal data-d="2">
-      <a class="btn btn--purple" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Tenho%20um%20problema%20que%20preciso%20destravar.%20Quero%20um%20caminho%20claro%20(IAieu)." target="_blank" rel="noopener">Falar agora <span class="arw">→</span></a>
-    </div>
-    <p class="socials" data-reveal data-d="2">Instagram: <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">@iaieu.evc</a> &nbsp;·&nbsp; LinkedIn: <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">IAieu</a></p>
+<div class="divisor"></div>
+
+<!-- CTA FINAL -->
+<div id="cta-wrap">
+<section id="cta">
+  <p class="destaque-quote">Você já perdeu tempo demais tentando resolver sozinho.<b>Me traz o problema. Você sai com o próximo passo.</b></p>
+  <h2 class="titulo" style="margin-top:52px">Problema confuso hoje. Caminho claro amanhã.</h2>
+  <p class="subtitulo">Uma conversa já é o começo da direção.</p>
+  <a class="btn-grad" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Tenho%20um%20problema%20que%20preciso%20destravar.%20Quero%20um%20caminho%20claro%20(IAieu)." target="_blank" rel="noopener">Falar agora</a>
+  <div class="cta-extra">
+    <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: <b>@iaieu.evc</b></a>
+    <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: <b>IAieu</b></a>
   </div>
 </section>
-
-<!-- ============================ FOOTER ============================ -->
-<footer data-od-id="footer">
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <img class="foot-logo" src="assets/img/logo-iaieu-claro.png" alt="IAieu" />
-        <p>A inteligência sempre será sua.</p>
-      </div>
-      <nav class="foot-nav">
-        <h5>Navegação</h5>
-        <ul>
-          <li><a href="#processo">Como eu trabalho</a></li>
-          <li><a href="sobre.html">O IAieu</a></li>
-          <li><a href="o-que-vendemos.html">O que vendemos</a></li>
-          <li><a href="#evc">Serviços</a></li>
-          <li><a href="#casos">Casos Reais</a></li>
-          <li><a href="#depoimentos">Depoimentos</a></li>
-          <li><a href="arte.html">Arte</a></li>
-          <li><a href="#cta">Começar</a></li>
-        </ul>
-        <div class="foot-social">
-          <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: @iaieu.evc</a>
-          <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: IAieu</a>
-          <a href="https://iaieu.com">iaieu.com</a>
-        </div>
-        <p class="foot-legal">© 2026 IAieu · A inteligência sempre será sua.</p>
-      </nav>
-    </div>
-  </div>
-  <div class="wrap"><div class="mega">Clareza<span class="pt">.</span></div></div>
-</footer>
-
-<!-- whatsapp float -->
-<a class="wa" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Tenho%20um%20problema%20que%20preciso%20destravar.%20Quero%20um%20caminho%20claro%20(IAieu)." target="_blank" rel="noopener" aria-label="Fale comigo no WhatsApp" data-od-id="wa-float">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.599 5.393l-.999 3.648 3.9-1.34zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-</a>
-
-<!-- overlay modal -->
-<div class="ov" id="ov" role="dialog" aria-modal="true" aria-label="Recomendação original">
-  <div class="ov-inner">
-    <button class="ov-close" id="ovClose" aria-label="Fechar">✕</button>
-    <img id="ovImg" src="" alt="Recomendação original no LinkedIn" />
-  </div>
 </div>
 
-<script src="assets/site.js"></script>
+</main>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="foot-brand">
+    <span class="wordmark foot-wordmark"><span class="w1">IA</span><span class="w2">ieu.</span></span>
+    <p class="foot-slogan"><b>A inteligência sempre será sua.</b></p>
+  </div>
+  <div class="foot-col">
+    <h4>Navegação</h4>
+    <ul>
+      <li><a href="#processo">Como eu trabalho</a></li>
+      <li><a href="sobre.html">O IAieu</a></li>
+      <li><a href="o-que-vendemos.html">O que vendemos</a></li>
+      <li><a href="#evc">Serviços</a></li>
+      <li><a href="#casos">Casos Reais</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="arte.html">Arte</a></li>
+      <li><a href="#cta">Começar</a></li>
+    </ul>
+  </div>
+  <div class="foot-meta">
+    <img src="favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
+    <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: @iaieu.evc</a>
+    <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: IAieu</a>
+    <a href="https://iaieu.com">iaieu.com</a>
+  </div>
+</footer>
+<div class="foot-base">© 2026 IAieu · A inteligência sempre será sua.</div>
+
+<!-- BOTÃO WHATSAPP FLUTUANTE -->
+<a class="wa-float" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20o%20site%20do%20IAieu%20e%20quero%20falar%20com%20voc%C3%AA." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
 <script>
-/* ---------- carrossel instagram ---------- */
-(function(){
-  var track=document.getElementById('carTrack');if(!track)return;
-  var slides=track.children,n=slides.length,i=0;
-  var dotsWrap=document.getElementById('carDots'),count=document.getElementById('carCount');
-  var pad=function(x){return('0'+(x+1)).slice(-2);};
-  for(var k=0;k<n;k++){var b=document.createElement('button');b.className='car-dot'+(k===0?' on':'');b.setAttribute('aria-label','Ir para arte '+(k+1));(function(idx){b.addEventListener('click',function(){i=idx;render();});})(k);dotsWrap.appendChild(b);}
-  var dots=dotsWrap.children;
-  function render(){
-    track.style.transform='translateX('+(-i*100)+'%)';
-    count.textContent=pad(i)+' / '+pad(n-1);
-    for(var d=0;d<n;d++)dots[d].classList.toggle('on',d===i);
+// Depoimentos aprovados vêm do config.json (o painel admin continua funcionando)
+fetch('config.json?t=' + Date.now())
+  .then(r => r.ok ? r.json() : {})
+  .then(cfg => {
+    const grid = document.getElementById('dep-grid');
+    const deps = cfg.depoimentos || [];
+    if (!deps.length) { grid.innerHTML = '<p style="color:var(--cinza);font-size:14px">Em breve, depoimentos de quem já foi atendido.</p>'; return; }
+    grid.innerHTML = deps.slice(0, 4).map(depCardHTML).join('');
+    grid.addEventListener('click', depToggle);
+  })
+  .catch(() => {
+    document.getElementById('dep-grid').innerHTML = '<p style="color:var(--cinza);font-size:14px">Em breve, depoimentos de quem já foi atendido.</p>';
+  });
+
+// --- Card estilo LinkedIn: 3 primeiras frases + "…mais" ---
+function depEsc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function depSplit(t){
+  if(!t || t.length<=300) return null;
+  var re=/[^.!?]+[.!?]+/g, m, ends=[];
+  while((m=re.exec(t))){ ends.push(re.lastIndex); }
+  if(ends.length<=3) return null;
+  return {head:t.slice(0,ends[2]).trim(), rest:t.slice(ends[2]).trim()};
+}
+function depTextoHTML(texto){
+  var t=(texto||'').trim(), s=depSplit(t);
+  if(!s) return '<p class="dep-texto">'+depEsc(t)+'</p>';
+  return '<p class="dep-texto"><span>'+depEsc(s.head)+'</span><span class="dep-rest" hidden> '+depEsc(s.rest)+'</span> <button type="button" class="dep-mais">…mais</button></p>';
+}
+var DEP_LI='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21 8.75 22 10.9 22 14v7h-4v-6.2c0-1.5-.03-3.4-2.1-3.4-2.1 0-2.4 1.6-2.4 3.3V21h-4z"/></svg>';
+var DEP_G='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5h-1.9V20H24v8h11.3C33.7 32.9 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.3-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 16 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.3 0-9.7-3.1-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.1-4.1 5.6l6.2 5.2C41.5 36.3 44 30.7 44 24c0-1.3-.1-2.3-.4-3.5z"/></svg>';
+function depGoogleHTML(d){
+  var acao=d.link ? '<a class="dep-print" href="'+depEsc(d.link)+'" target="_blank" rel="noopener">'+DEP_G+'Ver no Google &rarr;</a>'
+    : (d.print ? '<button type="button" class="dep-print" data-print="'+depEsc(d.print)+'">'+DEP_G+'Ver no Google</button>' : '');
+  return '<div class="dep-card dep-google"><div class="dep-g-head">'+DEP_G+'<div><div class="dep-g-nota">'+depEsc(d.nota||'')+' <span class="dep-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="dep-g-qtd">'+depEsc(d.qtd||'')+' avaliações no Google</div></div></div><div class="dep-g-emp">'+depEsc(d.empresa||'')+'</div><div class="dep-g-sub">'+depEsc(d.sub||'')+'</div><p class="dep-texto dep-g-txt">'+depEsc(d.texto||'')+'</p>'+acao+'</div>';
+}
+function depCardHTML(d){
+  if(d.google) return depGoogleHTML(d);
+  var ini=(d.nome||'?').trim().charAt(0).toUpperCase();
+  var cargo=d.cargo||d.profissao||'';
+  var li=d.linkedin ? '<div class="dep-li">'+DEP_LI+'Recomendação no LinkedIn</div>' : '';
+  var pr=d.print ? '<button type="button" class="dep-print" data-print="'+depEsc(d.print)+'">'+DEP_LI+'Ver recomendação original</button>' : '';
+  return '<div class="dep-card"><div class="dep-aspas">&ldquo;</div>'+depTextoHTML(d.texto)+
+    '<div class="dep-autor"><div class="dep-ini">'+ini+'</div><div><div class="dep-nome">'+depEsc(d.nome||'')+'</div><div class="dep-cargo">'+depEsc(cargo)+'</div>'+li+'</div></div>'+pr+'</div>';
+}
+function depToggle(e){
+  var pr=e.target.closest('.dep-print');
+  if(pr){ depLBopen(pr.getAttribute('data-print')); return; }
+  var b=e.target.closest('.dep-mais'); if(!b) return;
+  var p=b.closest('.dep-texto'), rest=p.querySelector('.dep-rest');
+  if(rest.hasAttribute('hidden')){ rest.removeAttribute('hidden'); b.textContent=' ver menos'; }
+  else{ rest.setAttribute('hidden',''); b.textContent='…mais'; }
+}
+function depLBopen(src){
+  var lb=document.getElementById('dep-lb');
+  if(!lb){
+    lb=document.createElement('div'); lb.id='dep-lb'; lb.className='dep-lb'; lb.hidden=true;
+    lb.innerHTML='<button class="dep-lb-x" type="button" aria-label="Fechar">&times;</button><img alt="Recomendação no LinkedIn">';
+    document.body.appendChild(lb);
+    lb.addEventListener('click', function(e){ if(e.target===lb || e.target.classList.contains('dep-lb-x')) depLBclose(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') depLBclose(); });
   }
-  document.getElementById('carPrev').addEventListener('click',function(){i=(i-1+n)%n;render();});
-  document.getElementById('carNext').addEventListener('click',function(){i=(i+1)%n;render();});
-  document.addEventListener('keydown',function(e){if(e.key==='ArrowLeft'){i=(i-1+n)%n;render();}else if(e.key==='ArrowRight'){i=(i+1)%n;render();}});
-  var x0=null,dx=0;
-  function down(x){x0=x;dx=0;track.classList.add('drag');}
-  function move(x){if(x0===null)return;dx=x-x0;track.style.transform='translateX('+(-i*100+dx/track.offsetWidth*100)+'%)';}
-  function up(){if(x0===null)return;track.classList.remove('drag');if(Math.abs(dx)>track.offsetWidth*0.18){if(dx<0)i=(i+1)%n;else i=(i-1+n)%n;}x0=null;render();}
-  track.addEventListener('mousedown',function(e){e.preventDefault();down(e.clientX);});
-  window.addEventListener('mousemove',function(e){move(e.clientX);});
-  window.addEventListener('mouseup',up);
-  track.addEventListener('touchstart',function(e){down(e.touches[0].clientX);},{passive:true});
-  track.addEventListener('touchmove',function(e){move(e.touches[0].clientX);},{passive:true});
-  track.addEventListener('touchend',up);
-  render();
+  lb.querySelector('img').src=src; lb.hidden=false; document.body.style.overflow='hidden';
+}
+function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidden=true; document.body.style.overflow=''; } }
+
+// --- Carrossel (arrastar, setas e bolinhas) ---
+(function(){
+  var track=document.getElementById('car-ia');
+  if(!track) return;
+  var cards=Array.prototype.slice.call(track.children);
+  var carousel=track.closest('.carousel');
+  var prev=carousel.querySelector('.car-prev');
+  var next=carousel.querySelector('.car-next');
+  var dotsWrap=document.getElementById('car-ia-dots');
+  cards.forEach(function(_,i){
+    var d=document.createElement('button');
+    d.type='button'; d.className='car-dot'; d.setAttribute('aria-label','Ir para o slide '+(i+1));
+    d.addEventListener('click',function(){ goTo(i); });
+    dotsWrap.appendChild(d);
+  });
+  var dots=Array.prototype.slice.call(dotsWrap.children);
+  var atual=0;
+  function current(){
+    var center=track.scrollLeft+track.clientWidth/2, best=0, bestD=Infinity;
+    cards.forEach(function(c,i){ var d=Math.abs((c.offsetLeft+c.offsetWidth/2)-center); if(d<bestD){bestD=d;best=i;} });
+    return best;
+  }
+  function marca(i){
+    atual=Math.max(0,Math.min(cards.length-1,i));
+    dots.forEach(function(d,k){ d.classList.toggle('on',k===atual); });
+    if(prev) prev.disabled = atual<=0;
+    if(next) next.disabled = atual>=cards.length-1;
+  }
+  function goTo(i){
+    i=Math.max(0,Math.min(cards.length-1,i));
+    marca(i);                                    // marca já no clique (não espera o evento de scroll)
+    var c=cards[i];
+    var left=c.offsetLeft-(track.clientWidth-c.offsetWidth)/2;
+    track.scrollTo({left:left,behavior:'smooth'});
+  }
+  if(prev) prev.addEventListener('click',function(){ goTo(atual-1); });
+  if(next) next.addEventListener('click',function(){ goTo(atual+1); });
+  var raf; track.addEventListener('scroll',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(function(){ marca(current()); }); });
+  window.addEventListener('resize',function(){ marca(atual); });
+  marca(0);
 })();
+
 </script>
 </body>
 </html>
