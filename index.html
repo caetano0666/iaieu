@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IAieu · Seu problema não está sem solução. Está sem direção.</title>
 
+<link rel="preload" as="image" href="cae-hero-fullbleed.webp">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=3">
@@ -51,7 +52,7 @@ body{
   min-height:100vh;
 }
 
-.glow{position:fixed;border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0}
+.glow{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
 .glow-a{top:-160px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(124,58,237,0.10),transparent 72%)}
 .glow-b{display:none}
 
@@ -124,7 +125,7 @@ nav{
 }
 .wa-float:hover{transform:scale(1.08);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
 .wa-float svg{width:32px;height:32px;fill:#fff}
-@keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.45)}50%{box-shadow:0 6px 34px rgba(37,211,102,0.7)}}
+}
 
 /* SEÇÕES / TÍTULOS */
 main{position:relative;z-index:1}
@@ -199,7 +200,7 @@ section[id]{scroll-margin-top:96px}
 
 /* ---------- HERO (arte final: foto + bússola + pilares) ---------- */
 #hero{position:relative;min-height:100vh;max-width:none;margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.hero-top{position:relative;flex:1 1 auto;display:flex;align-items:center;padding:120px 0 28px;background:url("cae-hero-fullbleed.png") right center/cover no-repeat}
+.hero-top{position:relative;flex:1 1 auto;display:flex;align-items:center;padding:120px 0 28px;background:url("cae-hero-fullbleed.webp") right center/cover no-repeat}
 .hero-top::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,15,0.88) 0%,rgba(10,10,15,0.55) 38%,rgba(10,10,15,0) 64%)}
 .hero-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;z-index:1;background:linear-gradient(180deg,transparent,rgba(10,10,15,0.85))}
 .hero-inner{width:100%;max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
@@ -248,7 +249,7 @@ section[id]{scroll-margin-top:96px}
 
 /* ---------- Para quem é ---------- */
 #para-quem{position:relative;overflow:hidden}
-#para-quem::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-paraquem.png') center/cover no-repeat;opacity:0.24}
+#para-quem::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-paraquem.webp') center/cover no-repeat;opacity:0.24}
 #para-quem::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#0A0A0F 34%,rgba(10,10,15,0.45) 100%)}
 #para-quem>*{position:relative;z-index:1}
 .pq-lista{list-style:none;max-width:660px;margin:26px 0 8px;display:flex;flex-direction:column;gap:15px}
@@ -260,7 +261,6 @@ section[id]{scroll-margin-top:96px}
 
 /* ---------- Como funciona (3 passos) ---------- */
 #como-funciona{position:relative;overflow:hidden}
-#como-funciona::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-comofunciona.png') center/cover no-repeat;opacity:0.14}
 #como-funciona>*{position:relative;z-index:1}
 .cf-passos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
 .cf-passo{border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:38px 32px;background:rgba(255,255,255,0.03);transition:border-color .3s,transform .3s}
@@ -274,15 +274,10 @@ section[id]{scroll-margin-top:96px}
 
 /* ---------- Sobre: fundo espiral ---------- */
 #sobre{position:relative;overflow:hidden}
-#sobre::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-sobre.png') right center/cover no-repeat;opacity:0.20;-webkit-mask-image:linear-gradient(to left,#000,transparent 66%);mask-image:linear-gradient(to left,#000,transparent 66%)}
 #sobre>*{position:relative;z-index:1}
 
 /* ---------- Bloco 3: Como eu trabalho ---------- */
 #processo{position:relative;overflow:hidden}
-#processo::before{content:"";position:absolute;inset:0;z-index:0;
-  background:url('bg-metodo.png') center 46%/contain no-repeat;opacity:0.16}
-#processo::after{content:"";position:absolute;inset:0;z-index:0;
-  background:radial-gradient(ellipse 70% 60% at center,transparent 30%,rgba(10,10,15,0.85) 82%)}
 #processo>*{position:relative;z-index:1}
 .processo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
 .passo{
@@ -316,7 +311,7 @@ section[id]{scroll-margin-top:96px}
 
 /* ---------- Faixa artística da frase (home) ---------- */
 .home-quote{text-align:center;position:relative}
-.home-quote::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72%;height:170%;background:radial-gradient(ellipse at center,rgba(124,58,237,0.16),rgba(37,99,235,0.08) 55%,transparent 72%);filter:blur(50px);z-index:0;pointer-events:none}
+.home-quote::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72%;height:170%;background:radial-gradient(ellipse at center,rgba(124,58,237,0.16),rgba(37,99,235,0.08) 55%,transparent 72%);z-index:0;pointer-events:none}
 .home-quote>*{position:relative;z-index:1}
 .hq-text{font-size:clamp(24px,3.6vw,42px);font-weight:800;line-height:1.3;letter-spacing:-0.02em;color:#fff;max-width:920px;margin:0 auto;text-wrap:balance}
 .hq-text em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
@@ -465,14 +460,10 @@ section[id]{scroll-margin-top:96px}
 
 /* ---------- Textura de constelação (site5) em "O que entrego" ---------- */
 #entrego{position:relative;overflow:hidden}
-#entrego::before{content:"";position:absolute;inset:0;z-index:0;
-  background:url('site5.png') right center/cover no-repeat;opacity:0.20;
-  -webkit-mask-image:linear-gradient(to left,#000,transparent 68%);mask-image:linear-gradient(to left,#000,transparent 68%)}
 #entrego>*{position:relative;z-index:1}
 
 /* ---------- Conteúdos ---------- */
 #conteudos{position:relative;overflow:hidden}
-#conteudos::before{content:"";position:absolute;inset:0;z-index:0;background:url('bg-conteudos.png') center/cover no-repeat;opacity:0.16}
 #conteudos>*{position:relative;z-index:1}
 .cont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
 .cont-card{border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:36px 30px;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
@@ -490,7 +481,7 @@ section[id]{scroll-margin-top:96px}
 /* ---------- CTA Final (fecho cinematográfico site4) ---------- */
 #cta-wrap{position:relative;overflow:hidden;background:#0A0A0F}
 #cta-wrap::before{content:"";position:absolute;inset:0;z-index:0;
-  background:url('site4.png') center 62%/cover no-repeat;opacity:0.62}
+  background:url('site4.webp') center 62%/cover no-repeat;opacity:0.62}
 #cta-wrap::after{content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(180deg,#0A0A0F 0%,rgba(10,10,15,0.60) 38%,rgba(10,10,15,0.28) 74%,rgba(10,10,15,0.82) 100%)}
 #cta-wrap>*{position:relative;z-index:2}
@@ -896,7 +887,7 @@ section[id]{scroll-margin-top:96px}
     </ul>
   </div>
   <div class="foot-meta">
-    <img src="favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
+    <img loading="lazy" src="favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
     <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: @iaieu.evc</a>
     <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: IAieu</a>
     <a href="https://iaieu.com">iaieu.com</a>
@@ -1017,6 +1008,20 @@ function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidd
   marca(0);
 })();
 
+</script>
+<script>
+/* Medicao: conta cliques em todos os botoes/links de WhatsApp */
+(function(){
+  window.dataLayer = window.dataLayer || [];
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
+    if(!a) return;
+    var rotulo = (a.textContent || 'whatsapp').trim().slice(0, 60) || 'flutuante';
+    var dado = {event: 'whatsapp_click', rotulo: rotulo, pagina: location.pathname};
+    window.dataLayer.push(dado);
+    if (typeof window.gtag === 'function') { window.gtag('event', 'whatsapp_click', {rotulo: rotulo, pagina: location.pathname}); }
+  }, true);
+})();
 </script>
 </body>
 </html>
