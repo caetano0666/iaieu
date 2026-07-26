@@ -199,7 +199,9 @@ section[id]{scroll-margin-top:96px}
 
 /* ---------- HERO (arte final: foto + bússola + pilares) ---------- */
 #hero{position:relative;min-height:100vh;max-width:none;margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.hero-top{position:relative;flex:1 1 auto;display:flex;align-items:center;padding:120px 0 28px}
+.hero-top{position:relative;flex:1 1 auto;display:flex;align-items:center;padding:120px 0 28px;background:url("cae-hero-fullbleed.png") right center/cover no-repeat}
+.hero-top::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(10,10,15,0.88) 0%,rgba(10,10,15,0.55) 38%,rgba(10,10,15,0) 64%)}
+.hero-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;z-index:1;background:linear-gradient(180deg,transparent,rgba(10,10,15,0.85))}
 .hero-inner{width:100%;max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
 .hero-copy{max-width:590px}
 .hero-eyebrow{font-size:14px;font-weight:600;letter-spacing:0.28em;text-transform:uppercase;color:#A78BFA;margin-bottom:22px;text-shadow:0 1px 14px rgba(10,10,15,0.95),0 0 3px rgba(10,10,15,0.85)}
@@ -214,10 +216,6 @@ section[id]{scroll-margin-top:96px}
 .hero-link:hover{color:#fff}
 
 /* arte à direita (foto + bússola + luz) */
-.hero-photo{position:absolute;top:0;right:0;bottom:0;width:60%;z-index:1;pointer-events:none}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:100% 100%;z-index:2;
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%);
-  mask-image:linear-gradient(to right,transparent 0%,#000 22%,#000 100%);}
 
 /* 5 pilares na base do hero */
 .hero-pilares{position:relative;z-index:3;width:100%;max-width:1280px;margin:0 auto;
@@ -232,11 +230,9 @@ section[id]{scroll-margin-top:96px}
 
 @media(max-width:900px){
   #hero{min-height:auto}
-  .hero-top{padding:128px 0 22px}
-  .hero-photo{width:100%;opacity:0.22}
-  .hero-photo::after{content:"";position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,rgba(10,10,15,0.55),rgba(10,10,15,0.15) 55%,rgba(10,10,15,0.7))}
-  .hero-photo img{object-fit:cover;object-position:60% 28%;-webkit-mask-image:linear-gradient(to bottom,#000 18%,transparent 86%);mask-image:linear-gradient(to bottom,#000 18%,transparent 86%)}
-  .hero-copy{max-width:100%}
+  .hero-top{padding:128px 0 22px;background-position:74% center}
+  .hero-top::before{background:linear-gradient(180deg,rgba(10,10,15,0.82) 0%,rgba(10,10,15,0.55) 55%,rgba(10,10,15,0.75) 100%)}
+    .hero-copy{max-width:100%}
   .hero-inner{padding:0 22px}
 }
 
@@ -531,7 +527,6 @@ section[id]{scroll-margin-top:96px}
 <!-- HERO -->
 <section id="hero" name="topo"><a id="topo"></a>
   <div class="hero-top">
-    <div class="hero-photo"><img src="cae-hero-pb.png" alt="Caetano · IAieu eVc"></div>
     <div class="hero-inner">
       <div class="hero-copy">
         <p class="hero-eyebrow">Clareza abre caminhos.</p>
