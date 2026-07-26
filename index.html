@@ -52,9 +52,6 @@ body{
   min-height:100vh;
 }
 
-.glow{position:fixed;border-radius:50%;pointer-events:none;z-index:0}
-.glow-a{top:-160px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(124,58,237,0.10),transparent 72%)}
-.glow-b{display:none}
 
 a{color:inherit}
 img{max-width:100%;display:block}
@@ -65,9 +62,8 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;justify-content:space-between;align-items:center;
   gap:20px;padding:14px 40px;
-  background:rgba(10,10,15,0.82);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(124,58,237,0.2);
+  background:rgba(10,10,15,0.96);
+    border-bottom:1px solid rgba(124,58,237,0.2);
 }
 .nav-logo{display:inline-flex;align-items:center;text-decoration:none}
 .nav-logo img{height:30px;width:auto}
@@ -337,7 +333,7 @@ section[id]{scroll-margin-top:96px}
 .car-nav{
   position:absolute;top:50%;transform:translateY(-50%);z-index:5;
   width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);
-  background:rgba(10,10,15,0.72);backdrop-filter:blur(8px);
+  background:rgba(10,10,15,0.72);
   color:#fff;font-size:26px;line-height:1;cursor:pointer;
   display:flex;align-items:center;justify-content:center;
   transition:opacity .2s,transform .2s,background .2s;
@@ -431,7 +427,7 @@ section[id]{scroll-margin-top:96px}
 .dep-print{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12.5px;font-weight:600;color:var(--roxo);background:none;border:none;padding:0;cursor:pointer;font-family:inherit}
 .dep-print:hover{text-decoration:underline}
 .dep-print svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
-.dep-lb{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;backdrop-filter:blur(4px)}
+.dep-lb{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
 .dep-lb[hidden]{display:none}
 .dep-lb img{max-width:min(920px,94vw);max-height:90vh;width:auto;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,0.6)}
 .dep-lb-x{position:fixed;top:16px;right:22px;background:none;border:none;color:#fff;font-size:34px;line-height:1;cursor:pointer;opacity:.85}
@@ -495,9 +491,6 @@ section[id]{scroll-margin-top:96px}
 </style>
 </head>
 <body>
-
-<div class="glow glow-a"></div>
-<div class="glow glow-b"></div>
 
 <!-- NAV -->
 <nav>

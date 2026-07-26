@@ -30,13 +30,13 @@
 .arte-card:hover img{transform:scale(1.05)}
 .arte-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(10,10,15,0.9));transition:opacity .3s}
 .arte-cap{position:absolute;left:16px;right:16px;bottom:15px;z-index:2;text-align:left;color:#fff;font-size:14.5px;font-weight:600;letter-spacing:-0.01em}
-.arte-badge{position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;background:rgba(10,10,15,0.72);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.16);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;color:#fff}
+.arte-badge{position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;gap:5px;background:rgba(10,10,15,0.72);border:1px solid rgba(255,255,255,0.16);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:700;color:#fff}
 .arte-badge svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.7}
 .arte-card:focus-visible{outline:2px solid var(--roxo);outline-offset:3px}
 .arte-empty{text-align:center;color:var(--cinza);font-size:15px;margin-top:44px}
 
 /* Modal / tela cheia + carrossel */
-.lb{position:fixed;inset:0;z-index:500;background:rgba(6,6,10,0.94);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:24px}
+.lb{position:fixed;inset:0;z-index:500;background:rgba(6,6,10,0.94);display:flex;align-items:center;justify-content:center;padding:24px}
 .lb[hidden]{display:none}
 .lb-img{max-width:min(1100px,94vw);max-height:88vh;width:auto;height:auto;border-radius:12px;box-shadow:0 24px 90px rgba(0,0,0,0.6);object-fit:contain}
 .lb-x{position:fixed;top:18px;right:22px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit}
@@ -52,9 +52,6 @@
 </style>
 </head>
 <body>
-
-<div class="glow glow-a"></div>
-<div class="glow glow-b"></div>
 
 <!-- NAV -->
 <nav>
