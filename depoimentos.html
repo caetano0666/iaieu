@@ -26,7 +26,7 @@
 /* Cards de depoimentos */
 .dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:44px}
 .dep-card{border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px 28px;background:rgba(255,255,255,0.02);transition:border-color 0.3s,box-shadow 0.3s}
-.dep-card:hover{border-color:rgba(124,58,237,0.3);box-shadow:0 0 30px rgba(124,58,237,0.08)}
+.dep-card:hover{border-color:rgba(124,58,237,0.3);box-shadow:none}
 .dep-aspas{font-size:46px;line-height:1;color:var(--roxo);opacity:0.4;font-family:Georgia,serif;margin-bottom:6px}
 .dep-texto{font-size:15px;color:var(--cinza);line-height:1.75;font-weight:300;font-style:italic;margin-bottom:22px}
 .dep-autor{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.07);padding-top:18px}
@@ -57,7 +57,7 @@
 .dep-google .dep-print svg{width:16px;height:16px}
 
 /* Depoimento em destaque (o primeiro, sozinho e maior) */
-#dep-grid .dep-card:first-child{grid-column:1/-1;padding:46px 48px;border-color:rgba(124,58,237,0.35);background:linear-gradient(135deg,rgba(124,58,237,0.09),rgba(37,99,235,0.04));box-shadow:0 0 70px rgba(124,58,237,0.12)}
+#dep-grid .dep-card:first-child{grid-column:1/-1;padding:46px 48px;border-color:rgba(124,58,237,0.35);background:linear-gradient(135deg,rgba(124,58,237,0.09),rgba(37,99,235,0.04));box-shadow:none}
 #dep-grid .dep-card:first-child .dep-aspas{font-size:64px}
 #dep-grid .dep-card:first-child .dep-texto{font-size:clamp(18px,2.1vw,22px);line-height:1.7}
 #dep-grid .dep-card:first-child .dep-ini{width:52px;height:52px;font-size:19px}
@@ -67,7 +67,7 @@
 
 /* Formulário */
 #form-wrap{background:linear-gradient(180deg,transparent,rgba(124,58,237,0.06),transparent);scroll-margin-top:90px}
-.form-card{max-width:600px;margin:0 auto;border:1px solid rgba(124,58,237,0.3);border-radius:24px;padding:48px 44px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(37,99,235,0.05));box-shadow:0 0 60px rgba(124,58,237,0.12)}
+.form-card{max-width:600px;margin:0 auto;border:1px solid rgba(124,58,237,0.3);border-radius:24px;padding:48px 44px;background:linear-gradient(135deg,rgba(124,58,237,0.08),rgba(37,99,235,0.05));box-shadow:none}
 .form-titulo{text-align:center;font-size:25px;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px}
 .form-sub{text-align:center;font-size:14px;color:var(--cinza);font-weight:300;margin-bottom:32px;line-height:1.6}
 .form-group{margin-bottom:18px}
@@ -76,7 +76,7 @@
 .form-group textarea{resize:vertical;min-height:120px;line-height:1.7}
 .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--roxo);background:rgba(124,58,237,0.06);box-shadow:0 0 0 3px rgba(124,58,237,0.15)}
 .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(160,160,184,0.45)}
-.btn-submit{width:100%;background:var(--grad);color:#fff;border:none;cursor:pointer;padding:16px;border-radius:10px;font-size:16px;font-weight:700;font-family:inherit;box-shadow:0 0 30px rgba(124,58,237,0.4);transition:opacity 0.2s,transform 0.2s;margin-top:10px}
+.btn-submit{width:100%;background:var(--grad);color:#fff;border:none;cursor:pointer;padding:16px;border-radius:10px;font-size:16px;font-weight:700;font-family:inherit;box-shadow:none;transition:opacity 0.2s,transform 0.2s;margin-top:10px}
 .btn-submit:hover{opacity:0.9;transform:translateY(-2px)}
 .btn-submit:disabled{opacity:0.5;cursor:not-allowed;transform:none}
 .form-msg{text-align:center;font-size:14px;margin-top:18px;font-weight:500;min-height:20px;line-height:1.5}
@@ -94,7 +94,8 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="index.html"><span class="wordmark"><span class="w1">IA</span><span class="w2">ieu.</span></span></a>
-  <ul class="nav-links">
+  <button class="nav-burger" aria-label="Menu" aria-expanded="false" onclick="var n=this.closest('nav');n.classList.toggle('aberto');this.setAttribute('aria-expanded',n.classList.contains('aberto'))"><span></span><span></span><span></span></button>
+  <ul class="nav-links" onclick="this.closest('nav').classList.remove('aberto')">
     <li><a href="o-que-vendemos.html">O que vendemos</a></li>
     <li><a href="sobre.html">O IAieu</a></li>
     <li><a href="projetos.html">Projetos</a></li>
