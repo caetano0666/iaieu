@@ -25,8 +25,8 @@
 <nav class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="IAieu">
-      <img src="assets/img/favcom.png" alt="" />
-      <span>IAieu<span class="b-dot">.</span> <span class="b-evc">eVc.</span></span>
+      <img class="brand-logo" src="assets/img/logo-iaieu-claro.png" alt="IAieu" />
+      <span class="b-evc">eVc.</span>
     </a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="navLinks">
@@ -53,9 +53,8 @@
   <div class="wrap">
     <div class="foot-top">
       <div class="foot-brand">
-        <div class="lg">IAieu<span class="pt">.</span></div>
+        <img class="foot-logo" src="assets/img/logo-iaieu-claro.png" alt="IAieu" />
         <p>A inteligência sempre será sua.</p>
-        <img src="assets/img/favcom.png" alt="IAieu" />
       </div>
       <nav class="foot-nav">
         <h5>Navegação</h5>
@@ -117,7 +116,7 @@
   lb.addEventListener('click',function(e){if(e.target===lb)close();});
   document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();else if(e.key==='ArrowLeft'&&current.length>1){ci=(ci-1+current.length)%current.length;render();}else if(e.key==='ArrowRight'&&current.length>1){ci=(ci+1)%current.length;render();}});
   function emptyState(){
-    root.innerHTML='<div class="empty"><img class="mark" src="assets/img/favcom.png" alt=""><div class="big">Em breve<span class="pt">.</span></div>'+
+    root.innerHTML='<div class="empty"><img class="mark" src="assets/img/logo-iaieu-claro.png" alt="" style="width:auto;height:40px;border-radius:0"><div class="big">Em breve<span class="pt">.</span></div>'+
       '<p>A galeria de artes está sendo montada. Enquanto isso, você encontra o trabalho publicado todo dia no Instagram <a class="tlink" href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">@iaieu.evc &#8594;</a></p></div>';
   }
   function build(itens){
