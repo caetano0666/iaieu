@@ -970,24 +970,37 @@ function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidd
   }
   function goTo(i){
     i=Math.max(0,Math.min(cards.length-1,i));
-    track.scrollTo({left:alvoDe(cards[i]),behavior:'smooth'});
+    // sem smooth programatico: snap mandatory engole (medido em Chrome real); instant ancora certo
+    track.scrollLeft = alvoDe(cards[i]);
   }
   function passo(dir){
     var cr=cards[0].getBoundingClientRect();
     var gap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||20;
-    track.scrollBy({left:dir*(cr.width+gap),behavior:'smooth'});
+    track.scrollLeft = track.scrollLeft + dir*(cr.width+gap);
   }
   if(prev) prev.addEventListener('click',function(){ passo(-1); });
   if(next) next.addEventListener('click',function(){ passo(1); });
   // estado dos dots derivado do scroll REAL
   var raf; track.addEventListener('scroll',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(function(){ marca(current()); }); });
-  // roda vertical sobre o carrossel rola a PAGINA (nao os slides)
-  track.addEventListener('wheel',function(e){
+  // roda vertical sobre o carrossel rola a PAGINA (nao os slides).
+  // Captura no wrapper: intercepta o fluxo real antes de qualquer coisa.
+  // Alvo acumulado: com html{scroll-behavior:smooth}, ler scrollTop no meio da
+  // animacao perde distancia entre ticks; o acumulador preserva cada tick.
+  var alvoY=null, alvoTimer=null;
+  (carousel||track).addEventListener('wheel',function(e){
     if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){
       e.preventDefault();
-      window.scrollBy({top:e.deltaY,left:0,behavior:'instant'});
+      var dy=e.deltaY;
+      if(e.deltaMode===1) dy*=16;                 // linhas -> px
+      else if(e.deltaMode===2) dy*=window.innerHeight; // paginas -> px
+      var se=document.scrollingElement;
+      if(alvoY===null) alvoY=se.scrollTop;
+      alvoY=Math.max(0,Math.min(se.scrollHeight-se.clientHeight,alvoY+dy));
+      se.scrollTop=alvoY;
+      clearTimeout(alvoTimer);
+      alvoTimer=setTimeout(function(){ alvoY=null; },200);
     }
-  },{passive:false});
+  },{passive:false,capture:true});
   window.addEventListener('resize',function(){ marca(atual); });
   marca(0);
 })();
