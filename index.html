@@ -249,8 +249,8 @@ section[id]{scroll-margin-top:96px}
 #para-quem::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#0D0B10 34%,rgba(13,11,16,0.45) 100%)}
 #para-quem>*{position:relative;z-index:1}
 .pq-lista{list-style:none;max-width:660px;margin:26px 0 8px;display:flex;flex-direction:column;gap:15px}
-.pq-lista li{display:flex;gap:14px;align-items:flex-start;font-size:clamp(15px,1.6vw,18px);color:#c8c8d8;font-weight:300;line-height:1.6}
-.pq-lista li::before{content:"";flex-shrink:0;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--grad)}
+.pq-lista li{display:block;position:relative;padding-left:22px;font-size:clamp(15px,1.6vw,18px);color:#c8c8d8;font-weight:300;line-height:1.6}
+.pq-lista li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
 .pq-lista strong{color:#F5F2EC;font-weight:500}
 .pq-close{font-size:clamp(18px,2.3vw,25px);font-weight:600;color:#F5F2EC;margin-top:32px;max-width:660px;line-height:1.4;letter-spacing:-0.01em}
 .pq-close b{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
@@ -620,13 +620,13 @@ section[id]{scroll-margin-top:96px}
   <div class="carousel">
     <button class="car-nav car-prev" type="button" aria-label="Arte anterior">&lsaquo;</button>
     <div class="car-track" id="car-ia">
-      <img class="car-slide" src="correio-1.jpeg" width="1254" height="1254" loading="lazy" alt="Uma pergunta: você ainda trabalha como quem envia cartas ou como quem envia e-mails?">
-      <img class="car-slide" src="correio-2.jpeg" width="1254" height="1254" loading="lazy" alt="Quem não usa inteligência artificial escreve, apaga, reescreve, revisa e corrige tudo sozinho. É como escrever uma carta e ir ao correio.">
-      <img class="car-slide" src="correio-3.jpeg" width="1254" height="1254" loading="lazy" alt="Quem usa inteligência artificial pensa, conversa, refina. Em poucos minutos o trabalho está pronto. É como escrever um e-mail e clicar em enviar.">
-      <img class="car-slide" src="correio-4.jpeg" width="1254" height="1254" loading="lazy" alt="Os dois chegam ao mesmo destino. Mas um leva dias e o outro leva segundos.">
-      <img class="car-slide" src="correio-5.jpeg" width="1254" height="1254" loading="lazy" alt="A inteligência artificial não muda apenas a velocidade. Ela muda a forma como você trabalha.">
-      <img class="car-slide" src="correio-6.jpeg" width="1254" height="1254" loading="lazy" alt="A pergunta é: você quer continuar trabalhando como quem envia cartas ou como quem envia e-mails? Escolha a direção.">
-      <img class="car-slide" src="correio-7.jpeg" width="1254" height="1254" loading="lazy" alt="IAieu. A inteligência sempre será sua. Clareza, direção, transformação.">
+      <img class="car-slide" src="correio-1.jpeg" width="1254" height="1254" alt="Uma pergunta: você ainda trabalha como quem envia cartas ou como quem envia e-mails?">
+      <img class="car-slide" src="correio-2.jpeg" width="1254" height="1254" alt="Quem não usa inteligência artificial escreve, apaga, reescreve, revisa e corrige tudo sozinho. É como escrever uma carta e ir ao correio.">
+      <img class="car-slide" src="correio-3.jpeg" width="1254" height="1254" alt="Quem usa inteligência artificial pensa, conversa, refina. Em poucos minutos o trabalho está pronto. É como escrever um e-mail e clicar em enviar.">
+      <img class="car-slide" src="correio-4.jpeg" width="1254" height="1254" alt="Os dois chegam ao mesmo destino. Mas um leva dias e o outro leva segundos.">
+      <img class="car-slide" src="correio-5.jpeg" width="1254" height="1254" alt="A inteligência artificial não muda apenas a velocidade. Ela muda a forma como você trabalha.">
+      <img class="car-slide" src="correio-6.jpeg" width="1254" height="1254" alt="A pergunta é: você quer continuar trabalhando como quem envia cartas ou como quem envia e-mails? Escolha a direção.">
+      <img class="car-slide" src="correio-7.jpeg" width="1254" height="1254" alt="IAieu. A inteligência sempre será sua. Clareza, direção, transformação.">
     </div>
     <button class="car-nav car-next" type="button" aria-label="Próxima arte">&rsaquo;</button>
   </div>
@@ -856,7 +856,7 @@ section[id]{scroll-margin-top:96px}
     </ul>
   </div>
   <div class="foot-meta">
-    <img loading="lazy" src="favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
+    <img src="favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
     <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: @iaieu.evc</a>
     <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: IAieu</a>
     <a href="https://iaieu.com">iaieu.com</a>
@@ -952,9 +952,14 @@ function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidd
   });
   var dots=Array.prototype.slice.call(dotsWrap.children);
   var atual=0;
+  // posicoes SEMPRE no referencial do track (offsetLeft apontava pra secao: bug das setas paradas)
+  function alvoDe(c){
+    var tr=track.getBoundingClientRect(), cr=c.getBoundingClientRect();
+    return track.scrollLeft + (cr.left - tr.left) - (track.clientWidth - cr.width)/2;
+  }
   function current(){
-    var center=track.scrollLeft+track.clientWidth/2, best=0, bestD=Infinity;
-    cards.forEach(function(c,i){ var d=Math.abs((c.offsetLeft+c.offsetWidth/2)-center); if(d<bestD){bestD=d;best=i;} });
+    var tr=track.getBoundingClientRect(), center=tr.left+track.clientWidth/2, best=0, bestD=Infinity;
+    cards.forEach(function(c,i){ var cr=c.getBoundingClientRect(); var d=Math.abs((cr.left+cr.width/2)-center); if(d<bestD){bestD=d;best=i;} });
     return best;
   }
   function marca(i){
@@ -965,14 +970,24 @@ function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidd
   }
   function goTo(i){
     i=Math.max(0,Math.min(cards.length-1,i));
-    marca(i);                                    // marca já no clique (não espera o evento de scroll)
-    var c=cards[i];
-    var left=c.offsetLeft-(track.clientWidth-c.offsetWidth)/2;
-    track.scrollTo({left:left,behavior:'smooth'});
+    track.scrollTo({left:alvoDe(cards[i]),behavior:'smooth'});
   }
-  if(prev) prev.addEventListener('click',function(){ goTo(atual-1); });
-  if(next) next.addEventListener('click',function(){ goTo(atual+1); });
+  function passo(dir){
+    var cr=cards[0].getBoundingClientRect();
+    var gap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||20;
+    track.scrollBy({left:dir*(cr.width+gap),behavior:'smooth'});
+  }
+  if(prev) prev.addEventListener('click',function(){ passo(-1); });
+  if(next) next.addEventListener('click',function(){ passo(1); });
+  // estado dos dots derivado do scroll REAL
   var raf; track.addEventListener('scroll',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(function(){ marca(current()); }); });
+  // roda vertical sobre o carrossel rola a PAGINA (nao os slides)
+  track.addEventListener('wheel',function(e){
+    if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){
+      e.preventDefault();
+      window.scrollBy({top:e.deltaY,left:0,behavior:'instant'});
+    }
+  },{passive:false});
   window.addEventListener('resize',function(){ marca(atual); });
   marca(0);
 })();
