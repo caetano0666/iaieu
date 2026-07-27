@@ -319,7 +319,9 @@ section[id]{scroll-margin-top:96px}
 .carousel{position:relative;margin-top:40px}
 .car-track{
   display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;padding:4px 2px;
+  padding:4px 2px;
+  /* sem scroll-behavior:smooth: com snap mandatory, o Chrome mata a animacao
+     e scrolls programaticos (e ate scrollLeft direto) viram no-op */
   -ms-overflow-style:none;scrollbar-width:none;
 }
 .car-track::-webkit-scrollbar{display:none}
@@ -958,6 +960,10 @@ function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidd
     return track.scrollLeft + (cr.left - tr.left) - (track.clientWidth - cr.width)/2;
   }
   function current(){
+    // nas bordas o slide extremo nao alcanca o centro (alvo clampado): resolve direto
+    var max=track.scrollWidth-track.clientWidth;
+    if(track.scrollLeft<=1) return 0;
+    if(track.scrollLeft>=max-1) return cards.length-1;
     var tr=track.getBoundingClientRect(), center=tr.left+track.clientWidth/2, best=0, bestD=Infinity;
     cards.forEach(function(c,i){ var cr=c.getBoundingClientRect(); var d=Math.abs((cr.left+cr.width/2)-center); if(d<bestD){bestD=d;best=i;} });
     return best;
@@ -970,23 +976,23 @@ function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidd
   }
   function goTo(i){
     i=Math.max(0,Math.min(cards.length-1,i));
-    // sem smooth programatico: snap mandatory engole (medido em Chrome real); instant ancora certo
-    track.scrollLeft = alvoDe(cards[i]);
+    // instant explicito: smooth programatico com snap mandatory e engolido (medido em Chrome real)
+    track.scrollTo({left:alvoDe(cards[i]),behavior:'instant'});
+    marca(current());
   }
   function passo(dir){
-    var cr=cards[0].getBoundingClientRect();
-    var gap=parseFloat(getComputedStyle(track).columnGap||getComputedStyle(track).gap)||20;
-    track.scrollLeft = track.scrollLeft + dir*(cr.width+gap);
+    // passo por INDICE, nao por pixels: na borda o slide 0 fica deslocado do
+    // proprio ponto de snap central e um passo em px pula um slide (440 -> 626)
+    goTo(current()+dir);
   }
   if(prev) prev.addEventListener('click',function(){ passo(-1); });
   if(next) next.addEventListener('click',function(){ passo(1); });
-  // estado dos dots derivado do scroll REAL
-  var raf; track.addEventListener('scroll',function(){ cancelAnimationFrame(raf); raf=requestAnimationFrame(function(){ marca(current()); }); });
+  // estado dos dots derivado do scroll REAL (direto, sem rAF: em aba oculta
+  // o rAF nao dispara e o estado ficaria defasado; o custo por evento e trivial)
+  track.addEventListener('scroll',function(){ marca(current()); });
   // roda vertical sobre o carrossel rola a PAGINA (nao os slides).
-  // Captura no wrapper: intercepta o fluxo real antes de qualquer coisa.
-  // Alvo acumulado: com html{scroll-behavior:smooth}, ler scrollTop no meio da
-  // animacao perde distancia entre ticks; o acumulador preserva cada tick.
-  var alvoY=null, alvoTimer=null;
+  // Captura no wrapper; instant explicito para o html{scroll-behavior:smooth}
+  // nao animar (posicao assenta sincronamente, tick seguinte le o valor certo).
   (carousel||track).addEventListener('wheel',function(e){
     if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){
       e.preventDefault();
@@ -994,11 +1000,7 @@ function depLBclose(){ var lb=document.getElementById('dep-lb'); if(lb){ lb.hidd
       if(e.deltaMode===1) dy*=16;                 // linhas -> px
       else if(e.deltaMode===2) dy*=window.innerHeight; // paginas -> px
       var se=document.scrollingElement;
-      if(alvoY===null) alvoY=se.scrollTop;
-      alvoY=Math.max(0,Math.min(se.scrollHeight-se.clientHeight,alvoY+dy));
-      se.scrollTop=alvoY;
-      clearTimeout(alvoTimer);
-      alvoTimer=setTimeout(function(){ alvoY=null; },200);
+      se.scrollTo({top:se.scrollTop+dy,left:se.scrollLeft,behavior:'instant'});
     }
   },{passive:false,capture:true});
   window.addEventListener('resize',function(){ marca(atual); });
