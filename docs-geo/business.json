@@ -1,0 +1,131 @@
+{
+  "_leia_isto": "FONTE UNICA DE VERDADE do IAieu. Todo dado publicado no site (schema, metadata, FAQ, llms.txt) deve bater com este arquivo. Se um dado nao esta aqui, ele nao foi confirmado e NAO pode ir para o site. Atualizado em 30 de julho de 2026.",
+  "organizacao": {
+    "nome": "IAieu",
+    "url": "https://iaieu.com",
+    "logo": "https://iaieu.com/logo_horizontal.png",
+    "descricaoCurta": "O IAieu transforma problemas confusos em um caminho claro de decisoes, usando inteligencia artificial como ferramenta.",
+    "descricaoOficial": "O IAieu nao vende inteligencia artificial. Vende direcao, clareza e tempo recuperado. Caetano Zammataro entende o contexto do problema, separa causa de sintoma e organiza a confusao numa sequencia simples de decisoes, pronta para executar. A IA e apenas a ferramenta que torna isso rapido.",
+    "frasePosicionamento": "Seu problema nao esta sem solucao. Esta sem direcao.",
+    "fundacao": "2026",
+    "_nota_fundacao": "Confirmado pelo proprietario em 30/07/2026: o IAieu foi criado em 2026.",
+    "sameAs": [
+      "https://www.instagram.com/iaieu.evc/"
+    ],
+    "_nota_nome": "Confirmado pelo proprietario em 30/07/2026: o nome oficial e IAieu, somente. \"IAieu eVc\" e nome de OFERTA, nao da marca."
+  },
+  "pessoa": {
+    "nome": "Caetano Zammataro",
+    "nomeCompletoLegal": "Caetano Zammataro",
+    "_nota_nome": "Confirmado em 30/07/2026: usar Caetano Zammataro, sem \"Marc\".",
+    "cargo": "Fundador do IAieu",
+    "descricao": "Fundador do IAieu. Durante mais de três décadas construiu operações, reorganizou empresas, formou equipes e recuperou negócios que pareciam não ter solução, em setores e países diferentes. Hoje usa inteligência artificial como ferramenta para fazer o mesmo trabalho mais rápido: entender o contexto, separar causa de sintoma e organizar a execução.",
+    "sameAs": [
+      "https://www.linkedin.com/in/caetano-marc-zammataro/",
+      "https://www.instagram.com/caetano.zammataro/"
+    ],
+    "conhecimentos": [
+      "Direcao de solucoes com inteligencia artificial",
+      "Clareza e posicionamento profissional",
+      "Comunicacao no LinkedIn",
+      "Organizacao de processos e execucao",
+      "Criacao de sites e conteudo"
+    ],
+    "_nota_conhecimentos": "Lista derivada do que o site ja afirma nas paginas sobre.html e o-que-vendemos.html. Nao adicionar competencia que o site nao sustente.",
+    "idiomas": [
+      "pt-BR"
+    ],
+    "_nota_idiomas": "Ingles e espanhol NAO confirmados. Nao declarar knowsLanguage alem de portugues sem confirmacao.",
+    "_nota_experiencia": "Fonte: sobre.html, texto escrito pelo proprio Caetano e ja publicado. Nao e dado inventado. Ele confirmou o uso em 30/07/2026.",
+    "youtube": null,
+    "_nota_youtube": "Confirmado em 30/07/2026: nao existe canal no YouTube."
+  },
+  "contato": {
+    "whatsapp": "https://wa.me/17542525245",
+    "whatsappExibicao": "+1 754 252 5245",
+    "email": "czamma@gmail.com",
+    "formulario": null,
+    "_nota_contato": "WhatsApp e o canal principal de contratacao, ja usado em todas as paginas. E-mail confirmado pelo proprietario em 30/07/2026."
+  },
+  "alcance": {
+    "foco": "Brasil e falantes de portugues no exterior",
+    "idiomaDoSite": "pt-BR",
+    "negocioLocal": false,
+    "_nota_alcance": "NAO e negocio local. Proibido LocalBusiness, areaServed com cidade, pagina de cidade, Google Business Profile ou Bing Places."
+  },
+  "ofertas": [
+    {
+      "id": "iaieu-evc",
+      "nome": "IAieu eVc",
+      "descricao": "Traducao da trajetoria profissional em posicionamento, comunicacao e clareza. O foco principal e a presenca no LinkedIn.",
+      "preco": null,
+      "precoPublico": false,
+      "comoContratar": "Conversa pelo WhatsApp",
+      "pagina": "https://iaieu.com/iaieu-evc.html",
+      "termosPublicos": [
+        "Servico mensal",
+        "Contrato minimo de 3 meses",
+        "Vagas limitadas"
+      ]
+    },
+    {
+      "id": "iaieu-mais",
+      "nome": "IAieu+",
+      "descricao": "Voce traz o problema e recebe a solucao pronta, organizada em passos executaveis.",
+      "preco": null,
+      "precoPublico": false,
+      "comoContratar": "Conversa pelo WhatsApp",
+      "pagina": "https://iaieu.com/iaieu-mais.html"
+    },
+    {
+      "id": "iaieu-go",
+      "nome": "IAieu GO",
+      "descricao": "Uma hora ao vivo para sair da confusao com um caminho definido.",
+      "preco": null,
+      "precoPublico": false,
+      "comoContratar": "Conversa pelo WhatsApp",
+      "pagina": "https://iaieu.com/iaieu-go.html",
+      "termosPublicos": [
+        "Ao vivo pela internet",
+        "Cobrado por hora",
+        "Cliente escolhe o formato"
+      ]
+    }
+  ],
+  "_nota_precos": "DECISAO DO PROPRIETARIO EM 30/07/2026: precos NAO sao publicos. Nenhum valor pode aparecer no site nem em schema. A pergunta 'quanto custa' e respondida na FAQ apontando para a conversa no WhatsApp.",
+  "portfolio": [
+    {
+      "nome": "Plinio Marcos, reporter de um tempo mau",
+      "url": "https://iaieu.com/plinio/",
+      "descricao": "Acervo digital do dramaturgo Plinio Marcos: teatro, livros, cinema e imprensa.",
+      "papelDoIAieu": "Concepcao e construcao do site"
+    },
+    {
+      "nome": "Sparta Team Wear",
+      "url": "https://iaieu.com/stw-daryl-lucas/",
+      "descricao": "Site da marca de vestuario esportivo Sparta Team Wear.",
+      "papelDoIAieu": "Concepcao e construcao do site"
+    }
+  ],
+  "_nota_portfolio": "DECISAO DO PROPRIETARIO EM 30/07/2026: os dois subsites sao vitrine do IAieu. Entram no sitemap e no grafo como CreativeWork com o IAieu como creator.",
+  "politicasComerciais": {
+    "prazo": null,
+    "reembolso": null,
+    "garantia": null,
+    "formaDeContratacao": "Conversa pelo WhatsApp",
+    "_nota_politicas": "DECISAO DO PROPRIETARIO EM 30/07/2026: nao ha politica formal definida, entao nada e publicado. Politica errada publicada e pior que nao ter politica."
+  },
+  "depoimentos": {
+    "exibidosNoSite": true,
+    "formato": "Imagens depo-*.png e depoimentos.html",
+    "schemaDeAvaliacao": "PROIBIDO",
+    "_nota_depoimentos": "NUNCA criar aggregateRating ou Review schema. Depoimento visivel precisa ser real e autorizado. Se houver fonte publica (post no LinkedIn, por exemplo), linkar a fonte."
+  },
+  "analytics": {
+    "ga4": "G-KRMHLHQNGB",
+    "eventosExistentes": [
+      "whatsapp_click"
+    ],
+    "_nota_analytics": "Ja instalado em todas as paginas. NAO mexer no que existe, apenas adicionar eventos que faltem."
+  }
+}
