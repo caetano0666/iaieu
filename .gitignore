@@ -1,2 +1,6 @@
 .claude/
 .DS_Store
+
+# Diário de bordo e logs de trabalho. Ficam só na máquina do Caetano.
+# Contêm nome, cargo e empresa de pessoas reais, então não vão para o site.
+logs/

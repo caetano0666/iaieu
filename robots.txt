@@ -4,8 +4,8 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 Disallow: /docs-geo/
-Disallow: /posts.json
-Disallow: /config.json
+Disallow: /dados/posts.json
+Disallow: /dados/config.json
 
 # Assistentes de IA: leitura liberada de proposito.
 # O IAieu quer ser lido, entendido e citado corretamente por estes sistemas.

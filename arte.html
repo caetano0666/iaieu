@@ -227,7 +227,7 @@
     </ul>
   </div>
   <div class="foot-meta">
-    <img src="favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
+    <img src="imagens/favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
     <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: @iaieu.evc</a>
     <a href="https://iaieu.com">iaieu.com</a>
   </div>
@@ -245,7 +245,7 @@
   var stack = '<svg viewBox="0 0 24 24"><rect x="3" y="3" width="13" height="13" rx="2"/><path d="M8 21h11a2 2 0 0 0 2-2V8"/></svg>';
   function esc(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-  fetch('artes/artes.json?t=' + Date.now())
+  fetch('dados/artes/artes.json?t=' + Date.now())
     .then(function(r){ return r.ok ? r.json() : {itens:[]}; })
     .then(function(d){
       var itens = (d && d.itens) || [];

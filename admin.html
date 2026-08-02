@@ -313,12 +313,12 @@ let alterado = false;
 // INIT
 async function init() {
   try {
-    const rc = await fetch('config.json?t='+Date.now());
+    const rc = await fetch('dados/config.json?t='+Date.now());
     config = await rc.json();
   } catch(e) { config = {hero:{},origem:{},curso:{},cta:{},depoimentos:[]}; }
 
   try {
-    const rp = await fetch('posts.json?t='+Date.now());
+    const rp = await fetch('dados/posts.json?t='+Date.now());
     posts = await rp.json();
   } catch(e) { posts = []; }
 
