@@ -6,6 +6,100 @@ Mais recente em cima.
 
 ---
 
+## 2 de agosto de 2026: raiz enxugada, Bloco 1
+
+Objetivo: menos itens visíveis ao abrir a pasta, para diminuir a carga mental. Não foi arrumação por estética.
+
+A raiz saiu de 38 para 35 itens.
+
+| Arquivo | Foi para | Por quê |
+|---|---|---|
+| `AI_RULES.md` | `docs-geo/` | é a regra de como trabalhar, quem lê é a IA, não o Caetano |
+| `HISTORICO-TECNICO.md` | `docs-geo/` | é registro do passado, consultado raramente |
+| `LEIA-ME.md` | `arquivo-morto/` | está desatualizado, descreve um site de página única que não existe mais |
+
+Nenhum dos três é usado pelo site.
+
+### Referências atualizadas
+
+| Onde | O que mudou |
+|---|---|
+| `COMECE_AQUI.md`, linha 21 | passou a citar `docs-geo/AI_RULES.md` |
+| `NEXT.md` | a pendência do travessão agora aponta para `arquivo-morto/LEIA-ME.md` |
+
+As menções ao `LEIA-ME.md` nos registros antigos deste arquivo **não** foram alteradas de propósito. Naquelas datas ele estava mesmo na raiz, e mudar o texto falsificaria o histórico.
+
+### O que não saiu da raiz, e por quê
+
+`favicon.ico`, `og-image.png` e `logo_horizontal.png` têm endereço fixo procurado pelo navegador ou declarado ao Google. As 12 páginas são endereços do site. O `estilo.css` sairia ao custo de mexer em 12 páginas, o que não compensa.
+
+### Bloco 2, proposto e não aprovado nesta sessão
+
+Tirar `favicon-16.png`, `favicon-32.png`, `favicon-192.png` e `apple-touch-icon.png` da raiz custa 34 linhas em 11 páginas. Ficou para decisão futura.
+
+### Teto conhecido
+
+Cerca de 31 itens é o piso desta estrutura. Para ir bem abaixo disso só colocando o site inteiro dentro de uma pasta e mandando o GitHub publicar de lá, o que mexe na configuração de publicação.
+
+### Testes rodados depois
+
+| Teste | Resultado |
+|---|---|
+| `python3 docs-geo/seo-tests.py` | 231 PASS, 0 WARN, 0 FAIL |
+| Varredura de link quebrado | nenhum |
+| Referência apontando para arquivo que não existe mais | nenhuma |
+| Os arquivos que nunca podem sumir | todos na raiz |
+| As páginas do site | todas abrindo |
+
+---
+
+## 2 de agosto de 2026: publicado
+
+As três etapas e a limpeza foram publicadas no site. Commit `7b70678` na branch `main`.
+
+### A checklist da seção 9, item por item
+
+| Item | Resultado |
+|---|---|
+| Arquivos obrigatórios na raiz, intactos | ok, os 6 |
+| `seo-tests.py` com 0 FAIL | 231 PASS, 0 WARN, 0 FAIL |
+| Página nova com os 7 itens | nenhuma página nova foi criada |
+| Página nova no `sitemap.xml` | não se aplica |
+| Número novo sem data | nenhum |
+| `aggregateRating` ou `review` no código | nenhum |
+| Textos de posicionamento aprovados | intactos |
+| Grep de travessão | reprova, ver abaixo |
+| Preço publicado | nenhum |
+| Promessa de posição no Google ou citação em IA | nenhuma |
+
+### Por que o item do travessão não travou a publicação
+
+O travessão aparece em dois arquivos: `admin.html`, com 14, e `LEIA-ME.md`, com 11.
+
+Foi comparada a versão que já estava no ar com a versão a publicar. Os números são idênticos nas duas. Nenhuma outra página do site tem travessão, e nenhum dos documentos novos tem.
+
+Ou seja, a publicação não criou violação nova. A violação já existia em produção e o Caetano decidiu tratá-la em outro momento. Fica pendente.
+
+### Conferência feita no site no ar, depois de publicar
+
+| O que foi conferido | Resultado |
+|---|---|
+| `robots.txt` novo no ar | sim, apontando para `/dados/` |
+| As 11 páginas | todas respondendo |
+| Home: imagens e fundo do hero | carregam de `imagens/` |
+| Home: depoimentos | 4 cards |
+| Página de depoimentos | 10 cards |
+| Clique no botão de print | abre a foto, carregada de `imagens/` |
+| `sitemap.xml` | 12 URLs, intacto |
+| `logs/` no ar | 404, ficou fora como planejado |
+| Endereços antigos, tipo `/config.json` | 404, como esperado |
+
+### Um efeito passageiro, esperado
+
+Quem visitou o site nos últimos minutos pode ter a página antiga guardada no navegador, e ela aponta para os endereços velhos das imagens. Isso se resolve sozinho quando o navegador busca a página de novo.
+
+---
+
 ## 2 de agosto de 2026: preparação para publicar
 
 Antes de publicar, foi feita a conferência da seção 9 do `FUTURE-MAINTENANCE.md`. Ela encontrou três problemas. Dois foram corrigidos, um ficou para depois.

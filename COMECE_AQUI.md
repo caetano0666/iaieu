@@ -18,7 +18,7 @@ Ele mostra:
 
 Antes de pedir qualquer tarefa, diga:
 
-"Leia primeiro os arquivos AI_RULES.md e NEXT.md antes de continuar."
+"Leia primeiro os arquivos docs-geo/AI_RULES.md e NEXT.md antes de continuar."
 
 ## 3. Se for alterar o site
 
