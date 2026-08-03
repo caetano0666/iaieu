@@ -1,10 +1,96 @@
-.claude/
+# ATENCAO: este repositorio e PUBLICO.
+# O GitHub Pages publica a partir da raiz do branch main.
+# Tudo que entra no git vira endereco publico em iaieu.com e no GitHub.
+#
+# Por isso a regra padrao aqui e BLOQUEAR.
+# A linha abaixo ignora todo item da raiz. Nada novo entra sozinho.
+# Arquivo novo do site so passa a existir para o git se for liberado
+# de proposito na lista de permissao abaixo.
+#
+# Documento de negocio, material de cliente, lead, faturamento e
+# arquivo interno nunca devem ser liberados. Eles ficam so nesta maquina.
+
+/*
+
+# ---------------------------------------------------------------
+# LISTA DE PERMISSAO
+# Os 34 itens de primeiro nivel que formam o site publicado hoje.
+# ---------------------------------------------------------------
+
+# O proprio arquivo de regras
+!/.gitignore
+
+# Paginas do site
+!/index.html
+!/o-que-vendemos.html
+!/iaieu-evc.html
+!/iaieu-mais.html
+!/iaieu-go.html
+!/sobre.html
+!/projetos.html
+!/conteudos.html
+!/depoimentos.html
+!/arte.html
+!/404.html
+!/admin.html
+
+# Estilo
+!/estilo.css
+
+# Dominio e buscadores
+!/CNAME
+!/robots.txt
+!/sitemap.xml
+!/llms.txt
+
+# Verificacao: Google Search Console e chave IndexNow do Bing.
+# O nome destes dois arquivos e a propria chave. Nao renomear.
+!/google7279386773b5d258.html
+!/24e8019110bddcf5ce9d83b015ca44ca.txt
+
+# Icones e imagem de compartilhamento
+!/favicon-16.png
+!/favicon-32.png
+!/favicon-192.png
+!/favicon.ico
+!/apple-touch-icon.png
+!/og-image.png
+!/logo_horizontal.png
+
+# Pastas do site
+!/imagens/
+!/dados/
+!/plinio/
+!/stw-daryl-lucas/
+!/docs-geo/
+
+# Documentos de retomada do projeto
+!/COMECE_AQUI.md
+!/NEXT.md
+
+# ---------------------------------------------------------------
+# PROTECAO EXPLICITA
+# Ja estao cobertas pela regra /* acima. Repetidas de proposito,
+# para que a protecao sobreviva se alguem mexer na regra padrao.
+# ---------------------------------------------------------------
+
+/00_DOCUMENTACAO/
+/01_PRODUTOS/
+/02_CLIENTES/
+/03_LEADS/
+/04_OPERACAO/
+/05_ARQUIVO/
+
+# Diario de bordo e logs de trabalho. Ficam so na maquina do Caetano.
+# Contem nome, cargo e empresa de pessoas reais, entao nao vao para o site.
+/logs/
+
+# Arquivos que o site nao usa mais. Ficam so na maquina do Caetano.
+# Entre eles o LEIA-ME.md antigo, que cita preco, e preco nao se publica.
+/arquivo-morto/
+
+# Configuracao local do Claude Code
+/.claude/
+
+# Lixo do Finder, em qualquer nivel
 .DS_Store
-
-# Diário de bordo e logs de trabalho. Ficam só na máquina do Caetano.
-# Contêm nome, cargo e empresa de pessoas reais, então não vão para o site.
-logs/
-
-# Arquivos que o site não usa mais. Ficam só na máquina do Caetano.
-# Entre eles o LEIA-ME.md antigo, que cita preço, e preço não se publica.
-arquivo-morto/

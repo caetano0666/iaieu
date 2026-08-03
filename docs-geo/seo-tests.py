@@ -307,9 +307,9 @@ def teste_faq_espelhada():
 # ---------------------------------------------------------------- conteudo
 def teste_conteudo_no_html_bruto():
     marcadores = {
-        "index.html": "Está sem direção",
-        "o-que-vendemos.html": "Vendo direção",
-        "sobre.html": "O que o IAieu faz",
+        "index.html": "soluções operacionais sob medida",
+        "o-que-vendemos.html": "em função do problema",
+        "sobre.html": "Quarenta anos",
         "projetos.html": "construí",
         "conteudos.html": "quem sabe usar",
         "depoimentos.html": "Nomes reais",

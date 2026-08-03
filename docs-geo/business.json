@@ -1,42 +1,48 @@
 {
-  "_leia_isto": "FONTE UNICA DE VERDADE do IAieu. Todo dado publicado no site (schema, metadata, FAQ, llms.txt) deve bater com este arquivo. Se um dado nao esta aqui, ele nao foi confirmado e NAO pode ir para o site. Atualizado em 30 de julho de 2026.",
+  "_leia_isto": "FONTE UNICA DE VERDADE do IAieu. Todo dado publicado no site (schema, metadata, FAQ, llms.txt) deve bater com este arquivo. Se um dado nao esta aqui, ele nao foi confirmado e NAO pode ir para o site. Atualizado em 3 de agosto de 2026, no reposicionamento institucional.",
   "organizacao": {
     "nome": "IAieu",
     "url": "https://iaieu.com",
     "logo": "https://iaieu.com/logo_horizontal.png",
-    "descricaoCurta": "O IAieu transforma problemas confusos em um caminho claro de decisoes, usando inteligencia artificial como ferramenta.",
-    "descricaoOficial": "O IAieu nao vende inteligencia artificial. Vende direcao, clareza e tempo recuperado. Caetano Zammataro entende o contexto do problema, separa causa de sintoma e organiza a confusao numa sequencia simples de decisoes, pronta para executar. A IA e apenas a ferramenta que torna isso rapido.",
-    "frasePosicionamento": "Seu problema nao esta sem solucao. Esta sem direcao.",
+    "descricaoCurta": "O IAieu desenvolve solucoes operacionais sob medida para empresas e pessoas.",
+    "descricaoOficial": "O IAieu desenvolve solucoes operacionais sob medida para empresas e pessoas. Entra numa operacao para entender como ela funciona, identifica onde tempo, pessoas ou dinheiro estao sendo desperdicados, constroi uma solucao especifica, implementa e mede o resultado. Nao vende inteligencia artificial, ferramentas nem plataformas: a tecnologia e apenas uma das ferramentas usadas. O produto e uma operacao melhor.",
+    "frasePosicionamento": "Quarenta anos organizando operacoes. Hoje com ferramentas que nao existiam ontem.",
     "fundacao": "2026",
     "_nota_fundacao": "Confirmado pelo proprietario em 30/07/2026: o IAieu foi criado em 2026.",
     "sameAs": [
       "https://www.instagram.com/iaieu.evc/"
     ],
-    "_nota_nome": "Confirmado pelo proprietario em 30/07/2026: o nome oficial e IAieu, somente. \"IAieu eVc\" e nome de OFERTA, nao da marca."
+    "_nota_nome": "Confirmado pelo proprietario em 30/07/2026: o nome oficial e IAieu, somente. \"IAieu eVc\" e nome de OFERTA, nao da marca.",
+    "principio": "A tecnologia e escolhida em funcao do problema, e nao o contrario.",
+    "_nota_reposicionamento": "REPOSICIONAMENTO OFICIAL de 03/08/2026. O site deixou de vender clareza e direcao com IA e passou a vender solucoes operacionais sob medida. A IA continua sendo usada, mas como ferramenta, nunca como produto. Fonte: IAieu_Filosofia_v1.0 e decisao do proprietario nesta data."
   },
   "pessoa": {
     "nome": "Caetano Zammataro",
     "nomeCompletoLegal": "Caetano Zammataro",
     "_nota_nome": "Confirmado em 30/07/2026: usar Caetano Zammataro, sem \"Marc\".",
     "cargo": "Fundador do IAieu",
-    "descricao": "Fundador do IAieu. Durante mais de três décadas construiu operações, reorganizou empresas, formou equipes e recuperou negócios que pareciam não ter solução, em setores e países diferentes. Hoje usa inteligência artificial como ferramenta para fazer o mesmo trabalho mais rápido: entender o contexto, separar causa de sintoma e organizar a execução.",
+    "descricao": "Fundador do IAieu. Quarenta anos construindo e reorganizando operacoes em logistica, aviacao, carga, supply chain, varejo e hotelaria, no Brasil e nos Estados Unidos. Construiu operacoes do zero, implantou processos, formou equipes e recuperou negocios. Hoje desenvolve solucoes operacionais sob medida, usando a tecnologia apenas como ferramenta.",
     "sameAs": [
       "https://www.linkedin.com/in/caetano-marc-zammataro/",
       "https://www.instagram.com/caetano.zammataro/"
     ],
     "conhecimentos": [
-      "Direcao de solucoes com inteligencia artificial",
-      "Clareza e posicionamento profissional",
-      "Comunicacao no LinkedIn",
-      "Organizacao de processos e execucao",
-      "Criacao de sites e conteudo"
+      "Operacoes",
+      "Processos",
+      "Logistica",
+      "Aviacao e carga aerea",
+      "Supply chain",
+      "Varejo",
+      "Implantacao de processos",
+      "Reorganizacao de empresas",
+      "Solucoes operacionais sob medida"
     ],
     "_nota_conhecimentos": "Lista derivada do que o site ja afirma nas paginas sobre.html e o-que-vendemos.html. Nao adicionar competencia que o site nao sustente.",
     "idiomas": [
       "pt-BR"
     ],
     "_nota_idiomas": "Ingles e espanhol NAO confirmados. Nao declarar knowsLanguage alem de portugues sem confirmacao.",
-    "_nota_experiencia": "Fonte: sobre.html, texto escrito pelo proprio Caetano e ja publicado. Nao e dado inventado. Ele confirmou o uso em 30/07/2026.",
+    "_nota_experiencia": "40 anos confirmado pelo proprietario em 03/08/2026: comecou antes dos 20 anos. Substitui a referencia anterior de 30 anos / tres decadas em todo o projeto.",
     "youtube": null,
     "_nota_youtube": "Confirmado em 30/07/2026: nao existe canal no YouTube."
   },

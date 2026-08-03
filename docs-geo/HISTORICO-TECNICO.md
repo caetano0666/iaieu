@@ -6,6 +6,47 @@ Mais recente em cima.
 
 ---
 
+## 2 de agosto de 2026: preço tirado do ar, e `arquivo-morto/` fora da publicação
+
+Publicado no commit `9abaa2d`.
+
+### O que a checklist encontrou
+
+O `LEIA-ME.md` antigo cita **R$249** duas vezes, para o IAieu GO. Ele estava público em `iaieu.com/LEIA-ME.md`, respondendo 200, sem nenhum bloqueio no `robots.txt`.
+
+A regra da casa é não publicar preço em lugar nenhum, e é o item 9 da checklist da seção 9.
+
+Não era novo, nem foi causado por nenhuma etapa da migração. Já estava assim antes. Mas mover o arquivo para `arquivo-morto/` não resolveria: ele só trocaria de endereço e o preço continuaria público.
+
+### O que foi feito
+
+A pasta `arquivo-morto/` saiu da publicação, do mesmo jeito que a `logs/`. Entrou no `.gitignore` e foi removida do repositório com `git rm -r --cached`, que tira do site e mantém no disco.
+
+Os 19 arquivos continuam na máquina do Caetano. Saíram do ar 17 MB de imagem sem uso, mais o `LEIA-ME.md` com o preço.
+
+### Conferido no site no ar, depois de publicar
+
+| Endereço | Esperado | Resultado |
+|---|---|---|
+| `/LEIA-ME.md` | sair do ar | 404 |
+| `/arquivo-morto/` e tudo dentro | sair do ar | 404 |
+| `/AI_RULES.md` e `/HISTORICO-TECNICO.md` na raiz | sair do ar | 404 |
+| `/logs/` | continuar fora | 404 |
+| As 11 páginas do site | continuar no ar | todas 200 |
+| `/docs-geo/AI_RULES.md` | passar a existir | 200 |
+| `imagens/`, `dados/`, `robots.txt`, `sitemap.xml` | intactos | 200 |
+| Busca por preço em tudo que continua público | nada | nenhum |
+
+### Achado que não travou a publicação
+
+O `stw-daryl-lucas/index.html` tem `R$ 000` em três lugares. São valores de exemplo num site de cliente, não preço real do IAieu, e o arquivo não foi tocado.
+
+### Lição
+
+A checklist da seção 9 só funciona se for lida de verdade antes de cada publicação. Esse preço estava público havia meses e nenhum teste automático apontou.
+
+---
+
 ## 2 de agosto de 2026: raiz enxugada, Bloco 1
 
 Objetivo: menos itens visíveis ao abrir a pasta, para diminuir a carga mental. Não foi arrumação por estética.
