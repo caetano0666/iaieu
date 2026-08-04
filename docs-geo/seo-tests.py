@@ -25,6 +25,7 @@ BASE = "https://iaieu.com"
 PAGINAS = {
     "index.html": f"{BASE}/",
     "o-que-vendemos.html": f"{BASE}/o-que-vendemos.html",
+    "caso-operacao-do-zero.html": f"{BASE}/caso-operacao-do-zero.html",
     "iaieu-evc.html": f"{BASE}/iaieu-evc.html",
     "iaieu-mais.html": f"{BASE}/iaieu-mais.html",
     "iaieu-go.html": f"{BASE}/iaieu-go.html",

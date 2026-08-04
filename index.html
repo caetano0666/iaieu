@@ -606,6 +606,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .dh-cargo{font-size:12.5px;color:#A0A0B8;font-weight:300;line-height:1.5;margin-top:3px}
 .dh-vinculo{font-size:12px;color:#A78BFA;font-weight:500;margin-top:6px}
 @media(max-width:820px){.dh-grid{grid-template-columns:1fr;gap:18px}.dh{padding:26px 22px}}
+
+/* Caso em destaque na home */
+.caso-destaque{max-width:1080px;margin:0 auto 26px;display:block;text-decoration:none;border:1px solid rgba(167,139,250,0.30);border-radius:20px;padding:34px 34px 30px;transition:border-color .2s}
+.caso-destaque:hover{border-color:rgba(167,139,250,0.65)}
+.cd-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#A78BFA;border:1px solid rgba(167,139,250,0.32);border-radius:999px;padding:5px 13px;margin-bottom:18px}
+.cd-t{font-size:clamp(21px,2.6vw,27px);font-weight:700;color:#F5F2EC;line-height:1.28;letter-spacing:-0.015em;margin-bottom:12px}
+.cd-d{font-size:clamp(15px,1.7vw,17px);line-height:1.7;color:#c8c8d8;font-weight:300;max-width:760px}
+.cd-n{display:flex;flex-wrap:wrap;gap:26px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(245,242,236,0.10)}
+.cd-n span{font-size:13.5px;color:#A0A0B8;font-weight:300}
+.cd-n b{display:block;font-size:19px;font-weight:800;color:#F5F2EC;letter-spacing:-0.02em}
+.cd-link{display:inline-block;margin-top:20px;font-size:15px;font-weight:600;color:#A78BFA}
+@media(max-width:640px){.caso-destaque{padding:26px 22px}}
 </style>
 <script type="application/ld+json">
 {
@@ -955,6 +967,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
             <span class="menu-t">Depoimentos</span>
             <span class="menu-d">Relatos de quem trabalhou comigo.</span>
           </a></li>
+          <li><a href="caso-operacao-do-zero.html">
+            <span class="menu-t">Caso 01</span>
+            <span class="menu-d">Uma operação implantada do zero, documentada.</span>
+          </a></li>
           <li><a href="projetos.html">
             <span class="menu-t">Projetos</span>
             <span class="menu-d">Problemas que alguém precisava resolver.</span>
@@ -1218,6 +1234,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   <span class="rotulo">O que já aconteceu</span>
   <h2 class="titulo">Problemas resolvidos, <em>um por vez.</em></h2>
 
+  <a class="caso-destaque" href="caso-operacao-do-zero.html">
+    <span class="cd-tag">Caso 01 · estudo completo</span>
+    <div class="cd-t">Uma operação que não depende de inspiração.</div>
+    <p class="cd-d">Sessenta dias implantando posicionamento, protocolos, rotina diária, calendário editorial, acompanhamento e indicadores. Do zero absoluto até uma operação que funciona todo dia. O primeiro cliente fui eu.</p>
+    <div class="cd-n">
+      <span><b>60</b>dias de implantação</span>
+      <span><b>11</b>peças implantadas</span>
+      <span><b>+500</b>conexões, como consequência</span>
+    </div>
+    <span class="cd-link">Ler o estudo de caso completo →</span>
+  </a>
+
   <div class="casos-grid">
     <div class="caso">
       <div class="quem">Bruno</div>
@@ -1369,14 +1397,16 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   <div class="foot-col">
     <h4>Navegação</h4>
     <ul>
-      <li><a href="#como-funciona">Como eu trabalho</a></li>
-      <li><a href="sobre.html">A experiência</a></li>
+      <li><a href="iaieu-evc.html">IAieu eVc</a></li>
+      <li><a href="iaieu-mais.html">IAieu+</a></li>
+      <li><a href="iaieu-go.html">IAieu GO</a></li>
       <li><a href="o-que-vendemos.html">O método</a></li>
-      <li><a href="#evc">Serviços</a></li>
-      <li><a href="#casos">Casos Reais</a></li>
-      <li><a href="#depoimentos">Depoimentos</a></li>
-      <li><a href="arte.html">Arte</a></li>
-      <li><a href="#cta">Começar</a></li>
+      <li><a href="sobre.html">A experiência</a></li>
+      <li><a href="caso-operacao-do-zero.html">Caso 01</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="depoimentos.html">Depoimentos</a></li>
+      <li><a href="conteudos.html">Conteúdos</a></li>
+      <li><a href="#cta">Contato</a></li>
     </ul>
   </div>
   <div class="foot-meta">
