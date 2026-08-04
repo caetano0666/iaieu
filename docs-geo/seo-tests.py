@@ -22,6 +22,10 @@ import sys
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://iaieu.com"
 
+# arte.html saiu desta lista em 04/08/2026, por decisao do proprietario: a galeria
+# esta vazia, entao a pagina foi tirada do percurso do visitante e do sitemap.
+# Ela continua no repositorio e continua sendo checada em teste_regras_da_casa.
+# Quando a galeria for preenchida, devolver a linha "arte.html" aqui e no sitemap.
 PAGINAS = {
     "index.html": f"{BASE}/",
     "o-que-vendemos.html": f"{BASE}/o-que-vendemos.html",
@@ -32,7 +36,6 @@ PAGINAS = {
     "sobre.html": f"{BASE}/sobre.html",
     "projetos.html": f"{BASE}/projetos.html",
     "conteudos.html": f"{BASE}/conteudos.html",
-    "arte.html": f"{BASE}/arte.html",
     "depoimentos.html": f"{BASE}/depoimentos.html",
     "plinio/index.html": f"{BASE}/plinio/",
     "stw-daryl-lucas/index.html": f"{BASE}/stw-daryl-lucas/",
@@ -323,7 +326,7 @@ def teste_conteudo_no_html_bruto():
 
 
 def teste_regras_da_casa():
-    for arq in list(PAGINAS) + ["404.html", "llms.txt"]:
+    for arq in list(PAGINAS) + ["404.html", "llms.txt", "arte.html"]:
         caminho = os.path.join(RAIZ, arq)
         if not os.path.exists(caminho):
             continue
