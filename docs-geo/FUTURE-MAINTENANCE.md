@@ -241,3 +241,24 @@ python3 docs-geo/seo-tests.py
 ```
 
 Precisa dar **0 FAIL**. A bateria tem um teste que cobra a frase-tese em cada página principal: se alguém reescrever a home e apagar a tese, o teste quebra de propósito.
+
+
+---
+
+## Regra editorial da página de Depoimentos (3 de agosto de 2026)
+
+Definida pelo proprietário e vale para sempre:
+
+> **Nenhum depoimento entra porque elogia o Caetano. Todo depoimento entra porque comprova a identidade do IAieu.**
+
+A página não existe para provar que gostam dele. Existe para mostrar que aquilo que o site afirma sobre operação, execução e processo já era percebido por outras pessoas muito antes desta empresa existir.
+
+Na primeira seleção, sete recomendações públicas do LinkedIn foram avaliadas e **quatro entraram**: Andréa Galletti (quatro décadas, com data de 1983), Marcelo Penna (excelência operacional, escrita por um cliente), Vanessa Srna (execução) e Celso Squilanti (processos). **Três ficaram de fora** por serem elogio à pessoa sem prova de operação: Jack Servera, Fábio Melo e Mariana Boff. Não são ruins, são fora de escopo.
+
+Regras de forma, já aplicadas:
+- Texto nativo, nunca print de tela. Print é invisível para busca e para IA, e o print do LinkedIn ainda expõe o painel de edição do próprio dono.
+- Citação reproduzida ao pé da letra, sem corte e sem correção. **Aqui o travessão é permitido**, porque fidelidade a texto de terceiro vale mais que a padronização da casa.
+- Um destaque por depoimento, só no trecho que justifica a presença dele.
+- Depoimento em inglês fica em inglês, com tradução discreta abaixo, identificada como tradução.
+- Cada bloco leva o vínculo real (foi cliente, trabalhou na mesma equipe) e a data.
+- **Nunca criar `Review` ou `aggregateRating` no schema**, mesmo sendo depoimentos verdadeiros.
