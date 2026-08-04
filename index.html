@@ -618,6 +618,44 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .cd-n b{display:block;font-size:19px;font-weight:800;color:#F5F2EC;letter-spacing:-0.02em}
 .cd-link{display:inline-block;margin-top:20px;font-size:15px;font-weight:600;color:#A78BFA}
 @media(max-width:640px){.caso-destaque{padding:26px 22px}}
+
+/* ============ HERO ============ */
+/* Um dominante. Sem etiqueta, sem subtitulo em gradiente, sem linha de principio.
+   O que saiu daqui abre a secao seguinte. */
+.hero-top{padding:150px 0 60px}
+.hero-copy{max-width:640px}
+.hero-title{font-size:clamp(36px,5.2vw,66px);line-height:1.06;letter-spacing:-0.038em}
+.h1-eco{display:block;font-size:0.40em;font-weight:400;line-height:1.35;margin-top:22px;color:#A0A0B8;letter-spacing:-0.005em;max-width:19em}
+.hero-rule{width:56px;height:2px;margin:44px 0 38px;opacity:.9}
+.hero-actions{gap:28px}
+.hero-cta{font-size:16px;padding:15px 30px;letter-spacing:0.005em}
+
+/* abertura da secao seguinte, que recebe o que saiu da Hero */
+.abertura-b{max-width:820px;font-size:clamp(18px,2vw,22px);line-height:1.7;color:#F5F2EC;font-weight:400;margin:0 0 30px;letter-spacing:-0.01em}
+
+@media(max-width:900px){
+  /* no celular a foto ocupa o alto e o texto pousa em preto limpo. Sem colisao. */
+  .hero-top{padding:0 0 44px;background-position:76% 8%}
+  .hero-top::before{background:linear-gradient(180deg,rgba(13,11,16,0.26) 0%,rgba(13,11,16,0.34) 22%,rgba(13,11,16,0.88) 40%,rgba(13,11,16,0.985) 52%,rgba(13,11,16,1) 64%,rgba(13,11,16,1) 100%)}
+  .hero-copy{padding-top:352px}
+  .hero-title{font-size:clamp(33px,8.6vw,42px)}
+  .h1-eco{font-size:0.46em;margin-top:18px}
+  .hero-rule{margin:32px 0 28px}
+}
+
+/* ============ BOTAO WHATSAPP · VERSAO B ============ */
+/* Mesma linguagem dos CTAs do site. Verde so como sinal discreto. */
+.wa-float{
+  background:var(--grad)!important;
+  box-shadow:0 10px 30px rgba(13,11,16,0.55)!important;
+  border:1px solid rgba(245,242,236,0.14);
+}
+.wa-float::after{
+  content:"";position:absolute;top:11px;right:11px;width:7px;height:7px;border-radius:50%;
+  background:#25D366;box-shadow:0 0 0 2px rgba(13,11,16,0.9);
+}
+.wa-float:hover{box-shadow:0 0 0 3px rgba(37,211,102,0.55),0 12px 34px rgba(13,11,16,0.6)!important}
+.wa-float svg{fill:#fff}
 </style>
 <script type="application/ld+json">
 {
@@ -1000,35 +1038,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   <div class="hero-top">
     <div class="hero-inner">
       <div class="hero-copy">
-        <p class="hero-eyebrow">Operação, processo e resultado.</p>
         <h1 class="hero-title">Quarenta anos organizando operações.<span class="h1-eco">Hoje com ferramentas que não existiam ontem.</span></h1>
-        <p class="hero-sub">Desenvolvemos soluções operacionais sob medida para empresas e pessoas.</p>
         <div class="hero-rule"></div>
-        <p class="hero-lead2">A tecnologia é escolhida em função do problema, e não o contrário.</p>
         <div class="hero-actions">
           <a class="btn-grad btn-primary hero-cta" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Tenho%20um%20processo%20que%20consome%20tempo%20e%20dinheiro%20e%20quero%20que%20ele%20funcione%20melhor." target="_blank" rel="noopener">Escolha um processo →</a>
-          <a class="hero-link" href="#como-funciona">Veja como trabalhamos →</a>
+          <a class="hero-link" href="#o-que-e">Veja como trabalhamos →</a>
         </div>
       </div>
     </div>
   </div>
   <div class="hero-pilares">
     <p class="pilar-intro">Onde esses quarenta anos aconteceram, no Brasil e nos Estados Unidos:</p>
-    <div class="pilar">
-      <div><div class="pilar-t">Logística</div><div class="pilar-s">Operações e cadeia de abastecimento.</div></div>
-    </div>
-    <div class="pilar">
-      <div><div class="pilar-t">Aviação</div><div class="pilar-s">Carga aérea, aeroporto, prazo e custo.</div></div>
-    </div>
-    <div class="pilar">
-      <div><div class="pilar-t">Supply chain</div><div class="pilar-s">Do fornecedor ao cliente final.</div></div>
-    </div>
-    <div class="pilar">
-      <div><div class="pilar-t">Varejo</div><div class="pilar-s">Loja, estoque e ponto de venda.</div></div>
-    </div>
-    <div class="pilar">
-      <div><div class="pilar-t">Hotelaria</div><div class="pilar-s">Serviço, rotina e equipe.</div></div>
-    </div>
+    <div class="pilar"><div><div class="pilar-t">Logística</div><div class="pilar-s">Operações e cadeia de abastecimento.</div></div></div>
+    <div class="pilar"><div><div class="pilar-t">Aviação</div><div class="pilar-s">Carga aérea, aeroporto, prazo e custo.</div></div></div>
+    <div class="pilar"><div><div class="pilar-t">Supply chain</div><div class="pilar-s">Do fornecedor ao cliente final.</div></div></div>
+    <div class="pilar"><div><div class="pilar-t">Varejo</div><div class="pilar-s">Loja, estoque e ponto de venda.</div></div></div>
+    <div class="pilar"><div><div class="pilar-t">Hotelaria</div><div class="pilar-s">Serviço, rotina e equipe.</div></div></div>
   </div>
 </section>
 
@@ -1038,8 +1063,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 <section id="o-que-e">
   <span class="rotulo">Em resumo</span>
   <h2 class="titulo">O que é o IAieu.</h2>
+  <p class="abertura-b">Desenvolvemos soluções operacionais sob medida para empresas e pessoas. A tecnologia é escolhida em função do problema, e não o contrário.</p>
   <div class="resposta-direta">
-    <p><strong>O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas.</strong> Eu entro numa operação para entender como ela funciona, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica, coloco para rodar e confiro se melhorou.</p>
+    <p><strong>Eu entro numa operação para entender como ela funciona</strong>, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica, coloco para rodar e confiro se melhorou.</p>
     <p><strong>Quem conduz:</strong> Caetano Zammataro, quarenta anos construindo e reorganizando operações em logística, aviação, carga, supply chain, varejo e hotelaria, no Brasil e nos Estados Unidos.</p>
     <p><strong>Para quem é:</strong> empresas e pessoas com processos que hoje consomem mais tempo, mais gente ou mais dinheiro do que deveriam. O que muda de um caso para o outro é a escala do problema, não o método.</p>
     <p><strong>O que você recebe:</strong> um processo funcionando melhor do que funcionava antes. Eu não vendo inteligência artificial, ferramentas nem plataformas. A tecnologia é apenas uma das coisas que eu uso para construir a solução.</p>
