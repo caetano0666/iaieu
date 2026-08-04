@@ -178,6 +178,10 @@ footer{
 
 /* RESPONSIVO base */
 @media(max-width:820px){
+  /* no celular a faixa de repertorio vira compacta: so os setores */
+  .hero-pilares{grid-template-columns:repeat(2,1fr);gap:12px 18px;padding:18px 20px 22px}
+  .pilar-s{display:none}
+  .pilar-intro{font-size:11px;margin-bottom:2px}
   nav{flex-direction:row;gap:12px;padding:0 16px;height:60px}
   .nav-burger{display:flex}
   /* no celular o topo fica so com logo e hamburguer: o resto vive no menu completo */
@@ -233,11 +237,13 @@ section[id]{scroll-margin-top:96px}
   padding:22px 40px 30px;border-top:1px solid rgba(255,255,255,0.09);
   display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
 .pilar{display:flex;align-items:flex-start;gap:14px}
+.pilar-intro{grid-column:1/-1;margin:0 0 4px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A78BFA}
+.pilar-t{border-left:2px solid rgba(124,58,237,0.55);padding-left:10px}
 .pilar-n{font-size:30px;font-weight:800;line-height:1;color:var(--roxo);flex-shrink:0;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;margin-top:-2px}
 .pilar-t{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#F5F2EC}
 .pilar-s{font-size:12.5px;color:var(--cinza);font-weight:300;margin-top:4px;line-height:1.4}
 @media(max-width:960px){.hero-pilares{grid-template-columns:repeat(2,1fr);gap:18px 22px}}
-@media(max-width:520px){.hero-pilares{grid-template-columns:1fr}}
+@media(max-width:520px){.hero-pilares{grid-template-columns:repeat(2,1fr)}}
 
 @media(max-width:900px){
   #hero{min-height:auto}
@@ -578,6 +584,16 @@ body.menu-aberto{overflow:hidden}
 /* 2a parte da tese, menor dentro do mesmo H1 */
 .h1-eco{display:block;font-size:0.56em;font-weight:600;line-height:1.22;margin-top:10px;color:#c8c8d8;letter-spacing:-0.01em}
 @media(max-width:820px){.h1-eco{font-size:0.62em}}
+
+/* Foco visivel para quem navega por teclado */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{
+  outline:3px solid #A78BFA;
+  outline-offset:3px;
+  border-radius:4px;
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -821,7 +837,7 @@ body.menu-aberto{overflow:hidden}
           "name": "O que exatamente o IAieu faz?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. Entramos numa operação para entender como ela funciona, descobrimos onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construímos uma solução específica para aquela realidade, implementamos e medimos o resultado."
+            "text": "O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. Eu entro numa operação para entender como ela funciona, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica para aquela realidade, coloco para rodar e meço o resultado."
           }
         },
         {
@@ -925,11 +941,11 @@ body.menu-aberto{overflow:hidden}
           </a></li>
           <li><a href="depoimentos.html">
             <span class="menu-t">Depoimentos</span>
-            <span class="menu-d">Quem já foi atendido.</span>
+            <span class="menu-d">Relatos de quem trabalhou comigo.</span>
           </a></li>
           <li><a href="projetos.html">
             <span class="menu-t">Projetos</span>
-            <span class="menu-d">Sites e projetos que eu construí.</span>
+            <span class="menu-d">Problemas que alguém precisava resolver.</span>
           </a></li>
       </ul>
     </div>
@@ -939,11 +955,7 @@ body.menu-aberto{overflow:hidden}
       <ul>
           <li><a href="conteudos.html">
             <span class="menu-t">Conteúdos</span>
-            <span class="menu-d">Curadoria comentada do mercado.</span>
-          </a></li>
-          <li><a href="arte.html">
-            <span class="menu-t">Arte</span>
-            <span class="menu-d">Peças e séries visuais.</span>
+            <span class="menu-d">Operação, processo e decisão, comentados.</span>
           </a></li>
       </ul>
       <a class="menu-wa" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20o%20site%20do%20IAieu%20e%20quero%20falar%20com%20voc%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -956,7 +968,7 @@ body.menu-aberto{overflow:hidden}
 <main>
 
 <!-- HERO -->
-<section id="hero" name="topo"><a id="topo"></a>
+<section id="hero" name="topo"><span id="topo"></span>
   <div class="hero-top">
     <div class="hero-inner">
       <div class="hero-copy">
@@ -973,25 +985,21 @@ body.menu-aberto{overflow:hidden}
     </div>
   </div>
   <div class="hero-pilares">
+    <p class="pilar-intro">Onde esses quarenta anos aconteceram, no Brasil e nos Estados Unidos:</p>
     <div class="pilar">
-      <span class="pilar-n">01</span>
-      <div><div class="pilar-t">Entender</div><div class="pilar-s">Como o processo funciona de verdade.</div></div>
+      <div><div class="pilar-t">Logística</div><div class="pilar-s">Operações e cadeia de abastecimento.</div></div>
     </div>
     <div class="pilar">
-      <span class="pilar-n">02</span>
-      <div><div class="pilar-t">Identificar</div><div class="pilar-s">Onde tempo e dinheiro se perdem.</div></div>
+      <div><div class="pilar-t">Aviação</div><div class="pilar-s">Carga aérea, aeroporto, prazo e custo.</div></div>
     </div>
     <div class="pilar">
-      <span class="pilar-n">03</span>
-      <div><div class="pilar-t">Desenvolver</div><div class="pilar-s">Uma solução sob medida.</div></div>
+      <div><div class="pilar-t">Supply chain</div><div class="pilar-s">Do fornecedor ao cliente final.</div></div>
     </div>
     <div class="pilar">
-      <span class="pilar-n">04</span>
-      <div><div class="pilar-t">Implementar</div><div class="pilar-s">Colocar para funcionar.</div></div>
+      <div><div class="pilar-t">Varejo</div><div class="pilar-s">Loja, estoque e ponto de venda.</div></div>
     </div>
     <div class="pilar">
-      <span class="pilar-n">05</span>
-      <div><div class="pilar-t">Medir</div><div class="pilar-s">O resultado, não a tecnologia.</div></div>
+      <div><div class="pilar-t">Hotelaria</div><div class="pilar-s">Serviço, rotina e equipe.</div></div>
     </div>
   </div>
 </section>
@@ -1003,10 +1011,10 @@ body.menu-aberto{overflow:hidden}
   <span class="rotulo">Em resumo</span>
   <h2 class="titulo">O que é o IAieu.</h2>
   <div class="resposta-direta">
-    <p><strong>O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas.</strong> Entramos numa operação para entender como ela funciona, descobrimos onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construímos uma solução específica, implementamos e medimos o resultado.</p>
+    <p><strong>O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas.</strong> Eu entro numa operação para entender como ela funciona, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica, coloco para rodar e confiro se melhorou.</p>
     <p><strong>Quem conduz:</strong> Caetano Zammataro, quarenta anos construindo e reorganizando operações em logística, aviação, carga, supply chain, varejo e hotelaria, no Brasil e nos Estados Unidos.</p>
     <p><strong>Para quem é:</strong> empresas e pessoas com processos que hoje consomem mais tempo, mais gente ou mais dinheiro do que deveriam. O que muda de um caso para o outro é a escala do problema, não o método.</p>
-    <p><strong>O que você recebe:</strong> um processo funcionando melhor do que funcionava antes. Não vendemos inteligência artificial, ferramentas nem plataformas. A tecnologia é apenas uma das coisas que usamos para construir a solução.</p>
+    <p><strong>O que você recebe:</strong> um processo funcionando melhor do que funcionava antes. Eu não vendo inteligência artificial, ferramentas nem plataformas. A tecnologia é apenas uma das coisas que eu uso para construir a solução.</p>
     <p><strong>Como falar comigo:</strong> a conversa começa pelo <a href="https://wa.me/17542525245" target="_blank" rel="noopener">WhatsApp</a>, em português. Também dá para escrever para czamma@gmail.com.</p>
   </div>
 </section>
@@ -1037,7 +1045,7 @@ body.menu-aberto{overflow:hidden}
   <p class="destaque-quote">Não é software. Não é agência. <b>É organizar o que já existe.</b></p>
   <div class="analogia">
     <p>Software vende licença e espera que você descubra como usar. Agência vende campanha e vai embora quando ela acaba. Nenhum dos dois entra na sua operação para entender como ela funciona de verdade.</p>
-    <p>Nós entramos. E se a melhor solução para o seu problema for uma planilha simples em vez de um sistema caro, a resposta vai ser a planilha simples. O que interessa é o processo funcionando, não a tecnologia usada.</p>
+    <p>Eu entro. E se a melhor solução para o seu problema for uma planilha simples em vez de um sistema caro, a resposta vai ser a planilha simples. O que interessa é o processo funcionando, não a tecnologia usada.</p>
   </div>
 </section>
 
@@ -1051,27 +1059,27 @@ body.menu-aberto{overflow:hidden}
     <div class="cf-passo">
       <div class="cf-num">01</div>
       <h3>Entender</h3>
-      <p>Entramos na operação para entender como ela funciona de verdade, e não como está escrito que deveria funcionar.</p>
+      <p>Entro na operação e acompanho como o trabalho acontece, conversando com quem executa todo dia.</p>
     </div>
     <div class="cf-passo">
       <div class="cf-num">02</div>
       <h3>Identificar</h3>
-      <p>Descobrimos onde tempo, pessoas ou dinheiro estão sendo desperdiçados. Separamos a causa do sintoma.</p>
+      <p>Descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, e separo a causa do sintoma.</p>
     </div>
     <div class="cf-passo">
       <div class="cf-num">03</div>
       <h3>Desenvolver</h3>
-      <p>Construímos uma solução específica para aquela realidade. Sem receita pronta, porque cada operação é diferente.</p>
+      <p>Construo uma solução específica para aquela realidade. Sem receita pronta, porque cada operação é diferente.</p>
     </div>
     <div class="cf-passo">
       <div class="cf-num">04</div>
       <h3>Implementar</h3>
-      <p>Colocamos a solução para funcionar dentro da rotina real, com as pessoas que vão usar ela todo dia.</p>
+      <p>Coloco a solução para funcionar dentro da rotina real, junto com quem vai usar ela.</p>
     </div>
     <div class="cf-passo">
       <div class="cf-num">05</div>
       <h3>Medir</h3>
-      <p>O sucesso é medido pelo resultado obtido, nunca pela tecnologia utilizada. Se gerar valor, seguimos juntos.</p>
+      <p>Comparo com o que era antes. O sucesso é medido pelo resultado, nunca pela tecnologia usada.</p>
     </div>
   </div>
   <div class="narr-chips">
@@ -1135,20 +1143,13 @@ body.menu-aberto{overflow:hidden}
   <p class="subtitulo">O que você sabe e nunca escreveu, publicado na sua voz. Para pessoas e empresas.</p>
 
   <p class="evc-body">
-    Hoje é no LinkedIn e no Instagram que as pessoas te procuram: clientes, recrutadores, parceiros, seguidores.
-    <strong>Se o seu perfil está parado ou não mostra quem você é de verdade, oportunidade boa passa sem você nem perceber.</strong>
+    Toda pessoa com estrada carrega um repertório que nunca foi escrito: casos que resolveu, decisões que tomou, erros que não repetiu. <strong>Enquanto isso não aparece, o mercado vê um perfil parado no lugar de alguém que sabe o que faz.</strong>
   </p>
   <p class="evc-body">
-    Eu cuido disso pra você. Você me conta a sua história falando, em áudios, no seu tempo. Eu escrevo e monto o conteúdo com a sua cara, do jeito que você mesmo diria. Você só lê e aprova antes de publicar. <strong>Falo na sua voz e te entrego o conteúdo pronto.</strong>
-  </p>
-  <p class="evc-body">
-    Serve pra profissional que quer aparecer, pra empresa que quer ser lembrada e também pra atleta ou influenciador que precisa postar direto e não tem tempo de escrever. É o que chamam de ghostwriting: eu escrevo por você, como se fosse você.
-  </p>
-  <p class="evc-body">
-    E quando o assunto é currículo, monto o seu também, sempre baseado só em fatos verificados. Nada inventado, nada inflado.
+    Você me conta a sua história falando, em áudios, no seu tempo. Eu escrevo e monto o conteúdo com a sua cara, do jeito que você mesmo diria. Você só lê e aprova antes de publicar. <strong>Falo na sua voz e te entrego o conteúdo pronto.</strong>
   </p>
 
-  <div class="evc-detalhes">
+<div class="evc-detalhes">
     <span>Serviço mensal</span>
     <span>Contrato mínimo de 3 meses</span>
     <span>Vagas limitadas</span>
@@ -1202,28 +1203,28 @@ body.menu-aberto{overflow:hidden}
 
 <!-- CASOS REAIS -->
 <section id="casos">
-  <span class="rotulo">Casos Reais</span>
+  <span class="rotulo">O que já aconteceu</span>
   <h2 class="titulo">Problemas resolvidos, <em>um por vez.</em></h2>
 
   <div class="casos-grid">
     <div class="caso">
       <div class="quem">Bruno</div>
-      <div class="papel">Lançamento em 24 horas</div>
+      <div class="papel">Campanha parada há meses</div>
       <div class="caso-num">+40 inscrições<small>na primeira semana</small></div>
-      <p>A campanha completa saiu do zero e ficou pronta para publicar em menos de um dia.</p>
+      <p>A campanha inteira saiu do zero e ficou pronta para publicar em menos de um dia.</p>
     </div>
     <div class="caso">
       <div class="quem">Marc Cycling</div>
-      <div class="papel">Minha empresa nos EUA</div>
+      <div class="papel">Operação montada do zero, nos EUA</div>
       <div class="caso-num">115 avaliações 5★<small>nota 5,0 no Google, na Flórida</small></div>
       <p>Uma operação de conserto de bikes montada do zero.</p>
       <p class="fecho">Faço o que <b>falo.</b></p>
     </div>
     <div class="caso">
       <div class="quem">Patricia</div>
-      <div class="papel">Primeira aluna do IAieu GO</div>
+      <div class="papel">Primeira cliente do IAieu GO</div>
       <div class="caso-quote">&ldquo;Superou minhas expectativas.&rdquo;</div>
-      <p>Uma hora ao vivo e ela saiu com o caminho pronto para executar.</p>
+      <p>Uma hora ao vivo, e ela saiu com a próxima decisão tomada.</p>
     </div>
   </div>
 </section>
@@ -1281,7 +1282,7 @@ body.menu-aberto{overflow:hidden}
   <div class="faq-lista">
     <div class="faq-item">
       <h3 class="faq-q">O que exatamente o IAieu faz?</h3>
-      <p class="faq-a">O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. Entramos numa operação para entender como ela funciona, descobrimos onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construímos uma solução específica para aquela realidade, implementamos e medimos o resultado.</p>
+      <p class="faq-a">O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. Eu entro numa operação para entender como ela funciona, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica para aquela realidade, coloco para rodar e meço o resultado.</p>
     </div>
     <div class="faq-item">
       <h3 class="faq-q">Isso é consultoria de inteligência artificial?</h3>
@@ -1311,25 +1312,11 @@ body.menu-aberto{overflow:hidden}
 </section>
 
 <div class="divisor"></div>
-
-<!-- ISCA: experiencia real do Caetano, na voz dele -->
-<section id="quem-fala">
-  <span class="rotulo">Quem está falando com você</span>
-  <h2 class="titulo">Quarenta anos organizando <em>o que parecia perdido.</em></h2>
-  <div class="isca">
-    <p>Comecei antes dos vinte anos. Passei <strong>quarenta anos</strong> construindo operações, implantando processos, reorganizando empresas, formando equipes e recuperando negócios que pareciam não ter solução.</p>
-    <p>Mudaram os setores. Mudaram os países. Mudaram as tecnologias. E uma coisa nunca mudou: os melhores resultados nunca apareceram porque alguém tinha uma ferramenta melhor. Apareceram quando alguém <strong>entendeu a operação e organizou o que estava desorganizado.</strong></p>
-    <p>É isso que eu faço hoje, com ferramentas que não existiam ontem. A ferramenta acelera o trabalho. Ela não substitui saber o que precisa ser feito.</p>
-    <p class="isca-fecho">Me aponte um processo que hoje consome tempo, pessoas ou dinheiro. Se eu não for a pessoa certa para o seu caso, eu digo na primeira conversa.</p>
-    <a class="isca-cta" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20te%20apontar%20um%20processo%20que%20consome%20tempo%20e%20dinheiro%20aqui." target="_blank" rel="noopener">Apontar um processo →</a>
-  </div>
-</section>
-
 <div id="cta-wrap">
 <section id="cta">
   <p class="destaque-quote">Escolha um processo que hoje consome pessoas, tempo ou dinheiro.<b>Nós mostramos como ele pode funcionar melhor utilizando as ferramentas mais adequadas para aquela realidade.</b></p>
   <h2 class="titulo" style="margin-top:52px">Comece por um processo só.</h2>
-  <p class="subtitulo">Estudamos, construímos, implementamos e medimos. Se gerar valor, seguimos juntos.</p>
+  <p class="subtitulo">Eu estudo, construo, implanto e meço. Se gerar valor, a gente segue para o próximo. E se eu não for a pessoa certa para o seu caso, eu digo na primeira conversa.</p>
   <a class="btn-grad btn-primary" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Escolhi%20um%20processo%20que%20hoje%20consome%20tempo%2C%20pessoas%20ou%20dinheiro%20e%20quero%20que%20ele%20funcione%20melhor." target="_blank" rel="noopener">Falar agora</a>
   <div class="cta-extra">
     <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: <b>@iaieu.evc</b></a>

@@ -217,3 +217,13 @@ body.menu-aberto{overflow:hidden}
   .menu-full{padding:80px 20px 40px}
   .menu-grid{grid-template-columns:1fr;gap:30px}
 }
+
+/* Foco visivel para quem navega por teclado */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{
+  outline:3px solid #A78BFA;
+  outline-offset:3px;
+  border-radius:4px;
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}

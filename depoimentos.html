@@ -197,11 +197,11 @@
           </a></li>
           <li><a href="depoimentos.html">
             <span class="menu-t">Depoimentos</span>
-            <span class="menu-d">Quem já foi atendido.</span>
+            <span class="menu-d">Relatos de quem trabalhou comigo.</span>
           </a></li>
           <li><a href="projetos.html">
             <span class="menu-t">Projetos</span>
-            <span class="menu-d">Sites e projetos que eu construí.</span>
+            <span class="menu-d">Problemas que alguém precisava resolver.</span>
           </a></li>
       </ul>
     </div>
@@ -211,11 +211,7 @@
       <ul>
           <li><a href="conteudos.html">
             <span class="menu-t">Conteúdos</span>
-            <span class="menu-d">Curadoria comentada do mercado.</span>
-          </a></li>
-          <li><a href="arte.html">
-            <span class="menu-t">Arte</span>
-            <span class="menu-d">Peças e séries visuais.</span>
+            <span class="menu-d">Operação, processo e decisão, comentados.</span>
           </a></li>
       </ul>
       <a class="menu-wa" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20o%20site%20do%20IAieu%20e%20quero%20falar%20com%20voc%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp</a>
@@ -230,8 +226,8 @@
 <!-- TOPO + CARDS -->
 <section class="topo">
   <span class="rotulo" style="text-align:center">Depoimentos</span>
-  <h1 class="titulo">Quem já foi<br><em>atendido.</em></h1>
-  <p class="subtitulo">Relatos de quem já trabalhou comigo, do jeito que a pessoa escreveu. Sem retoque e sem promessa exagerada. Enquanto os primeiros não chegam, os casos estão na página inicial.</p>
+  <h1 class="titulo">O que dizem<br><em>de mim.</em></h1>
+  <p class="subtitulo">Relatos de quem já trabalhou comigo, do jeito que a pessoa escreveu, sem retoque. Esta página está sendo montada agora. Enquanto isso, os resultados concretos estão nos <a href="projetos.html" style="color:var(--roxo);text-decoration:none;font-weight:600">projetos</a> e na <a href="index.html" style="color:var(--roxo);text-decoration:none;font-weight:600">página inicial</a>.</p>
 </section>
 
 <section style="padding-top:0">
@@ -313,12 +309,12 @@ fetch('dados/config.json?t=' + Date.now())
   .then(cfg => {
     const grid = document.getElementById('dep-grid');
     const deps = cfg.depoimentos || [];
-    if (!deps.length) { grid.innerHTML = '<p style="color:var(--cinza);font-size:14px">Em breve, depoimentos de quem já foi atendido.</p>'; return; }
+    if (!deps.length) { grid.innerHTML = '<p style="color:var(--cinza);font-size:15px;line-height:1.7">Os primeiros relatos estão sendo reunidos. Se você já trabalhou comigo, o formulário abaixo leva dois minutos.</p>'; return; }
     grid.innerHTML = deps.map(depCardHTML).join('');
     grid.addEventListener('click', depToggle);
   })
   .catch(() => {
-    document.getElementById('dep-grid').innerHTML = '<p style="color:var(--cinza);font-size:14px">Em breve, depoimentos de quem já foi atendido.</p>';
+    document.getElementById('dep-grid').innerHTML = '<p style="color:var(--cinza);font-size:15px;line-height:1.7">Os primeiros relatos estão sendo reunidos. Se você já trabalhou comigo, o formulário abaixo leva dois minutos.</p>';
   });
 
 // --- Card estilo LinkedIn: 3 primeiras frases + "…mais" ---

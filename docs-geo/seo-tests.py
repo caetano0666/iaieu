@@ -312,7 +312,7 @@ def teste_conteudo_no_html_bruto():
         "sobre.html": "Quarenta anos",
         "projetos.html": "precisava resolver",
         "conteudos.html": "operação, processo, gestão",
-        "depoimentos.html": "Quem já foi",
+        "depoimentos.html": "O que dizem",
     }
     for arq, marcador in marcadores.items():
         if marcador in texto_visivel(ler(arq)):
