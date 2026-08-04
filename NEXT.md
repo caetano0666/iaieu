@@ -45,8 +45,33 @@ O que foi feito: o link foi removido da `projetos.html`, junto com a seção que
 
 Também foram conferidos, fora da bateria: contraste de cada texto contra o fundo real em que ele cai, em dez páginas, zero falha; estouro de layout e imagem quebrada em desktop e celular, nenhum; link interno quebrado, nenhum; e comparação do mesmo componente entre as dez páginas, com as nove internas batendo cem por cento entre si.
 
+## Conferência operacional, feita antes da publicação
+
+- Nenhum arquivo novo fora de controle do Git.
+- Nenhum temporário, backup, cache, `.DS_Store` ou `__pycache__` na pasta.
+- `git status`: árvore limpa, um commit à frente do `origin/main`.
+- 442 arquivos versionados.
+- `robots.txt` intacto, com `Allow: /` e o sitemap apontado.
+- `sitemap.xml` com 12 URLs, sem a Arte.
+- O site não tem formulário: o contato é WhatsApp e e-mail, então não existe formulário a validar.
+- Existe uma pasta `_lixo_git` na raiz, criada durante a sessão para destravar um lock do Git. Ela está ignorada pelo `.gitignore` e não entra no repositório. Pode ser apagada à mão a qualquer momento.
+
 ## Próxima ação
 
-**Publicar.** Rodar `python3 docs-geo/seo-tests.py` para conferir os 0 FAIL, e dar `git push`. O commit da V2 já está feito.
+**Dar o `git push`.** O commit `0c0a599` está pronto e a árvore está limpa. O push tem que ser feito no Terminal da máquina, porque o terminal que a IA alcança nesta sessão não tem internet.
 
-Depois de publicado, abrir o site no celular e conferir página por página, que é onde chega a maior parte de quem visita.
+```
+cd /Users/cae/IAieu-site
+git push
+```
+
+Depois do push, o GitHub Pages leva de um a três minutos. A validação no ar, desktop e celular, ainda não foi feita.
+
+## Depois que estiver no ar
+
+O site deixa de ser projeto em desenvolvimento e passa a ser produto em operação. Daqui para frente, melhoria só nasce de resultado real de uso, nunca de iniciativa própria:
+
+- O que o Analytics mostrar sobre onde as pessoas param de rolar e por onde saem.
+- Dúvida que se repetir na conversa de WhatsApp, porque dúvida repetida é buraco de página.
+- A página Conteúdos, quando existirem mais textos publicados.
+- A página Arte, quando a galeria existir. O passo a passo para devolvê-la está registrado acima.
