@@ -310,9 +310,9 @@ def teste_conteudo_no_html_bruto():
         "index.html": "soluções operacionais sob medida",
         "o-que-vendemos.html": "em função do problema",
         "sobre.html": "Quarenta anos",
-        "projetos.html": "construí",
-        "conteudos.html": "quem sabe usar",
-        "depoimentos.html": "Nomes reais",
+        "projetos.html": "precisava resolver",
+        "conteudos.html": "operação, processo, gestão",
+        "depoimentos.html": "Quem já foi",
     }
     for arq, marcador in marcadores.items():
         if marcador in texto_visivel(ler(arq)):
