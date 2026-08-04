@@ -1,8 +1,12 @@
 # Mapa de entidades do IAieu
 
-Gerado em 30 de julho de 2026. Fonte dos dados: `business.json`.
+Atualizado em 3 de agosto de 2026, no reposicionamento institucional.
 
-Este documento define **quem é quem** para os buscadores e assistentes de IA. Cada entidade tem um `@id` estável: um endereço fixo que nunca muda, mesmo que o texto da página mude. É isso que permite a uma máquina entender que a "IAieu" citada na página de projetos é a mesma da home.
+**O que o grafo precisa afirmar, em uma frase:** o IAieu desenvolve soluções operacionais sob medida para empresas e pessoas, conduzido por alguém com quarenta anos de operação, usando tecnologia como ferramenta e nunca como produto.
+
+**Regra de coerência (vale para tudo daqui pra frente):** se uma IA ler apenas a camada invisível, sem abrir nenhuma página, ela precisa chegar exatamente à mesma conclusão que um visitante chegaria navegando. Qualquer divergência entre o que está escrito na tela e o que está no schema é um defeito, não uma questão de estilo.
+
+**Erro que o grafo existe para evitar:** ser descrito como empresa de inteligência artificial, consultoria de IA, agência ou software house.
 
 ## Decisão central: duas entidades, não uma
 

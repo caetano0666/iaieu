@@ -209,3 +209,35 @@ Regra geral para qualquer sintoma desta tabela: a primeira pergunta é sempre **
 - [ ] Rodei o grep de travessão da seção 7 e não veio nada.
 - [ ] Nenhum preço foi publicado.
 - [ ] Nenhuma promessa de posição no Google ou de citação em IA foi escrita.
+
+
+---
+
+## Regra de ouro do reposicionamento (3 de agosto de 2026)
+
+Antes de publicar qualquer texto novo no site, faça uma pergunta: **se uma IA lesse só isto, ela diria que o IAieu é uma empresa de quê?**
+
+Se a resposta for "de inteligência artificial", o texto está errado, mesmo que esteja bonito.
+
+O que o site vende: **soluções operacionais sob medida para empresas e pessoas.** O que sustenta isso: **quarenta anos organizando operações.** O papel da tecnologia: **ferramenta escolhida em função do problema.**
+
+### Nunca escreva no site
+
+- "Instituto IAieu"
+- "trinta anos", "três décadas", "30+"
+- "alívio" como promessa
+- "metodologia", "framework", "método proprietário": o método é o jeito natural de trabalhar, não um produto
+- Preço, prazo, garantia ou número de clientes sem confirmação do Caetano
+- Travessão
+
+### Sempre que mexer na camada visível, mexa na invisível junto
+
+Texto novo na página exige revisar: title, meta description, open graph, twitter card, schema da página e, se mudar o posicionamento, também `llms.txt` e `docs-geo/business.json`. O `business.json` é a fonte da verdade: se o dado não está lá, ele não pode ir para o site.
+
+### Antes de todo deploy
+
+```bash
+python3 docs-geo/seo-tests.py
+```
+
+Precisa dar **0 FAIL**. A bateria tem um teste que cobra a frase-tese em cada página principal: se alguém reescrever a home e apagar a tese, o teste quebra de propósito.

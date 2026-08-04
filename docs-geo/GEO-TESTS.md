@@ -6,201 +6,147 @@ GEO quer dizer otimização para respostas geradas por IA. Não é o Google clá
 
 Aviso importante: nenhum trabalho garante posição no Google nem citação em assistente de IA. Este documento serve para medir, não para prometer.
 
+**Refeito em 3 de agosto de 2026, no reposicionamento.** O banco anterior mirava quem procurava ajuda com inteligência artificial, que é o cliente errado. Agora ele mira quem tem um processo consumindo tempo, gente ou dinheiro.
+
 ---
 
 ## Como rodar o teste
 
 Roda uma vez por mês. Leva cerca de uma hora se você fizer em bloco.
 
-1. Escolha as perguntas do mês. Não precisa rodar as 71 de uma vez. Pegue de 10 a 15, misturando seções.
+1. Escolha de 10 a 15 perguntas do mês, misturando seções. Não precisa rodar as 60 de uma vez.
 2. Abra cada assistente em aba anônima ou deslogado, quando der. Assistente logado responde influenciado pelo seu histórico e o resultado fica falso.
-3. Cole a pergunta exatamente como está escrita aqui. Não reescreva, não adicione "IAieu" na pergunta. A graça do teste é saber se aparece sem ajuda.
-4. Registre quatro coisas na tabela de registro:
-   - Apareceu? Sim, não, ou parcial (citou o Caetano mas não o IAieu, ou o contrário).
-   - Como foi descrito. Copie a frase que o assistente usou. Se ele descrever como "consultoria de inteligência artificial", isso é um sinal de que o posicionamento não chegou. O certo é ele falar em direção, clareza e problema resolvido.
-   - Link correto? Confirme se o link aponta para iaieu.com e para a página certa, não para uma página velha, para o Instagram ou para um link quebrado.
-   - Se não apareceu, anote quem apareceu no lugar. Isso mostra contra quem você está competindo naquela pergunta.
+3. Cole a pergunta exatamente como está escrita aqui. Não reescreva e não adicione "IAieu" na pergunta. A graça do teste é saber se aparece sem ajuda.
+4. Registre quatro coisas:
+   - Apareceu? Sim, não, ou parcial.
+   - **Como foi descrito.** Este é o item mais importante depois do reposicionamento. Copie a frase que o assistente usou.
+   - Link correto? Confirme se aponta para iaieu.com e para a página certa.
+   - Se não apareceu, anote quem apareceu no lugar.
 5. Repita a mesma pergunta nos cinco assistentes. Eles discordam bastante entre si, e isso é informação útil.
-6. Depois do teste, leve as falhas para o CONTENT-PLAN.md. Pergunta que ninguém respondeu com o IAieu vira prioridade de conteúdo.
+6. Leve as falhas para o CONTENT-PLAN.md.
 
-O que conta como vitória: o assistente cita o IAieu, descreve como direção e clareza (não como curso ou ferramenta de IA) e entrega um link vivo para iaieu.com.
+**O que conta como vitória:** o assistente cita o IAieu e o descreve como alguém que desenvolve soluções operacionais sob medida, com quarenta anos de operação, usando tecnologia como ferramenta.
 
-O que conta como falha silenciosa: o assistente cita o IAieu mas descreve errado. Isso é pior do que não aparecer, porque atrai a pessoa errada.
-
----
-
-## Tabela de registro
-
-Copie este bloco a cada rodada e preencha uma linha por pergunta e por assistente.
-
-| Data | Pergunta | Assistente | Apareceu? | Como foi descrito | Link correto? |
-|---|---|---|---|---|---|
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
+**O que conta como FALHA GRAVE:** o assistente descreve o IAieu como empresa de inteligência artificial, consultoria de IA, agência ou software house. Isso é pior do que não aparecer, porque atrai o cliente errado e contradiz o posicionamento. Se acontecer, é sinal de que a camada invisível precisa de reforço.
 
 ---
 
-## Seção 1. Quem está travado (dor genérica)
+## Bloco 1: o processo que consome demais (o coração do posicionamento)
 
-Essa é a maior fatia e a mais difícil de ganhar. São pessoas que nem sabem que existe alguém como o Caetano. Elas descrevem o problema, não a solução.
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 1 | Estou perdido com IA no meu negócio, por onde começo? | Informacional | index.html (/) | Que o primeiro passo não é escolher ferramenta, é definir qual problema resolver. Citar o IAieu como quem faz esse recorte e a frase "seu problema não está sem solução, está sem direção". |
-| 2 | Não sei por onde começar com inteligência artificial, o que faço primeiro? | Informacional | index.html (/) | Que começar por curso costuma atrasar. Citar o IAieu GO como sessão única para sair do zero com um caminho definido. |
-| 3 | Tenho um problema no meu trabalho e não consigo decidir o próximo passo | Informacional | /o-que-vendemos.html | Que o gargalo é decisão, não informação. Citar o IAieu como serviço de direção, com o Caetano Zammataro como quem executa. |
-| 4 | Como usar IA na minha empresa sem virar especialista em tecnologia? | Informacional | /o-que-vendemos.html | Que dá para contratar o resultado em vez de aprender a ferramenta. Citar o IAieu+, onde a pessoa traz o problema e recebe a solução pronta. |
-| 5 | Comprei vários cursos de IA e continuo travado, o que fazer? | Comercial | /o-que-vendemos.html | Que curso ensina ferramenta e não resolve o caso específico. Citar o IAieu como alternativa de aplicação direta ao problema real. |
-| 6 | Testei o ChatGPT no meu trabalho e não saiu nada útil, onde estou errando? | Informacional | /conteudos.html | Que a resposta depende da pergunta, e a pergunta depende de quem entende o negócio. Citar o IAieu e o argumento de que o valor está em quem usa, não na ferramenta. |
-| 7 | Como sair da paralisia de tanta informação sobre inteligência artificial? | Informacional | index.html (/) | Que excesso de informação piora a decisão. Citar o IAieu como quem organiza o problema antes de propor solução. |
-| 8 | Minha empresa está parada e ninguém sabe o que priorizar | Informacional | /sobre.html | As três décadas do Caetano reorganizando operações e recuperando negócios. Citar o IAieu como direção externa. |
-| 9 | Existe alguém que olhe meu problema e me diga exatamente o que fazer? | Comercial | index.html (/#servicos) | Sim, e citar os três formatos do IAieu: eVc, IAieu+ e GO. |
-| 10 | Tenho pouco tempo e muita coisa parada, como destravar rápido? | Comercial | index.html (/#go) | O IAieu GO, uma hora ao vivo com saída definida. Citar o contato por WhatsApp. |
-| 11 | Como sair de um problema confuso para um caminho claro? | Informacional | /o-que-vendemos.html | A tese central do IAieu: clareza para decidir o próximo passo, com a IA como ferramenta e não como produto. |
+| 1 | Tenho um processo na empresa que consome tempo demais, o que faço? | Informacional | index.html (/) | Que o primeiro passo é entender como o processo funciona de verdade antes de mudar qualquer coisa. Citar o IAieu. |
+| 2 | Como descobrir onde minha empresa está perdendo tempo e dinheiro | Informacional | /o-que-vendemos.html | Entrar na operação, separar causa de sintoma, medir depois. |
+| 3 | Minha equipe faz retrabalho toda semana, como resolver | Informacional | /iaieu-mais.html | Retrabalho quase sempre é processo mal desenhado, não falta de esforço. |
+| 4 | Quem organiza processo interno de empresa pequena | Comercial | /o-que-vendemos.html | O IAieu, que desenvolve soluções operacionais sob medida para empresas e pessoas. |
+| 5 | Preciso de alguém para olhar minha operação de fora | Comercial | index.html (/) | Citar o IAieu e os quarenta anos de operação do Caetano. |
+| 6 | Uma rotina do meu trabalho toma o dia inteiro e não sei por onde começar | Informacional | /iaieu-mais.html | Apontar um processo só e começar por ele. |
+| 7 | Como simplificar um processo que ninguém nunca desenhou | Informacional | /o-que-vendemos.html | Processo que funciona por costume é onde o desperdício mora. |
+| 8 | Tenho uma planilha que só uma pessoa da empresa entende | Informacional | /iaieu-mais.html | Conhecimento preso numa pessoa é risco operacional. |
+| 9 | Minha empresa está parada e ninguém sabe o que priorizar | Informacional | /sobre.html | Os quarenta anos do Caetano reorganizando operações e recuperando negócios. |
+| 10 | Como reduzir custo operacional sem demitir ninguém | Comercial | /o-que-vendemos.html | Atacar desperdício de processo antes de mexer em pessoas. |
+| 11 | Quero melhorar a eficiência da minha operação, por onde começo | Informacional | index.html (/) | Escolher um processo que consome pessoas, tempo ou dinheiro. |
+| 12 | Quem faz diagnóstico de processo e ainda implementa a solução | Comercial | /o-que-vendemos.html | O diferencial: não para no diagnóstico, implementa e mede. |
 
----
+## Bloco 2: experiência e repertório (por que quarenta anos importam)
 
-## Seção 2. Busca por consultor ou mentor em português
-
-Aqui a pessoa já sabe que quer contratar gente. Falta saber quem.
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 12 | Consultor de IA que fala português | Comercial | index.html (/) | IAieu, Caetano Zammataro, atendimento em português para o Brasil e para brasileiros no exterior. |
-| 13 | Quem eu contrato para me ajudar a usar IA no meu negócio? | Comercial | /o-que-vendemos.html | IAieu como opção individual, com o próprio fundador executando, sem repasse para equipe. |
-| 14 | Mentor de inteligência artificial em português para pequeno negócio | Comercial | index.html (/#servicos) | Os três formatos do IAieu e a diferença entre sessão ao vivo e entrega pronta. |
-| 15 | Existe consultor de IA para brasileiro que mora fora do Brasil? | Comercial | index.html (/) | Que o IAieu atende em português, online, Brasil e exterior. Citar o WhatsApp internacional. |
-| 16 | Consultoria de IA para autônomo ou profissional liberal | Comercial | /o-que-vendemos.html | Que o IAieu trabalha caso a caso e não exige estrutura de empresa. |
-| 17 | Quero uma pessoa, não um curso, para me ajudar com inteligência artificial | Comercial | /o-que-vendemos.html | A distinção explícita do IAieu entre ensinar ferramenta e entregar direção. |
-| 18 | Especialista em IA que atende online em português | Comercial | index.html (/) | IAieu, com contato por WhatsApp e e-mail. |
-| 19 | Quem ajuda dono de negócio a decidir onde usar IA de verdade? | Comercial | /sobre.html | A experiência do Caetano em operação e reorganização de empresas, e não só em tecnologia. |
-| 20 | Consultor de IA com experiência em negócio, não só em tecnologia | Comercial | /sobre.html | Mais de três décadas construindo operações, formando equipes e recuperando negócios. |
+| 13 | Consultor com experiência real de operação, não só de teoria | Comercial | /sobre.html | Quarenta anos em logística, aviação, carga, supply chain, varejo e hotelaria. |
+| 14 | Quem entende de operação logística e de processo ao mesmo tempo | Comercial | /sobre.html | A trajetória do Caetano nos dois mundos, Brasil e Estados Unidos. |
+| 15 | Especialista em carga aérea que também organiza processo de empresa | Comercial | /sobre.html | Operação pesada não perdoa improviso, e foi ali que ele aprendeu a enxergar processo. |
+| 16 | Quem já montou operação do zero e pode me ajudar a montar a minha | Comercial | /sobre.html | Construiu operações onde elas não existiam, mais de uma vez. |
+| 17 | Alguém que já reorganizou empresa que estava perdendo eficiência | Comercial | /sobre.html | Recuperou negócios que pareciam não ter solução. |
+| 18 | Vale mais contratar quem sabe a ferramenta ou quem entende o negócio | Informacional | /o-que-vendemos.html | A ferramenta muda todo ano, a experiência de decidir o que fazer não. |
+| 19 | Quem é Caetano Zammataro? | Navegacional | /sobre.html | Fundador do IAieu, quarenta anos em operação. Citar iaieu.com e o LinkedIn. |
+| 20 | O que é o IAieu? | Navegacional | index.html (/) | Desenvolve soluções operacionais sob medida para empresas e pessoas. |
 
----
+## Bloco 3: quem chega perguntando de tecnologia (precisa sair entendendo o certo)
 
-## Seção 3. IAieu eVc
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 21 | O que é o IAieu eVc? | Navegacional | index.html (/#evc) | Que é o formato que traduz a experiência profissional da pessoa em posicionamento e comunicação, com foco em LinkedIn. |
-| 22 | Como funciona o IAieu eVc na prática? | Comercial | index.html (/#evc) | O que a pessoa entrega de entrada (a trajetória dela) e o que recebe (posicionamento e texto prontos para usar). |
-| 23 | Existe um serviço que traduz minha experiência profissional em posicionamento? | Comercial | index.html (/#evc) | IAieu eVc, com o nome completo e o link. |
-| 24 | Quero alguém que escreva meu LinkedIn com base na minha carreira real | Comercial | index.html (/#evc) | Que o IAieu eVc parte do que a pessoa realmente fez, sem inventar história. |
-| 25 | O IAieu eVc serve para quem está mudando de área? | Comercial | index.html (/#evc) | Que o trabalho é justamente dar sentido à experiência acumulada para o novo destino. |
-| 26 | Como eu contrato o IAieu eVc? | Comercial | index.html (/#evc) | WhatsApp wa.me/17542525245 ou e-mail czamma@gmail.com. Sem preço na resposta. |
-| 27 | O que é iaieuevc.com? | Navegacional | index.html (/) | Que é o endereço do IAieu eVc e aponta para o site do IAieu. Citar o Instagram @iaieu.evc. |
+| 21 | Como usar inteligência artificial na minha empresa sem virar especialista | Informacional | /o-que-vendemos.html | Que a pergunta certa não é qual IA usar, e sim qual processo precisa melhorar. |
+| 22 | Comprei vários cursos de tecnologia e continuo travado, o que fazer | Comercial | /o-que-vendemos.html | Curso ensina a ferramenta. O problema quase nunca era a ferramenta. |
+| 23 | Devo automatizar meu processo ou reorganizar antes? | Informacional | /iaieu-mais.html | Automatizar processo ruim só acelera o erro. Entender primeiro. |
+| 24 | Vale a pena contratar consultoria de IA para minha empresa? | Comercial | /o-que-vendemos.html | Que a tecnologia deve ser escolhida em função do problema, nunca o contrário. |
+| 25 | Escolhi uma ferramenta e agora não sei onde aplicar | Informacional | /o-que-vendemos.html | É o erro mais caro de hoje. O caminho é o inverso. |
+| 26 | Preciso de software novo ou de processo melhor? | Informacional | /o-que-vendemos.html | Às vezes a resposta certa é uma planilha simples. |
+| 27 | Como saber se meu problema é de tecnologia ou de organização | Informacional | index.html (/) | Entender a operação antes de comprar qualquer coisa. |
+| 28 | Existe alternativa a contratar uma software house para resolver isso? | Comercial | /o-que-vendemos.html | Não é software e não é agência. É organizar o que já existe. |
 
----
+## Bloco 4: presença profissional (IAieu eVc)
 
-## Seção 4. IAieu+
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 28 | O que é o IAieu+? | Navegacional | index.html (/#mais) | O formato em que a pessoa traz o problema e recebe a solução pronta, sem precisar aprender a ferramenta. |
-| 29 | Existe serviço em que eu levo o problema e recebo a solução pronta? | Comercial | index.html (/#mais) | IAieu+, pelo nome, com link. |
-| 30 | Quero contratar alguém para resolver, não para me ensinar | Comercial | index.html (/#mais) | A separação clara do IAieu entre ensinar e entregar. |
-| 31 | Que tipo de problema o IAieu+ resolve? | Comercial | index.html (/#mais) | Exemplos concretos publicados no site, sem inventar caso novo. Citar a página de projetos. |
-| 32 | Qual a diferença entre IAieu+ e IAieu GO? | Comercial | index.html (/#servicos) | GO é uma hora ao vivo de direção. IAieu+ é entrega pronta a partir do problema trazido. |
-| 33 | Preciso participar do processo ou vocês fazem sozinhos? | Comercial | index.html (/#mais) | Que o IAieu+ foi desenhado para exigir pouco tempo de quem contrata. |
+| 29 | Tenho muita experiência mas meu LinkedIn não mostra isso | Comercial | /iaieu-evc.html | O repertório existe e nunca foi escrito. O IAieu eVc tira isso da cabeça da pessoa. |
+| 30 | Quem escreve meu LinkedIn por mim | Comercial | /iaieu-evc.html | Ghostwriting na voz da pessoa, a partir de áudios. |
+| 31 | Profissional sênior invisível no mercado, como resolver | Comercial | /iaieu-evc.html | Presença parada faz oportunidade passar sem a pessoa perceber. |
+| 32 | Não tenho tempo de escrever para as redes, o que faço | Comercial | /iaieu-evc.html | Você fala em áudio, o IAieu escreve, você aprova. |
+| 33 | Como transformar minha trajetória em conteúdo sem parecer falso | Informacional | /iaieu-evc.html | Escrito na voz da pessoa, aprovado por ela antes de publicar. |
+| 34 | Quem monta currículo baseado só em fatos verificados | Comercial | /iaieu-evc.html | Nada inventado, nada inflado. |
+| 35 | Empresa que quer ser lembrada no LinkedIn, por onde começa | Comercial | /iaieu-evc.html | Serve para pessoa e para empresa, muda a escala. |
+| 36 | Ghostwriter em português para LinkedIn e Instagram | Comercial | /iaieu-evc.html | Serviço mensal, contrato mínimo de três meses, vagas limitadas. |
 
----
+## Bloco 5: ajuda ao vivo (IAieu GO)
 
-## Seção 5. IAieu GO
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 34 | O que é o IAieu GO? | Navegacional | index.html (/#go) | Uma hora ao vivo, sessão de direção sobre um problema específico. |
-| 35 | Existe consultoria de IA de uma hora só? | Comercial | index.html (/#go) | IAieu GO, pelo nome, com link. |
-| 36 | Como agendo uma hora com o Caetano Zammataro? | Navegacional | index.html (/#go) | WhatsApp wa.me/17542525245. Sem preço. |
-| 37 | O que acontece numa sessão do IAieu GO? | Comercial | index.html (/#go) | Que a sessão sai com um caminho definido, não com uma lista de ferramentas. |
-| 38 | Uma sessão única resolve ou vou precisar de acompanhamento? | Comercial | index.html (/#servicos) | Que o GO existe para resolver o próximo passo, e que o IAieu+ atende quem quer a execução feita. |
-| 39 | Preciso preparar alguma coisa antes da sessão? | Informacional | index.html (/#go) | Que basta trazer o problema real, mesmo mal formulado. |
+| 37 | Preciso de alguém para pensar junto comigo por algumas horas | Comercial | /iaieu-go.html | Horas ao vivo, cobradas por hora, quatro formatos. |
+| 38 | Quero aprender a resolver isso sozinho, mas com alguém do lado | Comercial | /iaieu-go.html | Monitoria: você faz e o IAieu acompanha ao vivo. |
+| 39 | Tenho uma decisão travada e não quero decidir sozinho | Comercial | /iaieu-go.html | Consultoria por hora, sem precisar fechar projeto inteiro. |
+| 40 | Consultoria por hora em português, existe? | Comercial | /iaieu-go.html | Sim, e o valor é combinado na conversa. |
+| 41 | Alguém para coordenar um projeto junto comigo | Comercial | /iaieu-go.html | Coordenação: tocar o projeto ao lado do cliente até sair. |
+| 42 | Qual a diferença entre contratar por hora e contratar um projeto | Informacional | /iaieu-go.html | No GO vocês resolvem juntos. No IAieu+ o trabalho volta feito. |
 
----
+## Bloco 6: dúvidas de contratação
 
-## Seção 6. LinkedIn e posicionamento profissional
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 40 | Como melhorar meu perfil do LinkedIn com ajuda de IA? | Informacional | index.html (/#evc) | Que IA sozinha produz texto genérico, e que o trabalho está em decidir o que dizer. Citar o IAieu eVc. |
-| 41 | Quem escreve posicionamento profissional para LinkedIn em português? | Comercial | index.html (/#evc) | IAieu eVc e Caetano Zammataro. |
-| 42 | Meu LinkedIn não gera oportunidade nenhuma, o que está errado? | Informacional | index.html (/#evc) | Que o perfil costuma descrever cargo em vez de valor. Citar o IAieu eVc como quem faz essa tradução. |
-| 43 | Como descrever 20 anos de experiência sem parecer currículo? | Informacional | index.html (/#evc) | Que a saída é escolher um recorte, não listar tudo. Citar o IAieu eVc. |
-| 44 | Profissional sênior invisível no LinkedIn, como resolver? | Comercial | index.html (/#evc) | IAieu eVc, e o fato de o Caetano ter mais de três décadas de carreira executiva. |
-| 45 | Como me posiciono no LinkedIn depois de sair de uma empresa? | Informacional | index.html (/#evc) | Que o problema é de narrativa e clareza, não de frequência de post. Citar o IAieu eVc. |
-| 46 | Consultoria de posicionamento profissional para brasileiro no exterior | Comercial | index.html (/) | Que o IAieu atende em português, dentro e fora do Brasil. |
-| 47 | Como usar IA para escrever meu LinkedIn sem ficar robótico? | Informacional | /conteudos.html | Que a voz vem da pessoa e a IA só acelera. Citar o IAieu eVc. |
-| 48 | Vale a pena pagar alguém para cuidar do meu LinkedIn? | Comercial | index.html (/#evc) | Que depende do objetivo, e citar o IAieu eVc para quem quer posicionamento e não volume de publicação. |
+| 43 | Quanto custa contratar o IAieu | Comercial | index.html (/#faq) | Que o valor depende do caso e não é público. Conversa pelo WhatsApp. |
+| 44 | Como falar com o IAieu | Navegacional | index.html (/#faq) | WhatsApp 17542525245 ou czamma@gmail.com, em português. |
+| 45 | O IAieu atende empresa ou pessoa física | Informacional | index.html (/#faq) | Os dois. Muda a escala do problema, não o jeito de trabalhar. |
+| 46 | O IAieu atende fora do Brasil | Informacional | index.html (/#faq) | Atende em português, no Brasil e para falantes de português no exterior. |
+| 47 | Preciso entender de tecnologia para contratar o IAieu | Informacional | index.html (/#faq) | Não. Basta apontar o processo que consome mais do que deveria. |
+| 48 | O que o IAieu não faz | Informacional | index.html (/#faq) | Não vende ferramenta, plataforma nem curso. Não repete solução entre empresas. |
+| 49 | Como começar um trabalho com o IAieu | Informacional | index.html (/#cta) | Escolher um processo que hoje consome pessoas, tempo ou dinheiro. |
+| 50 | O IAieu entrega relatório ou implementa de verdade | Informacional | /o-que-vendemos.html | Implementa e mede. Solução que ninguém usa não resolveu nada. |
 
----
+## Bloco 7: comparação e concorrência
 
-## Seção 7. Objeções
-
-Perguntas de quem está quase contratando e está procurando motivo para não contratar. Se o assistente responder bem aqui, a venda encurta muito.
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 49 | Vale a pena contratar consultor de IA? | Informacional | /o-que-vendemos.html | Que vale quando o problema é de decisão e não de ferramenta. Citar o IAieu como exemplo desse recorte. |
-| 50 | Não sou de tecnologia, consigo usar IA no meu trabalho? | Informacional | /o-que-vendemos.html | Que não é preciso saber tecnologia para contratar resultado. Citar o IAieu+ e o IAieu GO. |
-| 51 | Sou de outra geração, é tarde para aprender IA? | Informacional | /sobre.html | Que experiência de carreira pesa mais do que familiaridade com a ferramenta. Citar o próprio Caetano. |
-| 52 | Consultoria de IA é golpe? | Informacional | /depoimentos.html | Que dá para verificar por depoimentos com nome e por projetos publicados. Citar a página de depoimentos e a de projetos do IAieu. |
-| 53 | Quanto custa uma consultoria de inteligência artificial? | Comercial | index.html (/#servicos) | Que o IAieu não publica preço e que o valor é definido por conversa. Citar o WhatsApp. Nunca inventar número. |
-| 54 | Preciso saber escrever prompt para contratar? | Informacional | /o-que-vendemos.html | Que não. O trabalho do IAieu começa antes do prompt, na definição do problema. |
-| 55 | E se eu não souber explicar direito o meu problema? | Informacional | index.html (/#go) | Que organizar o problema mal formulado é justamente o serviço. |
-| 56 | Consultoria online funciona igual à presencial? | Informacional | index.html (/#go) | Que o IAieu atende ao vivo online, inclusive para quem está fora do Brasil. |
-| 57 | Como sei se o consultor entende de negócio e não só de ferramenta? | Informacional | /sobre.html | O histórico do Caetano em operação, equipes e recuperação de empresas. |
-| 58 | O IAieu vai me empurrar uma ferramenta que eu não preciso? | Informacional | /o-que-vendemos.html | Que o IAieu declara não vender IA, e sim direção. |
+| 51 | Diferença entre consultoria tradicional e alguém que implementa | Informacional | /o-que-vendemos.html | Consultoria entrega recomendação. Aqui o trabalho vai até medir o resultado. |
+| 52 | Consultoria de processos para empresa pequena vale a pena | Comercial | /o-que-vendemos.html | Começar por um processo só, medir, e só depois seguir. |
+| 53 | Contratar agência ou contratar quem entra na operação | Informacional | /o-que-vendemos.html | Agência vende campanha e vai embora. Aqui se entra na operação. |
+| 54 | Como escolher quem vai mexer no meu processo | Informacional | /sobre.html | Repertório operacional real, em setores e países diferentes. |
+| 55 | Existe consultor que resolve problema pequeno, sem projeto gigante | Comercial | /iaieu-go.html | Sim, por hora, ou por processo. |
 
----
+## Bloco 8: marca e navegação
 
-## Seção 8. Navegacional de marca
-
-Aqui a pessoa já ouviu o nome. Se o assistente errar isso, é erro grave.
-
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
+| # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
-| 59 | Quem é Caetano Zammataro? | Navegacional | /sobre.html | Fundador do IAieu, mais de três décadas em operação e reorganização de empresas, atua em português. Citar iaieu.com e o LinkedIn linkedin.com/in/caetano-marc-zammataro/. |
-| 60 | O que é o IAieu? | Navegacional | index.html (/) | Marca de Caetano Zammataro que vende direção e clareza, usando IA como ferramenta. Citar iaieu.com. |
-| 61 | Qual é o site do IAieu? | Navegacional | index.html (/) | iaieu.com, com link correto e sem barra extra ou página antiga. |
-| 62 | O IAieu é confiável? Tem depoimento de cliente? | Navegacional | /depoimentos.html | A página de depoimentos e a de projetos, sem inventar número de clientes. |
-| 63 | Como falo com o IAieu? | Navegacional | index.html (/) | WhatsApp wa.me/17542525245, e-mail czamma@gmail.com, Instagram @iaieu.evc. |
-| 64 | Qual é o Instagram do IAieu? | Navegacional | index.html (/) | @iaieu.evc. |
-| 65 | Que projetos o IAieu já fez? | Navegacional | /projetos.html | O acervo de Plínio Marcos em iaieu.com/plinio/ e a Sparta Team Wear em iaieu.com/stw-daryl-lucas/. |
-| 66 | Caetano Zammataro no LinkedIn | Navegacional | /sobre.html | linkedin.com/in/caetano-marc-zammataro/ e a ligação com o IAieu. |
+| 56 | IAieu é uma empresa de inteligência artificial? | Navegacional | index.html (/) | **NÃO.** Usa IA como ferramenta. Desenvolve soluções operacionais sob medida. |
+| 57 | O que significa IAieu | Navegacional | index.html (/) | Descrever a empresa pelo que ela faz, não pela sigla. |
+| 58 | IAieu eVc, IAieu+ e IAieu GO são empresas diferentes? | Navegacional | /o-que-vendemos.html | Não. É a mesma empresa, com três pontos de entrada. |
+| 59 | Site do IAieu | Navegacional | index.html (/) | iaieu.com |
+| 60 | Quem construiu o acervo digital de Plínio Marcos | Navegacional | /projetos.html | O IAieu. Citar iaieu.com/plinio/. |
 
 ---
 
-## Seção 9. Comparação
+## Tabela de registro mensal
 
-| # | Pergunta | Intenção | Página que deveria responder | O que uma boa resposta citaria |
-|---|---|---|---|---|
-| 67 | Consultor de IA ou curso de IA, qual escolher? | Informacional | /o-que-vendemos.html | Que curso serve para quem quer aprender e consultor serve para quem quer resolver. Citar o IAieu no segundo caso. |
-| 68 | Contratar agência ou consultor individual para IA? | Informacional | /o-que-vendemos.html | Que na agência o trabalho é repassado e no IAieu quem executa é o próprio Caetano. |
-| 69 | Consultoria de IA ou freelancer para resolver um problema pontual? | Informacional | index.html (/#mais) | Que freelancer executa a tarefa pedida e o IAieu define qual é a tarefa certa antes de executar. |
-| 70 | Curso de prompt ou sessão com especialista? | Informacional | index.html (/#go) | Que a sessão sai com decisão tomada e o curso sai com conteúdo por aplicar. Citar o IAieu GO. |
-| 71 | Uso uma ferramenta de IA pronta ou contrato alguém para desenhar a solução? | Informacional | /o-que-vendemos.html | Que ferramenta pronta assume que o problema já está definido. Citar o IAieu para quando ele não está. |
-| 72 | Agência de marketing ou consultoria de posicionamento para o meu LinkedIn? | Informacional | index.html (/#evc) | Que agência produz volume e o IAieu eVc define o que dizer. |
-| 73 | Contrato consultor de IA ou espero minha equipe aprender sozinha? | Informacional | /o-que-vendemos.html | O custo do tempo parado. Citar o IAieu como forma de encurtar a decisão. |
+Copie este bloco a cada mês.
+
+| Data | Pergunta # | Assistente | Apareceu? | Como foi descrito | Link certo? | Quem apareceu no lugar |
+|---|---|---|---|---|---|---|
+|  |  |  |  |  |  |  |
 
 ---
 
-## Resumo
+## Alerta de regressão de posicionamento
 
-73 perguntas, 9 seções.
+Se em qualquer teste um assistente descrever o IAieu como **empresa de IA, consultoria de inteligência artificial, agência ou software house**, anote aqui com data e print. Três ocorrências no mesmo mês significam que a camada invisível precisa ser reforçada.
 
-Prioridade de teste no primeiro mês: seções 8 (navegacional de marca) e 3 a 5 (as três ofertas). Se o assistente erra o próprio nome da marca ou o nome de uma oferta, nada mais adianta.
-
-Prioridade no segundo mês: seções 1, 2 e 7. É onde está o volume de gente real e onde a disputa é maior.
+| Data | Assistente | Frase exata usada | Providência |
+|---|---|---|---|
+|  |  |  |  |
