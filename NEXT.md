@@ -6,7 +6,7 @@ Construir um sistema de trabalho com IA que funcione mesmo quando eu esquecer on
 
 ## Onde parei
 
-**A V2 do site está encerrada e aprovada. Falta só o push.**
+**A V2 está no ar. Publicada, validada em produção e oficialmente encerrada em 04/08/2026.**
 
 Em 4 de agosto de 2026 o site inteiro passou por uma evolução de direção de arte, em quatro rodadas no mesmo dia: a home, o refino da home, as nove páginas internas, e a auditoria final antes de publicar.
 
@@ -45,33 +45,31 @@ O que foi feito: o link foi removido da `projetos.html`, junto com a seção que
 
 Também foram conferidos, fora da bateria: contraste de cada texto contra o fundo real em que ele cai, em dez páginas, zero falha; estouro de layout e imagem quebrada em desktop e celular, nenhum; link interno quebrado, nenhum; e comparação do mesmo componente entre as dez páginas, com as nove internas batendo cem por cento entre si.
 
-## Conferência operacional, feita antes da publicação
+## Publicação e validação em produção, 04/08/2026
 
-- Nenhum arquivo novo fora de controle do Git.
-- Nenhum temporário, backup, cache, `.DS_Store` ou `__pycache__` na pasta.
-- `git status`: árvore limpa, um commit à frente do `origin/main`.
-- 442 arquivos versionados.
-- `robots.txt` intacto, com `Allow: /` e o sitemap apontado.
-- `sitemap.xml` com 12 URLs, sem a Arte.
-- O site não tem formulário: o contato é WhatsApp e e-mail, então não existe formulário a validar.
-- Existe uma pasta `_lixo_git` na raiz, criada durante a sessão para destravar um lock do Git. Ela está ignorada pelo `.gitignore` e não entra no repositório. Pode ser apagada à mão a qualquer momento.
+Commits `0c0a599` e `ce6913c` confirmados no GitHub. O site foi validado no ar, em desktop e em celular.
 
-## Próxima ação
+O que foi conferido e está íntegro: as dez páginas públicas respondendo 200, um H1 por página, menu com os mesmos cinco itens em todas, áreas claras no lugar, rodapé e botão do WhatsApp em todas, 23 alvos internos entre páginas, imagens e CSS sem um link quebrado, `sitemap.xml` com 12 URLs e sem a Arte, `robots.txt` intacto, `llms.txt` sem a Arte, zero âmbar, zero travessão, botões todos em pílula, e um único texto com gradiente na home inteira, que é a pergunta dos trinta dias. O bloco da `sobre.html` que estava sem formatação apareceu no ar com caixa, borda e espaçamento.
 
-**Dar o `git push`.** O commit `0c0a599` está pronto e a árvore está limpa. O push tem que ser feito no Terminal da máquina, porque o terminal que a IA alcança nesta sessão não tem internet.
+Nenhuma correção foi necessária depois da publicação.
 
-```
-cd /Users/cae/IAieu-site
-git push
-```
+## Uma nota operacional que não é defeito do site
 
-Depois do push, o GitHub Pages leva de um a três minutos. A validação no ar, desktop e celular, ainda não foi feita.
+Durante a validação, o navegador insistia em mostrar a versão antiga mesmo com o site novo no servidor. A causa era um Service Worker fantasma: uma versão antiga do site registrou um `sw.js` no navegador, e esse registro continuou vivo guardando páginas em cache. O arquivo `sw.js` não existe mais no projeto, e o endereço `https://iaieu.com/sw.js` responde 404.
 
-## Depois que estiver no ar
+Consequência prática: quem visitou o site em julho pode ver a versão antiga por algum tempo. Isso se resolve sozinho, porque o navegador desregistra o Service Worker quando tenta atualizá-lo e recebe 404. Não há nada a corrigir no projeto.
 
-O site deixa de ser projeto em desenvolvimento e passa a ser produto em operação. Daqui para frente, melhoria só nasce de resultado real de uso, nunca de iniciativa própria:
+Se acontecer com você, abra o site numa janela anônima para ver a versão real.
+
+## Daqui para frente
+
+O site deixou de ser projeto em desenvolvimento e passou a ser produto em operação. Melhoria só nasce de resultado real de uso, nunca de refinamento de direção de arte por iniciativa própria:
 
 - O que o Analytics mostrar sobre onde as pessoas param de rolar e por onde saem.
 - Dúvida que se repetir na conversa de WhatsApp, porque dúvida repetida é buraco de página.
 - A página Conteúdos, quando existirem mais textos publicados.
 - A página Arte, quando a galeria existir. O passo a passo para devolvê-la está registrado acima.
+
+## Próxima ação
+
+Nenhuma. A V2 está encerrada.

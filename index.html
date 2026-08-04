@@ -983,6 +983,120 @@ footer{border-top-color:rgba(245,242,236,0.08)}
 #evc{border-radius:20px}
 .menu-wa{color:#F5F2EC!important}
 
+
+/* ==============================================================
+   V2.2 · REFINAMENTO EDITORIAL
+   Nao muda identidade, nao muda arquitetura, nao muda conteudo de
+   posicionamento. Mexe so em ritmo, respiro, costura e um punhado
+   de detalhes de direcao de arte. Apagar este bloco devolve a V2.
+   ============================================================== */
+
+/* --------------------------------------------------------------
+   1. DUAS NOVAS AREAS CLARAS, cada uma por um motivo.
+   A promessa vira luz porque ela e o momento de alivio da
+   narrativa: o texto fala de tempo que volta, e a pagina clareia
+   junto. A FAQ vira luz porque e o bloco mais longo de leitura do
+   site, 1592px de texto corrido, e leitura longa pede papel.
+   -------------------------------------------------------------- */
+#promessa .titulo{max-width:20ch}
+#promessa .big-lead p{color:#3A3441;font-weight:400}
+#promessa .big-lead p strong{color:#1A161F;font-weight:600}
+.faixa-clara .faq-item{border-color:rgba(26,22,31,0.12)}
+.faixa-clara .faq-item:first-child{border-top-color:rgba(26,22,31,0.12)}
+.faixa-clara .faq-q{color:#1A161F}
+.faixa-clara .faq-a{color:#4A4453;font-weight:400}
+.faixa-clara .abertura-b{color:#1A161F}
+.faixa-clara .resposta-direta{border-left-color:rgba(124,58,237,0.45)}
+.faixa-clara .resposta-direta p{color:#3A3441}
+.faixa-clara .resposta-direta strong{color:#1A161F}
+.faixa-clara .big-lead p{color:#3A3441}
+
+/* --------------------------------------------------------------
+   2. MAIS RESPIRO. O site vende organizacao, e organizacao tambem
+   e espaco vazio. As secoes escuras ganham a mesma folga que as
+   claras ja tinham, e o titulo passa a ter ar antes do corpo.
+   -------------------------------------------------------------- */
+main > section{padding-top:132px;padding-bottom:132px}
+#hero{padding:0}
+.faixa-clara section{padding-top:140px;padding-bottom:140px}
+.titulo{margin-bottom:34px}
+.rotulo{margin-bottom:20px}
+.big-lead{margin-top:12px}
+
+/* --------------------------------------------------------------
+   3. COSTURA ENTRE SECOES. O divisor era uma linha branca chapada
+   de ponta a ponta, e uma linha reta sempre corta. Agora ele nasce
+   e morre no nada, com o gradiente da marca no meio, em opacidade
+   baixa. Ele nao separa: ele emenda.
+   -------------------------------------------------------------- */
+.divisor{
+  height:1px;max-width:1120px;margin:0 auto;
+  background:linear-gradient(90deg,
+    transparent 0%,
+    rgba(124,58,237,0.16) 22%,
+    rgba(124,58,237,0.30) 46%,
+    rgba(37,99,235,0.30) 54%,
+    rgba(37,99,235,0.16) 78%,
+    transparent 100%)!important;
+}
+.faixa-clara .divisor{
+  background:linear-gradient(90deg,
+    transparent 0%,
+    rgba(124,58,237,0.14) 24%,
+    rgba(124,58,237,0.26) 48%,
+    rgba(37,99,235,0.26) 52%,
+    rgba(37,99,235,0.14) 76%,
+    transparent 100%)!important;
+}
+
+/* --------------------------------------------------------------
+   4. O CARD DO GOOGLE. Sem logotipo e sem imitar a marca. Duas
+   pistas bastam para o reconhecimento acontecer antes da leitura:
+   a estrela amarela de avaliacao e os quatro pontos nas cores da
+   plataforma. O olho reconhece, o texto confirma.
+   -------------------------------------------------------------- */
+.estrelas{
+  color:#FBBC05;-webkit-text-fill-color:#FBBC05;
+  letter-spacing:0.06em;font-size:0.82em;vertical-align:0.06em;
+}
+.g-pontos{display:inline-flex;gap:3.5px;margin-right:9px;vertical-align:middle}
+.g-pontos i{width:7px;height:7px;border-radius:50%;display:block}
+.g-pontos i:nth-child(1){background:#4285F4}
+.g-pontos i:nth-child(2){background:#EA4335}
+.g-pontos i:nth-child(3){background:#FBBC05}
+.g-pontos i:nth-child(4){background:#34A853}
+
+/* --------------------------------------------------------------
+   5. A PERGUNTA. Um ponto de interrogacao do tamanho da secao,
+   quase invisivel, atras do texto. Nao e ornamento: e a propria
+   pergunta virando espaco. Ele fica atras, nunca disputa leitura,
+   e some no celular, onde nao ha altura para ele existir sem
+   atrapalhar.
+   -------------------------------------------------------------- */
+.home-quote{position:relative;overflow:hidden}
+.home-quote::before{
+  content:"?";
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  font-size:min(74vh,660px);
+  font-weight:800;line-height:0.78;
+  color:#F5F2EC;opacity:0.028;
+  pointer-events:none;user-select:none;z-index:0;
+}
+.home-quote > *{position:relative;z-index:1}
+@media(max-width:900px){.home-quote::before{font-size:min(46vh,320px);opacity:0.04}}
+
+/* --------------------------------------------------------------
+   6. A PALAVRA RETRABALHO. O plano inicial era espelhar o segundo
+   R. Testado e descartado: em caixa baixa o gancho do "r" e a
+   identidade inteira da letra, entao espelhar destroi a leitura e
+   parece defeito de renderizacao, nao inquietacao. A solucao que
+   ficou: a mesma letra, mesma fonte, mesmo peso, apenas escorregada
+   dois pixels e girada cinco graus. A palavra continua legivel. O
+   olho apenas sente que uma letra saiu da linha, que e exatamente
+   o que retrabalho faz dentro de um processo organizado.
+   -------------------------------------------------------------- */
+.rt-r{display:inline-block;transform:translateY(2px) rotate(5deg);transform-origin:50% 90%}
 </style>
 <script type="application/ld+json">
 {
@@ -1234,7 +1348,7 @@ footer{border-top-color:rgba(245,242,236,0.08)}
           "name": "Isso é consultoria de inteligência artificial?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Não. A inteligência artificial é apenas uma das ferramentas que usamos, do mesmo jeito que usamos planilha, processo escrito ou reunião com a equipe. A tecnologia é escolhida em função do problema, e não o contrário. Nosso produto é uma operação melhor, não tecnologia."
+            "text": "Não. A inteligência artificial é apenas uma das ferramentas que usamos, do mesmo jeito que usamos planilha, processo escrito ou reunião com a equipe. A tecnologia é escolhida em função do problema, e não o contrário. O que eu entrego não é tecnologia, é tempo que volta para você."
           }
         },
         {
@@ -1416,7 +1530,7 @@ footer{border-top-color:rgba(245,242,236,0.08)}
     <div class="caso">
       <div class="quem">Marc Cycling</div>
       <div class="papel">Operação montada do zero, nos EUA</div>
-      <div class="caso-num">115 avaliações 5★<small>nota 5,0 no Google, na Flórida</small></div>
+      <div class="caso-num">115 avaliações <span class="estrelas">★★★★★</span><small><span class="g-pontos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>nota 5,0 no Google, na Flórida</small></div>
       <p>Uma operação de conserto de bikes montada do zero.</p>
       <p class="fecho">Faço o que <b>falo.</b></p>
     </div>
@@ -1501,8 +1615,8 @@ footer{border-top-color:rgba(245,242,236,0.08)}
 
 <!-- FAIXA ARTÍSTICA · a frase -->
 <section class="home-quote" id="frase">
-  <p class="hq-text"><span class="hq-mark">&ldquo;</span>Se a sua operação ficasse trinta dias sem você, <em>quanto dela continuaria funcionando exatamente igual?</em></p>
-  <p class="hq-fim">Essa é a pergunta que o nosso trabalho responde.</p>
+  <p class="hq-text"><span class="hq-mark">&ldquo;</span>O que na sua operação <em>só anda quando você empurra?</em></p>
+  <p class="hq-fim">É por essa lista que a gente começa.</p>
 </section>
 
 <div class="divisor"></div>
@@ -1519,7 +1633,7 @@ footer{border-top-color:rgba(245,242,236,0.08)}
   <div class="sobre-stats">
     <div class="sobre-stat"><div class="n">40</div><div class="l">anos construindo e reorganizando operações</div></div>
     <div class="sobre-stat"><div class="n">2</div><div class="l">países, Brasil e Estados Unidos</div></div>
-    <div class="sobre-stat"><div class="n">1</div><div class="l">produto de verdade: uma operação melhor</div></div>
+    <div class="sobre-stat"><div class="n">1</div><div class="l">jeito de trabalhar: entender antes de resolver</div></div>
   </div>
   <p style="margin-top:30px"><a href="sobre.html" style="color:#A78BFA;font-weight:600;text-decoration:none;font-size:15px">Conheça a experiência por trás do IAieu →</a></p>
 </section>
@@ -1527,13 +1641,18 @@ footer{border-top-color:rgba(245,242,236,0.08)}
 <div class="divisor"></div>
 
 <!-- BLOCO 6 · O que realmente entrego -->
+<div class="faixa-clara" id="promessa">
+<!-- O QUE MUDA NA PRATICA -->
 <section id="entrego">
-  <h2 class="titulo">O nosso produto é <em>uma operação melhor.</em></h2>
+  <span class="rotulo">O que muda na prática</span>
+  <h2 class="titulo">Menos tempo perdido.<br>Menos <span class="rt">ret<span class="rt-r">r</span>abalho</span>.<br><em>Mais tempo para o que importa.</em></h2>
   <div class="big-lead">
-    <p>Menos tempo perdido, menos retrabalho, menos custo. Mais velocidade e mais previsibilidade. Pode ser um processo redesenhado, uma rotina que deixou de consumir o dia, uma operação reorganizada ou uma presença profissional que passa a funcionar sozinha. <strong>Esses são só os formatos.</strong></p>
-    <p>O resultado é sempre o mesmo. A operação passa a funcionar melhor do que funcionava antes, e isso pode ser medido.</p>
+    <p>Não prometo transformar a sua operação, porque eu ainda não a conheci. Prometo o que sempre acontece quando um processo é entendido e organizado: some a etapa que existia sem motivo, para a informação de circular duas vezes, e o dia deixa de ser consumido por coisa que não precisava consumir.</p>
+    <p>Pode ser um processo redesenhado, uma rotina que deixou de comer o dia, uma operação reorganizada ou uma presença profissional que passa a funcionar sozinha. <strong>Esses são só os formatos.</strong></p>
+    <p>O que muda de verdade é onde o seu tempo vai parar.</p>
   </div>
 </section>
+</div>
 
 <div class="divisor"></div>
 
@@ -1687,6 +1806,7 @@ footer{border-top-color:rgba(245,242,236,0.08)}
 
 <div class="divisor"></div>
 
+<div class="faixa-clara" id="duvidas">
 <!-- PERGUNTAS FREQUENTES (texto visivel espelhado 1:1 no FAQPage schema) -->
 <section id="faq">
   <span class="rotulo">Perguntas frequentes</span>
@@ -1698,7 +1818,7 @@ footer{border-top-color:rgba(245,242,236,0.08)}
     </div>
     <div class="faq-item">
       <h3 class="faq-q">Isso é consultoria de inteligência artificial?</h3>
-      <p class="faq-a">Não. A inteligência artificial é apenas uma das ferramentas que usamos, do mesmo jeito que usamos planilha, processo escrito ou reunião com a equipe. A tecnologia é escolhida em função do problema, e não o contrário. Nosso produto é uma operação melhor, não tecnologia.</p>
+      <p class="faq-a">Não. A inteligência artificial é apenas uma das ferramentas que usamos, do mesmo jeito que usamos planilha, processo escrito ou reunião com a equipe. A tecnologia é escolhida em função do problema, e não o contrário. O que eu entrego não é tecnologia, é tempo que volta para você.</p>
     </div>
     <div class="faq-item">
       <h3 class="faq-q">Como funciona na prática?</h3>
@@ -1722,6 +1842,7 @@ footer{border-top-color:rgba(245,242,236,0.08)}
     </div>
   </div>
 </section>
+</div>
 
 <div class="divisor"></div>
 
