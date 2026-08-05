@@ -412,7 +412,7 @@ section[id]{scroll-margin-top:96px}
 .fecho b{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
 
 /* ---------- Casos Reais ---------- */
-.casos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.casos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px;margin-top:44px}
 .caso{
   border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;
   background:rgba(255,255,255,0.02);transition:border-color .3s,box-shadow .3s,transform .3s;
@@ -1520,13 +1520,7 @@ main > section{padding-top:132px;padding-bottom:132px}
       <p>Uma operação de conserto de bikes montada do zero.</p>
       <p class="fecho">Faço o que <b>falo.</b></p>
     </div>
-    <div class="caso">
-      <div class="quem">Patricia</div>
-      <div class="papel">Primeira cliente do IAieu GO</div>
-      <div class="caso-quote">&ldquo;Superou minhas expectativas.&rdquo;</div>
-      <p>Uma hora ao vivo, e ela saiu com a próxima decisão tomada.</p>
-    </div>
-  </div>
+    
 </section>
 </div>
 
@@ -1535,7 +1529,7 @@ main > section{padding-top:132px;padding-bottom:132px}
   <span class="rotulo">O que quase ninguém vê</span>
   <h2 class="titulo">Todo mundo vê o resultado. <em>Quase ninguém vê a operação.</em></h2>
   <div class="big-lead">
-    <p>Seu problema não está sem solução. Está sem direção. E direção não se compra pronta, porque ela depende de entender a sua operação por dentro.</p>
+    <p>Seu problema não está sem solução. Está sem direção.</p>
   </div>
   <ul class="pq-lista">
     <li>Uma rotina que consome o dia inteiro <strong>e ninguém nunca parou para olhar.</strong></li>
@@ -1589,9 +1583,7 @@ main > section{padding-top:132px;padding-bottom:132px}
       <p>Comparo com o que era antes. O sucesso é medido pelo resultado, nunca pela tecnologia usada.</p>
     </div>
   </div>
-  <div class="narr-chips">
-    <span>Processo interno</span><span>Rotina que consome o dia</span><span>Operação que precisa crescer</span><span>Time que depende de uma pessoa só</span><span>Presença profissional</span><span>Decisão travada</span>
-  </div>
+  
   <p class="cf-nota">O problema muda de um cliente para o outro. <strong>O método não muda.</strong></p>
 </section>
 
@@ -1632,8 +1624,7 @@ main > section{padding-top:132px;padding-bottom:132px}
   <h2 class="titulo">Menos tempo perdido.<br>Menos <span class="rt">ret<span class="rt-r">r</span>abalho</span>.<br><em>Mais tempo para o que importa.</em></h2>
   <div class="big-lead">
     <p>Não prometo transformar a sua operação, porque eu ainda não a conheci. Prometo o que sempre acontece quando um processo é entendido e organizado: some a etapa que existia sem motivo, para a informação de circular duas vezes, e o dia deixa de ser consumido por coisa que não precisava consumir.</p>
-    <p>Pode ser um processo redesenhado, uma rotina que deixou de comer o dia, uma operação reorganizada ou uma presença profissional que passa a funcionar sozinha. <strong>Esses são só os formatos.</strong></p>
-    <p>O que muda de verdade é onde o seu tempo vai parar.</p>
+        <p>O que muda de verdade é onde o seu tempo vai parar.</p>
   </div>
 </section>
 </div>
@@ -1737,21 +1728,7 @@ main > section{padding-top:132px;padding-bottom:132px}
 
 
 
-<div class="divisor"></div>
 
-<!-- RESPOSTA DIRETA (bloco de citabilidade para busca e assistentes de IA) -->
-<section id="o-que-e">
-  <span class="rotulo">Para quem chegou agora</span>
-  <h2 class="titulo">Em um <em>parágrafo.</em></h2>
-  <p class="abertura-b">O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. A tecnologia é escolhida em função do problema, e não o contrário.</p>
-  <div class="resposta-direta">
-    <p><strong>Eu entro numa operação para entender como ela funciona</strong>, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica, coloco para rodar e confiro se melhorou.</p>
-    <p><strong>Quem conduz:</strong> Caetano Zammataro, quarenta anos construindo e reorganizando operações em logística, aviação, carga, supply chain, varejo e hotelaria, no Brasil e nos Estados Unidos.</p>
-    <p><strong>Para quem é:</strong> empresas e pessoas com processos que hoje consomem mais tempo, mais gente ou mais dinheiro do que deveriam. O que muda de um caso para o outro é a escala do problema, não o método.</p>
-    <p><strong>O que você recebe:</strong> um processo funcionando melhor do que funcionava antes. Eu não vendo inteligência artificial, ferramentas nem plataformas. A tecnologia é apenas uma das coisas que eu uso para construir a solução.</p>
-    <p><strong>Como falar comigo:</strong> a conversa começa pelo <a href="https://wa.me/17542525245" target="_blank" rel="noopener">WhatsApp</a>, em português. Também dá para escrever para czamma@gmail.com.</p>
-  </div>
-</section>
 
 <div class="divisor"></div>
 
@@ -1798,6 +1775,7 @@ main > section{padding-top:132px;padding-bottom:132px}
   <p class="subtitulo">Eu estudo, construo, implanto e meço. Se gerar valor, a gente segue para o próximo. E se eu não for a pessoa certa para o seu caso, eu digo na primeira conversa.</p>
   <a class="btn-grad btn-primary" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Escolhi%20um%20processo%20que%20hoje%20consome%20tempo%2C%20pessoas%20ou%20dinheiro%20e%20quero%20que%20ele%20funcione%20melhor." target="_blank" rel="noopener">Falar agora</a>
   <div class="cta-extra">
+    <a href="mailto:czamma@gmail.com">E-mail: <b>czamma@gmail.com</b></a>
     <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: <b>@iaieu.evc</b></a>
     <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: <b>Caetano Marc Zammataro</b></a>
   </div>
