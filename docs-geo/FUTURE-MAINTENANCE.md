@@ -276,3 +276,26 @@ O IAieu é conduzido por uma pessoa só, e o texto do site precisa refletir isso
 - **Citação de terceiro nunca se altera**, mesmo contendo plural. Os depoimentos da Andréa e do Marcelo têm "nós" e continuam intactos.
 
 Estado após a auditoria: **zero plural exclusivo em todo o domínio**, incluindo o `llms.txt`.
+
+
+---
+
+## Regra permanente de forma, 4 de agosto de 2026
+
+Definida pelo proprietário depois de duas ocorrências do mesmo erro.
+
+> **Nunca introduza uma geometria nova apenas para quebrar repetição visual.**
+> A variedade do IAieu deve surgir da edição, da composição e do silêncio, nunca de formas decorativas.
+> Se uma solução chama mais atenção para o formato do componente do que para a informação que ele contém, ela enfraquece a identidade da marca.
+
+Na prática, o sistema tem **três formas e nenhuma quarta**:
+
+| Elemento | Raio |
+|---|---|
+| Caixa (cartão, painel, bloco) | **18px** |
+| Pílula (etiqueta, tag, botão) | **999px** |
+| Círculo (marcador, avatar, ponto) | **50%** |
+
+**O erro que gerou esta regra:** uma regra de CSS que pretendia unificar raios listou, no mesmo seletor, cartões e etiquetas, e aplicou 999px a todos. Os cinco cartões do método e os três cartões de casos viraram cápsulas. A intenção era boa, a execução misturou duas naturezas diferentes de componente.
+
+**Como não repetir:** antes de aplicar raio a um seletor múltiplo, conferir se todos os elementos da lista são da mesma natureza. Cartão e etiqueta nunca compartilham raio.

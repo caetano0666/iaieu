@@ -908,7 +908,12 @@ section{padding:104px 40px}
 
 /* 4. RAIO DE CANTO. Havia 18px, 20px, 22px e 28px convivendo em caixas
    que fazem a mesma coisa. Ficou um valor so para caixa e um para pilula. */
-.cf-passo,.caso,.narr-chips span,.evc-detalhes span,.cd-tag,.dh-angulo{border-radius:999px}
+.narr-chips span,.evc-detalhes span,.cd-tag,.dh-angulo{border-radius:999px}
+/* CAIXA E CAIXA. A regra acima misturava cartao com pilula e transformava os
+   cartoes do metodo e dos casos em capsulas. Caixa tem um raio so, discreto,
+   e ela nao muda de forma para criar ritmo: o ritmo vem do espaco e da
+   hierarquia. Ver a regra permanente no fim deste bloco. */
+.cf-passo,.caso,.caso-destaque,.dh,.isca,.sobre-stats,.dep-card{border-radius:18px}
 
 /* 5. BORDAS. Conviviam duas familias, uma em branco puro e outra no
    off-white da marca, para a mesma funcao. Ficou so a da marca, em dois
@@ -1070,6 +1075,22 @@ main > section{padding-top:132px;padding-bottom:132px}
    o que retrabalho faz dentro de um processo organizado.
    -------------------------------------------------------------- */
 .rt-r{display:inline-block;transform:translateY(2px) rotate(5deg);transform-origin:50% 90%}
+
+/* ==============================================================
+   REGRA PERMANENTE DO CONSELHO CRIATIVO
+   Definida em 4 de agosto de 2026, depois de duas ocorrencias.
+
+   Nunca introduzir uma geometria nova apenas para quebrar
+   repeticao visual. A variedade do IAieu nasce da edicao, da
+   composicao, do ritmo, do espaco e da hierarquia. Nunca da
+   forma do componente.
+
+   Se uma solucao chama mais atencao para o formato da caixa do
+   que para a informacao dentro dela, ela enfraquece a marca.
+
+   Na pratica: raio 18px para caixa, 999px para pilula e botao,
+   50% apenas para marcador e avatar. Nao existe terceira forma.
+   ============================================================== */
 </style>
 <script type="application/ld+json">
 {

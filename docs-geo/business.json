@@ -140,5 +140,9 @@
     "proibido": "Plural que sugere equipe institucional inexistente: desenvolvemos, vendemos, usamos, fazemos, nosso, nossa, quando o sujeito e a empresa.",
     "excecao": "Citacao de terceiro nunca se altera, mesmo que contenha plural.",
     "_nota": "Definido em 04/08/2026, na auditoria de voz da V3. Aplicado no dominio inteiro: zero plural exclusivo restante."
+  },
+  "direcaoDeArte": {
+    "regraDeForma": "Nunca introduzir geometria nova para quebrar repeticao visual. A variedade nasce da edicao, da composicao, do ritmo, do espaco e da hierarquia, nunca da forma do componente. Caixa usa raio 18px. Pilula e botao usam 999px. Circulo de 50% so em marcador e avatar. Nao existe terceira forma.",
+    "_nota_regra": "Definida em 04/08/2026 pelo proprietario, depois de duas ocorrencias. A segunda foi uma regra que tentou unificar raios e misturou cartao com pilula, transformando os cartoes do metodo e dos casos em capsulas."
   }
 }
