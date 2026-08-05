@@ -134,5 +134,11 @@
       "whatsapp_click"
     ],
     "_nota_analytics": "Ja instalado em todas as paginas. NAO mexer no que existe, apenas adicionar eventos que faltem."
+  },
+  "vozDaMarca": {
+    "regra": "O IAieu e conduzido por uma pessoa so. Primeira pessoa do singular para acao executada. 'O IAieu', 'o metodo' ou 'o trabalho' para marca, metodo e filosofia. Plural somente quando inclui o cliente.",
+    "proibido": "Plural que sugere equipe institucional inexistente: desenvolvemos, vendemos, usamos, fazemos, nosso, nossa, quando o sujeito e a empresa.",
+    "excecao": "Citacao de terceiro nunca se altera, mesmo que contenha plural.",
+    "_nota": "Definido em 04/08/2026, na auditoria de voz da V3. Aplicado no dominio inteiro: zero plural exclusivo restante."
   }
 }

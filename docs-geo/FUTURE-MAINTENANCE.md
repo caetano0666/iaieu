@@ -262,3 +262,17 @@ Regras de forma, já aplicadas:
 - Depoimento em inglês fica em inglês, com tradução discreta abaixo, identificada como tradução.
 - Cada bloco leva o vínculo real (foi cliente, trabalhou na mesma equipe) e a data.
 - **Nunca criar `Review` ou `aggregateRating` no schema**, mesmo sendo depoimentos verdadeiros.
+
+
+---
+
+## Voz da marca, definida em 4 de agosto de 2026
+
+O IAieu é conduzido por uma pessoa só, e o texto do site precisa refletir isso.
+
+- **Primeira pessoa do singular** quando a ação é executada pelo Caetano: "eu entro na operação", "eu não vendo ferramentas", "eu mostro como pode funcionar melhor".
+- **"O IAieu", "o método" ou "o trabalho"** quando o assunto é a marca, o método ou a filosofia: "o IAieu desenvolve soluções operacionais sob medida".
+- **Plural apenas quando inclui o cliente.** "A gente resolve junto", "se gerar valor, seguimos juntos" e "olhar junto" são plurais verdadeiros e devem ser preservados. O plural que finge equipe é proibido.
+- **Citação de terceiro nunca se altera**, mesmo contendo plural. Os depoimentos da Andréa e do Marcelo têm "nós" e continuam intactos.
+
+Estado após a auditoria: **zero plural exclusivo em todo o domínio**, incluindo o `llms.txt`.
