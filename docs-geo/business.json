@@ -144,5 +144,16 @@
   "direcaoDeArte": {
     "regraDeForma": "Nunca introduzir geometria nova para quebrar repeticao visual. A variedade nasce da edicao, da composicao, do ritmo, do espaco e da hierarquia, nunca da forma do componente. Caixa usa raio 18px. Pilula e botao usam 999px. Circulo de 50% so em marcador e avatar. Nao existe terceira forma.",
     "_nota_regra": "Definida em 04/08/2026 pelo proprietario, depois de duas ocorrencias. A segunda foi uma regra que tentou unificar raios e misturou cartao com pilula, transformando os cartoes do metodo e dos casos em capsulas."
+  },
+  "filosofiaDaMarca": {
+    "frase": "O IAieu nao explica inteligencia artificial. O IAieu reduz complexidade antes que ela se transforme em ansiedade.",
+    "consequencia": "Toda decisao de texto, de arte e de arquitetura deve fazer o visitante terminar a navegacao com menos peso mental do que tinha ao entrar.",
+    "_nota": "Definida pelo proprietario em 04/08/2026, no encerramento da direcao de criacao. E o criterio final para julgar qualquer alteracao futura."
+  },
+  "estadoDoProjeto": {
+    "em": "04/08/2026",
+    "situacao": "O site deixou de ser projeto em desenvolvimento e passou a ser produto em operacao.",
+    "regra": "Nenhuma alteracao deve nascer apenas de opiniao estetica. As proximas evolucoes vem de casos reais, comportamento dos visitantes, duvidas recorrentes, novos conteudos e amadurecimento natural da marca.",
+    "proximoCapitulo": "O foco sai do site e vai para autoridade editorial: artigos, estudos de caso, apresentacoes, videos, palestras, LinkedIn, Instagram e experiencia publicada."
   }
 }

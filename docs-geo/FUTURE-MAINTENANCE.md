@@ -299,3 +299,16 @@ Na prática, o sistema tem **três formas e nenhuma quarta**:
 **O erro que gerou esta regra:** uma regra de CSS que pretendia unificar raios listou, no mesmo seletor, cartões e etiquetas, e aplicou 999px a todos. Os cinco cartões do método e os três cartões de casos viraram cápsulas. A intenção era boa, a execução misturou duas naturezas diferentes de componente.
 
 **Como não repetir:** antes de aplicar raio a um seletor múltiplo, conferir se todos os elementos da lista são da mesma natureza. Cartão e etiqueta nunca compartilham raio.
+
+
+---
+
+## O critério final, definido em 4 de agosto de 2026
+
+Quando houver dúvida sobre qualquer alteração futura, a pergunta não é se ela deixa o site mais bonito. A pergunta é esta:
+
+> **O IAieu não explica inteligência artificial. O IAieu reduz complexidade antes que ela se transforme em ansiedade.**
+
+O visitante deve terminar a navegação com menos peso mental do que tinha quando entrou. Alteração que não faz isso não deve ser feita, por melhor que pareça.
+
+A partir desta data o site é **produto em operação**, não projeto em desenvolvimento. Nenhuma alteração deve nascer de opinião estética. As próximas evoluções vêm de casos reais, do comportamento dos visitantes, de dúvidas recorrentes, de novos conteúdos e do amadurecimento natural da marca.

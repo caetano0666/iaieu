@@ -4,72 +4,131 @@
 
 Construir um sistema de trabalho com IA que funcione mesmo quando eu esquecer onde parei.
 
-## Onde parei
+---
 
-**A V2 está no ar. Publicada, validada em produção e oficialmente encerrada em 04/08/2026.**
+# STATUS DO PROJETO — IAieu V3 Final
 
-Em 4 de agosto de 2026 o site inteiro passou por uma evolução de direção de arte, em quatro rodadas no mesmo dia: a home, o refino da home, as nove páginas internas, e a auditoria final antes de publicar.
+**Data: 04/08/2026**
 
-Nenhuma palavra de conteúdo foi alterada em nenhuma das rodadas. Só ritmo, escala, cor, ordem de seção, espaçamento, borda, raio e comportamento.
+## O que foi concluído
 
-O que mudou, em resumo:
+A fase de direção de criação do site foi oficialmente encerrada.
 
-1. A prova subiu para o começo da home. Casos e Caso 01 aparecem logo depois do hero.
-2. Entraram áreas claras no off-white da marca, sempre no bloco de prova. Duas na home, uma em cada interna.
-3. O gradiente roxo e azul virou raro. Existe na marca, nos botões e na pergunta dos trinta dias. Nos títulos, a ênfase virou monocromática.
-4. O título do hero cresceu de 50px para 78px.
-5. A pergunta dos trinta dias ganhou uma tela quase vazia só dela.
-6. Saíram as duas imagens de banco, as partículas em rede e o planeta com halo roxo, e a rosa dos ventos da página de conteúdos. No lugar entrou uma malha fina em CSS.
-7. O botão do WhatsApp ficou silencioso e só acende no hover.
-8. O menu passou a mostrar Casos e Depoimentos.
-9. Corpo de texto saiu do peso 300 para 400.
-10. O âmbar foi removido do site inteiro, inclusive o uso antigo, anterior a esta evolução. A paleta agora é só preto, off-white, roxo e azul.
-11. O bloco `.analogia-box` da `sobre.html`, que usava classes sem CSS e ficava sem formatação no ar, foi resolvido: a definição saiu do CSS interno da página do método e passou para o `estilo.css`, então vale para as duas páginas e o problema não volta.
-12. A página Arte saiu do percurso do visitante, última correção antes da publicação.
+Durante este ciclo, o projeto deixou de ser um site sobre inteligência artificial para se tornar uma marca baseada em experiência operacional.
 
-Onde o sistema mora: o CSS novo da home está num bloco único no fim do `<style>` do `index.html`, marcado como "EVOLUCAO DA DIRECAO DE ARTE". O das internas está no fim do `estilo.css`, que as nove dividem. Nenhum arquivo novo foi criado, de propósito, porque o `.gitignore` bloqueia tudo por padrão. Apagar esses dois blocos devolve o visual anterior.
+O objetivo deixou de ser explicar tecnologia. Passou a ser organizar problemas complexos com clareza, utilizando tecnologia apenas quando ela faz sentido.
 
-## A decisão sobre a página Arte, em 04/08/2026
+## Principais conquistas
 
-A `arte.html` estava publicada, estava no `sitemap.xml` e recebia um link da página Projetos com a chamada "Veja também as minhas artes". A galeria lê de `dados/artes/artes.json`, que está com a lista vazia, então a página entregava "Em breve, novas artes por aqui".
+- Posicionamento consolidado.
+- Hero definitiva.
+- Linguagem editorial definida.
+- Arquitetura estabilizada.
+- Home editada e reduzida em aproximadamente 15% sem perda de conteúdo.
+- Voz institucional unificada.
+- Sistema visual consolidado.
+- Regras permanentes registradas.
+- Auditorias técnicas e editoriais concluídas.
+- Publicação validada.
 
-Decisão do proprietário: **não mostramos aquilo que ainda não entregamos.** A página saiu do percurso do visitante e continua no repositório para uso futuro.
+## Regras permanentes
 
-O que foi feito: o link foi removido da `projetos.html`, junto com a seção que só existia para ele. A URL saiu do `sitemap.xml`. A linha saiu do `llms.txt`. A página ganhou `noindex` para não aparecer na busca enquanto estiver vazia. E ela saiu da lista `PAGINAS` do `docs-geo/seo-tests.py`, de forma consciente e documentada num comentário dentro do próprio arquivo, mas continua sendo checada pelas regras da casa, então ela nunca fica com travessão.
+### Voz
 
-**Para devolver a página ao ar quando a galeria estiver pronta:** preencher `dados/artes/artes.json`, devolver a linha `"arte.html"` ao dicionário `PAGINAS` do `seo-tests.py`, devolver o bloco `<url>` ao `sitemap.xml` com a data real, tirar o `noindex`, igualar o menu ao das outras páginas e refazer o link na `projetos.html`.
+- "Eu" para ações executadas pelo Caetano.
+- "IAieu" para método, filosofia e marca.
+- Plural apenas quando incluir genuinamente o cliente.
 
-## Estado dos testes
+### Geometria
 
-`python3 docs-geo/seo-tests.py` fecha em **232 PASS, 0 WARN, 0 FAIL**. O número de testes caiu de 247 para 232 porque a `arte.html` deixou de ser uma das páginas públicas conferidas.
+- Cards: 18px.
+- Tags: pílula.
+- Círculos apenas quando realmente forem círculos.
 
-Também foram conferidos, fora da bateria: contraste de cada texto contra o fundo real em que ele cai, em dez páginas, zero falha; estouro de layout e imagem quebrada em desktop e celular, nenhum; link interno quebrado, nenhum; e comparação do mesmo componente entre as dez páginas, com as nove internas batendo cem por cento entre si.
+Nunca criar novas geometrias apenas para variar a interface.
 
-## Publicação e validação em produção, 04/08/2026
+### Promessa
 
-Commits `0c0a599` e `ce6913c` confirmados no GitHub. O site foi validado no ar, em desktop e em celular.
+Nunca prometer transformar uma operação antes de conhecê-la.
 
-O que foi conferido e está íntegro: as dez páginas públicas respondendo 200, um H1 por página, menu com os mesmos cinco itens em todas, áreas claras no lugar, rodapé e botão do WhatsApp em todas, 23 alvos internos entre páginas, imagens e CSS sem um link quebrado, `sitemap.xml` com 12 URLs e sem a Arte, `robots.txt` intacto, `llms.txt` sem a Arte, zero âmbar, zero travessão, botões todos em pílula, e um único texto com gradiente na home inteira, que é a pergunta dos trinta dias. O bloco da `sobre.html` que estava sem formatação apareceu no ar com caixa, borda e espaçamento.
+O IAieu melhora processos. Não julga operações.
 
-Nenhuma correção foi necessária depois da publicação.
+## Filosofia da marca
 
-## Uma nota operacional que não é defeito do site
+O IAieu não explica inteligência artificial.
 
-Durante a validação, o navegador insistia em mostrar a versão antiga mesmo com o site novo no servidor. A causa era um Service Worker fantasma: uma versão antiga do site registrou um `sw.js` no navegador, e esse registro continuou vivo guardando páginas em cache. O arquivo `sw.js` não existe mais no projeto, e o endereço `https://iaieu.com/sw.js` responde 404.
+**O IAieu reduz complexidade antes que ela se transforme em ansiedade.**
 
-Consequência prática: quem visitou o site em julho pode ver a versão antiga por algum tempo. Isso se resolve sozinho, porque o navegador desregistra o Service Worker quando tenta atualizá-lo e recebe 404. Não há nada a corrigir no projeto.
+## Estado do projeto
 
-Se acontecer com você, abra o site numa janela anônima para ver a versão real.
+O site deixa de ser um projeto em desenvolvimento. Passa a ser um produto em operação.
 
-## Daqui para frente
+A partir deste momento, nenhuma alteração deve nascer apenas de opinião estética.
 
-O site deixou de ser projeto em desenvolvimento e passou a ser produto em operação. Melhoria só nasce de resultado real de uso, nunca de refinamento de direção de arte por iniciativa própria:
+As próximas evoluções deverão surgir de:
 
-- O que o Analytics mostrar sobre onde as pessoas param de rolar e por onde saem.
-- Dúvida que se repetir na conversa de WhatsApp, porque dúvida repetida é buraco de página.
-- A página Conteúdos, quando existirem mais textos publicados.
-- A página Arte, quando a galeria existir. O passo a passo para devolvê-la está registrado acima.
+- casos reais;
+- comportamento dos visitantes;
+- dúvidas recorrentes;
+- novos conteúdos;
+- amadurecimento natural da marca.
 
-## Próxima ação
+## Próximo capítulo
 
-Nenhuma. A V2 está encerrada.
+O foco deixa de ser o site. O foco passa a ser construir autoridade editorial.
+
+A marca será fortalecida por: artigos, estudos de caso, apresentações, vídeos, palestras, LinkedIn, Instagram e experiência publicada.
+
+---
+
+# Anexo técnico
+
+Escrito para quem abrir este arquivo daqui a um ano e precisar mexer sem quebrar nada.
+
+## Onde as coisas moram
+
+| O quê | Onde |
+|---|---|
+| Site publicado | `/Users/cae/IAieu-site`, único ambiente com Git. Publica por commit e push na `main` |
+| Fonte única de verdade | `docs-geo/business.json`. Dado que não está lá não pode ir para o site |
+| Regras invioláveis, com o motivo de cada uma | `docs-geo/FUTURE-MAINTENANCE.md` |
+| Bateria de testes | `python3 docs-geo/seo-tests.py`, obrigatório **0 FAIL** antes de publicar |
+| CSS da evolução visual da home | Blocos marcados no fim do `<style>` do `index.html`: V2, V2.2 e a regra permanente de forma. Apagar um bloco devolve o estado anterior |
+| CSS das páginas internas | Fim do `estilo.css`, compartilhado pelas nove |
+
+## Armadilhas conhecidas
+
+**O `.gitignore` bloqueia tudo por padrão.** Arquivo novo do site precisa ser liberado de propósito na lista de permissão. Isso já causou uma página publicada sem o arquivo, em 404, por alguns minutos.
+
+**O Git trava com locks presos.** Aconteceu duas vezes. Conferir que nenhum processo git está rodando e remover os arquivos `.lock` de dentro do `.git`.
+
+**Antes de aplicar raio de canto a um seletor múltiplo, conferir se todos os elementos são da mesma natureza.** Cartão e etiqueta nunca compartilham raio. Foi esse descuido que transformou os cartões do método em cápsulas.
+
+**Auditoria de texto não pega tudo.** O título do posicionamento antigo sobreviveu a quatro auditorias dentro do campo `name` do JSON-LD, porque todas conferiam o texto visível e a tag `<title>`. Conferir o schema por dentro.
+
+## O que ficou aberto, e nenhum deles é trabalho de site
+
+1. **Segundo caso operacional**, com antes e depois medido de um cliente externo. Hoje existe um caso só, e o cliente dele foi o próprio IAieu.
+2. **Página de Conteúdos** promete oito temas e entrega dois posts. É a página mais fraca do site.
+3. **Fotografia.** A atual mostra o homem e não mostra o trabalho. Briefing definido: mesma chave baixa, mesmo preto, mesma sobriedade, e uma prova visual de que esse homem trabalha.
+4. **Rosa dos Ventos.** Decidido esperar em vez de usar como enfeite. Conceito proposto e não implementado: ela não aparece desenhada, ela é a razão de a luz existir na fotografia.
+5. **Apresentação da IGP Sports** ainda assina "Instituto IAieu" no último slide.
+6. **Bio do Instagram e LinkedIn** provavelmente ainda falam do posicionamento antigo.
+7. Cinco regras de CSS órfãs das etiquetas removidas na edição final. Não afetam nada.
+
+## O que aconteceu no dia 04/08/2026
+
+| Hora | Commit | O que foi |
+|---|---|---|
+| 10:35 | `0c0a599` | V2: evolução da direção de arte em todas as páginas |
+| 19:52 | `3af707e` | V2.2: áreas claras, costura entre seções, card do Google, nova pergunta, promessa revista, a letra escorregada em "retrabalho" |
+| 20:58 | `f5f7617` | V3: maturidade editorial, quase toda subtração |
+| 21:06 | `57ef7ff` | V3.1: uma lógica de voz para toda a marca |
+| 21:08 | `5c3e461` | Schema da home: título antigo que sobreviveu ao reposicionamento |
+| 21:09 | `54a5caa` | Texto alternativo da imagem de compartilhamento |
+| 21:15 | `4c9d31e` | Reverte cartões em cápsula e cria a regra permanente de forma |
+| 21:34 | `bc18639` | Edição final: 14,7% a menos na home, sem perda de conteúdo |
+
+Estado dos testes ao fim do dia: **232 PASS, 0 WARN, 0 FAIL.**
+
+A história completa das decisões anteriores, com o motivo de cada uma, está nos PDFs da pasta `LOG` em `/Users/cae/iaieu/LOG/`.
