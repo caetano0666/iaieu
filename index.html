@@ -478,20 +478,7 @@ section[id]{scroll-margin-top:96px}
 #entrego>*{position:relative;z-index:1}
 
 /* ---------- Conteúdos ---------- */
-#conteudos{position:relative;overflow:hidden}
-#conteudos>*{position:relative;z-index:1}
-.cont-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
-.cont-card{border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:36px 30px;background:rgba(255,255,255,0.03);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
-.cont-card:hover{border-color:rgba(124,58,237,0.32);transform:translateY(-4px)}
-.cont-ic{width:30px;height:30px;color:var(--roxo);margin-bottom:18px}
-.cont-ic svg{width:100%;height:100%;fill:currentColor}
-.cont-card h3{font-size:20px;font-weight:700;color:#F5F2EC;letter-spacing:-0.02em;margin-bottom:8px}
-.cont-card p{font-size:14.5px;color:var(--cinza);font-weight:300;line-height:1.65;flex:1}
-.cont-link{margin-top:20px;align-self:flex-start;font-size:14px;font-weight:600;color:var(--roxo);text-decoration:none}
-.cont-link:hover{opacity:.8}
-.cont-card.breve{opacity:.7}
-.cont-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--cinza);border:1px solid rgba(255,255,255,0.16);border-radius:999px;padding:5px 12px;margin-top:20px;align-self:flex-start}
-@media(max-width:820px){.cont-grid{grid-template-columns:1fr}}
+@media(max-width:820px){}
 
 /* ---------- CTA Final (fecho cinematográfico site4) ---------- */
 #cta-wrap{position:relative;overflow:hidden;background:#0D0B10}
@@ -810,10 +797,7 @@ section{padding:104px 40px}
 /* --------------------------------------------------------------
    5. LEGIBILIDADE. Peso 300 em fundo escuro cansa depois dos 40.
    -------------------------------------------------------------- */
-.big-lead,.subtitulo,.caso p,.cf-passo p,.cont-card p,
-.pq-lista li,.resposta-direta p,#sobre .sobre-body,
-.faixa-analogia .analogia,.dh-fala,.mini p{font-weight:400}
-.big-lead,#sobre .sobre-body,.resposta-direta p{line-height:1.8}
+.big-lead,.subtitulo,.caso p,.cf-passo p,.big-lead,#sobre .sobre-body,.resposta-direta p{line-height:1.8}
 .faq-a{font-weight:400}
 
 /* --------------------------------------------------------------
@@ -913,11 +897,7 @@ section{padding:104px 40px}
 
 /* 2. LINKS DE SETA. Existiam dois roxos e dois tamanhos para a mesma
    funcao. O roxo escuro em fundo escuro ainda por cima lia mal. */
-.of-link,.cd-link,.cont-link,.ref-link{
-  color:#A78BFA;font-size:15px;font-weight:600;text-decoration:none;
-}
-.of-link:hover,.cd-link:hover,.cont-link:hover,.ref-link:hover{color:#F5F2EC}
-.faixa-clara .cd-link{color:#A78BFA}
+.of-link,.cd-link,.of-link:hover,.cd-link:hover,.faixa-clara .cd-link{color:#A78BFA}
 
 /* 3. ROTULOS EM CAIXA ALTA. Eram quatro tratamentos diferentes, com
    quatro tamanhos, dois pesos e tres espacamentos de letra. Viraram
@@ -928,16 +908,12 @@ section{padding:104px 40px}
 
 /* 4. RAIO DE CANTO. Havia 18px, 20px, 22px e 28px convivendo em caixas
    que fazem a mesma coisa. Ficou um valor so para caixa e um para pilula. */
-.cf-passo,.caso,.cont-card,.mini,.dh,.caso-destaque,.sobre-stats,.dep-card,.faq-item{
-  border-radius:20px;
-}
-.narr-chips span,.evc-detalhes span,.cd-tag,.dh-angulo{border-radius:999px}
+.cf-passo,.caso,.narr-chips span,.evc-detalhes span,.cd-tag,.dh-angulo{border-radius:999px}
 
 /* 5. BORDAS. Conviviam duas familias, uma em branco puro e outra no
    off-white da marca, para a mesma funcao. Ficou so a da marca, em dois
    niveis: repouso e elemento interativo. */
-.cf-passo,.cont-card,.mini,.passo,.faq-item{border-color:rgba(245,242,236,0.10)}
-.narr-chips span,.evc-detalhes span{border-color:rgba(245,242,236,0.14)}
+.cf-passo,.narr-chips span,.evc-detalhes span{border-color:rgba(245,242,236,0.14)}
 .divisor{background:rgba(245,242,236,0.08)}
 footer{border-top-color:rgba(245,242,236,0.08)}
 
@@ -948,10 +924,7 @@ footer{border-top-color:rgba(245,242,236,0.08)}
 
 /* 7. HOVER DOS CARTOES. Cada familia subia uma distancia diferente e
    acendia numa cor diferente. Agora todos se comportam igual. */
-.cf-passo:hover,.cont-card:hover,.caso:hover,.mini:hover,.passo:hover{
-  border-color:rgba(124,58,237,0.32);transform:translateY(-3px);
-}
-.faixa-clara .caso:hover{border-color:rgba(26,22,31,0.26);transform:translateY(-3px)}
+.cf-passo:hover,.faixa-clara .caso:hover{border-color:rgba(26,22,31,0.26);transform:translateY(-3px)}
 
 
 /* 8. RESTOS DA VARREDURA. Tres pontos que ainda estavam fora do padrao:
@@ -1353,14 +1326,6 @@ main > section{padding-top:132px;padding-bottom:132px}
         },
         {
           "@type": "Question",
-          "name": "Como funciona na prática?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "São cinco passos. Entender como o processo funciona hoje. Identificar onde tempo, pessoas ou dinheiro se perdem. Desenvolver uma solução específica. Implementar dentro da rotina real. Medir o resultado obtido. Se a solução gerar valor, seguimos juntos."
-          }
-        },
-        {
-          "@type": "Question",
           "name": "Serve para empresa ou para pessoa?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -1555,8 +1520,6 @@ main > section{padding-top:132px;padding-bottom:132px}
     <li>Uma rotina que consome o dia inteiro <strong>e ninguém nunca parou para olhar.</strong></li>
     <li>Conhecimento que só existe na cabeça de uma pessoa e nunca foi escrito.</li>
     <li>Retrabalho que virou hábito, porque sempre foi feito assim.</li>
-    <li>Uma empresa que perdeu o rumo e não sabe o que resolver primeiro.</li>
-    <li>Um profissional que sabe muito, mas trava na hora de mostrar o próprio valor.</li>
   </ul>
   <p class="pq-close">Se você reconheceu a sua operação em alguma dessas linhas, <b>a gente precisa conversar.</b></p>
 </section>
@@ -1684,10 +1647,6 @@ main > section{padding-top:132px;padding-bottom:132px}
   <a class="ref-link" href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">Veja uma referência viva no LinkedIn →</a>
 
   <div class="evc-cta">
-    <a class="btn-grad" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20conversar%20sobre%20o%20IAieu%20eVc%20(presen%C3%A7a%20no%20LinkedIn)." target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Quero conversar
-    </a>
     <a class="of-link" href="iaieu-evc.html">Ver como funciona o eVc →</a>
   </div>
 </section>
@@ -1703,10 +1662,7 @@ main > section{padding-top:132px;padding-bottom:132px}
       <p class="sub">O processo que consome mais do que deveria.</p>
       <p>Toda operação tem uma rotina que ninguém desenhou, que foi acontecendo, e que hoje come o dia inteiro. Você me aponta esse processo, eu estudo como ele funciona hoje, construo a solução, coloco pra rodar e confiro se melhorou. Sem você ter que aprender ferramenta nenhuma.</p>
       <p class="fecho">O trabalho volta <b>feito.</b></p>
-      <a class="btn-grad" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20IAieu%2B." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Chamar no WhatsApp
-      </a>
+      
       <a class="of-link" href="iaieu-mais.html">Ver como funciona o IAieu+ →</a>
     </div>
 
@@ -1715,10 +1671,7 @@ main > section{padding-top:132px;padding-bottom:132px}
       <p class="sub">Quando é mais rápido olhar junto.</p>
       <p>Tem problema que não precisa de projeto. Precisa de meia hora com alguém que já viu aquilo antes. Marque horas comigo, ao vivo: aula para aprender, monitoria enquanto você faz, consultoria para decidir ou coordenação para eu tocar junto. O valor é cobrado por hora.</p>
       <p class="fecho">A mesma cabeça, <b>ao seu lado.</b></p>
-      <a class="btn-grad" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20IAieu%20GO." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Chamar no WhatsApp
-      </a>
+      
       <a class="of-link" href="iaieu-go.html">Ver como funciona o GO →</a>
     </div>
 
@@ -1761,39 +1714,14 @@ main > section{padding-top:132px;padding-bottom:132px}
 </section>
 </div>
 
-<!-- CONTEÚDOS -->
-<section id="conteudos">
-  <span class="rotulo">Conteúdos</span>
-  <h2 class="titulo">Não acredite em mim. <em>Veja por si.</em></h2>
-  <p class="subtitulo">O melhor jeito de entender o que eu faço é ver de perto.</p>
-  <div class="cont-grid">
-    <div class="cont-card">
-      <div class="cont-ic"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21 8.75 22 10.9 22 14v7h-4v-6.2c0-1.5-.03-3.4-2.1-3.4-2.1 0-2.4 1.6-2.4 3.3V21h-4z"/></svg></div>
-      <h3>Meu LinkedIn</h3>
-      <p>O meu próprio perfil é o exemplo vivo do que eu faço pelos clientes. Dá uma olhada.</p>
-      <a class="cont-link" href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">Ver no LinkedIn →</a>
-    </div>
-    <div class="cont-card">
-      <div class="cont-ic"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2c2.7 0 3 .01 4.1.06 1.05.05 1.8.22 2.4.47.65.25 1.2.6 1.75 1.15.55.55.9 1.1 1.15 1.75.25.6.42 1.35.47 2.4.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.05-.22 1.8-.47 2.4-.25.65-.6 1.2-1.15 1.75-.55.55-1.1.9-1.75 1.15-.6.25-1.35.42-2.4.47-1.1.05-1.4.06-4.1.06s-3-.01-4.1-.06c-1.05-.05-1.8-.22-2.4-.47a4.9 4.9 0 01-1.75-1.15 4.9 4.9 0 01-1.15-1.75c-.25-.6-.42-1.35-.47-2.4C2.01 15 2 14.7 2 12s.01-3 .06-4.1c.05-1.05.22-1.8.47-2.4.25-.65.6-1.2 1.15-1.75.55-.55 1.1-.9 1.75-1.15.6-.25 1.35-.42 2.4-.47C9 2.01 9.3 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.25-.88a1.13 1.13 0 100 2.26 1.13 1.13 0 000-2.26z"/></svg></div>
-      <h3>@iaieu.evc</h3>
-      <p>Exemplos curtos de operação organizada e problema resolvido. O jeito mais fácil de acompanhar o trabalho.</p>
-      <a class="cont-link" href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Seguir no Instagram →</a>
-    </div>
-    <div class="cont-card">
-      <div class="cont-ic"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2h9l5 5v13a2 2 0 01-2 2H6a2 2 0 01-2-2V4a2 2 0 012-2zm8 1.5V8h4.5L14 3.5zM7.5 12h9v1.5h-9zm0 3h9v1.5h-9zm0-6h4v1.5h-4z"/></svg></div>
-      <h3>Materiais pra você</h3>
-      <p>O que eu leio e comento sobre operação, processo, gestão e decisão. Tecnologia entra quando muda o resultado.</p>
-      <a class="cont-link" href="conteudos.html">Ver os conteúdos →</a>
-    </div>
-  </div>
-</section>
+
 
 <div class="divisor"></div>
 
 <!-- RESPOSTA DIRETA (bloco de citabilidade para busca e assistentes de IA) -->
 <section id="o-que-e">
-  <span class="rotulo">Em resumo</span>
-  <h2 class="titulo">O que é o IAieu.</h2>
+  <span class="rotulo">Para quem chegou agora</span>
+  <h2 class="titulo">Em um <em>parágrafo.</em></h2>
   <p class="abertura-b">Desenvolvemos soluções operacionais sob medida para empresas e pessoas. A tecnologia é escolhida em função do problema, e não o contrário.</p>
   <div class="resposta-direta">
     <p><strong>Eu entro numa operação para entender como ela funciona</strong>, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica, coloco para rodar e confiro se melhorou.</p>
@@ -1819,10 +1747,6 @@ main > section{padding-top:132px;padding-bottom:132px}
     <div class="faq-item">
       <h3 class="faq-q">Isso é consultoria de inteligência artificial?</h3>
       <p class="faq-a">Não. A inteligência artificial é apenas uma das ferramentas que usamos, do mesmo jeito que usamos planilha, processo escrito ou reunião com a equipe. A tecnologia é escolhida em função do problema, e não o contrário. O que eu entrego não é tecnologia, é tempo que volta para você.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Como funciona na prática?</h3>
-      <p class="faq-a">São cinco passos. Entender como o processo funciona hoje. Identificar onde tempo, pessoas ou dinheiro se perdem. Desenvolver uma solução específica. Implementar dentro da rotina real. Medir o resultado obtido. Se a solução gerar valor, seguimos juntos.</p>
     </div>
     <div class="faq-item">
       <h3 class="faq-q">Serve para empresa ou para pessoa?</h3>
