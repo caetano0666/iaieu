@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0D0B10">
+<title>IAieu · Shimano Fest 2026</title>
+<meta name="description" content="Você grava na feira. Eu faço o resto. Cinco postagens prontas em 48 horas.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --preto:#0D0B10;
+    --preto2:#131018;
+    --roxo:#7C3AED;
+    --azul:#2563EB;
+    --branco:#FFFFFF;
+    --cinza:#A0A0B8;
+    --cinza2:#6E6E85;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    background:var(--preto);
+    color:var(--branco);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  .barra{height:4px;background:linear-gradient(90deg,var(--roxo),var(--azul));}
+  .wrap{max-width:720px;margin:0 auto;padding:0 28px;}
+
+  header{padding:34px 0 0;}
+  .marca{font-size:20px;font-weight:700;letter-spacing:-.5px;}
+  .marca span{color:var(--roxo);}
+
+  .hero{padding:64px 0 72px;}
+  .kicker{
+    font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+    color:var(--cinza2);margin-bottom:26px;
+  }
+  h1{
+    font-size:clamp(38px,8vw,60px);
+    font-weight:800;line-height:1.08;letter-spacing:-2px;margin-bottom:28px;
+  }
+  h1 .grad{
+    background:linear-gradient(90deg,var(--roxo),var(--azul));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .sub{font-size:clamp(19px,4vw,23px);font-weight:500;color:var(--cinza);max-width:520px;}
+
+  .filete{width:64px;height:3px;background:linear-gradient(90deg,var(--roxo),var(--azul));margin:0 0 34px;}
+
+  section{padding:56px 0;border-top:1px solid rgba(255,255,255,.07);}
+  h2{
+    font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+    color:var(--cinza2);margin-bottom:30px;
+  }
+  .texto p{font-size:clamp(17px,3.6vw,19px);color:var(--cinza);margin-bottom:14px;}
+  .texto p.forte{color:var(--branco);font-weight:600;}
+
+  .passos{list-style:none;}
+  .passo{display:flex;gap:22px;margin-bottom:30px;align-items:flex-start;}
+  .n{
+    flex:0 0 40px;height:40px;border-radius:50%;
+    background:linear-gradient(135deg,var(--roxo),var(--azul));
+    display:flex;align-items:center;justify-content:center;
+    font-size:15px;font-weight:700;color:#fff;
+  }
+  .passo-txt{font-size:clamp(17px,3.6vw,19px);color:var(--branco);font-weight:500;padding-top:7px;}
+  .passo-txt em{display:block;font-style:normal;color:var(--cinza2);font-size:15px;font-weight:400;margin-top:5px;}
+
+  .preco-box{
+    background:var(--preto2);
+    border:1px solid rgba(124,58,237,.35);
+    padding:38px 32px;
+  }
+  .valor{font-size:clamp(46px,10vw,64px);font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:18px;}
+  .valor .grad{
+    background:linear-gradient(90deg,var(--roxo),var(--azul));
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  }
+  .preco-box p{font-size:17px;color:var(--cinza);margin-bottom:8px;}
+  .preco-box p.cond{color:var(--cinza2);font-size:15px;margin-top:18px;margin-bottom:0;}
+
+  .quem p{font-size:clamp(17px,3.6vw,19px);color:var(--cinza);margin-bottom:16px;}
+  .assina{margin-top:26px;}
+  .assina .nome{font-size:19px;font-weight:700;color:var(--branco);}
+  .assina .creds{font-size:15px;color:var(--cinza2);margin-top:6px;}
+
+  .cta{text-align:left;padding:56px 0 12px;}
+  .cta .frase{font-size:clamp(22px,5vw,30px);font-weight:700;letter-spacing:-.8px;margin-bottom:26px;line-height:1.25;}
+  .botao{
+    display:inline-block;text-decoration:none;
+    background:linear-gradient(90deg,var(--roxo),var(--azul));
+    color:#fff;font-size:17px;font-weight:700;
+    padding:17px 34px;letter-spacing:-.2px;
+  }
+  .obs{font-size:14px;color:var(--cinza2);margin-top:18px;}
+
+  footer{padding:52px 0 60px;border-top:1px solid rgba(255,255,255,.07);margin-top:44px;}
+  .slogan{font-size:17px;color:var(--cinza);margin-bottom:22px;line-height:1.5;}
+  .slogan strong{color:var(--branco);font-weight:600;}
+  .site{font-size:16px;font-weight:600;color:var(--branco);text-decoration:none;border-bottom:2px solid var(--roxo);padding-bottom:2px;}
+  .rodape-marca{font-size:14px;color:var(--cinza2);margin-top:26px;}
+</style>
+</head>
+<body>
+
+<div class="barra"></div>
+
+<div class="wrap">
+
+  <header>
+    <div class="marca">IAieu<span>.</span></div>
+  </header>
+
+  <div class="hero">
+    <div class="kicker">Shimano Fest 2026 · 20 a 23 de agosto</div>
+    <h1>Você grava na feira.<br><span class="grad">Eu faço o resto.</span></h1>
+    <p class="sub">Cinco postagens prontas em 48 horas, a partir do material que você captar no seu estande.</p>
+  </div>
+
+  <section class="texto">
+    <h2>O que costuma acontecer</h2>
+    <div class="filete"></div>
+    <p>Você volta da feira com o celular cheio. Foto do estande, vídeo de produto, gente falando da sua marca.</p>
+    <p>E volta com a semana cheia também. Pedido atrasado, orçamento parado, lojista cobrando prazo.</p>
+    <p>Na prática o material fica no celular até sobrar tempo de publicar.</p>
+    <p class="forte">E não sobra. Sai um carrossel de agradecimento e olhe lá.</p>
+  </section>
+
+  <section>
+    <h2>Como funciona</h2>
+    <div class="filete"></div>
+    <ul class="passos">
+      <li class="passo">
+        <div class="n">1</div>
+        <div class="passo-txt">Durante os quatro dias, você capta.
+          <em>Não precisa ficar bonito. Precisa existir. Vídeo torto de celular serve.</em>
+        </div>
+      </li>
+      <li class="passo">
+        <div class="n">2</div>
+        <div class="passo-txt">Você me manda o que captou.
+          <em>Do jeito que estiver. Foto estranha também resolvo.</em>
+        </div>
+      </li>
+      <li class="passo">
+        <div class="n">3</div>
+        <div class="passo-txt">Em 48 horas você recebe cinco postagens prontas.
+          <em>Para Instagram, TikTok e Facebook, ou onde você precisar. Faço também matéria e conteúdo para revista e anúncio.</em>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Quanto custa</h2>
+    <div class="filete"></div>
+    <div class="preco-box">
+      <div class="valor"><span class="grad">R$300</span></div>
+      <p>Cinco postagens prontas.</p>
+      <p>Entrega em 48 horas.</p>
+      <p>Você recebe o arquivo pronto e publica onde quiser.</p>
+      <p class="cond">Condição para material captado na Shimano Fest.</p>
+    </div>
+  </section>
+
+  <section class="quem">
+    <h2>Quem faz</h2>
+    <div class="filete"></div>
+    <p>Toquei a loja Bike Tech Jardins por 19 anos. Sei bem como é a semana depois de uma feira.</p>
+    <div class="assina">
+      <div class="nome">Caetano Zammataro</div>
+      <div class="creds">Bike Tech Jardins &nbsp;·&nbsp; BikeZone &nbsp;·&nbsp; podcast Fala, BikeZone!</div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div class="frase">Grave tudo na feira.<br>Dia 24 eu te entrego os posts.</div>
+    <a class="botao" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20Shimano%20Fest%20e%20quero%20as%20cinco%20postagens.">Falar no WhatsApp</a>
+    <p class="obs">Se você precisar de alguma coisa antes, durante os dias de feira, é só chamar.</p>
+  </div>
+
+  <footer>
+    <p class="slogan"><strong>Seu problema não está sem solução. Está sem direção.</strong><br>Meu trabalho é transformar isso em um caminho claro.</p>
+    <a class="site" href="https://iaieu.com">iaieu.com</a>
+    <p class="rodape-marca">IAieu · A inteligência sempre será sua.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
