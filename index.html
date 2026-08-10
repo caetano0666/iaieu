@@ -1091,6 +1091,11 @@ main > section{padding-top:132px;padding-bottom:132px}
    Na pratica: raio 18px para caixa, 999px para pilula e botao,
    50% apenas para marcador e avatar. Nao existe terceira forma.
    ============================================================== */
+
+/* Fecha a pendencia dos raios. Apenas elementos que sao caixa de verdade.
+   Controle, linha, pilula e circulo ficam como estao, porque a geometria
+   deles tem funcao propria. */
+#evc,#cta,.mini{border-radius:18px}
 </style>
 <script type="application/ld+json">
 {
@@ -1623,7 +1628,7 @@ main > section{padding-top:132px;padding-bottom:132px}
   <span class="rotulo">O que muda na prática</span>
   <h2 class="titulo">Menos tempo perdido.<br>Menos <span class="rt">ret<span class="rt-r">r</span>abalho</span>.<br><em>Mais tempo para o que importa.</em></h2>
   <div class="big-lead">
-    <p>Não prometo transformar a sua operação, porque eu ainda não a conheci. Prometo o que sempre acontece quando um processo é entendido e organizado: some a etapa que existia sem motivo, para a informação de circular duas vezes, e o dia deixa de ser consumido por coisa que não precisava consumir.</p>
+    <p>Não prometo transformar a sua operação, porque eu ainda não a conheci. Prometo o que sempre acontece quando um processo é entendido e organizado: some a etapa que existia sem motivo, a informação para de circular duas vezes, e o dia deixa de ser consumido por coisa que não precisava consumir.</p>
         <p>O que muda de verdade é onde o seu tempo vai parar.</p>
   </div>
 </section>

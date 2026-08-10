@@ -312,3 +312,21 @@ Quando houver dúvida sobre qualquer alteração futura, a pergunta não é se e
 O visitante deve terminar a navegação com menos peso mental do que tinha quando entrou. Alteração que não faz isso não deve ser feita, por melhor que pareça.
 
 A partir desta data o site é **produto em operação**, não projeto em desenvolvimento. Nenhuma alteração deve nascer de opinião estética. As próximas evoluções vêm de casos reais, do comportamento dos visitantes, de dúvidas recorrentes, de novos conteúdos e do amadurecimento natural da marca.
+
+
+---
+
+## Pendência dos raios: encerrada em 4 de agosto de 2026
+
+A regra de forma foi aplicada ao domínio inteiro. Auditoria feita medindo o valor **computado** de cada elemento nas dez páginas, não o valor escrito no CSS, porque várias declarações estavam sobrescritas por regras posteriores.
+
+**Normalizados para 18px, por serem caixa de verdade:** `#evc`, `#cta` e `.mini` na home; `.of-faq`, `.of-outra`, `.uni`, `.analogia-box`, `.ed-inner`, `.mf-final`, `.caso-ficha`, `.caso-transp`, `.ofs a`, `.proj-card`, `.post-fonte` e os cartões de número do Caso 01 nas internas. O `.dep-trad` ficou `0 18px 18px 0`, porque o canto esquerdo reto é proposital: ele encosta numa borda vertical.
+
+**Preservados de propósito, por não serem caixa:**
+
+- `.hero-rule` e `.dep-barra`, com 2px. São **linhas** de 2px de espessura. O raio ali arredonda a ponta da linha, não um canto de caixa.
+- `.nav-burger` e `.nav-cta`, com 9px. São **controles de interface**, não cartões. Arredondá-los a 18px faria um botão parecer card.
+- O foco de teclado, com 4px. É affordance de acessibilidade.
+- `.mf-final .lead`, com 20px. Declaração **sem efeito visual nenhum**: o elemento não tem fundo, borda nem sombra, então não existe aresta para arredondar. Mexer nele mudaria zero pixel.
+
+**Estado final:** 98 elementos com raio no domínio. Todos os que desenham uma caixa usam 18px. Pílula 999px e círculo 50% intactos.

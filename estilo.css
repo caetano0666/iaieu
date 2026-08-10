@@ -596,3 +596,11 @@ body .faixa-clara p b,body .faixa-clara p strong{color:#1A161F}
    -------------------------------------------------------------- */
 body .titulo{line-height:1.1}
 body .topo{max-width:820px}
+
+/* Fecha a pendencia dos raios nas paginas internas. So caixa de verdade.
+   .dep-trad mantem o canto esquerdo reto de proposito, porque ele encosta
+   numa borda vertical. .hero-rule e .dep-barra sao linhas, nao caixas. */
+body .of-faq,body .of-outra,body .uni,body .analogia-box,body .ed-inner,
+body .mf-final,body .caso-ficha,body .caso-transp,body .ofs a,
+body .proj-card,body .post-fonte,body .caso-num div{border-radius:18px}
+body .dep-trad{border-radius:0 18px 18px 0}

@@ -116,6 +116,8 @@ Escrito para quem abrir este arquivo daqui a um ano e precisar mexer sem quebrar
 6. **Bio do Instagram e LinkedIn** provavelmente ainda falam do posicionamento antigo.
 7. Cinco regras de CSS órfãs das etiquetas removidas na edição final. Não afetam nada.
 
+**Encerrado em 04/08/2026:** a pendência dos border-radius. Todos os elementos que desenham uma caixa usam 18px em todo o domínio. O detalhe do que foi normalizado e do que foi preservado de propósito está no `FUTURE-MAINTENANCE.md`.
+
 ## O que aconteceu no dia 04/08/2026
 
 | Hora | Commit | O que foi |
