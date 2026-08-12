@@ -21,6 +21,10 @@
 !/.gitignore
 
 # Paginas do site
+!/en/
+!/en/*.html
+!/es/
+!/es/*.html
 !/index.html
 !/o-que-vendemos.html
 !/iaieu-evc.html

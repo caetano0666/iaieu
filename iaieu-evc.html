@@ -21,6 +21,10 @@
 <meta property="og:url" content="https://iaieu.com/iaieu-evc.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://iaieu.com/iaieu-evc.html">
+<link rel="alternate" hreflang="pt-BR" href="https://iaieu.com/iaieu-evc.html">
+<link rel="alternate" hreflang="en" href="https://iaieu.com/en/iaieu-evc.html">
+<link rel="alternate" hreflang="es" href="https://iaieu.com/es/iaieu-evc.html">
+<link rel="alternate" hreflang="x-default" href="https://iaieu.com/iaieu-evc.html">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:site_name" content="IAieu">
 <meta property="og:locale" content="pt_BR">
@@ -65,6 +69,27 @@
 .uni-f{margin-bottom:0!important;color:#F5F2EC!important}
 .uni-f b{font-weight:600}
 @media(max-width:640px){.uni{padding:26px 22px}}
+
+/* Seletor de idioma. Texto puro, sem bandeira: bandeira representa pais e nao
+   idioma, e o publico hispanico da Florida nao e espanhol europeu. */
+.idiomas{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.idiomas a,.idiomas .idioma-ativo{font-size:14px;font-weight:500;letter-spacing:0.02em;text-decoration:none}
+.idiomas a{color:#A0A0B8}
+.idiomas a:hover{color:#F5F2EC}
+.idiomas .idioma-ativo{color:#F5F2EC;font-weight:700}
+.idiomas i{color:rgba(160,160,184,0.5);font-style:normal;font-size:12px}
+@media(max-width:820px){.idiomas{padding:13px 2px}}
+
+/* No celular a barra do topo esconde o menu inteiro, e o seletor de idioma ia
+   junto. Trocar de idioma nao pode depender de abrir o hamburguer, entao ele
+   fica visivel na barra, ao lado do botao do menu. */
+@media(max-width:820px){
+  .nav-links{display:flex!important;position:static;flex-direction:row;align-items:center;
+    background:none;border:0;padding:0;margin:0 10px 0 auto;width:auto;gap:0}
+  .nav-links li:not(.idiomas){display:none}
+  .nav-links .idiomas{padding:0}
+  .idiomas a,.idiomas .idioma-ativo{font-size:13px}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -212,6 +237,7 @@
     <li><a href="sobre.html">A experiência</a></li>
     <li class="nav-extra"><a href="projetos.html">Casos</a></li>
     <li class="nav-extra"><a href="depoimentos.html">Depoimentos</a></li>
+    <li class="idiomas"><span class="idioma-ativo">PT</span><i>·</i><a href="https://iaieu.com/en/iaieu-evc.html">EN</a><i>·</i><a href="https://iaieu.com/es/iaieu-evc.html">ES</a></li>
     <li><a href="index.html#cta" class="nav-cta-out">Fale comigo →</a></li>
   </ul>
   <button class="nav-burger" type="button" aria-label="Abrir menu completo" aria-expanded="false" aria-controls="menu-completo" data-menu-abrir><span></span><span></span><span></span></button>

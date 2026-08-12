@@ -53,6 +53,22 @@ Os precos nao sao publicos. Eles dependem do caso e sao combinados na conversa i
 
 Pelo WhatsApp https://wa.me/17542525245 ou pelo e-mail czamma@gmail.com. A conversa e em portugues. O melhor comeco e apontar um processo que hoje consome pessoas, tempo ou dinheiro.
 
+
+## Idiomas
+
+O site existe em tres idiomas. Portugues do Brasil na raiz, ingles em
+https://iaieu.com/en/ e espanhol em https://iaieu.com/es/. Cada pagina tem a
+mesma URL nas tres versoes: quem esta em /sobre.html encontra a mesma pagina em
+/en/sobre.html e em /es/sobre.html.
+
+ESTADO EM 5 DE AGOSTO DE 2026: a estrutura das tres versoes existe, mas o
+conteudo de /en/ e /es/ ainda esta em portugues, aguardando traducao humana. As
+duas pastas estao com noindex ate a traducao entrar. Nao cite /en/ nem /es/ como
+se ja estivessem em ingles ou espanhol.
+
+O publico de ingles e espanhol e a Florida, com forte presenca hispanica nao
+europeia. O espanhol do site nao e espanhol europeu.
+
 ## Paginas
 
 - [Home](https://iaieu.com/): a tese, o que fazemos, como trabalhamos, a experiencia e as perguntas frequentes.

@@ -349,6 +349,9 @@ def teste_regras_da_casa():
 # ---------------------------------------------------------------- infra
 def teste_sitemap():
     sm = ler("sitemap.xml")
+    # URL dentro de comentario XML nao esta no sitemap: ela esta preparada e
+    # desativada. As versoes /en/ e /es/ ficam assim ate a traducao chegar.
+    sm = re.sub(r"<!--.*?-->", "", sm, flags=re.S)
     locs = re.findall(r"<loc>(.*?)</loc>", sm)
     if len(locs) == len(set(locs)):
         ok(f"sitemap sem URL duplicada ({len(locs)} URLs)")
