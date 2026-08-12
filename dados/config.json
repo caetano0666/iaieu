@@ -27,14 +27,14 @@
     "sessao2_desc": "A IA só funciona bem se você souber pedir. Aprenda a Fórmula IAieu — 4 ingredientes que transformam qualquer dúvida em resposta útil.",
     "sessao3_titulo": "IA na sua rotina",
     "sessao3_desc": "E-mails, trabalho, saúde. Você sai com IA funcionando no que já faz todo dia — economizando horas.",
-    "preco": "249",
     "preco_desc": "Pacote completo · 3 sessões ao vivo",
     "item1": "3 sessões de 45 minutos cada, via Google Meet",
     "item2": "Pagamento em até 10x no cartão",
     "item3": "Você sempre na tela — aprendendo fazendo",
     "item4": "Sem conhecimento técnico necessário",
     "item5": "Ritmo no seu tempo, exemplos da sua vida",
-    "item6": "Acompanhamento entre as sessões por WhatsApp"
+    "item6": "Acompanhamento entre as sessões por WhatsApp",
+    "_nota": "Produto descontinuado em 05/08/2026. O IAieu GO virou mentoria, sem recorte de idade, e o preco esta pendente. Bloco mantido so para o admin.html nao quebrar."
   },
   "cta": {
     "titulo": "Pronto para dizer \"Eu consigo\"?",

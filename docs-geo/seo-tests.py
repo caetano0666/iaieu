@@ -32,7 +32,8 @@ PAGINAS = {
     "caso-operacao-do-zero.html": f"{BASE}/caso-operacao-do-zero.html",
     "iaieu-evc.html": f"{BASE}/iaieu-evc.html",
     "iaieu-mais.html": f"{BASE}/iaieu-mais.html",
-    "iaieu-go.html": f"{BASE}/iaieu-go.html",
+    # iaieu-go.html saiu do percurso em 05/08/2026, igual a arte.html.
+    # Continua checada pelas regras da casa, entao nunca fica com travessao.
     "sobre.html": f"{BASE}/sobre.html",
     "projetos.html": f"{BASE}/projetos.html",
     "conteudos.html": f"{BASE}/conteudos.html",
