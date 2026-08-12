@@ -73,6 +73,10 @@
 !/COMECE_AQUI.md
 !/NEXT.md
 
+# Texto do site extraido para traducao. Fica no repo de proposito, para ter
+# historico de versao, e fica bloqueado no robots.txt: e material de trabalho.
+!/TRADUZIR.md
+
 # ---------------------------------------------------------------
 # PROTECAO EXPLICITA
 # Ja estao cobertas pela regra /* acima. Repetidas de proposito,
