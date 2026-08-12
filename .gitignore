@@ -73,9 +73,11 @@
 !/COMECE_AQUI.md
 !/NEXT.md
 
-# Texto do site extraido para traducao. Fica no repo de proposito, para ter
-# historico de versao, e fica bloqueado no robots.txt: e material de trabalho.
-!/TRADUZIR.md
+# O TRADUZIR.md NAO entra aqui de proposito.
+# Ele e material interno de trabalho. Tudo que esta na main vai para o ar,
+# entao a unica forma de nao publicar e nao versionar. O arquivo fica so no
+# computador, em /Users/cae/IAieu-site/TRADUZIR.md.
+# Decisao do dono em 05/08/2026. Nao liberar de novo.
 
 # ---------------------------------------------------------------
 # PROTECAO EXPLICITA
