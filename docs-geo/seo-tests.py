@@ -349,7 +349,12 @@ def teste_sitemap():
     else:
         falha("sitemap com URL duplicada")
 
-    esperadas = set(PAGINAS.values())
+    # As homes de /en/ e /es/ entraram no sitemap em 13/08/2026, quando foram
+    # traduzidas e o noindex saiu delas. As outras dezoito paginas de /en/ e
+    # /es/ continuam fora, dentro do comentario, porque ainda estao em
+    # portugues. Nao acrescentar nenhuma aqui sem a traducao ter chegado.
+    TRADUZIDAS = {f"{BASE}/en/", f"{BASE}/es/"}
+    esperadas = set(PAGINAS.values()) | TRADUZIDAS
     faltando = esperadas - set(locs)
     sobrando = set(locs) - esperadas
     if faltando:

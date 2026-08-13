@@ -68,24 +68,36 @@
   </url>
 
   <!-- =========================================================
-       VERSOES EM INGLES E ESPANHOL, prontas e desativadas.
-
-       Elas ficam comentadas de proposito. Enquanto /en/ e /es/
-       estiverem com noindex, listar essas URLs aqui seria mandar o
-       Google rastrear paginas que o proprio site pede para nao
-       indexar, e isso queima orcamento de rastreio e confunde o
-       sinal de hreflang.
-
-       QUANDO A TRADUCAO CHEGAR, em uma etapa so: tirar o noindex das
-       20 paginas de /en/ e /es/, e descomentar este bloco.
+       HOMES TRADUZIDAS. Estas duas entraram em 13/08/2026, quando a
+       home nova foi publicada nos tres idiomas e o noindex saiu delas.
        ========================================================= -->
-  <!--
   <url>
     <loc>https://iaieu.com/en/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://iaieu.com/es/</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- =========================================================
+       AS DEMAIS PAGINAS DE /en/ E /es/, prontas e desativadas.
+
+       Elas continuam comentadas de proposito: o texto delas ainda
+       esta em portugues e elas seguem com noindex. Listar aqui uma
+       URL que o proprio site pede para nao indexar queima orcamento
+       de rastreio e confunde o sinal de hreflang.
+
+       QUANDO CADA UMA FOR TRADUZIDA, em uma etapa so: tirar o
+       noindex da pagina e mover a URL dela para fora deste
+       comentario. Nao descomentar o bloco inteiro de uma vez sem
+       que as dezoito estejam traduzidas.
+       ========================================================= -->
+  <!--
   <url>
     <loc>https://iaieu.com/en/o-que-vendemos.html</loc>
     <lastmod>2026-08-05</lastmod>
@@ -133,12 +145,6 @@
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iaieu.com/es/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://iaieu.com/es/o-que-vendemos.html</loc>
