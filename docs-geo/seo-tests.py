@@ -250,11 +250,13 @@ def teste_jsonld():
 def teste_entidades_da_home():
     grafo = json.loads(blocos_jsonld(ler("index.html"))[0])["@graph"]
     por_id = {n.get("@id"): n for n in grafo}
+    # A home nova, aprovada em 13/08/2026, tem oito secoes e nenhuma FAQ.
+    # Por isso #faq saiu daqui. Ver teste_home_sem_faq logo abaixo.
     esperados = [
         f"{BASE}/#organization",
         f"{BASE}/#person-caetano",
         f"{BASE}/#website",
-        f"{BASE}/#faq",
+        f"{BASE}/#webpage",
     ]
     for eid in esperados:
         if eid in por_id:
@@ -279,40 +281,29 @@ def teste_entidades_da_home():
         falha("LocalBusiness encontrado", "o IAieu nao e negocio local")
 
 
-def teste_faq_espelhada():
-    html = ler("index.html")
-    grafo = json.loads(blocos_jsonld(html)[0])["@graph"]
-    faq = next((n for n in grafo if n.get("@type") == "FAQPage"), None)
-    if not faq:
-        falha("home sem FAQPage")
-        return
+def teste_home_sem_faq():
+    """A home nova nao tem FAQ. Decisao do Caetano em 13/08/2026.
 
-    visivel = texto_visivel(html)
-    perguntas = [q["name"] for q in faq.get("mainEntity", [])]
-    respostas = [q["acceptedAnswer"]["text"] for q in faq.get("mainEntity", [])]
-
-    if not perguntas:
-        falha("FAQPage sem perguntas")
-        return
-
-    faltando = [p for p in perguntas if p not in visivel]
-    if faltando:
-        falha("FAQ do schema nao esta visivel na pagina",
-              f"{len(faltando)} pergunta(s): {faltando[:2]}")
-    else:
-        ok(f"FAQ espelhada 1:1 ({len(perguntas)} perguntas visiveis)")
-
-    resp_faltando = [r for r in respostas if r[:60] not in visivel]
-    if resp_faltando:
-        falha("resposta do schema nao esta visivel", f"{len(resp_faltando)} resposta(s)")
-    else:
-        ok("todas as respostas do schema estao visiveis")
+    O teste antigo exigia FAQ espelhada 1:1 entre schema e texto visivel. Ele
+    existia porque a home antiga tinha FAQ. Agora ele trava o contrario: se
+    alguem devolver uma FAQ para a home, isso aparece aqui como falha, em vez
+    de entrar sem ninguem perceber.
+    """
+    for arq in ("index.html", "en/index.html", "es/index.html"):
+        html = ler(arq)
+        grafo = json.loads(blocos_jsonld(html)[0])["@graph"]
+        if any(n.get("@type") == "FAQPage" for n in grafo):
+            falha(f"{arq}: FAQPage no schema", "a home aprovada em 13/08/2026 nao tem FAQ")
+        else:
+            ok(f"{arq}: sem FAQPage, como a home aprovada define")
 
 
 # ---------------------------------------------------------------- conteudo
 def teste_conteudo_no_html_bruto():
     marcadores = {
-        "index.html": "soluções operacionais sob medida",
+        # Marcador trocado em 13/08/2026: a home nova abre pela pergunta do
+        # visitante, e nao mais pela descricao do que o IAieu vende.
+        "index.html": "tomando mais tempo do que deveria",
         "o-que-vendemos.html": "em função do problema",
         "sobre.html": "Quarenta anos",
         "projetos.html": "precisava resolver",
@@ -443,7 +434,7 @@ def main():
         teste_estrutura,
         teste_jsonld,
         teste_entidades_da_home,
-        teste_faq_espelhada,
+        teste_home_sem_faq,
         teste_conteudo_no_html_bruto,
         teste_regras_da_casa,
         teste_sitemap,

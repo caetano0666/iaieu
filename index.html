@@ -1,1127 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Google Analytics (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRMHLHQNGB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KRMHLHQNGB');
-</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IAieu · Quarenta anos organizando operações</title>
+<title>Tem alguma coisa no seu dia tomando mais tempo do que deveria?</title>
+<meta name="description" content="Pode ser uma tarefa que volta toda semana. Pode ser uma decisão travada. Ou uma coisa que você desconfia que tem um jeito mais fácil de fazer.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 
-<link rel="preload" as="image" href="imagens/cae-hero-fullbleed.webp">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png?v=3">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png?v=3">
 <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png?v=3">
 <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
-<meta name="theme-color" content="#0D0B10">
+<meta name="theme-color" content="#FFFFFF">
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="IAieu · Quarenta anos organizando operações">
-<meta property="og:description" content="Soluções operacionais sob medida para empresas e pessoas. A tecnologia é escolhida em função do problema, e não o contrário.">
-<meta property="og:image" content="https://iaieu.com/og-image.png">
-<meta property="og:url" content="https://iaieu.com/">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://iaieu.com/">
 <link rel="alternate" hreflang="pt-BR" href="https://iaieu.com/">
 <link rel="alternate" hreflang="en" href="https://iaieu.com/en/">
 <link rel="alternate" hreflang="es" href="https://iaieu.com/es/">
 <link rel="alternate" hreflang="x-default" href="https://iaieu.com/">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<meta property="og:type" content="website">
 <meta property="og:site_name" content="IAieu">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Tem alguma coisa no seu dia tomando mais tempo do que deveria?">
+<meta property="og:description" content="Pode ser uma tarefa que volta toda semana. Pode ser uma decisão travada. Ou uma coisa que você desconfia que tem um jeito mais fácil de fazer.">
+<meta property="og:url" content="https://iaieu.com/">
+<meta property="og:image" content="https://iaieu.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="IAieu. Quarenta anos organizando operações. Hoje com ferramentas que não existiam ontem.">
-<meta name="twitter:title" content="IAieu · Quarenta anos organizando operações">
-<meta name="twitter:description" content="Soluções operacionais sob medida para empresas e pessoas. A tecnologia é escolhida em função do problema, e não o contrário.">
+<meta property="og:image:alt" content="IAieu. Me conta o que está acontecendo.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tem alguma coisa no seu dia tomando mais tempo do que deveria?">
+<meta name="twitter:description" content="Pode ser uma tarefa que volta toda semana. Pode ser uma decisão travada. Ou uma coisa que você desconfia que tem um jeito mais fácil de fazer.">
 <meta name="twitter:image" content="https://iaieu.com/og-image.png">
-<meta name="description" content="Soluções operacionais sob medida para empresas e pessoas. Entendemos o processo, achamos o desperdício, construímos a solução e medimos o resultado.">
 
-<style>
-/* ============================================================
-   IAieu · Estilo base (embutido para a home ser auto-suficiente)
-   Cores: Fundo #0D0B10 · Roxo #7C3AED · Azul #2563EB · Branco · Cinza #A0A0B8
-   ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+<link rel="preload" href="/fontes/inter-var.woff2" as="font" type="font/woff2" crossorigin>
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
-:root{
-  --preto:#0D0B10;
-  --branco:#F5F2EC;
-  --roxo:#7C3AED;
-  --azul:#2563EB;
-  --cinza:#A0A0B8;
-  --verde:#25D366;
-  --grad:linear-gradient(135deg,#7C3AED,#2563EB);
-  --grad3:linear-gradient(135deg,#7C3AED,#2563EB,#3B82F6);
-}
-
-html{scroll-behavior:smooth}
-body{
-  background:var(--preto);
-  color:var(--branco);
-  font-family:'Inter','Helvetica Neue',sans-serif;
-  line-height:1.6;
-  overflow-x:hidden;
-  min-height:100vh;
-}
-
-
-a{color:inherit}
-img{max-width:100%;display:block}
-.blend{mix-blend-mode:screen}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;justify-content:space-between;align-items:center;
-  gap:20px;padding:14px 40px;
-  background:rgba(13,11,16,0.96);
-    border-bottom:1px solid rgba(124,58,237,0.2);
-}
-.nav-logo{display:inline-flex;align-items:center;text-decoration:none}
-.nav-logo img{height:30px;width:auto}
-.wordmark{font-family:'Inter',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.045em;line-height:1;white-space:nowrap;display:inline-block}
-.wordmark .w1{color:#F5F2EC}
-.wordmark .w2{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-.foot-wordmark{font-size:27px}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none;flex-wrap:wrap;justify-content:flex-end}
-.nav-links a{
-  color:var(--cinza);text-decoration:none;font-size:14px;font-weight:500;
-  letter-spacing:0.02em;transition:color 0.2s;white-space:nowrap;
-}
-.nav-links a:hover,.nav-links a.ativo{color:#F5F2EC}
-.nav-links a.ativo{font-weight:700}
-.nav-cta{
-  background:var(--grad);color:#F5F2EC!important;
-  padding:9px 20px;border-radius:9px;font-weight:600!important;
-}
-.nav-cta:hover{opacity:0.9}
-.nav-burger{display:none;background:none;border:1px solid rgba(255,255,255,0.18);border-radius:9px;width:42px;height:38px;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:0}
-.nav-burger span{display:block;width:18px;height:2px;background:#fff;border-radius:2px}
-
-/* BOTÕES */
-.btn-wa{
-  display:inline-flex;align-items:center;gap:11px;
-  background:var(--verde);color:#F5F2EC;text-decoration:none;
-  padding:15px 34px;border-radius:12px;font-size:16px;font-weight:700;
-  box-shadow:none;
-  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
-  border:none;cursor:pointer;font-family:inherit;
-}
-.btn-wa:hover{opacity:0.9;transform:translateY(-2px)}
-.btn-wa svg{width:21px;height:21px;fill:#fff;flex-shrink:0}
-
-.btn-grad{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--roxo);color:#F5F2EC;text-decoration:none;
-  padding:15px 34px;border-radius:12px;font-size:16px;font-weight:700;
-  box-shadow:none;
-  transition:opacity 0.2s,transform 0.2s,box-shadow 0.2s;
-  border:none;cursor:pointer;font-family:inherit;
-}
-.btn-grad:hover{opacity:0.9;transform:translateY(-2px)}
-.btn-primary{background:var(--grad)}
-.btn-grad svg{width:20px;height:20px;fill:#fff;flex-shrink:0}
-
-/* BOTÃO WHATSAPP FLUTUANTE */
-.wa-float{
-  position:fixed;bottom:24px;right:24px;z-index:300;
-  width:60px;height:60px;border-radius:50%;
-  background:var(--verde);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 14px rgba(0,0,0,0.45);
-  transition:transform 0.2s,box-shadow 0.2s;
-}
-.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 18px rgba(0,0,0,0.5)}
-.wa-float svg{width:32px;height:32px;fill:#fff}
-
-/* SEÇÕES / TÍTULOS */
-main{position:relative;z-index:1}
-section{padding:114px 40px;max-width:1120px;margin:0 auto;position:relative;z-index:1}
-.rotulo{
-  font-size:14px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
-  color:#A78BFA;margin-bottom:16px;display:block;
-}
-.titulo{font-size:clamp(28px,4.4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px}
-.titulo em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.subtitulo{font-size:18px;color:var(--cinza);font-weight:300;line-height:1.7;max-width:640px}
-.divisor{height:1px;max-width:1120px;margin:0 auto;background:rgba(255,255,255,0.10);opacity:1}
-
-/* RODAPÉ */
-footer{
-  position:relative;z-index:1;
-  border-top:1px solid rgba(255,255,255,0.07);
-  padding:56px 40px 40px;
-  display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;align-items:start;
-  max-width:1200px;margin:0 auto;
-}
-.foot-brand{display:flex;flex-direction:column;gap:16px}
-.foot-logo{height:34px;width:auto}
-.foot-slogan{font-size:14px;color:var(--cinza);font-weight:300}
-.foot-slogan b{color:#F5F2EC;font-weight:600}
-.foot-col h4{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--cinza);margin-bottom:16px}
-.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-.foot-col a{color:var(--cinza);text-decoration:none;font-size:14px;transition:color 0.2s}
-.foot-col a:hover{color:#F5F2EC}
-.foot-meta{display:flex;flex-direction:column;gap:12px}
-.foot-simbolo{width:40px;height:40px}
-.foot-meta a{color:var(--cinza);text-decoration:none;font-size:14px;transition:color 0.2s}
-.foot-meta a:hover{color:#F5F2EC}
-.foot-base{
-  max-width:1200px;margin:0 auto;padding:20px 40px 44px;
-  font-size:12px;color:var(--cinza);opacity:0.6;text-align:center;
-}
-
-/* RESPONSIVO base */
-@media(max-width:820px){
-  /* no celular a faixa de repertorio vira compacta: so os setores */
-  .hero-pilares{grid-template-columns:repeat(2,1fr);gap:12px 18px;padding:18px 20px 22px}
-  .pilar-s{display:none}
-  .pilar-intro{font-size:11px;margin-bottom:2px}
-  nav{flex-direction:row;gap:12px;padding:0 16px;height:60px}
-  .nav-burger{display:flex}
-  /* no celular o topo fica so com logo e hamburguer: o resto vive no menu completo */
-  .nav-links{display:none}
-  section{padding:84px 20px}
-  footer{grid-template-columns:1fr;gap:28px;padding:44px 22px 28px}
-}
-@media(max-width:480px){
-  .wa-float{}
-  .wa-float{width:54px;height:54px;bottom:18px;right:18px}
-  .wa-float svg{width:28px;height:28px}
-}
-
-/* ============================================================
-   SINGLE PAGE · estilos específicos da home IAieu
-   ============================================================ */
-
-/* Âncoras param abaixo do menu fixo */
-section[id]{scroll-margin-top:96px}
-@media(max-width:820px){section[id]{scroll-margin-top:120px}}
-
-/* Menu: logo "eVc" e botão contornado */
-.wordmark .w3{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:600}
-.nav-cta-out{
-  border:1px solid rgba(124,58,237,0.55);color:#F5F2EC!important;
-  padding:9px 20px;border-radius:999px;font-weight:600!important;
-  transition:background .2s,border-color .2s;
-}
-.nav-cta-out:hover{background:rgba(124,58,237,0.16);border-color:var(--roxo)}
-
-/* ---------- HERO (arte final: foto + bússola + pilares) ---------- */
-#hero{position:relative;min-height:100vh;max-width:none;margin:0;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.hero-top{position:relative;flex:1 1 auto;display:flex;align-items:center;padding:120px 0 28px;background:url("imagens/cae-hero-fullbleed.webp") right center/cover no-repeat}
-.hero-top::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(13,11,16,0.88) 0%,rgba(13,11,16,0.55) 38%,rgba(13,11,16,0) 64%)}
-.hero-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;z-index:1;background:linear-gradient(180deg,transparent,rgba(13,11,16,0.85))}
-.hero-inner{width:100%;max-width:1280px;margin:0 auto;padding:0 40px;position:relative;z-index:2}
-.hero-copy{max-width:590px}
-.hero-title{font-size:clamp(34px,4.2vw,50px);font-weight:800;line-height:1.1;letter-spacing:-0.035em;color:#F5F2EC;text-wrap:balance}
-.hero-rule{width:64px;height:3px;border-radius:2px;background:var(--roxo);margin:30px 0 24px}
-.hero-actions{display:flex;align-items:center;gap:14px 28px;flex-wrap:wrap}
-.hero-cta{display:inline-flex;border-radius:999px;padding:20px 46px;font-size:19px}
-
-.hero-link{color:var(--cinza);text-decoration:none;font-size:15px;font-weight:600;transition:color .2s}
-.hero-link:hover{color:#F5F2EC}
-
-/* arte à direita (foto + bússola + luz) */
-
-/* 5 pilares na base do hero */
-.hero-pilares{position:relative;z-index:3;width:100%;max-width:1280px;margin:0 auto;
-  padding:22px 40px 30px;border-top:1px solid rgba(255,255,255,0.09);
-  display:grid;grid-template-columns:repeat(5,1fr);gap:22px}
-.pilar{display:flex;align-items:flex-start;gap:14px}
-.pilar-intro{grid-column:1/-1;margin:0 0 4px;font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#A78BFA}
-.pilar-t{border-left:2px solid rgba(124,58,237,0.55);padding-left:10px}
-.pilar-n{font-size:30px;font-weight:800;line-height:1;color:var(--roxo);flex-shrink:0;letter-spacing:-0.04em;font-variant-numeric:tabular-nums;margin-top:-2px}
-.pilar-t{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#F5F2EC}
-.pilar-s{font-size:12.5px;color:var(--cinza);font-weight:300;margin-top:4px;line-height:1.4}
-@media(max-width:960px){.hero-pilares{grid-template-columns:repeat(2,1fr);gap:18px 22px}}
-@media(max-width:520px){.hero-pilares{grid-template-columns:repeat(2,1fr)}}
-
-@media(max-width:900px){
-  #hero{min-height:auto}
-  .hero-top{padding:128px 0 22px;background-position:74% center}
-  .hero-top::before{background:linear-gradient(180deg,rgba(13,11,16,0.82) 0%,rgba(13,11,16,0.55) 55%,rgba(13,11,16,0.75) 100%)}
-    .hero-copy{max-width:100%}
-  .hero-inner{padding:0 22px}
-}
-
-/* ---------- Blocos de narrativa ---------- */
-.big-lead{font-size:clamp(18px,1.9vw,20px);line-height:1.85;color:#c8c8d8;font-weight:300;max-width:760px;margin-top:8px}
-.big-lead p+p{margin-top:22px}
-.big-lead strong{color:#F5F2EC;font-weight:500}
-.narr-chips{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
-.narr-chips span{
-  font-size:13px;font-weight:400;color:var(--cinza);
-  border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:8px 16px;
-}
-
-/* ---------- Para quem é ---------- */
-#para-quem{position:relative;overflow:hidden}
-#para-quem::before{content:"";position:absolute;inset:0;z-index:0;background:url('imagens/bg-paraquem.webp') center/cover no-repeat;opacity:0.24}
-#para-quem::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(90deg,#0D0B10 34%,rgba(13,11,16,0.45) 100%)}
-#para-quem>*{position:relative;z-index:1}
-.pq-lista{list-style:none;max-width:660px;margin:26px 0 8px;display:flex;flex-direction:column;gap:15px}
-.pq-lista li{display:block;position:relative;padding-left:22px;font-size:clamp(15px,1.6vw,18px);color:#c8c8d8;font-weight:300;line-height:1.6}
-.pq-lista li::before{content:"";position:absolute;left:0;top:9px;width:8px;height:8px;border-radius:50%;background:var(--grad)}
-.pq-lista strong{color:#F5F2EC;font-weight:500}
-.pq-close{font-size:clamp(18px,2.3vw,25px);font-weight:600;color:#F5F2EC;margin-top:32px;max-width:660px;line-height:1.4;letter-spacing:-0.01em}
-.pq-close b{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
-
-/* ---------- Como funciona (3 passos) ---------- */
-#como-funciona{position:relative;overflow:hidden}
-#como-funciona>*{position:relative;z-index:1}
-.cf-passos{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:50px}
-@media(max-width:1080px){.cf-passos{grid-template-columns:repeat(3,1fr);gap:20px}}
-.cf-passo{border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:38px 32px;background:rgba(255,255,255,0.03);transition:border-color .3s,transform .3s}
-.cf-passo:hover{border-color:rgba(124,58,237,0.32);transform:translateY(-4px)}
-.cf-num{font-size:34px;font-weight:900;line-height:1;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:16px}
-.cf-passo h3{font-size:22px;font-weight:700;letter-spacing:-0.02em;color:#F5F2EC;margin-bottom:10px}
-.cf-passo p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.7}
-.cf-nota{font-size:clamp(17px,2vw,22px);font-weight:600;color:#F5F2EC;margin-top:32px;max-width:660px;line-height:1.4}
-.cf-nota strong{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
-@media(max-width:820px){.cf-passos{grid-template-columns:1fr}}
-
-/* ---------- Sobre: fundo espiral ---------- */
-#sobre{position:relative;overflow:hidden}
-#sobre>*{position:relative;z-index:1}
-
-/* ---------- Bloco 3: Como eu trabalho ---------- */
-#processo{position:relative;overflow:hidden}
-#processo>*{position:relative;z-index:1}
-.processo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
-.passo{
-  border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:40px 34px;
-  background:rgba(255,255,255,0.02);transition:border-color .3s,transform .3s;
-}
-.passo:hover{border-color:rgba(124,58,237,0.32);transform:translateY(-4px)}
-.passo .ico{width:32px;height:32px;margin-bottom:22px;color:var(--roxo)}
-.passo .ico svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.passo h3{font-size:23px;font-weight:700;letter-spacing:-0.02em;color:#F5F2EC;margin-bottom:10px}
-.passo p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.72}
-@media(max-width:820px){.processo-grid{grid-template-columns:1fr}}
-
-/* ---------- Frase destaque grande ---------- */
-.destaque-quote{
-  font-size:clamp(23px,3.4vw,40px);font-weight:600;line-height:1.35;
-  letter-spacing:-0.02em;max-width:940px;margin:0 auto;text-wrap:balance;
-}
-.destaque-quote b{
-  display:block;margin-top:12px;font-weight:800;
-  background:var(--grad3);-webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-}
-
-/* ---------- Faixa da analogia (curso x direção) ---------- */
-.faixa-analogia{text-align:center}
-.faixa-analogia .destaque-quote{max-width:880px}
-.faixa-analogia .analogia{max-width:680px;margin:34px auto 0;font-size:clamp(16px,1.9vw,19px);line-height:1.8;color:#c8c8d8;font-weight:300}
-.faixa-analogia .analogia b{color:#F5F2EC;font-weight:600}
-.faixa-analogia .analogia p+p{margin-top:16px}
-
-/* ---------- Faixa artística da frase (home) ---------- */
-.home-quote{text-align:center;position:relative}
-.home-quote>*{position:relative;z-index:1}
-.hq-text{font-size:clamp(24px,3.6vw,42px);font-weight:800;line-height:1.3;letter-spacing:-0.02em;color:#F5F2EC;max-width:920px;margin:0 auto;text-wrap:balance}
-.hq-text em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-.hq-mark{font-family:Georgia,serif;color:var(--roxo);opacity:.5;margin-right:2px}
-.hq-fim{margin-top:22px;font-size:clamp(15px,1.8vw,19px);color:var(--cinza);font-weight:400}
-
-/* ---------- Carrossel (do correio ao e-mail) ---------- */
-.carrossel-sec{text-align:center}
-.carrossel-sec .subtitulo{margin:0 auto}
-.carousel{position:relative;margin-top:40px}
-.car-track{
-  display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;
-  padding:4px 2px;
-  /* sem scroll-behavior:smooth: com snap mandatory, o Chrome mata a animacao
-     e scrolls programaticos (e ate scrollLeft direto) viram no-op */
-  -ms-overflow-style:none;scrollbar-width:none;
-}
-.car-track::-webkit-scrollbar{display:none}
-.car-slide{
-  scroll-snap-align:center;flex:0 0 min(80%,420px);
-  width:min(80%,420px);height:auto;border-radius:20px;
-  border:1px solid rgba(255,255,255,0.08);
-  box-shadow:0 20px 60px rgba(0,0,0,0.5);
-}
-.car-nav{
-  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
-  width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,0.16);
-  background:rgba(13,11,16,0.72);
-  color:#F5F2EC;font-size:26px;line-height:1;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;
-  transition:opacity .2s,transform .2s,background .2s;
-}
-.car-nav:hover{background:var(--roxo);transform:translateY(-50%) scale(1.06)}
-.car-prev{left:-8px}
-.car-next{right:-8px}
-.car-nav:disabled{opacity:.28;cursor:default;pointer-events:none}
-@media(max-width:820px){.car-nav{display:none}}
-.car-dots{display:flex;justify-content:center;gap:9px;margin-top:26px}
-.car-dot{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:rgba(255,255,255,0.22);transition:background .2s,width .2s}
-.car-dot.on{background:var(--grad);width:22px;border-radius:5px}
-
-/* ---------- IAieu eVc · destaque máximo ---------- */
-#evc{
-  border:1px solid rgba(124,58,237,0.28);border-radius:28px;
-  background:linear-gradient(180deg,rgba(124,58,237,0.07),rgba(37,99,235,0.03));
-  box-shadow:none;
-  padding:72px 60px;margin-top:20px;margin-bottom:20px;
-}
-#evc .titulo{font-size:clamp(38px,6vw,64px)}
-.evc-body{font-size:18px;color:var(--cinza);font-weight:300;line-height:1.85;max-width:760px;margin:22px 0}
-.evc-body strong{color:#F5F2EC;font-weight:600}
-.andrea-box{
-  border-left:3px solid var(--roxo);border-radius:0 16px 16px 0;
-  background:rgba(255,255,255,0.03);padding:26px 30px;margin:30px 0;max-width:760px;
-}
-.andrea-box .rot{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--roxo);margin-bottom:12px;display:block}
-.andrea-box p{font-size:16px;color:var(--cinza);font-weight:300;line-height:1.8;font-style:italic}
-.andrea-box strong{color:#F5F2EC;font-style:normal;font-weight:600}
-.evc-detalhes{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 6px}
-.evc-detalhes span{
-  font-size:13px;font-weight:500;color:var(--cinza);
-  border:1px solid rgba(255,255,255,0.12);border-radius:999px;padding:8px 16px;
-}
-.ref-link{display:inline-block;margin:18px 0 30px;font-size:14px;font-weight:600;color:var(--roxo);text-decoration:none}
-.ref-link:hover{opacity:0.8}
-.evc-cta{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:8px}
-
-/* ---------- IAieu+ e IAieu GO · cards de segundo plano ---------- */
-.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:24px}
-.mini{
-  border:1px solid rgba(255,255,255,0.09);border-radius:22px;padding:42px 38px;
-  background:rgba(255,255,255,0.02);transition:border-color .3s,box-shadow .3s,transform .3s;
-  display:flex;flex-direction:column;
-}
-.mini:hover{border-color:rgba(124,58,237,0.4);box-shadow:none;transform:translateY(-4px)}
-.mini h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;letter-spacing:-0.03em;margin-bottom:6px}
-.mini .sub{font-size:16px;color:#F5F2EC;font-weight:600;margin-bottom:16px}
-.mini p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.75}
-.mini .fecho{font-size:clamp(19px,2.2vw,24px);margin:20px 0 26px}
-.mini .btn-wa{margin-top:auto;align-self:flex-start}
-@media(max-width:820px){.mini-grid{grid-template-columns:1fr}}
-
-/* ---------- Fecho reutilizável (cards de produto) ---------- */
-.fecho{font-size:clamp(20px,2.7vw,30px);font-weight:700;letter-spacing:-0.02em;line-height:1.3;margin-top:8px}
-.fecho b{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;font-weight:800}
-
-/* ---------- Casos Reais ---------- */
-.casos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:22px;margin-top:44px}
-.caso{
-  border:1px solid rgba(255,255,255,0.09);border-radius:20px;padding:32px 28px;
-  background:rgba(255,255,255,0.02);transition:border-color .3s,box-shadow .3s,transform .3s;
-  display:flex;flex-direction:column;
-}
-.caso:hover{border-color:rgba(37,99,235,0.4);box-shadow:none;transform:translateY(-4px)}
-.caso .quem{font-size:19px;font-weight:700;color:#F5F2EC;letter-spacing:-0.02em;margin-bottom:4px}
-.caso .papel{font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--roxo);margin-bottom:18px}
-.caso-num{font-size:clamp(34px,4.4vw,44px);font-weight:900;line-height:1.02;letter-spacing:-0.03em;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:16px}
-.caso-num small{display:block;font-size:13px;font-weight:600;letter-spacing:0.01em;color:var(--cinza);-webkit-text-fill-color:var(--cinza);margin-top:8px;line-height:1.4}
-.caso-quote{font-size:clamp(21px,2.7vw,27px);font-weight:800;line-height:1.25;letter-spacing:-0.02em;color:#F5F2EC;margin-bottom:16px}
-.caso p{font-size:15px;color:var(--cinza);font-weight:300;line-height:1.72}
-.caso .fecho{font-size:19px;margin-top:20px}
-@media(max-width:820px){.casos-grid{grid-template-columns:1fr}}
-
-/* ---------- Depoimentos ---------- */
-.dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:44px}
-.dep-card{border:1px solid rgba(255,255,255,0.08);border-radius:20px;padding:32px 28px;background:rgba(255,255,255,0.02);transition:border-color .3s,box-shadow .3s}
-.dep-card:hover{border-color:rgba(124,58,237,0.3);box-shadow:none}
-.dep-aspas{font-size:46px;line-height:1;color:var(--roxo);opacity:0.4;font-family:Georgia,serif;margin-bottom:6px}
-.dep-texto{font-size:15px;color:var(--cinza);line-height:1.75;font-weight:300;font-style:italic;margin-bottom:22px}
-.dep-autor{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.07);padding-top:18px}
-.dep-ini{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:#F5F2EC;flex-shrink:0}
-.dep-nome{font-size:14px;font-weight:600;color:#F5F2EC}
-.dep-cargo{font-size:12px;color:var(--cinza);font-weight:300}
-.dep-cta{text-align:center;margin-top:38px}
-.dep-mais{background:none;border:none;padding:0;margin-left:2px;color:var(--roxo);font-family:inherit;font-size:inherit;font-style:normal;font-weight:600;cursor:pointer}
-.dep-mais:hover{text-decoration:underline}
-.dep-li{display:inline-flex;align-items:center;gap:5px;margin-top:8px;font-size:11px;font-weight:600;color:#70a8ff}
-.dep-li svg{width:13px;height:13px;fill:currentColor;flex-shrink:0}
-.dep-print{display:inline-flex;align-items:center;gap:6px;margin-top:16px;font-size:12.5px;font-weight:600;color:var(--roxo);background:none;border:none;padding:0;cursor:pointer;font-family:inherit}
-.dep-print:hover{text-decoration:underline}
-.dep-print svg{width:14px;height:14px;fill:currentColor;flex-shrink:0}
-.dep-lb{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,0.85);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
-.dep-lb[hidden]{display:none}
-.dep-lb img{max-width:min(920px,94vw);max-height:90vh;width:auto;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,0.6)}
-.dep-lb-x{position:fixed;top:16px;right:22px;background:none;border:none;color:#F5F2EC;font-size:34px;line-height:1;cursor:pointer;opacity:.85}
-.dep-lb-x:hover{opacity:1}
-.dep-google{background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.02))}
-.dep-g-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.dep-g-head svg{width:34px;height:34px;flex-shrink:0}
-.dep-g-nota{font-size:24px;font-weight:800;color:#F5F2EC;display:flex;align-items:center;gap:8px;line-height:1}
-.dep-stars{color:#FBBC04;font-size:16px;letter-spacing:1px}
-.dep-g-qtd{font-size:12.5px;color:var(--cinza);margin-top:5px}
-.dep-g-emp{font-size:18px;font-weight:700;color:#F5F2EC;letter-spacing:-0.01em}
-.dep-g-sub{font-size:12.5px;color:var(--cinza);margin-top:3px;margin-bottom:16px}
-.dep-g-txt{font-style:normal!important;margin-bottom:0}
-.dep-google .dep-print svg{width:16px;height:16px}
-
-/* ---------- Sobre ---------- */
-#sobre .sobre-body{font-size:clamp(17px,1.9vw,20px);color:#c8c8d8;font-weight:300;line-height:1.85;max-width:760px;margin:22px 0}
-#sobre .sobre-body p+p{margin-top:20px}
-#sobre .sobre-body strong{color:#F5F2EC;font-weight:500}
-.sobre-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px 30px;margin:42px 0 6px;padding:44px 40px;border-radius:26px;border:1px solid rgba(124,58,237,0.22);background:linear-gradient(135deg,rgba(124,58,237,0.09),rgba(37,99,235,0.04));box-shadow:none}
-.sobre-stat{border:none;background:none;border-radius:0;padding:0}
-.sobre-stat .n{font-size:clamp(52px,7.5vw,78px);font-weight:900;line-height:1;letter-spacing:-0.03em;background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:12px}
-.sobre-stat .l{font-size:14px;color:var(--cinza);font-weight:400;line-height:1.55}
-@media(max-width:820px){.sobre-stats{padding:34px 26px}}
-@media(max-width:820px){.sobre-stats{grid-template-columns:1fr}}
-
-/* ---------- Textura de constelação (site5) em "O que entrego" ---------- */
-#entrego{position:relative;overflow:hidden}
-#entrego>*{position:relative;z-index:1}
-
-/* ---------- Conteúdos ---------- */
-@media(max-width:820px){}
-
-/* ---------- CTA Final (fecho cinematográfico site4) ---------- */
-#cta-wrap{position:relative;overflow:hidden;background:#0D0B10}
-#cta-wrap::before{content:"";position:absolute;inset:0;z-index:0;
-  background:url('imagens/site4.webp') center 62%/cover no-repeat;opacity:0.62}
-#cta-wrap::after{content:"";position:absolute;inset:0;z-index:1;
-  background:radial-gradient(58% 42% at 50% 100%,rgba(124,58,237,0.14),transparent 72%),linear-gradient(180deg,#0D0B10 0%,rgba(13,11,16,0.60) 38%,rgba(13,11,16,0.28) 74%,rgba(13,11,16,0.82) 100%)}
-#cta-wrap>*{position:relative;z-index:2}
-#cta{text-align:center;max-width:940px}
-#cta .titulo{margin-bottom:12px}
-#cta .subtitulo{margin:0 auto 36px;font-size:18px}
-.cta-extra{margin-top:40px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
-.cta-extra a{color:var(--cinza);text-decoration:none;font-size:15px;transition:color .2s}
-.cta-extra a:hover{color:#F5F2EC}
-.cta-extra b{color:#F5F2EC;font-weight:600}
-
-/* ambar mel: SOMENTE assinatura dos servicos + horizonte do CTA */
-#evc .fecho b,#mais .fecho b{background:none;-webkit-background-clip:initial;background-clip:initial;-webkit-text-fill-color:#A78BFA;color:#A78BFA}
-
-/* Resposta direta e FAQ (blocos GEO, adicionados em 30/07/2026) */
-.resposta-direta{border-left:2px solid rgba(167,139,250,0.45);padding-left:26px;max-width:820px}
-.resposta-direta p{font-size:clamp(17px,1.9vw,20px);line-height:1.8;color:#c8c8d8;font-weight:300;margin-bottom:16px}
-.resposta-direta p:last-child{margin-bottom:0}
-.resposta-direta strong{color:#F5F2EC;font-weight:600}
-.faq-lista{max-width:840px;margin-top:12px}
-.faq-item{padding:26px 0;border-bottom:1px solid rgba(245,242,236,0.10)}
-.faq-item:first-child{border-top:1px solid rgba(245,242,236,0.10)}
-.faq-q{font-size:clamp(18px,2vw,21px);font-weight:600;color:#F5F2EC;margin-bottom:10px;letter-spacing:-0.01em;line-height:1.35}
-.faq-a{font-size:clamp(15px,1.7vw,18px);line-height:1.75;color:#c8c8d8;font-weight:300}
-.faq-a a{color:#A78BFA;text-decoration:none;border-bottom:1px solid rgba(167,139,250,0.4)}
-@media(max-width:640px){.resposta-direta{padding-left:18px}}
-
-/* Isca: convite na voz do Caetano (adicionado em 30/07/2026) */
-.isca{max-width:860px;margin:0 auto;border:1px solid rgba(245,242,236,0.12);border-radius:18px;padding:44px 40px}
-.isca p{font-size:clamp(17px,1.9vw,20px);line-height:1.8;color:#c8c8d8;font-weight:300;margin-bottom:20px}
-.isca p:last-of-type{margin-bottom:0}
-.isca strong{color:#F5F2EC;font-weight:600}
-.isca .isca-fecho{font-size:clamp(18px,2.2vw,23px);font-weight:600;color:#F5F2EC;line-height:1.45;margin-top:28px;letter-spacing:-0.01em}
-.isca-cta{display:inline-block;margin-top:28px;padding:16px 30px;border-radius:999px;background:linear-gradient(135deg,#7C3AED,#2563EB);color:#fff;text-decoration:none;font-weight:600;font-size:16px}
-@media(max-width:640px){.isca{padding:32px 24px}}
-
-/* Link para a pagina completa de cada oferta */
-.of-link{display:inline-block;margin-top:14px;font-size:15px;font-weight:600;color:#A78BFA;text-decoration:none;border-bottom:1px solid rgba(167,139,250,0.4)}
-.of-link:hover{color:#F5F2EC;border-color:rgba(245,242,236,0.5)}
-.evc-cta .of-link{margin-top:0;margin-left:18px}
-
-/* ---------- Menu completo (hamburguer em todos os tamanhos) ---------- */
-.nav-burger{display:flex;position:relative}
-.nav-burger span{transition:transform .18s ease,opacity .18s ease}
-.nav-burger[aria-expanded="true"]{border-color:rgba(167,139,250,0.7)}
-.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-.menu-full{
-  position:fixed;left:0;right:0;top:0;bottom:0;z-index:99;
-  background:#0D0B10;
-  overflow-y:auto;padding:96px 40px 48px;
-}
-.menu-full[hidden]{display:none}
-.menu-grid{
-  max-width:1000px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(3,1fr);gap:38px;
-}
-.menu-grupo h3{
-  font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;
-  color:#A78BFA;margin:0 0 18px;padding-bottom:12px;
-  border-bottom:1px solid rgba(245,242,236,0.12);
-}
-.menu-grupo ul{list-style:none;margin:0;padding:0}
-.menu-grupo li{margin-bottom:16px}
-.menu-grupo a{display:block;text-decoration:none}
-.menu-t{display:block;font-size:17px;font-weight:600;color:#F5F2EC;line-height:1.35}
-.menu-d{display:block;font-size:14px;font-weight:300;color:#A0A0B8;line-height:1.55;margin-top:3px}
-.menu-grupo a:hover .menu-t{color:#A78BFA}
-.menu-wa{
-  display:inline-block;margin-top:6px;padding:13px 24px;border-radius:999px;
-  background:linear-gradient(135deg,#7C3AED,#2563EB);
-  color:#fff!important;text-decoration:none;font-weight:600;font-size:15px;
-}
-.menu-dica{max-width:1000px;margin:34px auto 0;font-size:13px;color:#A0A0B8;font-weight:300}
-body.menu-aberto{overflow:hidden}
-@media(max-width:820px){
-  .menu-full{padding:80px 20px 40px}
-  .menu-grid{grid-template-columns:1fr;gap:30px}
-}
-
-/* 2a parte da tese, menor dentro do mesmo H1 */
-.h1-eco{display:block;font-size:0.56em;font-weight:600;line-height:1.22;margin-top:10px;color:#c8c8d8;letter-spacing:-0.01em}
-@media(max-width:820px){.h1-eco{font-size:0.62em}}
-
-/* Foco visivel para quem navega por teclado */
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, [tabindex]:focus-visible{
-  outline:3px solid #A78BFA;
-  outline-offset:3px;
-  border-radius:4px;
-}
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
-}
-
-/* Dois depoimentos na home: evidencia, nao elogio */
-.dh-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:1080px;margin:44px auto 0}
-.dh{border:1px solid rgba(245,242,236,0.12);border-radius:18px;padding:32px 30px;display:flex;flex-direction:column}
-.dh-angulo{display:inline-block;align-self:flex-start;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#A78BFA;border:1px solid rgba(167,139,250,0.32);border-radius:999px;padding:5px 12px;margin-bottom:20px}
-.dh-fala{font-size:clamp(15px,1.7vw,17px);line-height:1.72;color:#c8c8d8;font-weight:300;flex:1;margin:0}
-.dh-fala b{color:#F5F2EC;font-weight:500}
-.dh-quem{margin-top:24px;padding-top:18px;border-top:1px solid rgba(245,242,236,0.10)}
-.dh-nome{font-size:15px;font-weight:700;color:#F5F2EC}
-.dh-cargo{font-size:12.5px;color:#A0A0B8;font-weight:300;line-height:1.5;margin-top:3px}
-.dh-vinculo{font-size:12px;color:#A78BFA;font-weight:500;margin-top:6px}
-@media(max-width:820px){.dh-grid{grid-template-columns:1fr;gap:18px}.dh{padding:26px 22px}}
-
-/* Caso em destaque na home */
-.caso-destaque{max-width:1080px;margin:0 auto 26px;display:block;text-decoration:none;border:1px solid rgba(167,139,250,0.30);border-radius:20px;padding:34px 34px 30px;transition:border-color .2s}
-.caso-destaque:hover{border-color:rgba(167,139,250,0.65)}
-.cd-tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#A78BFA;border:1px solid rgba(167,139,250,0.32);border-radius:999px;padding:5px 13px;margin-bottom:18px}
-.cd-t{font-size:clamp(21px,2.6vw,27px);font-weight:700;color:#F5F2EC;line-height:1.28;letter-spacing:-0.015em;margin-bottom:12px}
-.cd-d{font-size:clamp(15px,1.7vw,17px);line-height:1.7;color:#c8c8d8;font-weight:300;max-width:760px}
-.cd-n{display:flex;flex-wrap:wrap;gap:26px;margin-top:22px;padding-top:20px;border-top:1px solid rgba(245,242,236,0.10)}
-.cd-n span{font-size:13.5px;color:#A0A0B8;font-weight:300}
-.cd-n b{display:block;font-size:19px;font-weight:800;color:#F5F2EC;letter-spacing:-0.02em}
-.cd-link{display:inline-block;margin-top:20px;font-size:15px;font-weight:600;color:#A78BFA}
-@media(max-width:640px){.caso-destaque{padding:26px 22px}}
-
-/* ============ HERO ============ */
-/* Um dominante. Sem etiqueta, sem subtitulo em gradiente, sem linha de principio.
-   O que saiu daqui abre a secao seguinte. */
-.hero-top{padding:150px 0 60px}
-.hero-copy{max-width:640px}
-.hero-title{font-size:clamp(36px,5.2vw,66px);line-height:1.06;letter-spacing:-0.038em}
-.h1-eco{display:block;font-size:0.40em;font-weight:400;line-height:1.35;margin-top:22px;color:#A0A0B8;letter-spacing:-0.005em;max-width:19em}
-.hero-rule{width:56px;height:2px;margin:44px 0 44px;opacity:.9}
-.hero-actions{gap:22px}
-.hero-cta{font-size:16px;padding:15px 30px;letter-spacing:0.005em}
-
-/* abertura da secao seguinte, que recebe o que saiu da Hero */
-.abertura-b{max-width:820px;font-size:clamp(18px,2vw,22px);line-height:1.7;color:#F5F2EC;font-weight:400;margin:0 0 30px;letter-spacing:-0.01em}
-
-@media(max-width:900px){
-  /* no celular a foto ocupa o alto e o texto pousa em preto limpo. Sem colisao. */
-  .hero-top{padding:0 0 44px;background-position:76% 8%}
-  .hero-top::before{background:linear-gradient(180deg,rgba(13,11,16,0.26) 0%,rgba(13,11,16,0.34) 22%,rgba(13,11,16,0.88) 40%,rgba(13,11,16,0.985) 52%,rgba(13,11,16,1) 64%,rgba(13,11,16,1) 100%)}
-  .hero-copy{padding-top:352px}
-  .hero-title{font-size:clamp(33px,8.6vw,42px)}
-  .h1-eco{font-size:0.46em;margin-top:18px}
-  .hero-rule{margin:32px 0 28px}
-}
-
-/* ============ BOTAO WHATSAPP · VERSAO B ============ */
-/* Mesma linguagem dos CTAs do site. Verde so como sinal discreto. */
-.wa-float{
-  background:var(--grad)!important;
-  box-shadow:0 10px 30px rgba(13,11,16,0.55)!important;
-  border:1px solid rgba(245,242,236,0.14);
-}
-.wa-float:hover{box-shadow:0 12px 34px rgba(13,11,16,0.62)!important;border-color:rgba(245,242,236,0.28)}
-.wa-float svg{fill:#fff}
-
-/* ==========================================================================
-   EVOLUCAO DA DIRECAO DE ARTE · v2 · 04/08/2026
-   Nada de conteudo mudou. Este bloco so ajusta ritmo, escala, cor e silencio.
-   Fica no fim do style de proposito: e a ultima camada, e sai inteiro se
-   alguem quiser voltar ao visual anterior.
-   ========================================================================== */
-
-/* --------------------------------------------------------------
-   1. ESCALA. A marca precisa de presenca em tela grande.
-   -------------------------------------------------------------- */
-.hero-title{font-size:clamp(38px,5.4vw,78px);letter-spacing:-0.04em;line-height:1.04}
-.hero-title .h1-eco{
-  display:block;margin-top:20px;
-  font-size:clamp(17px,1.5vw,21px);font-weight:400;line-height:1.5;
-  letter-spacing:-0.005em;color:#c8c8d8;
-}
-.hero-copy{max-width:720px}
-.hero-oferta{
-  margin-top:26px;max-width:520px;
-  font-size:clamp(15px,1.35vw,18px);line-height:1.6;font-weight:400;
-  color:var(--cinza);
-}
-.hero-oferta b{color:#F5F2EC;font-weight:600}
-.titulo{font-size:clamp(30px,4.2vw,58px);letter-spacing:-0.032em}
-.hq-text{font-size:clamp(26px,4.4vw,58px);line-height:1.18}
-
-/* --------------------------------------------------------------
-   2. O GRADIENTE VOLTA A SER RARO.
-   Antes ele aparecia em quase todo titulo, numero e fecho. Quando tudo
-   e destaque, nada e destaque. Agora ele existe em tres lugares apenas:
-   a marca, os botoes e a frase dos trinta dias.
-   A enfase nos titulos passa a ser monocromatica: o trecho importante
-   fica em off-white cheio e o resto recua. Mesma hierarquia, sem grito.
-   -------------------------------------------------------------- */
-.titulo em,
-.pq-close b,
-.cf-nota strong,
-.destaque-quote b,
-.caso-num,
-.sobre-stat .n,
-.cf-num,
-.fecho b{
-  background:none!important;
-  -webkit-background-clip:initial!important;background-clip:initial!important;
-  -webkit-text-fill-color:currentColor!important;
-}
-.titulo em,.pq-close b,.cf-nota strong,.destaque-quote b{color:#F5F2EC}
-.titulo:has(em){color:rgba(245,242,236,0.62)}
-.destaque-quote:has(b){color:rgba(245,242,236,0.62)}
-.pq-close:has(b),.cf-nota:has(strong){color:rgba(245,242,236,0.66)}
-.caso-num{color:#F5F2EC}
-.sobre-stat .n{color:#F5F2EC}
-.cf-num{color:#A78BFA;font-size:26px;font-weight:800;letter-spacing:0.02em}
-.fecho b{color:#A78BFA}
-#evc .fecho b,#mais .fecho b{-webkit-text-fill-color:#A78BFA!important;color:#A78BFA}
-
-/* a excecao eleita: a pergunta dos trinta dias continua com o gradiente */
-.hq-text em{
-  background:var(--grad3)!important;-webkit-background-clip:text!important;
-  background-clip:text!important;-webkit-text-fill-color:transparent!important;
-}
-
-/* --------------------------------------------------------------
-   3. RITMO. Tres tempos de respiro em vez de um so.
-   -------------------------------------------------------------- */
-section{padding:104px 40px}
-.faixa-analogia,#entrego,#servicos{padding-top:120px;padding-bottom:120px}
-#servicos{padding-bottom:34px}
-.home-quote{padding:190px 40px}          /* a pausa: quase vazio de proposito */
-#para-quem,#como-funciona,#sobre{padding-top:112px;padding-bottom:112px}
-.divisor{background:rgba(255,255,255,0.06)}
-.hq-fim{margin-top:30px}
-@media(max-width:820px){
-  section{padding:76px 20px}
-  .home-quote{padding:120px 22px}
-}
-
-/* --------------------------------------------------------------
-   4. AREAS CLARAS. Dois respiros, nos dois momentos de prova.
-   Off-white da propria identidade. Nao e alternancia mecanica:
-   a luz aparece exatamente onde o visitante precisa descansar e
-   onde a evidencia precisa ser vista.
-   -------------------------------------------------------------- */
-.faixa-clara{
-  position:relative;z-index:1;
-  background:#F5F2EC;
-  color:#1A161F;
-}
-.faixa-clara section{padding-top:132px;padding-bottom:132px}
-.faixa-clara .rotulo{color:#7C3AED}
-.faixa-clara .titulo{color:#1A161F}
-.faixa-clara .titulo:has(em){color:rgba(26,22,31,0.70)}
-.faixa-clara .titulo em{color:#1A161F}
-.faixa-clara .subtitulo{color:#5B5566;font-weight:400}
-
-/* cards na luz: papel sobre papel, borda fina, sem brilho */
-.faixa-clara .caso,
-.faixa-clara .dh{
-  background:#FFFDF9;
-  border:1px solid rgba(26,22,31,0.10);
-  box-shadow:0 1px 2px rgba(26,22,31,0.03);
-}
-.faixa-clara .caso:hover,
-.faixa-clara .dh:hover{
-  border-color:rgba(26,22,31,0.24);
-  box-shadow:0 10px 30px rgba(26,22,31,0.07);
-  transform:translateY(-3px);
-}
-.faixa-clara .caso .quem,
-.faixa-clara .caso-quote,
-.faixa-clara .caso-num,
-.faixa-clara .dh-nome{color:#1A161F}
-.faixa-clara .caso .papel{color:#7C3AED}
-.faixa-clara .caso p,
-.faixa-clara .dh-cargo{color:#5B5566;font-weight:400}
-.faixa-clara .caso-num{font-size:clamp(28px,3.2vw,36px);line-height:1.08}
-.faixa-clara .caso-quote{font-size:clamp(19px,2.2vw,24px)}
-.faixa-clara .caso-num small{color:#6E6778;-webkit-text-fill-color:#6E6778}
-.faixa-clara .caso .fecho b{color:#7C3AED}
-.faixa-clara .dh-fala{color:#2E2836;font-weight:400}
-.faixa-clara .dh-fala b{color:#1A161F;font-weight:600}
-.faixa-clara .dh-angulo{color:#7C3AED;border-color:rgba(124,58,237,0.30)}
-.faixa-clara .dh-quem{border-top-color:rgba(26,22,31,0.12)}
-.faixa-clara .dh-vinculo{color:#6E6778}
-
-/* o caso 01 vira a peca principal da faixa: papel escuro sobre papel claro */
-.faixa-clara .caso-destaque{
-  background:#171319;
-  border:1px solid rgba(26,22,31,0.14);
-  box-shadow:0 18px 50px rgba(26,22,31,0.10);
-}
-.faixa-clara .caso-destaque:hover{
-  border-color:rgba(124,58,237,0.40);
-  box-shadow:0 22px 60px rgba(26,22,31,0.16);
-}
-.faixa-clara .caso-destaque .cd-t,
-.faixa-clara .caso-destaque .cd-n b{color:#F5F2EC}
-.faixa-clara .caso-destaque .cd-d,
-.faixa-clara .caso-destaque .cd-n span{color:#c8c8d8}
-.faixa-clara .caso-destaque .cd-tag{color:#A78BFA;border-color:rgba(167,139,250,0.42)}
-.faixa-clara .caso-destaque .cd-link{color:#A78BFA}
-
-/* botao dentro da luz: contorno escuro, sem gradiente, sem brilho */
-.faixa-clara .btn-grad{
-  background:#1A161F!important;color:#F5F2EC!important;
-  box-shadow:none!important;border:1px solid #1A161F;
-}
-.faixa-clara .btn-grad:hover{background:#000!important}
-
-/* costura entre a luz e o escuro, para a troca nao dar solavanco */
-.faixa-clara::before,.faixa-clara::after{
-  content:"";position:absolute;left:0;right:0;height:64px;pointer-events:none;
-}
-.faixa-clara::before{top:0;background:linear-gradient(180deg,rgba(13,11,16,0.16),transparent)}
-.faixa-clara::after{bottom:0;background:linear-gradient(0deg,rgba(13,11,16,0.16),transparent)}
-.faixa-clara section{position:relative;z-index:2}
-
-/* --------------------------------------------------------------
-   5. LEGIBILIDADE. Peso 300 em fundo escuro cansa depois dos 40.
-   -------------------------------------------------------------- */
-.big-lead,.subtitulo,.caso p,.cf-passo p,.big-lead,#sobre .sobre-body,.resposta-direta p{line-height:1.8}
-.faq-a{font-weight:400}
-
-/* --------------------------------------------------------------
-   6. MENOS CARA DE SOFTWARE.
-   Saem as duas imagens de banco (particulas em rede e planeta com
-   halo roxo). Elas sao o clima visual de empresa de IA, exatamente
-   o que o texto do site passa o tempo todo negando.
-   Entra uma malha fina, que e o desenho de quem organiza: planta,
-   planilha, grade de operacao. Feita em CSS, sem peso de imagem.
-   -------------------------------------------------------------- */
-#para-quem::before{
-  background-image:
-    linear-gradient(rgba(245,242,236,0.045) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(245,242,236,0.045) 1px,transparent 1px)!important;
-  background-size:64px 64px,64px 64px!important;
-  background-position:center!important;
-  opacity:1!important;
-  mask-image:radial-gradient(120% 90% at 78% 50%,#000 8%,transparent 72%);
-  -webkit-mask-image:radial-gradient(120% 90% at 78% 50%,#000 8%,transparent 72%);
-}
-#para-quem::after{
-  background:linear-gradient(90deg,#0D0B10 30%,rgba(13,11,16,0.62) 100%)!important;
-}
-#cta-wrap::before{
-  background-image:
-    linear-gradient(rgba(245,242,236,0.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(245,242,236,0.05) 1px,transparent 1px)!important;
-  background-size:78px 78px,78px 78px!important;
-  background-position:center bottom!important;
-  opacity:1!important;
-  mask-image:linear-gradient(0deg,#000 0%,transparent 78%);
-  -webkit-mask-image:linear-gradient(0deg,#000 0%,transparent 78%);
-}
-#cta-wrap::after{
-  background:radial-gradient(62% 46% at 50% 104%,rgba(124,58,237,0.15),transparent 70%)!important;
-}
-#cta-wrap{padding-top:14px}
-
-/* --------------------------------------------------------------
-   7. SILENCIO. O botao do WhatsApp era o ponto mais alto de toda
-   tela do site, em cor de terceiro. Agora ele espera, e so acende
-   quando o visitante chega perto.
-   -------------------------------------------------------------- */
-.wa-float{
-  background:rgba(245,242,236,0.07)!important;
-  border:1px solid rgba(245,242,236,0.18)!important;
-  box-shadow:none!important;
-  backdrop-filter:blur(6px);
-  transition:background .25s,border-color .25s,transform .25s;
-}
-.wa-float svg{fill:rgba(245,242,236,0.72);transition:fill .25s}
-.wa-float:hover{
-  background:var(--verde)!important;border-color:var(--verde)!important;
-  transform:translateY(-2px);
-}
-.wa-float:hover svg{fill:#0D0B10}
-
-/* --------------------------------------------------------------
-   8. DETALHES QUE SOMAM
-   -------------------------------------------------------------- */
-/* a regua do hero deixa de ser um bloco roxo e vira um risco fino */
-.hero-rule{width:52px;height:2px;background:var(--roxo)}
-/* a caixa de numeros do Sobre perde o fundo colorido e vira contorno seco */
-.sobre-stats{
-  background:none;border:1px solid rgba(245,242,236,0.10);
-  border-radius:22px;padding:52px 44px;
-}
-.sobre-stat .n{font-size:clamp(48px,6.4vw,70px)}
-/* chips e rotulos mais discretos */
-.narr-chips span{color:rgba(245,242,236,0.62);border-color:rgba(245,242,236,0.14)}
-/* cartoes do metodo mais leves */
-.cf-passo{background:rgba(245,242,236,0.02);border-color:rgba(245,242,236,0.08)}
-.cf-passo:hover{border-color:rgba(124,58,237,0.30);transform:translateY(-3px)}
-/* menu do topo com a prova visivel, sem depender do hamburguer */
-.nav-links{gap:26px}
-@media(max-width:1080px){.nav-extra{display:none}}
-
-
-/* ==========================================================================
-   v2.1 · REFINAMENTO DE CONSISTENCIA · 04/08/2026
-   Nada de novo entrou aqui. Este bloco so acerta detalhes que estavam
-   diferentes sem motivo. Ambar removido do site inteiro, inclusive o que
-   ja existia antes desta rodada.
-   ========================================================================== */
-
-/* 1. BOTOES. Havia dois formatos no mesmo site: o do hero era pilula,
-   todos os outros tinham canto de 12px. Agora todos sao pilula, com o
-   mesmo respiro interno. A diferenca entre principal e secundario
-   continua sendo o preenchimento, nao o formato. */
-.btn-grad,.btn-primary,.hero-cta,.faixa-clara .btn-grad{
-  border-radius:999px;
-  padding:16px 34px;
-  font-size:16px;
-  font-weight:700;
-}
-.hero-cta{padding:18px 40px;font-size:17px}
-
-/* 2. LINKS DE SETA. Existiam dois roxos e dois tamanhos para a mesma
-   funcao. O roxo escuro em fundo escuro ainda por cima lia mal. */
-.of-link,.cd-link,.of-link:hover,.cd-link:hover,.faixa-clara .cd-link{color:#A78BFA}
-
-/* 3. ROTULOS EM CAIXA ALTA. Eram quatro tratamentos diferentes, com
-   quatro tamanhos, dois pesos e tres espacamentos de letra. Viraram
-   dois: um de secao e um de card, com a mesma familia de ajuste. */
-.rotulo{font-size:13px;font-weight:700;letter-spacing:0.14em}
-.pilar-intro{font-size:11px;font-weight:700;letter-spacing:0.14em}
-.cd-tag,.dh-angulo,.caso .papel{font-size:11px;font-weight:700;letter-spacing:0.14em}
-
-/* 4. RAIO DE CANTO. Havia 18px, 20px, 22px e 28px convivendo em caixas
-   que fazem a mesma coisa. Ficou um valor so para caixa e um para pilula. */
-.narr-chips span,.evc-detalhes span,.cd-tag,.dh-angulo{border-radius:999px}
-/* CAIXA E CAIXA. A regra acima misturava cartao com pilula e transformava os
-   cartoes do metodo e dos casos em capsulas. Caixa tem um raio so, discreto,
-   e ela nao muda de forma para criar ritmo: o ritmo vem do espaco e da
-   hierarquia. Ver a regra permanente no fim deste bloco. */
-.cf-passo,.caso,.caso-destaque,.dh,.isca,.sobre-stats,.dep-card{border-radius:18px}
-
-/* 5. BORDAS. Conviviam duas familias, uma em branco puro e outra no
-   off-white da marca, para a mesma funcao. Ficou so a da marca, em dois
-   niveis: repouso e elemento interativo. */
-.cf-passo,.narr-chips span,.evc-detalhes span{border-color:rgba(245,242,236,0.14)}
-.divisor{background:rgba(245,242,236,0.08)}
-footer{border-top-color:rgba(245,242,236,0.08)}
-
-/* 6. BRANCO PURO. Um unico elemento usava #fff em vez do off-white da
-   marca. Em fundo escuro a diferenca aparece. */
-.menu-wa{color:#F5F2EC}
-.wa-float svg{fill:rgba(245,242,236,0.72)}
-
-/* 7. HOVER DOS CARTOES. Cada familia subia uma distancia diferente e
-   acendia numa cor diferente. Agora todos se comportam igual. */
-.cf-passo:hover,.faixa-clara .caso:hover{border-color:rgba(26,22,31,0.26);transform:translateY(-3px)}
-
-
-/* 8. RESTOS DA VARREDURA. Tres pontos que ainda estavam fora do padrao:
-   a borda do botao de menu e a linha da faixa de repertorio usavam branco
-   puro, e uma secao tinha canto de 28px sozinha no site. */
-.nav-burger{border-color:rgba(245,242,236,0.18)}
-.hero-pilares{border-top-color:rgba(245,242,236,0.09)}
-#cta{border-radius:20px}
-
-/* 9. PALETA. O roxo das areas claras passa a ser o proprio roxo da marca,
-   e os cinzas de apoio na luz passam a ser o preto da marca com menos
-   forca, em vez de tons novos. Nenhuma cor nova existe mais no site. */
-.faixa-clara .rotulo,
-.faixa-clara .caso .papel,
-.faixa-clara .caso .fecho b,
-.faixa-clara .dh-angulo{color:#7C3AED}
-.faixa-clara .dh-angulo{border-color:rgba(124,58,237,0.30)}
-.faixa-clara .caso p,
-.faixa-clara .dh-cargo,
-.faixa-clara .subtitulo{color:rgba(26,22,31,0.66)}
-.faixa-clara .caso-num small{color:rgba(26,22,31,0.62);-webkit-text-fill-color:rgba(26,22,31,0.62)}
-.faixa-clara .dh-vinculo{color:rgba(26,22,31,0.68)}
-.faixa-clara .dh-fala{color:rgba(26,22,31,0.86)}
-.faixa-clara .caso-destaque:hover{border-color:rgba(124,58,237,0.40)}
-
-
-/* 10. ULTIMOS DOIS. A caixa do eVc era a unica com canto de 28px, e o
-   link de WhatsApp do menu era o unico texto em branco puro do site. */
-#evc{border-radius:20px}
-.menu-wa{color:#F5F2EC!important}
-
-
-/* ==============================================================
-   V2.2 · REFINAMENTO EDITORIAL
-   Nao muda identidade, nao muda arquitetura, nao muda conteudo de
-   posicionamento. Mexe so em ritmo, respiro, costura e um punhado
-   de detalhes de direcao de arte. Apagar este bloco devolve a V2.
-   ============================================================== */
-
-/* --------------------------------------------------------------
-   1. DUAS NOVAS AREAS CLARAS, cada uma por um motivo.
-   A promessa vira luz porque ela e o momento de alivio da
-   narrativa: o texto fala de tempo que volta, e a pagina clareia
-   junto. A FAQ vira luz porque e o bloco mais longo de leitura do
-   site, 1592px de texto corrido, e leitura longa pede papel.
-   -------------------------------------------------------------- */
-#promessa .titulo{max-width:20ch}
-#promessa .big-lead p{color:#3A3441;font-weight:400}
-#promessa .big-lead p strong{color:#1A161F;font-weight:600}
-.faixa-clara .faq-item{border-color:rgba(26,22,31,0.12)}
-.faixa-clara .faq-item:first-child{border-top-color:rgba(26,22,31,0.12)}
-.faixa-clara .faq-q{color:#1A161F}
-.faixa-clara .faq-a{color:#4A4453;font-weight:400}
-.faixa-clara .abertura-b{color:#1A161F}
-.faixa-clara .resposta-direta{border-left-color:rgba(124,58,237,0.45)}
-.faixa-clara .resposta-direta p{color:#3A3441}
-.faixa-clara .resposta-direta strong{color:#1A161F}
-.faixa-clara .big-lead p{color:#3A3441}
-
-/* --------------------------------------------------------------
-   2. MAIS RESPIRO. O site vende organizacao, e organizacao tambem
-   e espaco vazio. As secoes escuras ganham a mesma folga que as
-   claras ja tinham, e o titulo passa a ter ar antes do corpo.
-   -------------------------------------------------------------- */
-main > section{padding-top:132px;padding-bottom:132px}
-#hero{padding:0}
-.faixa-clara section{padding-top:140px;padding-bottom:140px}
-.titulo{margin-bottom:34px}
-.rotulo{margin-bottom:20px}
-.big-lead{margin-top:12px}
-
-/* --------------------------------------------------------------
-   3. COSTURA ENTRE SECOES. O divisor era uma linha branca chapada
-   de ponta a ponta, e uma linha reta sempre corta. Agora ele nasce
-   e morre no nada, com o gradiente da marca no meio, em opacidade
-   baixa. Ele nao separa: ele emenda.
-   -------------------------------------------------------------- */
-.divisor{
-  height:1px;max-width:1120px;margin:0 auto;
-  background:linear-gradient(90deg,
-    transparent 0%,
-    rgba(124,58,237,0.16) 22%,
-    rgba(124,58,237,0.30) 46%,
-    rgba(37,99,235,0.30) 54%,
-    rgba(37,99,235,0.16) 78%,
-    transparent 100%)!important;
-}
-.faixa-clara .divisor{
-  background:linear-gradient(90deg,
-    transparent 0%,
-    rgba(124,58,237,0.14) 24%,
-    rgba(124,58,237,0.26) 48%,
-    rgba(37,99,235,0.26) 52%,
-    rgba(37,99,235,0.14) 76%,
-    transparent 100%)!important;
-}
-
-/* --------------------------------------------------------------
-   4. O CARD DO GOOGLE. Sem logotipo e sem imitar a marca. Duas
-   pistas bastam para o reconhecimento acontecer antes da leitura:
-   a estrela amarela de avaliacao e os quatro pontos nas cores da
-   plataforma. O olho reconhece, o texto confirma.
-   -------------------------------------------------------------- */
-.estrelas{
-  color:#FBBC05;-webkit-text-fill-color:#FBBC05;
-  letter-spacing:0.06em;font-size:0.82em;vertical-align:0.06em;
-}
-.g-pontos{display:inline-flex;gap:3.5px;margin-right:9px;vertical-align:middle}
-.g-pontos i{width:7px;height:7px;border-radius:50%;display:block}
-.g-pontos i:nth-child(1){background:#4285F4}
-.g-pontos i:nth-child(2){background:#EA4335}
-.g-pontos i:nth-child(3){background:#FBBC05}
-.g-pontos i:nth-child(4){background:#34A853}
-
-/* --------------------------------------------------------------
-   5. A PERGUNTA. Um ponto de interrogacao do tamanho da secao,
-   quase invisivel, atras do texto. Nao e ornamento: e a propria
-   pergunta virando espaco. Ele fica atras, nunca disputa leitura,
-   e some no celular, onde nao ha altura para ele existir sem
-   atrapalhar.
-   -------------------------------------------------------------- */
-.home-quote{position:relative;overflow:hidden}
-.home-quote::before{
-  content:"?";
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  font-size:min(74vh,660px);
-  font-weight:800;line-height:0.78;
-  color:#F5F2EC;opacity:0.028;
-  pointer-events:none;user-select:none;z-index:0;
-}
-.home-quote > *{position:relative;z-index:1}
-@media(max-width:900px){.home-quote::before{font-size:min(46vh,320px);opacity:0.04}}
-
-/* --------------------------------------------------------------
-   6. A PALAVRA RETRABALHO. O plano inicial era espelhar o segundo
-   R. Testado e descartado: em caixa baixa o gancho do "r" e a
-   identidade inteira da letra, entao espelhar destroi a leitura e
-   parece defeito de renderizacao, nao inquietacao. A solucao que
-   ficou: a mesma letra, mesma fonte, mesmo peso, apenas escorregada
-   dois pixels e girada cinco graus. A palavra continua legivel. O
-   olho apenas sente que uma letra saiu da linha, que e exatamente
-   o que retrabalho faz dentro de um processo organizado.
-   -------------------------------------------------------------- */
-.rt-r{display:inline-block;transform:translateY(2px) rotate(5deg);transform-origin:50% 90%}
-
-/* ==============================================================
-   REGRA PERMANENTE DO CONSELHO CRIATIVO
-   Definida em 4 de agosto de 2026, depois de duas ocorrencias.
-
-   Nunca introduzir uma geometria nova apenas para quebrar
-   repeticao visual. A variedade do IAieu nasce da edicao, da
-   composicao, do ritmo, do espaco e da hierarquia. Nunca da
-   forma do componente.
-
-   Se uma solucao chama mais atencao para o formato da caixa do
-   que para a informacao dentro dela, ela enfraquece a marca.
-
-   Na pratica: raio 18px para caixa, 999px para pilula e botao,
-   50% apenas para marcador e avatar. Nao existe terceira forma.
-   ============================================================== */
-
-/* Fecha a pendencia dos raios. Apenas elementos que sao caixa de verdade.
-   Controle, linha, pilula e circulo ficam como estao, porque a geometria
-   deles tem funcao propria. */
-#evc,#cta,.mini{border-radius:18px}
-
-/* Seletor de idioma. Texto puro, sem bandeira: bandeira representa pais e nao
-   idioma, e o publico hispanico da Florida nao e espanhol europeu. */
-.idiomas{display:flex;align-items:center;gap:7px;white-space:nowrap}
-.idiomas a,.idiomas .idioma-ativo{font-size:14px;font-weight:500;letter-spacing:0.02em;text-decoration:none}
-.idiomas a{color:#A0A0B8}
-.idiomas a:hover{color:#F5F2EC}
-.idiomas .idioma-ativo{color:#F5F2EC;font-weight:700}
-.idiomas i{color:rgba(160,160,184,0.5);font-style:normal;font-size:12px}
-@media(max-width:820px){.idiomas{padding:13px 2px}}
-
-/* No celular a barra do topo esconde o menu inteiro, e o seletor de idioma ia
-   junto. Trocar de idioma nao pode depender de abrir o hamburguer, entao ele
-   fica visivel na barra, ao lado do botao do menu. */
-@media(max-width:820px){
-  .nav-links{display:flex!important;position:static;flex-direction:row;align-items:center;
-    background:none;border:0;padding:0;margin:0 10px 0 auto;width:auto;gap:0}
-  .nav-links li:not(.idiomas){display:none}
-  .nav-links .idiomas{padding:0}
-  .idiomas a,.idiomas .idioma-ativo{font-size:13px}
-}
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -1131,76 +46,18 @@ main > section{padding-top:132px;padding-bottom:132px}
       "@id": "https://iaieu.com/#organization",
       "name": "IAieu",
       "url": "https://iaieu.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://iaieu.com/logo_horizontal.png"
-      },
-      "image": "https://iaieu.com/og-image.png",
-      "slogan": "Quarenta anos organizando operações. Hoje com ferramentas que não existiam ontem.",
-      "description": "O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. Entende como o processo funciona hoje, identifica onde tempo, pessoas ou dinheiro estão sendo desperdiçados, constrói uma solução específica, implementa e mede o resultado. A tecnologia é escolhida em função do problema, e não o contrário.",
       "email": "czamma@gmail.com",
-      "founder": {
-        "@id": "https://iaieu.com/#person-caetano"
-      },
-      "knowsLanguage": "pt-BR",
-      "sameAs": [
-        "https://www.instagram.com/iaieu.evc/"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "Atendimento",
-        "url": "https://wa.me/17542525245",
-        "email": "czamma@gmail.com",
-        "availableLanguage": [
-          "Portuguese"
-        ]
-      },
-      "makesOffer": [
-        {
-          "@id": "https://iaieu.com/#service-evc"
-        },
-        {
-          "@id": "https://iaieu.com/#service-mais"
-        },
-        {
-          "@id": "https://iaieu.com/#service-go"
-        }
-      ],
-      "foundingDate": "2026",
-      "knowsAbout": [
-        "Operações",
-        "Processos",
-        "Logística",
-        "Aviação e carga aérea",
-        "Supply chain",
-        "Varejo",
-        "Implantação de processos",
-        "Reorganização de empresas",
-        "Soluções operacionais sob medida"
-      ]
+      "description": "Você manda o material do jeito que estiver. O IAieu lê, entende como aquilo funciona hoje, separa o que é fato do que está sendo repetido sem ninguém ter conferido e devolve a coisa pronta. A escolha da ferramenta vem do problema, nunca antes dele.",
+      "founder": { "@id": "https://iaieu.com/#person-caetano" },
+      "sameAs": ["https://www.instagram.com/iaieu.evc/"]
     },
     {
       "@type": "Person",
       "@id": "https://iaieu.com/#person-caetano",
       "name": "Caetano Zammataro",
       "jobTitle": "Fundador do IAieu",
-      "description": "Fundador do IAieu. Quarenta anos construindo e reorganizando operações em logística, aviação, carga, supply chain, varejo e hotelaria, no Brasil e nos Estados Unidos. Construiu operações do zero, implantou processos, formou equipes e recuperou negócios. Hoje desenvolve soluções operacionais sob medida, usando a tecnologia apenas como ferramenta.",
-      "url": "https://iaieu.com/sobre.html",
-      "worksFor": {
-        "@id": "https://iaieu.com/#organization"
-      },
-      "knowsAbout": [
-        "Operações",
-        "Processos",
-        "Logística",
-        "Aviação e carga aérea",
-        "Supply chain",
-        "Varejo",
-        "Implantação de processos",
-        "Reorganização de empresas",
-        "Soluções operacionais sob medida"
-      ],
-      "knowsLanguage": "pt-BR",
+      "description": "Oito operações, em dois países e em quatro setores, todas do zero ou quebradas na chegada. Hotelaria, aviação e carga aérea, varejo e ciclismo, entre Brasil e Estados Unidos.",
+      "worksFor": { "@id": "https://iaieu.com/#organization" },
       "sameAs": [
         "https://www.linkedin.com/in/caetano-marc-zammataro/",
         "https://www.instagram.com/caetano.zammataro/"
@@ -1211,674 +68,427 @@ main > section{padding-top:132px;padding-bottom:132px}
       "@id": "https://iaieu.com/#website",
       "url": "https://iaieu.com/",
       "name": "IAieu",
-      "description": "Soluções operacionais sob medida para empresas e pessoas.",
       "inLanguage": "pt-BR",
-      "publisher": {
-        "@id": "https://iaieu.com/#organization"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://iaieu.com/#service-evc",
-      "name": "IAieu eVc",
-      "description": "Organização da presença profissional: o repertório que a pessoa carrega e nunca escreveu vira conteúdo publicável na voz dela, com constância. Serviço mensal.",
-      "serviceType": "Soluções operacionais sob medida",
-      "provider": {
-        "@id": "https://iaieu.com/#organization"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Brasil"
-      },
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://wa.me/17542525245",
-        "availableLanguage": [
-          "Portuguese"
-        ]
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "url": "https://iaieu.com/iaieu-evc.html",
-        "priceCurrency": "BRL",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "valueAddedTaxIncluded": true
-        }
-      },
-      "url": "https://iaieu.com/iaieu-evc.html"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://iaieu.com/#service-mais",
-      "name": "IAieu+",
-      "description": "Estudo de um processo que hoje consome mais tempo, pessoas ou dinheiro do que deveria, com solução construída sob medida, implementada na rotina real e medida pelo resultado.",
-      "serviceType": "Soluções operacionais sob medida",
-      "provider": {
-        "@id": "https://iaieu.com/#organization"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Brasil"
-      },
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://wa.me/17542525245",
-        "availableLanguage": [
-          "Portuguese"
-        ]
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "url": "https://iaieu.com/iaieu-mais.html",
-        "priceCurrency": "BRL",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "valueAddedTaxIncluded": true
-        }
-      },
-      "url": "https://iaieu.com/iaieu-mais.html"
+      "description": "Me conta o que está acontecendo.",
+      "publisher": { "@id": "https://iaieu.com/#organization" }
     },
     {
       "@type": "WebPage",
       "@id": "https://iaieu.com/#webpage",
       "url": "https://iaieu.com/",
-      "name": "IAieu · Quarenta anos organizando operações",
-      "description": "O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. A tecnologia é escolhida em função do problema, e não o contrário.",
-      "isPartOf": {
-        "@id": "https://iaieu.com/#website"
-      },
+      "name": "Tem alguma coisa no seu dia tomando mais tempo do que deveria?",
+      "description": "Pode ser uma tarefa que volta toda semana. Pode ser uma decisão travada. Ou uma coisa que você desconfia que tem um jeito mais fácil de fazer.",
+      "isPartOf": { "@id": "https://iaieu.com/#website" },
+      "about": { "@id": "https://iaieu.com/#organization" },
       "inLanguage": "pt-BR",
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://iaieu.com/og-image.png"
-      },
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Início",
-            "item": "https://iaieu.com/"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://iaieu.com/" }
         ]
-      },
-      "publisher": {
-        "@id": "https://iaieu.com/#organization"
-      },
-      "about": {
-        "@id": "https://iaieu.com/#organization"
-      },
-      "mainEntity": {
-        "@id": "https://iaieu.com/#organization"
       }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://iaieu.com/#faq",
-      "inLanguage": "pt-BR",
-      "isPartOf": {
-        "@id": "https://iaieu.com/#website"
-      },
-      "about": {
-        "@id": "https://iaieu.com/#organization"
-      },
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "O que exatamente o IAieu faz?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. Eu entro numa operação para entender como ela funciona, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica para aquela realidade, coloco para rodar e meço o resultado."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Isso é consultoria de inteligência artificial?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Não. A inteligência artificial é apenas uma das ferramentas que eu uso, do mesmo jeito que uso planilha, processo escrito ou reunião com a equipe. A tecnologia é escolhida em função do problema, e não o contrário. O que eu entrego não é tecnologia, é tempo que volta para você."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Serve para empresa ou para pessoa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Para os dois. O método é o mesmo, o que muda é a escala do problema. Pode ser uma operação inteira que precisa ser reorganizada ou uma rotina de uma pessoa só que consome o dia inteiro."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Preciso entender de tecnologia para contratar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Não. A parte técnica é minha. Você precisa apenas conseguir apontar um processo que hoje consome mais tempo, mais gente ou mais dinheiro do que deveria."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quanto custa?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O valor depende do processo e do tamanho da solução, então ele não é publicado no site. A conversa inicial pelo WhatsApp é sem compromisso: você aponta o processo e eu digo o que dá para fazer e quanto fica."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "O que o IAieu não faz?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Não vendo ferramentas, plataformas nem cursos de tecnologia. Não aplico a mesma solução em empresas diferentes e não escolho uma tecnologia para depois procurar onde usá-la. Se o seu caso não for para mim, eu digo na primeira conversa."
-          }
-        }
-      ]
     }
   ]
 }
 </script>
+
+<style>
+/* ==========================================================================
+   Sistema visual do protótipo aprovado em 13/08/2026.
+   Tudo abaixo veio do arquivo aprovado e não foi alterado, com uma exceção
+   marcada no fim: o bloco "ajustes de produção", que só liga o que o
+   protótipo deixou reservado. Nada ali muda cor, tipografia ou medida.
+   ========================================================================== */
+@font-face{font-family:'Inter';src:url(/fontes/inter-var.woff2) format('woff2');font-weight:100 900;font-display:block}
+
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --preto:#111111;
+  --corpo:#5A5A5A;
+  --rotulo:#9A9A9A;
+  --linha:#E8E6E2;
+  --claro:#FFFFFF;
+  --papel:#FAF9F7;
+  --escuro:#0A0A0F;
+  --claro-sobre-escuro:#F5F2EC;
+  --corpo-escuro:#B0B0B0;
+  --acento:#C1121F;
+  --pad:clamp(22px,5vw,62px);
+  --max:1180px;
+}
+html{scroll-behavior:auto}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--claro);color:var(--preto);
+  -webkit-font-smoothing:antialiased;font-synthesis:none}
+
+/* ---------- navegação ---------- */
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);
+  backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--linha)}
+.nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:66px;
+  display:flex;align-items:center;gap:28px}
+.marca{font-size:20px;font-weight:800;letter-spacing:-.02em;color:var(--preto);
+  text-decoration:none;line-height:1;display:flex;align-items:baseline;gap:1px}
+.marca i{font-style:normal;color:var(--acento)}
+.nav-links{display:flex;gap:26px;margin-left:14px}
+.nav a.link{font-size:14.5px;color:#4A4A4A;text-decoration:none;font-weight:450}
+.nav a.link:hover{color:var(--preto)}
+.nav-dir{margin-left:auto;display:flex;align-items:center;gap:22px}
+.idiomas{display:flex;gap:8px;font-size:12.5px;color:#9A9A9A;letter-spacing:.05em}
+.idiomas a{color:#9A9A9A;text-decoration:none}
+.idiomas a.on{color:var(--preto);font-weight:600}
+.idiomas span{color:#D6D4D0}
+.nav .btn-nav{font-size:14px;font-weight:600;background:var(--preto);color:#fff;
+  padding:11px 18px;border-radius:2px;text-decoration:none;white-space:nowrap}
+.menu-mob{display:none}
+
+/* ---------- estrutura de seção ---------- */
+section{border-top:1px solid transparent}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.pad-l{padding-top:clamp(80px,11vw,150px);padding-bottom:clamp(80px,11vw,150px)}
+.pad-m{padding-top:clamp(64px,8vw,110px);padding-bottom:clamp(64px,8vw,110px)}
+.pad-s{padding-top:clamp(52px,6vw,86px);padding-bottom:clamp(52px,6vw,86px)}
+.papel{background:var(--papel)}
+.escuro{background:var(--escuro);color:var(--claro-sobre-escuro)}
+.escuro p{color:var(--corpo-escuro)}
+.escuro .rot{color:#6E6E78}
+
+.rot{display:block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+  font-weight:600;color:var(--rotulo);margin-bottom:26px}
+
+h1{font-size:clamp(38px,6.4vw,80px);line-height:1.08;font-weight:800;
+  letter-spacing:-.025em;max-width:15.5em}
+h2{font-size:clamp(28px,4vw,50px);line-height:1.15;font-weight:800;
+  letter-spacing:-.022em;max-width:16em}
+h3{font-size:clamp(19px,2.2vw,24px);line-height:1.3;font-weight:700;letter-spacing:-.012em}
+.escuro h2{color:var(--claro-sobre-escuro)}
+
+p{font-size:clamp(17px,1.35vw,20px);line-height:1.66;color:var(--corpo);font-weight:400;
+  max-width:34em}
+p+p{margin-top:20px}
+.forte{color:var(--preto)}
+.escuro .forte{color:var(--claro-sobre-escuro)}
+
+/* filete B0, unico lugar onde a cor de acento aparece */
+.filete{box-shadow:inset 0 -.085em 0 var(--acento)}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(64px,9vw,124px);padding-bottom:clamp(72px,10vw,132px)}
+.hero p{margin-top:34px}
+.acoes{display:flex;gap:14px;margin-top:46px;flex-wrap:wrap}
+.btn{padding:17px 27px;font-size:16px;font-weight:600;border-radius:2px;
+  text-decoration:none;display:inline-block;line-height:1.2}
+.btn-p{background:var(--preto);color:#fff}
+.btn-s{color:var(--preto);border:1px solid #CFCDC9;background:transparent}
+.escuro .btn-p{background:var(--claro-sobre-escuro);color:var(--escuro)}
+.escuro .btn-s{color:var(--claro-sobre-escuro);border-color:#3A3A44}
+
+/* ---------- secao 2, tres situacoes ---------- */
+.abertura{font-size:clamp(19px,1.9vw,26px);line-height:1.5;color:var(--preto);
+  font-weight:500;max-width:26em;margin-top:26px}
+.situacoes{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(26px,3.4vw,52px);
+  margin-top:clamp(50px,6vw,84px)}
+.sit{border-top:1px solid var(--linha);padding-top:24px}
+.sit h3{margin-bottom:14px;max-width:14em}
+.sit p{font-size:16.5px;line-height:1.62;max-width:none}
+
+/* ---------- secao 4, passos ---------- */
+.passos{margin-top:clamp(46px,5vw,74px);border-top:1px solid var(--linha)}
+.passo{display:grid;grid-template-columns:96px 1fr;gap:clamp(16px,3vw,44px);
+  padding:clamp(26px,3.2vw,40px) 0;border-bottom:1px solid var(--linha);align-items:start}
+.num{font-size:15px;font-weight:800;letter-spacing:.06em;color:var(--rotulo);
+  padding-top:.35em}
+.passo h3{margin-bottom:12px}
+.passo p{max-width:36em}
+
+/* ---------- secao 6, prova ---------- */
+.prova{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);
+  margin-top:clamp(46px,5vw,74px);align-items:start}
+.cartao{border:1px solid var(--linha);padding:clamp(24px,3vw,34px);background:#fff}
+.selo{display:inline-block;font-size:12.5px;letter-spacing:.01em;
+  font-weight:500;color:var(--corpo);border:1px solid var(--linha);padding:6px 10px;
+  margin-bottom:20px}
+.cartao h3{margin-bottom:14px}
+.cartao p{font-size:16.5px;max-width:none}
+.numero{font-size:clamp(30px,3.4vw,42px);font-weight:800;letter-spacing:-.02em;
+  color:var(--preto);line-height:1.1;margin-top:22px}
+.numero small{display:block;font-size:15px;font-weight:400;color:var(--corpo);
+  letter-spacing:0;margin-top:8px}
+.depos{display:flex;flex-direction:column;gap:clamp(24px,3vw,38px)}
+.depo{border-left:2px solid var(--linha);padding-left:22px}
+.depo p{font-size:17px;line-height:1.62;color:var(--preto);max-width:none}
+.assina{margin-top:16px;font-size:14.5px;color:var(--corpo)}
+.assina b{color:var(--preto);font-weight:600}
+
+/* ---------- secao 7, duas colunas ---------- */
+.quem{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);
+  gap:clamp(30px,5vw,80px);margin-top:clamp(40px,4.6vw,68px);align-items:start}
+.foto{aspect-ratio:4/5;border:1px dashed #C9C7C3;background:#F3F1EE;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
+.foto span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#A8A6A2;
+  line-height:1.7}
+.quem p{max-width:38em}
+
+/* ---------- secao 8 ---------- */
+.fechamento h2{max-width:12em}
+.fechamento p{margin-top:26px}
+
+/* ---------- rodape ---------- */
+footer{background:var(--escuro);color:#8E8E98;padding:clamp(44px,5vw,68px) 0 clamp(30px,4vw,44px)}
+.rod{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;
+  padding-bottom:32px;border-bottom:1px solid #1E1E26}
+.rod .marca{color:var(--claro-sobre-escuro)}
+.rod-links{display:flex;flex-wrap:wrap;gap:22px;margin-left:auto}
+.rod-links a{color:#A8A8B2;text-decoration:none;font-size:14.5px}
+.rod-links a:hover{color:var(--claro-sobre-escuro)}
+.rod-base{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
+  padding-top:24px;font-size:13px;color:#6E6E78}
+.rod-base .frase{color:#A8A8B2}
+
+/* ---------- rosa dos ventos, posicao reservada ---------- */
+.rosa{width:26px;height:26px;border:1px dashed #CFCDC9;border-radius:2px;flex:none}
+.rod .rosa{border-color:#33333C}
+
+@media (max-width:900px){
+  .situacoes{grid-template-columns:1fr;gap:32px}
+  .prova{grid-template-columns:1fr}
+  .quem{grid-template-columns:1fr}
+  .foto{max-width:300px}
+  .nav-links{display:none}
+  .nav .btn-nav{display:none}
+  .menu-mob{display:block;margin-left:auto;font-size:13px;color:#9A9A9A;letter-spacing:.06em}
+  .nav-dir{margin-left:0}
+  .passo{grid-template-columns:1fr;gap:8px}
+  .num{padding-top:0}
+}
+
+/* ==========================================================================
+   AJUSTES DE PRODUÇÃO
+   Só liga o que o protótipo deixou reservado ou desligado. Não muda cor,
+   tipografia, medida, espaçamento nem ordem. Apagar este bloco devolve o
+   protótipo exatamente como foi aprovado.
+   ========================================================================== */
+
+/* 1. A moldura da foto deixa de ser marcação e passa a segurar a fotografia.
+      Proporção, largura e posição na grade continuam as do protótipo. */
+.foto{border:0;background:var(--escuro);padding:0;overflow:hidden}
+/* 92% 47% centraliza o rosto no recorte 4:5. A foto original é 2048x1280
+   com o rosto à direita, então um recorte centrado pegaria só o fundo. */
+.foto img{width:100%;height:100%;object-fit:cover;object-position:92% 47%;display:block}
+
+/* 2. A posição da Rosa dos Ventos continua reservada, agora sem a moldura
+      tracejada, que era marcação de protótipo. O espaço permanece igual. */
+.rod .rosa{border-color:transparent}
+
+/* 3. O MENU do celular passa a abrir de verdade. Fechado, é igual ao
+      aprovado: a mesma palavra, no mesmo lugar, com a mesma cor. */
+button.menu-mob{background:none;border:0;font:inherit;cursor:pointer;padding:6px 0}
+.gaveta{position:fixed;inset:0;z-index:40;background:var(--claro);
+  padding:0 var(--pad);display:none;flex-direction:column;overflow-y:auto}
+.gaveta.aberta{display:flex}
+.gaveta-topo{display:flex;align-items:center;height:66px;
+  border-bottom:1px solid var(--linha);margin:0 calc(var(--pad) * -1);padding:0 var(--pad)}
+.gaveta-fechar{margin-left:auto;background:none;border:0;font:inherit;cursor:pointer;
+  font-size:13px;letter-spacing:.06em;color:#9A9A9A;padding:6px 0}
+.gaveta nav{display:flex;flex-direction:column;padding-top:12px}
+.gaveta nav a{font-size:20px;font-weight:600;letter-spacing:-.012em;color:var(--preto);
+  text-decoration:none;padding:20px 0;border-bottom:1px solid var(--linha)}
+.gaveta .btn{margin-top:30px;text-align:center}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="nav-logo" href="#topo"><span class="wordmark"><span class="w1">IA</span><span class="w2">ieu.</span></span></a>
-  <ul class="nav-links">
-    <li><a href="o-que-vendemos.html">O método</a></li>
-    <li><a href="sobre.html">A experiência</a></li>
-    <li class="nav-extra"><a href="#prova">Casos</a></li>
-    <li class="nav-extra"><a href="depoimentos.html">Depoimentos</a></li>
-    <li class="idiomas"><span class="idioma-ativo">PT</span><i>·</i><a href="https://iaieu.com/en/">EN</a><i>·</i><a href="https://iaieu.com/es/">ES</a></li>
-    <li><a href="#cta" class="nav-cta-out">Fale comigo →</a></li>
-  </ul>
-  <button class="nav-burger" type="button" aria-label="Abrir menu completo" aria-expanded="false" aria-controls="menu-completo" data-menu-abrir><span></span><span></span><span></span></button>
-</nav>
-
-<div class="menu-full" id="menu-completo" hidden aria-label="Menu completo">
-  <div class="menu-grid">
-
-    <div class="menu-grupo">
-      <h3>Onde o método é aplicado</h3>
-      <ul>
-          <li><a href="iaieu-evc.html">
-            <span class="menu-t">IAieu eVc</span>
-            <span class="menu-d">O que você sabe e nunca escreveu, publicado na sua voz.</span>
-          </a></li>
-          <li><a href="iaieu-mais.html">
-            <span class="menu-t">IAieu+</span>
-            <span class="menu-d">O processo que consome mais do que deveria.</span>
-          </a></li>
-          <li><a href="o-que-vendemos.html">
-            <span class="menu-t">O método completo</span>
-            <span class="menu-d">Como um problema vira solução.</span>
-          </a></li>
-      </ul>
-    </div>
-
-    <div class="menu-grupo">
-      <h3>O IAieu</h3>
-      <ul>
-          <li><a href="sobre.html">
-            <span class="menu-t">A experiência</span>
-            <span class="menu-d">Quarenta anos organizando operações.</span>
-          </a></li>
-          <li><a href="depoimentos.html">
-            <span class="menu-t">Depoimentos</span>
-            <span class="menu-d">Relatos de quem trabalhou comigo.</span>
-          </a></li>
-          <li><a href="caso-operacao-do-zero.html">
-            <span class="menu-t">Caso 01</span>
-            <span class="menu-d">Uma operação implantada do zero, documentada.</span>
-          </a></li>
-          <li><a href="projetos.html">
-            <span class="menu-t">Projetos</span>
-            <span class="menu-d">Problemas que alguém precisava resolver.</span>
-          </a></li>
-      </ul>
-    </div>
-
-    <div class="menu-grupo">
-      <h3>Mais</h3>
-      <ul>
-          <li><a href="conteudos.html">
-            <span class="menu-t">Conteúdos</span>
-            <span class="menu-d">Operação, processo e decisão, comentados.</span>
-          </a></li>
-      </ul>
-      <a class="menu-wa" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20o%20site%20do%20IAieu%20e%20quero%20falar%20com%20voc%C3%AA." target="_blank" rel="noopener">Falar no WhatsApp</a>
-    </div>
-
+<nav class="nav"><div class="nav-in">
+  <a href="#topo" class="marca">IAieu<i>.</i></a>
+  <div class="nav-links">
+    <a class="link" href="#s4">Como funciona</a>
+    <a class="link" href="#s6">O que dá pra conferir</a>
+    <a class="link" href="#s7">Quem está do outro lado</a>
   </div>
-  <p class="menu-dica">Toque no X para fechar, ou aperte a tecla Esc.</p>
+  <div class="nav-dir">
+    <div class="idiomas"><a href="https://iaieu.com/" class="on">PT</a><span>|</span><a href="https://iaieu.com/en/">EN</a><span>|</span><a href="https://iaieu.com/es/">ES</a></div>
+    <a class="btn-nav" href="#s8">Me conta o que está acontecendo</a>
+    <button class="menu-mob" type="button" id="abrir" aria-label="Abrir menu" aria-expanded="false" aria-controls="gaveta">MENU</button>
+  </div>
+</div></nav>
+
+<div class="gaveta" id="gaveta" aria-hidden="true">
+  <div class="gaveta-topo">
+    <a href="#topo" class="marca">IAieu<i>.</i></a>
+    <button class="gaveta-fechar" type="button" id="fechar" aria-label="Fechar menu">FECHAR</button>
+  </div>
+  <nav>
+    <a href="#s4">Como funciona</a>
+    <a href="#s6">O que dá pra conferir</a>
+    <a href="#s7">Quem está do outro lado</a>
+  </nav>
+  <a class="btn btn-p" href="#s8">Me conta o que está acontecendo</a>
 </div>
 
-<main>
+<!-- 1. HERO -->
+<section id="topo"><div class="wrap hero">
+  <h1>Tem alguma coisa no seu dia tomando <span class="filete">mais tempo do que deveria</span>?</h1>
+  <p>Pode ser uma tarefa que volta toda semana. Pode ser uma decisão travada. Ou uma coisa que você desconfia que tem um jeito mais fácil de fazer.</p>
+  <p class="forte">Me conta o que está acontecendo. Se você já tiver alguma coisa pronta, manda junto.</p>
+  <div class="acoes">
+    <a class="btn btn-p" href="#s8">Me conta o que está acontecendo</a>
+    <a class="btn btn-s" href="#s4">Ver como funciona</a>
+  </div>
+</div></section>
 
-<!-- HERO -->
-<section id="hero" name="topo"><span id="topo"></span>
-  <div class="hero-top">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <h1 class="hero-title">Quarenta anos organizando operações.<span class="h1-eco">Hoje com ferramentas que não existiam ontem.</span></h1>
-        <p class="hero-oferta"><b>Soluções operacionais sob medida</b> para empresas e pessoas. A tecnologia é escolhida em função do problema, e não o contrário.</p>
-        <div class="hero-rule"></div>
-        <div class="hero-actions">
-          <a class="btn-grad btn-primary hero-cta" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Tenho%20um%20processo%20que%20consome%20tempo%20e%20dinheiro%20e%20quero%20que%20ele%20funcione%20melhor." target="_blank" rel="noopener">Escolha um processo →</a>
-          <a class="hero-link" href="#o-que-e">Veja como eu trabalho →</a>
-        </div>
+<!-- 2. RECONHECIMENTO -->
+<section id="s2" class="papel"><div class="wrap pad-l">
+  <h2>Você não precisa saber o nome do que está faltando.</h2>
+  <p class="abertura">Quase ninguém chega aqui sabendo pedir. Chega sabendo que alguma coisa não anda.</p>
+  <div class="situacoes">
+    <div class="sit">
+      <h3>A tarefa que volta toda semana</h3>
+      <p>Chega o mesmo arquivo, você faz a mesma conferência, do mesmo jeito. Já sabe quanto tempo vai levar e já se conformou. Faz assim há tanto tempo que ninguém mais pergunta se precisa ser assim.</p>
+    </div>
+    <div class="sit">
+      <h3>A decisão que não sai do lugar</h3>
+      <p>Tem informação demais e parte dela se contradiz. Falta tempo de separar o que é fato do que só parece fato. Enquanto isso a decisão fica esperando, e o prazo não espera.</p>
+    </div>
+    <div class="sit">
+      <h3>A coisa que você desconfia que dá pra fazer mais fácil</h3>
+      <p>Você já pensou nisso mais de uma vez. Já até começou a procurar como resolver e parou no meio. Descobrir o caminho custa um tempo que você não tem hoje, e do jeito atual a coisa ainda sai. Então volta pro fim da lista. De novo.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- 3. O QUE É O IAieu -->
+<section id="s3" class="escuro"><div class="wrap pad-l">
+  <h2>É aqui que eu entro.</h2>
+  <p style="margin-top:34px">Eu começo pelo que já existe. Leio o que você me mandou, entendo como aquilo funciona hoje e separo o que é fato do que está sendo repetido sem ninguém ter conferido.</p>
+  <p>Só depois eu escolho a ferramenta. Às vezes é inteligência artificial. Às vezes é uma planilha simples. A escolha vem do problema, nunca antes dele.</p>
+  <p class="forte">E se o caminho que você imaginou não se sustentar, eu falo. Mesmo sendo o contrário do que você esperava ouvir.</p>
+</div></section>
+
+<!-- 4. COMO FUNCIONA -->
+<section id="s4"><div class="wrap pad-l">
+  <span class="rot">Como funciona</span>
+  <h2>O trabalho é meu.</h2>
+  <div class="passos">
+    <div class="passo">
+      <div class="num">01</div>
+      <div><h3>Você me manda o que tem</h3>
+      <p>Do jeito que estiver. Planilha bagunçada, arquivo que não abre, print, áudio. Não precisa organizar antes. Organizar antes já é parte do problema.</p></div>
+    </div>
+    <div class="passo">
+      <div class="num">02</div>
+      <div><h3>Eu pergunto o que faltar</h3>
+      <p>Uma conversa, um áudio, o que for mais fácil pra você. É aqui que aparece o que não estava no arquivo.</p></div>
+    </div>
+    <div class="passo">
+      <div class="num">03</div>
+      <div><h3>Eu trabalho sozinho</h3>
+      <p>Você não precisa gerenciar o meu trabalho nem entrar em reunião pra saber como está indo. Quando aparecer uma decisão que só você pode tomar, eu levo até você com a minha recomendação junto. Fora isso, eu volto quando tiver alguma coisa pra você olhar.</p></div>
+    </div>
+    <div class="passo">
+      <div class="num">04</div>
+      <div><h3>Você recebe pronto</h3>
+      <p>Não é relatório pra ficar bonito na gaveta. É a coisa em si, no formato que serve pro seu caso.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5. AMPLITUDE -->
+<section id="s5" class="papel"><div class="wrap pad-m">
+  <h2>Não é sobre entender de tudo.</h2>
+  <p style="margin-top:32px">Já mexi com perfil de LinkedIn parado desde 2020, com planilha de custo de operação, com apostila de treinamento de equipe, com campanha de anúncio e com conteúdo de TikTok. Nenhum desses assuntos parece com o outro.</p>
+  <p>O que eles têm em comum é o começo. Em todos, a pessoa me entregou o material dela e a primeira coisa que eu fiz foi ler e dizer o que estava ali de verdade. Quase sempre era diferente do que ela achava que estava.</p>
+  <p>Depois disso o caminho aparece. Às vezes o que falta é cortar, às vezes é escrever do zero. Teve caso em que a resposta foi montar uma planilha e teve caso em que foi tirar a planilha do caminho.</p>
+  <p class="forte">A IA entra aqui. Com ela eu consigo analisar muito mais informação em muito menos tempo, e por isso o assunto deixou de ser barreira. Quem decide o que fica continua sendo eu.</p>
+</div></section>
+
+<!-- 6. PROVA -->
+<section id="s6"><div class="wrap pad-m">
+  <h2>O que dá pra conferir.</h2>
+  <p style="margin-top:30px">Não tem case de cliente publicado aqui. A maior parte do que eu faço mexe com material interno de empresa e de pessoa, e eu não publico isso sem autorização escrita. O que dá pra conferir por fora está abaixo.</p>
+  <div class="prova">
+    <div class="cartao">
+      <span class="selo">Operação própria. Não é cliente do IAieu</span>
+      <h3>Marc Cycling</h3>
+      <p>Uma operação de conserto de bikes montada do zero nos Estados Unidos.</p>
+      <div class="numero">Mais de 100 avaliações no Google<small>Nota 5,0.</small></div>
+    </div>
+    <div class="depos">
+      <span class="rot" style="margin-bottom:2px">Quem viu meu trabalho de perto</span>
+      <div class="depo">
+        <p>Conheço o Caetano desde 1983, quando trabalhamos juntos no Maksoud Plaza. Já ali ficava claro o que o define até hoje: dedicação total à operação, sangue-frio sob pressão e um cuidado raro com a execução, do detalhe ao todo. Quatro décadas depois, vejo a mesma pessoa aplicando isso em logística e carga aérea, agora entre Brasil e EUA.</p>
+        <div class="assina"><b>Andréa Galletti</b>, Gerente de Produtos Internacional, Grupo BRT</div>
+      </div>
+      <div class="depo">
+        <p>Conheci o Caetano em 2023, quando eu já trabalhava na Air Canada Cargo, em MIA. Desde então, acompanhei de perto seu trabalho exemplar e seu compromisso constante com a excelência operacional. Sua contribuição vai continuar fazendo diferença em qualquer operação de que ele participe.</p>
+        <div class="assina"><b>Marcelo Penna</b>, Executivo Global, Air Canada</div>
       </div>
     </div>
   </div>
-  <div class="hero-pilares">
-    <p class="pilar-intro">Onde esses quarenta anos aconteceram, no Brasil e nos Estados Unidos:</p>
-    <div class="pilar"><div><div class="pilar-t">Logística</div><div class="pilar-s">Operações e cadeia de abastecimento.</div></div></div>
-    <div class="pilar"><div><div class="pilar-t">Aviação</div><div class="pilar-s">Carga aérea, aeroporto, prazo e custo.</div></div></div>
-    <div class="pilar"><div><div class="pilar-t">Supply chain</div><div class="pilar-s">Do fornecedor ao cliente final.</div></div></div>
-    <div class="pilar"><div><div class="pilar-t">Varejo</div><div class="pilar-s">Loja, estoque e ponto de venda.</div></div></div>
-    <div class="pilar"><div><div class="pilar-t">Hotelaria</div><div class="pilar-s">Serviço, rotina e equipe.</div></div></div>
-  </div>
-</section>
+</div></section>
 
-<!-- FAIXA CLARA 1 · a prova entra cedo (evolucao DA, 04/08/2026) -->
-<div class="faixa-clara" id="prova">
-<!-- CASOS REAIS -->
-<section id="casos">
-  <span class="rotulo">O que já aconteceu</span>
-  <h2 class="titulo">Problemas resolvidos, <em>um por vez.</em></h2>
-
-  <a class="caso-destaque" href="caso-operacao-do-zero.html">
-    <span class="cd-tag">Caso 01 · estudo completo</span>
-    <div class="cd-t">Uma operação que não depende de inspiração.</div>
-    <p class="cd-d">Sessenta dias implantando posicionamento, protocolos, rotina diária, calendário editorial, acompanhamento e indicadores. Do zero absoluto até uma operação que funciona todo dia. O primeiro cliente fui eu.</p>
-    <div class="cd-n">
-      <span><b>60</b>dias, de 21/05 a 21/07/2026</span>
-      <span><b>11</b>peças implantadas</span>
-      <span><b>+500</b>conexões, como consequência</span>
-    </div>
-    <span class="cd-link">Ler o estudo de caso completo →</span>
-  </a>
-
-  <div class="casos-grid">
-    <div class="caso">
-      <div class="quem">Bruno</div>
-      <div class="papel">Campanha parada há meses</div>
-      <div class="caso-num">+40 inscrições<small>na primeira semana</small></div>
-      <p>A campanha inteira saiu do zero e ficou pronta para publicar em menos de um dia.</p>
-    </div>
-    <div class="caso">
-      <div class="quem">Marc Cycling</div>
-      <div class="papel">Operação montada do zero, nos EUA</div>
-      <div class="caso-num">115 avaliações <span class="estrelas">★★★★★</span><small><span class="g-pontos" aria-hidden="true"><i></i><i></i><i></i><i></i></span>nota 5,0 no Google, na Flórida</small></div>
-      <p>Uma operação de conserto de bikes montada do zero.</p>
-      <p class="fecho">Faço o que <b>falo.</b></p>
-    </div>
-    
-</section>
-</div>
-
-<!-- PARA QUEM É -->
-<section id="para-quem">
-  <span class="rotulo">O que quase ninguém vê</span>
-  <h2 class="titulo">Todo mundo vê o resultado. <em>Quase ninguém vê a operação.</em></h2>
-  <div class="big-lead">
-    <p>Seu problema não está sem solução. Está sem direção.</p>
-  </div>
-  <ul class="pq-lista">
-    <li>Uma rotina que consome o dia inteiro <strong>e ninguém nunca parou para olhar.</strong></li>
-    <li>Conhecimento que só existe na cabeça de uma pessoa e nunca foi escrito.</li>
-    <li>Retrabalho que virou hábito, porque sempre foi feito assim.</li>
-  </ul>
-  <p class="pq-close">Se você reconheceu a sua operação em alguma dessas linhas, <b>a gente precisa conversar.</b></p>
-</section>
-
-<div class="divisor"></div>
-
-<!-- FAIXA · analogia curso x direção -->
-<section class="faixa-analogia">
-  <p class="destaque-quote">Não é software. Não é agência. <b>É organizar o que já existe.</b></p>
-  <div class="analogia">
-    <p>Software vende licença e espera que você descubra como usar. Agência vende campanha e vai embora quando ela acaba. Nenhum dos dois entra na sua operação para entender como ela funciona de verdade.</p>
-    <p>Eu entro. E se a melhor solução para o seu problema for uma planilha simples em vez de um sistema caro, a resposta vai ser a planilha simples. O que interessa é o processo funcionando, não a tecnologia usada.</p>
-  </div>
-</section>
-
-<div class="divisor"></div>
-
-<!-- COMO FUNCIONA -->
-<section id="como-funciona">
-  <span class="rotulo">Como eu trabalho</span>
-  <h2 class="titulo">Entender antes <em>de resolver.</em></h2>
-  <div class="cf-passos">
-    <div class="cf-passo">
-      <div class="cf-num">01</div>
-      <h3>Entender</h3>
-      <p>Entro na operação e acompanho como o trabalho acontece, conversando com quem executa todo dia.</p>
-    </div>
-    <div class="cf-passo">
-      <div class="cf-num">02</div>
-      <h3>Identificar</h3>
-      <p>Descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, e separo a causa do sintoma.</p>
-    </div>
-    <div class="cf-passo">
-      <div class="cf-num">03</div>
-      <h3>Desenvolver</h3>
-      <p>Construo uma solução específica para aquela realidade. Sem receita pronta, porque cada operação é diferente.</p>
-    </div>
-    <div class="cf-passo">
-      <div class="cf-num">04</div>
-      <h3>Implementar</h3>
-      <p>Coloco a solução para funcionar dentro da rotina real, junto com quem vai usar ela.</p>
-    </div>
-    <div class="cf-passo">
-      <div class="cf-num">05</div>
-      <h3>Medir</h3>
-      <p>Comparo com o que era antes. O sucesso é medido pelo resultado, nunca pela tecnologia usada.</p>
+<!-- 7. QUEM ESTÁ POR TRÁS -->
+<section id="s7" class="papel"><div class="wrap pad-m">
+  <h2>Quem está do outro lado.</h2>
+  <div class="quem">
+    <div class="foto"><img src="imagens/cae-hero-fullbleed.webp" alt="Caetano Zammataro" width="2048" height="1280" loading="lazy" decoding="async"></div>
+    <div>
+      <p>Comecei a trabalhar aos 15 anos, em hotel. Saí do Maksoud Plaza como gerente de recepção e fui para a United Airlines em Guarulhos, em 92, quando a empresa começou a operar no Brasil.</p>
+      <p>Na Continental eu montei a operação de cargas do zero, assumi São Paulo e Rio e abri estações. Quando começou a aliança entre Continental e Copa, fui eu quem colocou a Copa para voar no Brasil. O primeiro voo São Paulo Panamá foi projeto meu. A operação saiu do zero e chegou a dez milhões de dólares em oito anos.</p>
+      <p>Depois comprei uma loja em São Paulo que estava no vermelho e levei quinze anos para virar. Em 2020 vim para os Estados Unidos e montei uma empresa do zero na Flórida. Em 2023 voltei para a aviação, no hub de carga de Miami.</p>
+      <p>São oito operações, em dois países e em quatro setores. Todas do zero ou quebradas quando eu cheguei.</p>
+      <p>O setor de carga aérea já começou outra mudança com o ONE Record. Estou me certificando pela IATA agora, porque quero acompanhar essa mudança preparado, não começar a aprender depois.</p>
+      <p class="forte">É com esse olhar que eu leio o material que você me manda.</p>
     </div>
   </div>
-  
-  <p class="cf-nota">O problema muda de um cliente para o outro. <strong>O método não muda.</strong></p>
-</section>
+</div></section>
 
-<div class="divisor"></div>
-
-<!-- FAIXA ARTÍSTICA · a frase -->
-<section class="home-quote" id="frase">
-  <p class="hq-text"><span class="hq-mark">&ldquo;</span>O que na sua operação <em>só anda quando você empurra?</em></p>
-  <p class="hq-fim">É por essa lista que a gente começa.</p>
-</section>
-
-<div class="divisor"></div>
-
-<!-- BLOCO 5 · Sobre / O IAieu nasceu da minha própria história -->
-<section id="sobre">
-  <span class="rotulo">Sobre</span>
-  <h2 class="titulo">O trabalho é o mesmo <em>há quarenta anos.</em></h2>
-  <div class="sobre-body">
-    <p>Comecei antes dos vinte anos. Passei por logística, aviação, carga, supply chain, varejo, hotelaria e operações, no Brasil e nos Estados Unidos. Construí operações do zero, implantei processos, reorganizei empresas, formei equipes e recuperei negócios que pareciam não ter solução.</p>
-    <p>Os setores mudavam. Os países mudavam. As tecnologias mudavam. O trabalho era sempre o mesmo. <strong>Entender como a operação funciona de verdade e organizar o que estava desorganizado.</strong></p>
-    <p>Hoje eu faço exatamente isso, com ferramentas que não existiam ontem. As ferramentas mudaram. A experiência que decide o que fazer com elas continua sendo a mesma.</p>
+<!-- 8. CONTATO
+     O id "cta" existe porque as outras páginas do site apontam para
+     index.html#cta, endereço da home antiga. Mantido para não quebrar esses
+     links enquanto elas não forem refeitas. Não aparece na tela. -->
+<span id="cta" aria-hidden="true"></span>
+<section id="s8"><div class="wrap pad-l fechamento">
+  <h2>Me conta o que está acontecendo.</h2>
+  <p>Pode mandar do jeito que estiver. Um áudio, um print, uma planilha, um link ou só a explicação.</p>
+  <p class="forte">Eu leio, faço as perguntas que faltarem e digo com clareza se consigo ajudar.</p>
+  <div class="acoes">
+    <a class="btn btn-p" href="https://wa.me/17542525245">Falar comigo no WhatsApp</a>
+    <a class="btn btn-s" href="mailto:czamma@gmail.com">Mandar por e-mail</a>
   </div>
-  <div class="sobre-stats">
-    <div class="sobre-stat"><div class="n">40</div><div class="l">anos construindo e reorganizando operações</div></div>
-    <div class="sobre-stat"><div class="n">2</div><div class="l">países, Brasil e Estados Unidos</div></div>
-    <div class="sobre-stat"><div class="n">1</div><div class="l">jeito de trabalhar: entender antes de resolver</div></div>
-  </div>
-  <p style="margin-top:30px"><a href="sobre.html" style="color:#A78BFA;font-weight:600;text-decoration:none;font-size:15px">Conheça a experiência por trás do IAieu →</a></p>
-</section>
+</div></section>
 
-<div class="divisor"></div>
-
-<!-- BLOCO 6 · O que realmente entrego -->
-<div class="faixa-clara" id="promessa">
-<!-- O QUE MUDA NA PRATICA -->
-<section id="entrego">
-  <span class="rotulo">O que muda na prática</span>
-  <h2 class="titulo">Menos tempo perdido.<br>Menos <span class="rt">ret<span class="rt-r">r</span>abalho</span>.<br><em>Mais tempo para o que importa.</em></h2>
-  <div class="big-lead">
-    <p>Não prometo transformar a sua operação, porque eu ainda não a conheci. Prometo o que sempre acontece quando um processo é entendido e organizado: some a etapa que existia sem motivo, a informação para de circular duas vezes, e o dia deixa de ser consumido por coisa que não precisava consumir.</p>
-        <p>O que muda de verdade é onde o seu tempo vai parar.</p>
-  </div>
-</section>
-</div>
-
-<div class="divisor"></div>
-
-<!-- TRANSIÇÃO PARA OS SERVIÇOS -->
-<section id="servicos">
-  <span class="rotulo">Na prática</span>
-  <h2 class="titulo">Um método, <em>dois contextos.</em></h2>
-  <p class="subtitulo">Não são duas empresas nem dois produtos. É o mesmo trabalho, aplicado a problemas de tamanhos diferentes. O que muda é o problema e quem está com a mão na massa.</p>
-</section>
-<!-- IAieu eVc · destaque máximo -->
-<section id="evc">
-  <span class="rotulo">IAieu eVc</span>
-  <h2 class="titulo">IAieu <em>eVc</em></h2>
-  <p class="subtitulo">O que você sabe e nunca escreveu, publicado na sua voz. Para pessoas e empresas.</p>
-
-  <p class="evc-body">
-    Toda pessoa com estrada carrega um repertório que nunca foi escrito: casos que resolveu, decisões que tomou, erros que não repetiu. <strong>Enquanto isso não aparece, o mercado vê um perfil parado no lugar de alguém que sabe o que faz.</strong>
-  </p>
-  <p class="evc-body">
-    Você me conta a sua história falando, em áudios, no seu tempo. Eu escrevo e monto o conteúdo com a sua cara, do jeito que você mesmo diria. Você só lê e aprova antes de publicar. <strong>Falo na sua voz e te entrego o conteúdo pronto.</strong>
-  </p>
-
-<div class="evc-detalhes">
-    <span>Serviço mensal</span>
-    <span>Contrato mínimo de 3 meses</span>
-    <span>Vagas limitadas</span>
-  </div>
-
-  <a class="ref-link" href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">Veja uma referência viva no LinkedIn →</a>
-
-  <div class="evc-cta">
-    <a class="of-link" href="iaieu-evc.html">Ver como funciona o eVc →</a>
-  </div>
-</section>
-
-<div class="divisor"></div>
-
-<!-- IAieu+ e IAieu GO -->
-<section id="mais">
-  <div class="mini-grid">
-
-    <div class="mini" id="mais-card">
-      <h2>IAieu+</h2>
-      <p class="sub">O processo que consome mais do que deveria.</p>
-      <p>Toda operação tem uma rotina que ninguém desenhou, que foi acontecendo, e que hoje come o dia inteiro. Você me aponta esse processo, eu estudo como ele funciona hoje, construo a solução, coloco pra rodar e confiro se melhorou. Sem você ter que aprender ferramenta nenhuma.</p>
-      <p class="fecho">O trabalho volta <b>feito.</b></p>
-      
-      <a class="of-link" href="iaieu-mais.html">Ver como funciona o IAieu+ →</a>
-    </div>
-
-    
-</section>
-
-<!-- FAIXA CLARA 2 · o que dizem (evolucao DA, 04/08/2026) -->
-<div class="faixa-clara" id="prova-2">
-<!-- DEPOIMENTOS (secao escondida ate existir depoimento aprovado) -->
-<section id="depoimentos">
-  <span class="rotulo">O que dizem</span>
-  <h2 class="titulo">Isso já era percebido <em>antes do IAieu existir.</em></h2>
-  <p class="subtitulo">Recomendações públicas no LinkedIn, escritas por quem trabalhou comigo ou me contratou. Nenhuma foi pedida para este site.</p>
-  <div class="dh-grid">
-
-    <div class="dh">
-      <span class="dh-angulo">Sobre quatro décadas de trabalho</span>
-      <p class="dh-fala">Conheço o Caetano desde 1983, quando trabalhamos juntos no Maksoud Plaza. Já ali ficava claro o que o define até hoje: <b>dedicação total à operação, sangue-frio sob pressão e um cuidado raro com a execução, do detalhe ao todo.</b> Quatro décadas depois, vejo a mesma pessoa aplicando isso em logística e carga aérea, agora entre Brasil e EUA.</p>
-      <div class="dh-quem">
-        <div class="dh-nome">Andréa Paula Galletti</div>
-        <div class="dh-cargo">Estratégia comercial e distribuição, hotelaria. LATAM.</div>
-        <div class="dh-vinculo">Trabalharam na mesma equipe, desde 1983.</div>
-      </div>
-    </div>
-
-    <div class="dh">
-      <span class="dh-angulo">Sobre excelência operacional</span>
-      <p class="dh-fala">I met Caetano in 2023, when I was already working at Air Canada Cargo in MIA. Since then, I have closely followed his exemplary work and <b>his consistent commitment to operational excellence.</b> His contribution will continue to add significant value to any operation he is part of.</p>
-      <div class="dh-quem">
-        <div class="dh-nome">Marcelo Penna</div>
-        <div class="dh-cargo">Executivo global de cargas, operações e supply chain.</div>
-        <div class="dh-vinculo">Foi cliente do Caetano.</div>
-      </div>
-    </div>
-
-  </div>
-  <div class="dep-cta" style="margin-top:34px">
-    <a class="btn-grad" href="depoimentos.html">Ver os depoimentos completos →</a>
-  </div>
-</section>
-</div>
-
-
-
-
-
-<div class="divisor"></div>
-
-<div class="faixa-clara" id="duvidas">
-<!-- PERGUNTAS FREQUENTES (texto visivel espelhado 1:1 no FAQPage schema) -->
-<section id="faq">
-  <span class="rotulo">Perguntas frequentes</span>
-  <h2 class="titulo">O que perguntam <em>antes de começar.</em></h2>
-  <div class="faq-lista">
-    <div class="faq-item">
-      <h3 class="faq-q">O que exatamente o IAieu faz?</h3>
-      <p class="faq-a">O IAieu desenvolve soluções operacionais sob medida para empresas e pessoas. Eu entro numa operação para entender como ela funciona, descubro onde tempo, pessoas ou dinheiro estão sendo desperdiçados, construo uma solução específica para aquela realidade, coloco para rodar e meço o resultado.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Isso é consultoria de inteligência artificial?</h3>
-      <p class="faq-a">Não. A inteligência artificial é apenas uma das ferramentas que eu uso, do mesmo jeito que uso planilha, processo escrito ou reunião com a equipe. A tecnologia é escolhida em função do problema, e não o contrário. O que eu entrego não é tecnologia, é tempo que volta para você.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Serve para empresa ou para pessoa?</h3>
-      <p class="faq-a">Para os dois. O método é o mesmo, o que muda é a escala do problema. Pode ser uma operação inteira que precisa ser reorganizada ou uma rotina de uma pessoa só que consome o dia inteiro.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Preciso entender de tecnologia para contratar?</h3>
-      <p class="faq-a">Não. A parte técnica é minha. Você precisa apenas conseguir apontar um processo que hoje consome mais tempo, mais gente ou mais dinheiro do que deveria.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">Quanto custa?</h3>
-      <p class="faq-a">O valor depende do processo e do tamanho da solução, então ele não é publicado no site. A conversa inicial pelo WhatsApp é sem compromisso: você aponta o processo e eu digo o que dá para fazer e quanto fica.</p>
-    </div>
-    <div class="faq-item">
-      <h3 class="faq-q">O que o IAieu não faz?</h3>
-      <p class="faq-a">Não vendo ferramentas, plataformas nem cursos de tecnologia. Não aplico a mesma solução em empresas diferentes e não escolho uma tecnologia para depois procurar onde usá-la. Se o seu caso não for para mim, eu digo na primeira conversa.</p>
+<footer><div class="wrap">
+  <div class="rod">
+    <a href="#topo" class="marca">IAieu<i>.</i></a>
+    <div class="rosa" title="posição reservada para a Rosa dos Ventos"></div>
+    <div class="rod-links">
+      <a href="https://wa.me/17542525245">WhatsApp</a>
+      <a href="mailto:czamma@gmail.com">czamma@gmail.com</a>
+      <a href="https://www.instagram.com/iaieu.evc/">Instagram</a>
+      <a href="https://www.linkedin.com/in/caetano-marc-zammataro/">LinkedIn</a>
     </div>
   </div>
-</section>
-</div>
-
-<div class="divisor"></div>
-
-<div id="cta-wrap">
-<section id="cta">
-  <p class="destaque-quote">Escolha um processo que hoje consome pessoas, tempo ou dinheiro.<b>Eu mostro como ele pode funcionar melhor, com as ferramentas mais adequadas para aquela realidade.</b></p>
-  <h2 class="titulo" style="margin-top:52px">Comece por um processo só.</h2>
-  <p class="subtitulo">Eu estudo, construo, implanto e meço. Se gerar valor, a gente segue para o próximo. E se eu não for a pessoa certa para o seu caso, eu digo na primeira conversa.</p>
-  <a class="btn-grad btn-primary" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Escolhi%20um%20processo%20que%20hoje%20consome%20tempo%2C%20pessoas%20ou%20dinheiro%20e%20quero%20que%20ele%20funcione%20melhor." target="_blank" rel="noopener">Falar agora</a>
-  <div class="cta-extra">
-    <a href="mailto:czamma@gmail.com">E-mail: <b>czamma@gmail.com</b></a>
-    <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: <b>@iaieu.evc</b></a>
-    <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: <b>Caetano Marc Zammataro</b></a>
+  <div class="rod-base">
+    <span class="frase">A inteligência sempre será sua.</span>
+    <span>© <span id="ano">2026</span> IAieu</span>
   </div>
-</section>
-</div>
-
-</main>
-
-<!-- RODAPÉ -->
-<footer>
-  <div class="foot-brand">
-    <span class="wordmark foot-wordmark"><span class="w1">IA</span><span class="w2">ieu.</span></span>
-    <p class="foot-slogan"><b>A inteligência sempre será sua.</b></p>
-  </div>
-  <div class="foot-col">
-    <h4>Navegação</h4>
-    <ul>
-      <li><a href="iaieu-evc.html">IAieu eVc</a></li>
-      <li><a href="iaieu-mais.html">IAieu+</a></li>
-      <li><a href="o-que-vendemos.html">O método</a></li>
-      <li><a href="sobre.html">A experiência</a></li>
-      <li><a href="caso-operacao-do-zero.html">Caso 01</a></li>
-      <li><a href="projetos.html">Projetos</a></li>
-      <li><a href="depoimentos.html">Depoimentos</a></li>
-      <li><a href="conteudos.html">Conteúdos</a></li>
-      <li><a href="#cta">Contato</a></li>
-    </ul>
-  </div>
-  <div class="foot-meta">
-    <img src="imagens/favcom.png" alt="IAieu" width="48" height="48" class="foot-simbolo" style="width:48px;height:48px">
-    <a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noopener">Instagram: @iaieu.evc</a>
-    <a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noopener">LinkedIn: Caetano Marc Zammataro</a>
-    <a href="https://iaieu.com">iaieu.com</a>
-  </div>
-</footer>
-<div class="foot-base">© 2026 IAieu · A inteligência sempre será sua.</div>
-
-<!-- BOTÃO WHATSAPP FLUTUANTE -->
-<a class="wa-float" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20o%20site%20do%20IAieu%20e%20quero%20falar%20com%20voc%C3%AA." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-</a>
-
+</div></footer>
 
 <script>
-/* Medicao: conta cliques em todos os botoes/links de WhatsApp */
 (function(){
-  window.dataLayer = window.dataLayer || [];
-  document.addEventListener('click', function(e){
-    var a = e.target && e.target.closest ? e.target.closest('a[href*="wa.me"]') : null;
-    if(!a) return;
-    var rotulo = (a.textContent || 'whatsapp').trim().slice(0, 60) || 'flutuante';
-    var dado = {event: 'whatsapp_click', rotulo: rotulo, pagina: location.pathname};
-    window.dataLayer.push(dado);
-    if (typeof window.gtag === 'function') { window.gtag('event', 'whatsapp_click', {rotulo: rotulo, pagina: location.pathname}); }
-  }, true);
+  var gav=document.getElementById('gaveta');
+  var abrir=document.getElementById('abrir');
+  var fechar=document.getElementById('fechar');
+  function abre(){gav.classList.add('aberta');gav.setAttribute('aria-hidden','false');abrir.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function fecha(){gav.classList.remove('aberta');gav.setAttribute('aria-hidden','true');abrir.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  abrir.addEventListener('click',abre);
+  fechar.addEventListener('click',fecha);
+  gav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',fecha);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')fecha();});
+  document.getElementById('ano').textContent=new Date().getFullYear();
 })();
 </script>
-<script>
-/* Medicao: eventos que faltavam (o de WhatsApp acima nao foi alterado) */
-(function(){
-  window.dataLayer = window.dataLayer || [];
-  function envia(nome, rotulo){
-    var carga = {rotulo: (rotulo || '').trim().slice(0, 60), pagina: location.pathname};
-    window.dataLayer.push(Object.assign({event: nome}, carga));
-    if (typeof window.gtag === 'function') { window.gtag('event', nome, carga); }
-  }
-  document.addEventListener('click', function(e){
-    var alvo = e.target && e.target.closest ? e.target : null;
-    if(!alvo) return;
-    var a = alvo.closest('a');
-    if(a){
-      if(a.href && a.href.indexOf('mailto:') === 0){ envia('email_click', a.textContent); return; }
-      var sec = a.closest('#evc, #mais, #servicos, #entrego');
-      if(sec){ envia('oferta_click', sec.id + ': ' + a.textContent); return; }
-      if(a.getAttribute('href') === 'o-que-vendemos.html'){ envia('oferta_click', 'menu: ' + a.textContent); return; }
-    }
-    var faq = alvo.closest('.faq-item');
-    if(faq){
-      var q = faq.querySelector('.faq-q');
-      envia('faq_leitura', q ? q.textContent : 'pergunta');
-    }
-  }, true);
-})();
-</script>
-<script>
-/* Menu completo: abre em qualquer tamanho de tela */
-(function(){
-  var painel = document.getElementById('menu-completo');
-  var botao = document.querySelector('[data-menu-abrir]');
-  if(!painel || !botao) return;
 
-  function abre(){
-    painel.hidden = false;
-    botao.setAttribute('aria-expanded','true');
-    document.body.classList.add('menu-aberto');
-    botao.setAttribute('aria-label','Fechar menu completo');
-    var primeiro = painel.querySelector('a');
-    if(primeiro) primeiro.focus();
-  }
-  function fecha(){
-    painel.hidden = true;
-    botao.setAttribute('aria-expanded','false');
-    document.body.classList.remove('menu-aberto');
-    botao.setAttribute('aria-label','Abrir menu completo');
-    botao.focus();
-  }
-  botao.addEventListener('click', function(){
-    if(painel.hidden) abre(); else fecha();
-  });
-  painel.addEventListener('click', function(e){
-    if(e.target === painel) fecha();          // clique fora dos grupos fecha
-    if(e.target.closest && e.target.closest('a')) fecha();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape' && !painel.hidden) fecha();
-  });
-})();
-</script>
 </body>
 </html>

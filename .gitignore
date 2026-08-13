@@ -64,6 +64,8 @@
 
 # Pastas do site
 !/imagens/
+!/fontes/
+!/fontes/*.woff2
 !/dados/
 !/plinio/
 !/stw-daryl-lucas/
