@@ -7,6 +7,28 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://iaieu.com/plinio/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://iaieu.com/stw-daryl-lucas/</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- =========================================================
+       ARQUIVO HISTORICO. Estas oito paginas apresentam o
+       posicionamento anterior ao 13/08/2026 e nao foram reescritas.
+       Saem do sitemap e ficam com noindex, nofollow: elas continuam
+       acessiveis por endereco direto, mas nao representam mais o que
+       o IAieu e. Decisao do Caetano em 13/08/2026.
+       So voltam para ca depois de reescritas no discurso atual.
+       ========================================================= -->
+  <!--
+  <url>
     <loc>https://iaieu.com/o-que-vendemos.html</loc>
     <lastmod>2026-08-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -54,18 +76,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://iaieu.com/plinio/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://iaieu.com/stw-daryl-lucas/</loc>
-    <lastmod>2026-08-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  -->
 
   <!-- =========================================================
        HOMES TRADUZIDAS. Estas duas entraram em 13/08/2026, quando a

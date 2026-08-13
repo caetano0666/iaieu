@@ -26,21 +26,36 @@ BASE = "https://iaieu.com"
 # esta vazia, entao a pagina foi tirada do percurso do visitante e do sitemap.
 # Ela continua no repositorio e continua sendo checada em teste_regras_da_casa.
 # Quando a galeria for preenchida, devolver a linha "arte.html" aqui e no sitemap.
+# Em 13/08/2026 oito paginas saíram desta lista. Elas apresentam o
+# posicionamento anterior a home nova, nao foram reescritas e viraram arquivo
+# historico: continuam acessiveis, mas com noindex, fora do sitemap, sem
+# hreflang e sem dados estruturados. Ver ARQUIVO_HISTORICO logo abaixo.
 PAGINAS = {
     "index.html": f"{BASE}/",
-    "o-que-vendemos.html": f"{BASE}/o-que-vendemos.html",
-    "caso-operacao-do-zero.html": f"{BASE}/caso-operacao-do-zero.html",
-    "iaieu-evc.html": f"{BASE}/iaieu-evc.html",
-    "iaieu-mais.html": f"{BASE}/iaieu-mais.html",
-    # iaieu-go.html saiu do percurso em 05/08/2026, igual a arte.html.
-    # Continua checada pelas regras da casa, entao nunca fica com travessao.
-    "sobre.html": f"{BASE}/sobre.html",
-    "projetos.html": f"{BASE}/projetos.html",
-    "conteudos.html": f"{BASE}/conteudos.html",
-    "depoimentos.html": f"{BASE}/depoimentos.html",
     "plinio/index.html": f"{BASE}/plinio/",
     "stw-daryl-lucas/index.html": f"{BASE}/stw-daryl-lucas/",
 }
+
+# As homes traduzidas. Indexaveis e no sitemap desde 13/08/2026.
+TRADUZIDAS = {
+    "en/index.html": f"{BASE}/en/",
+    "es/index.html": f"{BASE}/es/",
+}
+
+# Arquivo historico. Acessiveis de proposito, fora do percurso.
+# So voltam para PAGINAS depois de reescritas no discurso atual.
+ARQUIVO_HISTORICO = [
+    "o-que-vendemos.html", "caso-operacao-do-zero.html", "iaieu-evc.html",
+    "iaieu-mais.html", "sobre.html", "projetos.html", "conteudos.html",
+    "depoimentos.html",
+]
+
+# Fora do percurso por decisao do proprietario, cada uma na sua data.
+FORA_DO_PERCURSO = ["arte.html", "iaieu-go.html", "shimanofest.html"]
+
+# Nomes que a home nova nao vende mais. Nenhuma pagina indexavel pode
+# declarar isso em dado estruturado.
+SCHEMA_PROIBIDO = ["FAQPage", '"name": "IAieu+"', '"name": "IAieu eVc"']
 
 # Arquivos que nunca podem sumir do repositorio.
 INTOCAVEIS = ["CNAME", "robots.txt", "sitemap.xml", "google7279386773b5d258.html"]
@@ -166,7 +181,7 @@ def teste_metadata():
 
 # ---------------------------------------------------------------- estrutura
 def teste_estrutura():
-    for arq in PAGINAS:
+    for arq in list(PAGINAS) + list(TRADUZIDAS):
         html = ler(arq)
 
         h1s = re.findall(r"<h1[^>]*>", html, flags=re.I)
@@ -281,6 +296,112 @@ def teste_entidades_da_home():
         falha("LocalBusiness encontrado", "o IAieu nao e negocio local")
 
 
+def teste_arquivo_historico():
+    """Trava as decisoes de 13/08/2026 sobre as oito paginas de arquivo.
+
+    Elas ficam acessiveis, mas nao podem voltar a competir com a home nova.
+    Se alguem reindexar uma delas sem reescrever o conteudo, falha aqui.
+    """
+    sm = ler("sitemap.xml")
+    sm_ativo = re.sub(r"<!--.*?-->", "", sm, flags=re.S)
+
+    for arq in ARQUIVO_HISTORICO:
+        html = ler(arq)
+
+        if re.search(r'<meta name="robots" content="noindex, nofollow">', html):
+            ok(f"{arq}: noindex, nofollow")
+        else:
+            falha(f"{arq}: sem noindex, nofollow", "e arquivo historico, nao pode indexar")
+
+        # procura a tag, nao a palavra: o comentario do topo cita "hreflang"
+        if re.search(r'<link[^>]+hreflang=', html):
+            falha(f"{arq}: ainda tem hreflang",
+                  "as versoes /en/ e /es/ dela estao bloqueadas")
+        else:
+            ok(f"{arq}: sem hreflang")
+
+        if "application/ld+json" in html:
+            falha(f"{arq}: ainda tem dado estruturado",
+                  "declara ao robo um IAieu que nao existe mais")
+        else:
+            ok(f"{arq}: sem dado estruturado antigo")
+
+        if f"{BASE}/{arq}" in sm_ativo:
+            falha(f"{arq}: de volta ao sitemap", "arquivo historico fica fora")
+        else:
+            ok(f"{arq}: fora do sitemap")
+
+        # Sair do percurso nao autoriza a pagina a quebrar: ela segue no ar.
+        h1s = re.findall(r"<h1[^>]*>", html, flags=re.I)
+        if len(h1s) == 1:
+            ok(f"{arq}: H1 unico")
+        else:
+            falha(f"{arq}: {len(h1s)} H1", "deve haver exatamente um")
+
+        sem_alt = [t for t in re.findall(r"<img[^>]*>", html, flags=re.I)
+                   if "alt=" not in t.lower()]
+        if sem_alt:
+            falha(f"{arq}: {len(sem_alt)} imagem sem alt")
+        else:
+            ok(f"{arq}: todas as imagens com alt")
+
+        sem_dim = [t for t in re.findall(r"<img[^>]*>", html, flags=re.I)
+                   if "width=" not in t.lower() or "height=" not in t.lower()]
+        if sem_dim:
+            falha(f"{arq}: {len(sem_dim)} imagem sem width ou height",
+                  "sem dimensao o layout salta enquanto carrega")
+        else:
+            ok(f"{arq}: todas as imagens com dimensao")
+
+        if "<title>" in html and re.search(r"<title>\s*</title>", html):
+            falha(f"{arq}: title vazio")
+        else:
+            ok(f"{arq}: title presente")
+
+
+def teste_fora_do_percurso():
+    """Paginas que existem mas nao representam mais o IAieu."""
+    for arq in FORA_DO_PERCURSO:
+        caminho = os.path.join(RAIZ, arq)
+        if not os.path.exists(caminho):
+            continue
+        if re.search(r'<meta name="robots" content="noindex', ler(arq)):
+            ok(f"{arq}: fora do percurso, com noindex")
+        else:
+            falha(f"{arq}: sem noindex", "esta acessivel e indexavel sem querer")
+
+
+def teste_schema_so_da_identidade_nova():
+    """Nenhuma pagina indexavel pode declarar produto ou FAQ descontinuados."""
+    for arq in list(PAGINAS) + list(TRADUZIDAS):
+        html = ler(arq)
+        achados = [p for p in SCHEMA_PROIBIDO if p in html]
+        if achados:
+            falha(f"{arq}: schema com identidade antiga", ", ".join(achados))
+        else:
+            ok(f"{arq}: schema so da identidade atual")
+
+
+def teste_contraste_da_home():
+    """Trava a correcao de contraste de 13/08/2026 na home nova.
+
+    Os cinzas secundarios do prototipo ficavam em 2,8:1 e 3,9:1. Foram para
+    #727272 no claro e #7A7A84 no escuro, ambos acima de 4,5:1. Se alguem
+    devolver os antigos, falha aqui.
+    """
+    html = ler("index.html")
+    for antigo, motivo in (("#9A9A9A", "2,81:1 no branco"), ("#6E6E78", "3,92:1 no escuro")):
+        if antigo in html:
+            falha(f"home com cinza de baixo contraste {antigo}", motivo)
+        else:
+            ok(f"home sem o cinza {antigo}")
+    for novo in ("#727272", "#7A7A84"):
+        if novo in html:
+            ok(f"home usa o cinza corrigido {novo}")
+        else:
+            aviso(f"home sem o cinza {novo}", "conferir se o contraste mudou de outro jeito")
+
+
 def teste_home_sem_faq():
     """A home nova nao tem FAQ. Decisao do Caetano em 13/08/2026.
 
@@ -289,7 +410,7 @@ def teste_home_sem_faq():
     alguem devolver uma FAQ para a home, isso aparece aqui como falha, em vez
     de entrar sem ninguem perceber.
     """
-    for arq in ("index.html", "en/index.html", "es/index.html"):
+    for arq in list(PAGINAS)[:1] + list(TRADUZIDAS):
         html = ler(arq)
         grafo = json.loads(blocos_jsonld(html)[0])["@graph"]
         if any(n.get("@type") == "FAQPage" for n in grafo):
@@ -304,6 +425,8 @@ def teste_conteudo_no_html_bruto():
         # Marcador trocado em 13/08/2026: a home nova abre pela pergunta do
         # visitante, e nao mais pela descricao do que o IAieu vende.
         "index.html": "tomando mais tempo do que deveria",
+        # As linhas abaixo sao arquivo historico. Continuam checadas porque as
+        # paginas seguem acessiveis e o conteudo delas nao pode sumir por acidente.
         "o-que-vendemos.html": "em função do problema",
         "sobre.html": "Quarenta anos",
         "projetos.html": "precisava resolver",
@@ -318,7 +441,8 @@ def teste_conteudo_no_html_bruto():
 
 
 def teste_regras_da_casa():
-    for arq in list(PAGINAS) + ["404.html", "llms.txt", "arte.html"]:
+    for arq in (list(PAGINAS) + list(TRADUZIDAS) + ARQUIVO_HISTORICO
+                + FORA_DO_PERCURSO + ["404.html", "llms.txt"]):
         caminho = os.path.join(RAIZ, arq)
         if not os.path.exists(caminho):
             continue
@@ -353,8 +477,7 @@ def teste_sitemap():
     # traduzidas e o noindex saiu delas. As outras dezoito paginas de /en/ e
     # /es/ continuam fora, dentro do comentario, porque ainda estao em
     # portugues. Nao acrescentar nenhuma aqui sem a traducao ter chegado.
-    TRADUZIDAS = {f"{BASE}/en/", f"{BASE}/es/"}
-    esperadas = set(PAGINAS.values()) | TRADUZIDAS
+    esperadas = set(PAGINAS.values()) | set(TRADUZIDAS.values())
     faltando = esperadas - set(locs)
     sobrando = set(locs) - esperadas
     if faltando:
@@ -440,6 +563,10 @@ def main():
         teste_jsonld,
         teste_entidades_da_home,
         teste_home_sem_faq,
+        teste_arquivo_historico,
+        teste_fora_do_percurso,
+        teste_schema_so_da_identidade_nova,
+        teste_contraste_da_home,
         teste_conteudo_no_html_bruto,
         teste_regras_da_casa,
         teste_sitemap,
