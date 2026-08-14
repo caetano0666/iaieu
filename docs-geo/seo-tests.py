@@ -57,6 +57,16 @@ FORA_DO_PERCURSO = ["arte.html", "iaieu-go.html", "shimanofest.html"]
 # declarar isso em dado estruturado.
 SCHEMA_PROIBIDO = ["FAQPage", '"name": "IAieu+"', '"name": "IAieu eVc"']
 
+# O acento da marca. Decisao do dono em 14/08/2026: o vermelho do site
+# predomina sobre o do arquivo do logo, que era rgb(218,9,12). Todo ativo
+# grafico da identidade tem que usar exatamente este tom.
+ACENTO = (193, 18, 31)          # #C1121F
+ATIVOS_DA_MARCA = [
+    "imagens/logo-iaieu.png", "imagens/logo-iaieu-claro.png",
+    "og-image.png", "og-image-en.png", "og-image-es.png",
+    "favicon-32.png", "apple-touch-icon.png", "icon-512.png",
+]
+
 # Favicon P1, aprovado em 14/08/2026. Estes arquivos precisam existir na raiz
 # e serem declarados nas homes. O pacote original esta em docs-geo/favicon/.
 FAVICON_P1 = [
@@ -467,6 +477,38 @@ def teste_favicon_p1():
             ok(f"{arq}: sem resquicio do icone antigo")
 
 
+def teste_um_vermelho_so():
+    """Nenhum ativo da marca pode usar um vermelho diferente do acento.
+
+    O arquivo do logo veio com rgb(218,9,12), proximo mas nao igual ao
+    #C1121F do site. Os dois conviviam na mesma tela. O dono decidiu em
+    14/08/2026 que o vermelho do site predomina.
+    """
+    try:
+        from PIL import Image
+    except ImportError:
+        aviso("sem Pillow, nao da para conferir o vermelho dos ativos")
+        return
+    import collections
+    for arq in ATIVOS_DA_MARCA:
+        caminho = os.path.join(RAIZ, arq)
+        if not os.path.exists(caminho):
+            falha(f"ativo da marca sumiu: {arq}")
+            continue
+        cores = collections.Counter(Image.open(caminho).convert("RGBA").getdata())
+        cheios = [(k, v) for k, v in cores.items()
+                  if k[3] == 255 and k[0] > 150 and k[1] < 70 and k[2] < 90]
+        if not cheios:
+            aviso(f"{arq}: sem vermelho cheio para conferir")
+            continue
+        tom = max(cheios, key=lambda x: x[1])[0][:3]
+        if tom == ACENTO:
+            ok(f"{arq}: acento #C1121F")
+        else:
+            falha(f"{arq}: vermelho fora do padrao",
+                  f"achado rgb{tom}, esperado rgb{ACENTO}")
+
+
 def teste_home_sem_faq():
     """A home nova nao tem FAQ. Decisao do Caetano em 13/08/2026.
 
@@ -629,6 +671,7 @@ def main():
         teste_entidades_da_home,
         teste_home_sem_faq,
         teste_favicon_p1,
+        teste_um_vermelho_so,
         teste_arquivo_historico,
         teste_fora_do_percurso,
         teste_schema_so_da_identidade_nova,
