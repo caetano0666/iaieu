@@ -105,7 +105,7 @@
 :root{
   --preto:#111111;
   --corpo:#5A5A5A;
-  --rotulo:#9A9A9A;
+  --rotulo:#727272;
   --linha:#E8E6E2;
   --claro:#FFFFFF;
   --papel:#FAF9F7;
@@ -125,15 +125,14 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--claro);color:var(
   backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid var(--linha)}
 .nav-in{max-width:var(--max);margin:0 auto;padding:0 var(--pad);height:66px;
   display:flex;align-items:center;gap:28px}
-.marca{font-size:20px;font-weight:800;letter-spacing:-.02em;color:var(--preto);
-  text-decoration:none;line-height:1;display:flex;align-items:baseline;gap:1px}
-.marca i{font-style:normal;color:var(--acento)}
+.marca{display:flex;align-items:center;text-decoration:none;line-height:0;flex:none}
+.marca img{height:24px;width:auto;display:block}
 .nav-links{display:flex;gap:26px;margin-left:14px}
 .nav a.link{font-size:14.5px;color:#4A4A4A;text-decoration:none;font-weight:450}
 .nav a.link:hover{color:var(--preto)}
 .nav-dir{margin-left:auto;display:flex;align-items:center;gap:22px}
-.idiomas{display:flex;gap:8px;font-size:12.5px;color:#9A9A9A;letter-spacing:.05em}
-.idiomas a{color:#9A9A9A;text-decoration:none}
+.idiomas{display:flex;gap:8px;font-size:12.5px;color:#727272;letter-spacing:.05em}
+.idiomas a{color:#727272;text-decoration:none}
 .idiomas a.on{color:var(--preto);font-weight:600}
 .idiomas span{color:#D6D4D0}
 .nav .btn-nav{font-size:14px;font-weight:600;background:var(--preto);color:#fff;
@@ -149,7 +148,7 @@ section{border-top:1px solid transparent}
 .papel{background:var(--papel)}
 .escuro{background:var(--escuro);color:var(--claro-sobre-escuro)}
 .escuro p{color:var(--corpo-escuro)}
-.escuro .rot{color:#6E6E78}
+.escuro .rot{color:#7A7A84}
 
 .rot{display:block;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
   font-weight:600;color:var(--rotulo);margin-bottom:26px}
@@ -235,12 +234,12 @@ p+p{margin-top:20px}
 footer{background:var(--escuro);color:#8E8E98;padding:clamp(44px,5vw,68px) 0 clamp(30px,4vw,44px)}
 .rod{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;
   padding-bottom:32px;border-bottom:1px solid #1E1E26}
-.rod .marca{color:var(--claro-sobre-escuro)}
+.rod .marca img{height:26px}
 .rod-links{display:flex;flex-wrap:wrap;gap:22px;margin-left:auto}
 .rod-links a{color:#A8A8B2;text-decoration:none;font-size:14.5px}
 .rod-links a:hover{color:var(--claro-sobre-escuro)}
 .rod-base{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;
-  padding-top:24px;font-size:13px;color:#6E6E78}
+  padding-top:24px;font-size:13px;color:#7A7A84}
 .rod-base .frase{color:#A8A8B2}
 
 /* ---------- rosa dos ventos, posicao reservada ---------- */
@@ -254,7 +253,7 @@ footer{background:var(--escuro);color:#8E8E98;padding:clamp(44px,5vw,68px) 0 cla
   .foto{max-width:300px}
   .nav-links{display:none}
   .nav .btn-nav{display:none}
-  .menu-mob{display:block;margin-left:auto;font-size:13px;color:#9A9A9A;letter-spacing:.06em}
+  .menu-mob{display:block;margin-left:auto;font-size:13px;color:#727272;letter-spacing:.06em}
   .nav-dir{margin-left:0}
   .passo{grid-template-columns:1fr;gap:8px}
   .num{padding-top:0}
@@ -287,7 +286,7 @@ button.menu-mob{background:none;border:0;font:inherit;cursor:pointer;padding:6px
 .gaveta-topo{display:flex;align-items:center;height:66px;
   border-bottom:1px solid var(--linha);margin:0 calc(var(--pad) * -1);padding:0 var(--pad)}
 .gaveta-fechar{margin-left:auto;background:none;border:0;font:inherit;cursor:pointer;
-  font-size:13px;letter-spacing:.06em;color:#9A9A9A;padding:6px 0}
+  font-size:13px;letter-spacing:.06em;color:#727272;padding:6px 0}
 .gaveta nav{display:flex;flex-direction:column;padding-top:12px}
 .gaveta nav a{font-size:20px;font-weight:600;letter-spacing:-.012em;color:var(--preto);
   text-decoration:none;padding:20px 0;border-bottom:1px solid var(--linha)}
@@ -300,7 +299,7 @@ button.menu-mob{background:none;border:0;font:inherit;cursor:pointer;padding:6px
 <body>
 
 <nav class="nav"><div class="nav-in">
-  <a href="#topo" class="marca">IAieu<i>.</i></a>
+  <a href="#topo" class="marca"><img src="/imagens/logo-iaieu.png" alt="IAieu" width="520" height="184"></a>
   <div class="nav-links">
     <a class="link" href="#s4">How it works</a>
     <a class="link" href="#s6">What you can check for yourself</a>
@@ -315,7 +314,7 @@ button.menu-mob{background:none;border:0;font:inherit;cursor:pointer;padding:6px
 
 <div class="gaveta" id="gaveta" aria-hidden="true">
   <div class="gaveta-topo">
-    <a href="#topo" class="marca">IAieu<i>.</i></a>
+    <a href="#topo" class="marca"><img src="/imagens/logo-iaieu.png" alt="IAieu" width="520" height="184"></a>
     <button class="gaveta-fechar" type="button" id="fechar" aria-label="Close menu">CLOSE</button>
   </div>
   <nav>
@@ -460,7 +459,7 @@ button.menu-mob{background:none;border:0;font:inherit;cursor:pointer;padding:6px
 
 <footer><div class="wrap">
   <div class="rod">
-    <a href="#topo" class="marca">IAieu<i>.</i></a>
+    <a href="#topo" class="marca"><img src="/imagens/logo-iaieu-claro.png" alt="IAieu" width="520" height="184"></a>
     <div class="rosa" title="posição reservada para a Rosa dos Ventos"></div>
     <div class="rod-links">
       <a href="https://wa.me/17542525245">WhatsApp</a>
