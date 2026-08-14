@@ -57,6 +57,16 @@ FORA_DO_PERCURSO = ["arte.html", "iaieu-go.html", "shimanofest.html"]
 # declarar isso em dado estruturado.
 SCHEMA_PROIBIDO = ["FAQPage", '"name": "IAieu+"', '"name": "IAieu eVc"']
 
+# Favicon P1, aprovado em 14/08/2026. Estes arquivos precisam existir na raiz
+# e serem declarados nas homes. O pacote original esta em docs-geo/favicon/.
+FAVICON_P1 = [
+    "favicon.svg", "favicon.ico", "apple-touch-icon.png", "site.webmanifest",
+    "icon-192.png", "icon-512.png", "icon-512-maskable.png",
+    "favicon-16.png", "favicon-32.png", "favicon-48.png", "favicon-96.png",
+    "favicon-16-dark.png", "favicon-32-dark.png",
+    "favicon-48-dark.png", "favicon-96-dark.png",
+]
+
 # Arquivos que nunca podem sumir do repositorio.
 INTOCAVEIS = ["CNAME", "robots.txt", "sitemap.xml", "google7279386773b5d258.html"]
 
@@ -402,6 +412,61 @@ def teste_contraste_da_home():
             aviso(f"home sem o cinza {novo}", "conferir se o contraste mudou de outro jeito")
 
 
+def teste_favicon_p1():
+    """Trava o pacote de icones aprovado em 14/08/2026.
+
+    Confere que os arquivos existem, que as tres homes os declaram, que o SVG
+    faz a troca de tema e que o manifest usa o nome oficial da marca. O pacote
+    original vinha com "IAieu eVc" no campo name, que e nome de oferta
+    descontinuada e nao pode voltar para a tela de ninguem.
+    """
+    for arq in FAVICON_P1:
+        if os.path.exists(os.path.join(RAIZ, arq)):
+            ok(f"icone presente: {arq}")
+        else:
+            falha(f"icone SUMIU: {arq}", "faz parte do pacote P1 aprovado")
+
+    svg = ler("favicon.svg")
+    for trecho, oq in (("#C1121F", "vermelho da marca"),
+                       ("#111111", "filete preto no tema claro"),
+                       ("prefers-color-scheme: dark", "troca de tema automatica"),
+                       ('cx="16" cy="12" r="10"', "geometria do circulo"),
+                       ('x="6" y="26" width="20" height="4"', "geometria do filete")):
+        if trecho in svg:
+            ok(f"favicon.svg com {oq}")
+        else:
+            falha(f"favicon.svg sem {oq}", trecho)
+
+    man = json.loads(ler("site.webmanifest"))
+    if man.get("name") == "IAieu":
+        ok("manifest com o nome oficial da marca")
+    else:
+        falha("manifest com nome errado", f'achado "{man.get("name")}", esperado "IAieu"')
+    if man.get("short_name") == "IAieu":
+        ok("manifest com short_name correto")
+    else:
+        falha("manifest sem short_name IAieu")
+    if "eVc" in json.dumps(man):
+        falha("manifest cita eVc", "nome de oferta descontinuada")
+    else:
+        ok("manifest sem eVc")
+
+    for arq in list(PAGINAS)[:1] + list(TRADUZIDAS):
+        html = ler(arq)
+        for tag, oq in (('href="/favicon.ico', "favicon.ico"),
+                        ('href="/favicon.svg', "favicon.svg"),
+                        ('href="/apple-touch-icon.png', "apple-touch-icon"),
+                        ('href="/site.webmanifest', "manifest")):
+            if tag in html:
+                ok(f"{arq}: declara {oq}")
+            else:
+                falha(f"{arq}: nao declara {oq}")
+        if "favicon-192.png" in html or "?v=3" in html:
+            falha(f"{arq}: ainda aponta para o icone antigo")
+        else:
+            ok(f"{arq}: sem resquicio do icone antigo")
+
+
 def teste_home_sem_faq():
     """A home nova nao tem FAQ. Decisao do Caetano em 13/08/2026.
 
@@ -563,6 +628,7 @@ def main():
         teste_jsonld,
         teste_entidades_da_home,
         teste_home_sem_faq,
+        teste_favicon_p1,
         teste_arquivo_historico,
         teste_fora_do_percurso,
         teste_schema_so_da_identidade_nova,

@@ -53,12 +53,29 @@
 !/google7279386773b5d258.html
 !/24e8019110bddcf5ce9d83b015ca44ca.txt
 
-# Icones e imagem de compartilhamento
+# Icones. Pacote P1 aprovado em 14/08/2026: circulo vermelho sobre filete.
+# O .svg troca o filete de preto para vermelho sozinho no tema escuro.
+# Documentacao e pacote original em docs-geo/favicon/.
+!/favicon.svg
+!/favicon-claro.svg
+!/favicon-escuro.svg
+!/favicon.ico
 !/favicon-16.png
 !/favicon-32.png
-!/favicon-192.png
-!/favicon.ico
+!/favicon-48.png
+!/favicon-96.png
+!/favicon-16-dark.png
+!/favicon-32-dark.png
+!/favicon-48-dark.png
+!/favicon-96-dark.png
 !/apple-touch-icon.png
+!/icon-192.png
+!/icon-512.png
+!/icon-512-maskable.png
+!/site.webmanifest
+# favicon-192.png e a Estrela do Norte antiga. Fica no repo como historico,
+# mas nenhuma pagina a carrega desde 14/08/2026.
+!/favicon-192.png
 !/og-image.png
 !/logo_horizontal.png
 
