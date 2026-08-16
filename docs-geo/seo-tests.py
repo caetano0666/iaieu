@@ -402,24 +402,46 @@ def teste_schema_so_da_identidade_nova():
             ok(f"{arq}: schema so da identidade atual")
 
 
-def teste_contraste_da_home():
-    """Trava a correcao de contraste de 13/08/2026 na home nova.
+def teste_assinatura_visual():
+    """Trava a assinatura visual da home aprovada v7, de 14/08/2026.
 
-    Os cinzas secundarios do prototipo ficavam em 2,8:1 e 3,9:1. Foram para
-    #727272 no claro e #7A7A84 no escuro, ambos acima de 4,5:1. Se alguem
-    devolver os antigos, falha aqui.
+    O circulo, o contorno em degrade e as duas linhas sao construidos por CSS,
+    de proposito. A regra do dono e expressa: nao simplificar, nao redesenhar,
+    nao substituir por outra decoracao e nao transformar em imagem. Se alguem
+    apagar uma dessas construcoes, ou trocar a foto da pantera, falha aqui.
     """
     html = ler("index.html")
-    for antigo, motivo in (("#9A9A9A", "2,81:1 no branco"), ("#6E6E78", "3,92:1 no escuro")):
-        if antigo in html:
-            falha(f"home com cinza de baixo contraste {antigo}", motivo)
+
+    for trecho, oq in ((".mark i {", "o circulo da marca"),
+                       ("border-radius:50%", "o circulo e redondo"),
+                       (".mark b {", "a barra da marca"),
+                       (".hero-signature", "a assinatura do hero"),
+                       ("conic-gradient", "o contorno em degrade"),
+                       ("box-shadow:34px 0", "a segunda linha, paralela")):
+        if trecho in html:
+            ok(f"assinatura: {oq}")
         else:
-            ok(f"home sem o cinza {antigo}")
-    for novo in ("#727272", "#7A7A84"):
-        if novo in html:
-            ok(f"home usa o cinza corrigido {novo}")
+            falha(f"assinatura sem {oq}", trecho)
+
+    for cls in ("cover-school", "cover-career", "cover-marc",
+                "cover-linkedin", "cover-plinio", "cover-ultra"):
+        if f".{cls} " in html or f".{cls}{{" in html:
+            ok(f"capa construida por CSS: {cls}")
         else:
-            aviso(f"home sem o cinza {novo}", "conferir se o contraste mudou de outro jeito")
+            falha(f"capa ausente: {cls}", "as artes sao codigo, nao imagem")
+
+    import hashlib
+    caminho = os.path.join(RAIZ, "imagens/panther-eye-ultra.jpg")
+    if not os.path.exists(caminho):
+        falha("a foto da pantera sumiu", "imagens/panther-eye-ultra.jpg")
+    else:
+        with open(caminho, "rb") as fh:
+            digest = hashlib.sha256(fh.read()).hexdigest()
+        esperado = "338cf67c3fd14faa7bd5e922d51769880dd09cc525a162f4047428a9dd104eae"
+        if digest == esperado:
+            ok("pantera com o SHA-256 do arquivo aprovado")
+        else:
+            falha("a pantera foi alterada", f"sha256 {digest[:16]}")
 
 
 def teste_favicon_p1():
@@ -529,9 +551,8 @@ def teste_home_sem_faq():
 # ---------------------------------------------------------------- conteudo
 def teste_conteudo_no_html_bruto():
     marcadores = {
-        # Marcador trocado em 13/08/2026: a home nova abre pela pergunta do
-        # visitante, e nao mais pela descricao do que o IAieu vende.
-        "index.html": "tomando mais tempo do que deveria",
+        # Marcador trocado em 14/08/2026, com a home aprovada v7.
+        "index.html": "A prova vem antes da explicação",
         # As linhas abaixo sao arquivo historico. Continuam checadas porque as
         # paginas seguem acessiveis e o conteudo delas nao pode sumir por acidente.
         "o-que-vendemos.html": "em função do problema",
@@ -675,7 +696,7 @@ def main():
         teste_arquivo_historico,
         teste_fora_do_percurso,
         teste_schema_so_da_identidade_nova,
-        teste_contraste_da_home,
+        teste_assinatura_visual,
         teste_conteudo_no_html_bruto,
         teste_regras_da_casa,
         teste_sitemap,
