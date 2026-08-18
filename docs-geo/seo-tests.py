@@ -57,14 +57,24 @@ FORA_DO_PERCURSO = ["arte.html", "iaieu-go.html", "shimanofest.html"]
 # declarar isso em dado estruturado.
 SCHEMA_PROIBIDO = ["FAQPage", '"name": "IAieu+"', '"name": "IAieu eVc"']
 
-# O acento da marca. Decisao do dono em 14/08/2026: o vermelho do site
-# predomina sobre o do arquivo do logo, que era rgb(218,9,12). Todo ativo
-# grafico da identidade tem que usar exatamente este tom.
-ACENTO = (193, 18, 31)          # #C1121F
+# O acento da marca. Decisao do dono em 18/08/2026: o unico vermelho oficial
+# do IAieu e #d0021a, o do arquivo do logo. O #C1121F anterior foi
+# descontinuado. Todo ativo grafico e todo CSS usam exatamente este tom.
+ACENTO = (208, 2, 26)           # #d0021a
 ATIVOS_DA_MARCA = [
-    "imagens/logo-iaieu.png", "imagens/logo-iaieu-claro.png",
+    "imagens/marca/iaieu-logo-claro.png", "imagens/marca/iaieu-logo-escuro.png",
+    "imagens/marca/iaieu-simbolo.png",
     "og-image.png", "og-image-en.png", "og-image-es.png",
-    "favicon-32.png", "apple-touch-icon.png", "icon-512.png",
+    "favicon-32.png", "favicon-96.png", "apple-touch-icon.png", "icon-512.png",
+]
+
+# Os arquivos oficiais da marca, aplicados em 18/08/2026. A marca deixou de
+# ser montada por CSS: agora e imagem, e nenhuma pagina pode voltar a montar.
+MARCA_OFICIAL = [
+    "imagens/marca/iaieu-logo-claro.png",
+    "imagens/marca/iaieu-logo-escuro.png",
+    "imagens/marca/iaieu-simbolo.png",
+    "imagens/marca/iaieu-simbolo-branco.png",
 ]
 
 # Favicon P1, aprovado em 14/08/2026. Estes arquivos precisam existir na raiz
@@ -403,19 +413,37 @@ def teste_schema_so_da_identidade_nova():
 
 
 def teste_assinatura_visual():
-    """Trava a assinatura visual da home aprovada v7, de 14/08/2026.
+    """Trava a assinatura visual da home e a aplicacao do logo oficial.
 
-    O circulo, o contorno em degrade e as duas linhas sao construidos por CSS,
-    de proposito. A regra do dono e expressa: nao simplificar, nao redesenhar,
-    nao substituir por outra decoracao e nao transformar em imagem. Se alguem
-    apagar uma dessas construcoes, ou trocar a foto da pantera, falha aqui.
+    Em 18/08/2026 a marca deixou de ser montada por CSS e passou a ser o
+    arquivo oficial. Se alguem devolver a construcao por CSS, apagar um dos
+    arquivos da marca, ou mexer no circulo, no degrade, nas duas linhas ou
+    na foto da pantera, falha aqui.
     """
-    html = ler("index.html")
+    import hashlib
+    for arq in MARCA_OFICIAL:
+        if os.path.exists(os.path.join(RAIZ, arq)):
+            ok(f"arquivo da marca presente: {arq}")
+        else:
+            falha(f"arquivo da marca SUMIU: {arq}")
 
-    for trecho, oq in ((".mark i {", "o circulo da marca"),
-                       ("border-radius:50%", "o circulo e redondo"),
-                       (".mark b {", "a barra da marca"),
-                       (".hero-signature", "a assinatura do hero"),
+    for arq in list(PAGINAS)[:1] + list(TRADUZIDAS):
+        html = ler(arq)
+        if re.search(r'class="mark[ "]', html) or ".mark i {" in html:
+            falha(f"{arq}: marca montada por CSS de volta",
+                  "a marca e o arquivo oficial, nao um circulo e uma barra em CSS")
+        else:
+            ok(f"{arq}: sem a marca antiga em CSS")
+        for uso, largura in (("wordmark", "112px"), ("hero-mark", "58px"),
+                             ("modal-brand", "118px"), ("footer-logo", "132px"),
+                             ("about-mark", "92px")):
+            if f".{uso} img {{ width:{largura}" in html:
+                ok(f"{arq}: {uso} com o logo oficial a {largura}")
+            else:
+                falha(f"{arq}: {uso} sem a medida esperada", largura)
+
+    html = ler("index.html")
+    for trecho, oq in ((".hero-signature", "a assinatura do hero"),
                        ("conic-gradient", "o contorno em degrade"),
                        ("box-shadow:34px 0", "a segunda linha, paralela")):
         if trecho in html:
@@ -430,18 +458,16 @@ def teste_assinatura_visual():
         else:
             falha(f"capa ausente: {cls}", "as artes sao codigo, nao imagem")
 
-    import hashlib
     caminho = os.path.join(RAIZ, "imagens/panther-eye-ultra.jpg")
     if not os.path.exists(caminho):
-        falha("a foto da pantera sumiu", "imagens/panther-eye-ultra.jpg")
+        falha("a foto da pantera sumiu")
     else:
         with open(caminho, "rb") as fh:
             digest = hashlib.sha256(fh.read()).hexdigest()
-        esperado = "338cf67c3fd14faa7bd5e922d51769880dd09cc525a162f4047428a9dd104eae"
-        if digest == esperado:
+        if digest == "338cf67c3fd14faa7bd5e922d51769880dd09cc525a162f4047428a9dd104eae":
             ok("pantera com o SHA-256 do arquivo aprovado")
         else:
-            falha("a pantera foi alterada", f"sha256 {digest[:16]}")
+            falha("a pantera foi alterada", digest[:16])
 
 
 def teste_favicon_p1():
@@ -459,11 +485,9 @@ def teste_favicon_p1():
             falha(f"icone SUMIU: {arq}", "faz parte do pacote P1 aprovado")
 
     svg = ler("favicon.svg")
-    for trecho, oq in (("#C1121F", "vermelho da marca"),
-                       ("#111111", "filete preto no tema claro"),
-                       ("prefers-color-scheme: dark", "troca de tema automatica"),
+    for trecho, oq in (("#d0021a", "vermelho oficial"),
                        ('cx="16" cy="12" r="10"', "geometria do circulo"),
-                       ('x="6" y="26" width="20" height="4"', "geometria do filete")):
+                       ('x="6" y="26" width="20" height="4"', "geometria da barra")):
         if trecho in svg:
             ok(f"favicon.svg com {oq}")
         else:
@@ -497,6 +521,24 @@ def teste_favicon_p1():
             falha(f"{arq}: ainda aponta para o icone antigo")
         else:
             ok(f"{arq}: sem resquicio do icone antigo")
+
+
+def teste_css_com_o_vermelho_oficial():
+    """A variavel institucional e o theme-color usam o vermelho oficial."""
+    for arq in list(PAGINAS)[:1] + list(TRADUZIDAS):
+        html = ler(arq)
+        if "--red:#d0021a" in html:
+            ok(f"{arq}: variavel institucional em #d0021a")
+        else:
+            falha(f"{arq}: variavel --red fora do padrao")
+        if 'theme-color" content="#d0021a"' in html:
+            ok(f"{arq}: theme-color em #d0021a")
+        else:
+            falha(f"{arq}: theme-color fora do padrao")
+        if re.search(r"#c1121f|193,\s*18,\s*31", html, re.I):
+            falha(f"{arq}: ainda tem o vermelho descontinuado")
+        else:
+            ok(f"{arq}: sem o vermelho descontinuado")
 
 
 def teste_um_vermelho_so():
@@ -552,7 +594,7 @@ def teste_home_sem_faq():
 def teste_conteudo_no_html_bruto():
     marcadores = {
         # Marcador trocado em 14/08/2026, com a home aprovada v7.
-        "index.html": "A prova vem antes da explicação",
+        "index.html": "A prova está no trabalho",
         # As linhas abaixo sao arquivo historico. Continuam checadas porque as
         # paginas seguem acessiveis e o conteudo delas nao pode sumir por acidente.
         "o-que-vendemos.html": "em função do problema",
@@ -692,6 +734,7 @@ def main():
         teste_entidades_da_home,
         teste_home_sem_faq,
         teste_favicon_p1,
+        teste_css_com_o_vermelho_oficial,
         teste_um_vermelho_so,
         teste_arquivo_historico,
         teste_fora_do_percurso,
