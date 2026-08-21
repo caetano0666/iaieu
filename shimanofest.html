@@ -3,123 +3,165 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Campanha encerrada. Fica acessivel, mas fora do percurso.
-     Decisao do Caetano em 13/08/2026. -->
-<meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0D0B10">
+<!-- Campanha reativada em 21/08/2026, durante a feira.
+     Identidade alinhada ao site vigente: Instrument Serif + DM Sans, #09090b / #f4f1eb / #d0021a. -->
+<meta name="theme-color" content="#f4f1eb">
 <title>IAieu · Shimano Fest 2026</title>
 <meta name="description" content="Você grava na feira. Eu faço o resto. Cinco postagens prontas em 48 horas.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://iaieu.com/shimanofest.html">
+<meta property="og:title" content="Você grava na feira. Eu faço o resto.">
+<meta property="og:description" content="Cinco postagens prontas em 48 horas, a partir do material que você captar no seu estande.">
+<meta property="og:image" content="https://iaieu.com/imagens/shimanofest-amostra.png">
+<meta property="og:url" content="https://iaieu.com/shimanofest.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
 <style>
   :root{
-    --preto:#0D0B10;
-    --preto2:#131018;
-    --roxo:#7C3AED;
-    --azul:#2563EB;
-    --branco:#FFFFFF;
-    --cinza:#A0A0B8;
-    --cinza2:#6E6E85;
+    --black:#09090b;
+    --paper:#f4f1eb;
+    --white:#fff;
+    --red:#d0021a;
+    --line:rgba(12,12,14,.18);
+    --mute:#6b6a67;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    font-family:'Inter',system-ui,sans-serif;
-    background:var(--preto);
-    color:var(--branco);
+    font-family:"DM Sans",Arial,sans-serif;
+    background:var(--paper);
+    color:var(--black);
     -webkit-font-smoothing:antialiased;
     line-height:1.55;
   }
-  .barra{height:4px;background:linear-gradient(90deg,var(--roxo),var(--azul));}
-  .wrap{max-width:720px;margin:0 auto;padding:0 28px;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
 
-  header{padding:34px 0 0;}
-  .marca{font-size:20px;font-weight:700;letter-spacing:-.5px;}
-  .marca span{color:var(--roxo);}
+  header{padding:38px 0 0;}
+  .marca{display:inline-block;line-height:0;}
+  .marca img{display:block;width:128px;height:auto;}
 
-  .hero{padding:64px 0 72px;}
+  .hero{padding:72px 0 78px;}
   .kicker{
-    font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
-    color:var(--cinza2);margin-bottom:26px;
+    font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--mute);margin-bottom:30px;
   }
   h1{
-    font-size:clamp(38px,8vw,60px);
-    font-weight:800;line-height:1.08;letter-spacing:-2px;margin-bottom:28px;
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(50px,9.4vw,86px);
+    font-weight:400;line-height:.94;letter-spacing:-.035em;margin-bottom:30px;
   }
-  h1 .grad{
-    background:linear-gradient(90deg,var(--roxo),var(--azul));
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-  }
-  .sub{font-size:clamp(19px,4vw,23px);font-weight:500;color:var(--cinza);max-width:520px;}
+  h1 em{font-style:italic;color:var(--red);}
+  .sub{font-size:clamp(19px,3.9vw,22px);color:var(--mute);max-width:540px;}
 
-  .filete{width:64px;height:3px;background:linear-gradient(90deg,var(--roxo),var(--azul));margin:0 0 34px;}
-
-  section{padding:56px 0;border-top:1px solid rgba(255,255,255,.07);}
+  section{padding:60px 0;border-top:1px solid var(--line);}
   h2{
-    font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
-    color:var(--cinza2);margin-bottom:30px;
+    font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--mute);margin-bottom:32px;
   }
-  .texto p{font-size:clamp(17px,3.6vw,19px);color:var(--cinza);margin-bottom:14px;}
-  .texto p.forte{color:var(--branco);font-weight:600;}
+  .filete{width:56px;height:3px;background:var(--red);margin:0 0 34px;}
+  .texto p{font-size:clamp(18px,3.6vw,20px);color:var(--mute);margin-bottom:15px;}
+  .texto p.forte{
+    color:var(--black);
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(28px,5.2vw,38px);line-height:1.12;letter-spacing:-.02em;
+    margin-top:26px;
+  }
+
+  /* amostra */
+  .palco{
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:56px 0;
+    display:flex;justify-content:center;
+  }
+  .palco img{
+    display:block;width:62%;max-width:420px;height:auto;
+    box-shadow:0 18px 44px rgba(12,12,14,.13);
+  }
+  .legenda{
+    font-size:15px;color:var(--mute);margin-top:18px;line-height:1.5;
+  }
+  .legenda strong{color:var(--black);font-weight:500;}
 
   .passos{list-style:none;}
-  .passo{display:flex;gap:22px;margin-bottom:30px;align-items:flex-start;}
+  .passo{display:flex;gap:22px;margin-bottom:32px;align-items:flex-start;}
   .n{
-    flex:0 0 40px;height:40px;border-radius:50%;
-    background:linear-gradient(135deg,var(--roxo),var(--azul));
+    flex:0 0 38px;height:38px;border-radius:50%;
+    border:1px solid var(--black);
     display:flex;align-items:center;justify-content:center;
-    font-size:15px;font-weight:700;color:#fff;
+    font-size:15px;font-weight:500;color:var(--black);
   }
-  .passo-txt{font-size:clamp(17px,3.6vw,19px);color:var(--branco);font-weight:500;padding-top:7px;}
-  .passo-txt em{display:block;font-style:normal;color:var(--cinza2);font-size:15px;font-weight:400;margin-top:5px;}
+  .passo-txt{font-size:clamp(18px,3.6vw,20px);color:var(--black);font-weight:500;padding-top:5px;}
+  .passo-txt em{display:block;font-style:normal;color:var(--mute);font-size:16px;font-weight:400;margin-top:6px;}
 
   .preco-box{
-    background:var(--preto2);
-    border:1px solid rgba(124,58,237,.35);
-    padding:38px 32px;
+    background:var(--white);
+    border:1px solid var(--line);
+    padding:40px 34px;
   }
-  .valor{font-size:clamp(46px,10vw,64px);font-weight:800;letter-spacing:-2px;line-height:1;margin-bottom:18px;}
-  .valor .grad{
-    background:linear-gradient(90deg,var(--roxo),var(--azul));
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  .valor{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(58px,12vw,84px);font-weight:400;letter-spacing:-.04em;line-height:1;
+    color:var(--red);margin-bottom:22px;
   }
-  .preco-box p{font-size:17px;color:var(--cinza);margin-bottom:8px;}
-  .preco-box p.cond{color:var(--cinza2);font-size:15px;margin-top:18px;margin-bottom:0;}
+  .preco-box p{font-size:18px;color:var(--mute);margin-bottom:8px;}
+  .preco-box p.cond{color:var(--mute);font-size:15px;margin-top:20px;margin-bottom:0;padding-top:18px;border-top:1px solid var(--line);}
 
-  .quem p{font-size:clamp(17px,3.6vw,19px);color:var(--cinza);margin-bottom:16px;}
-  .assina{margin-top:26px;}
-  .assina .nome{font-size:19px;font-weight:700;color:var(--branco);}
-  .assina .creds{font-size:15px;color:var(--cinza2);margin-top:6px;}
+  .quem p{font-size:clamp(18px,3.6vw,20px);color:var(--mute);margin-bottom:16px;}
+  .assina{margin-top:28px;}
+  .assina .nome{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:26px;font-weight:400;letter-spacing:-.02em;color:var(--black);
+  }
+  .assina .creds{font-size:15px;color:var(--mute);margin-top:8px;}
 
-  .cta{text-align:left;padding:56px 0 12px;}
-  .cta .frase{font-size:clamp(22px,5vw,30px);font-weight:700;letter-spacing:-.8px;margin-bottom:26px;line-height:1.25;}
+  .cta{padding:60px 0 14px;border-top:1px solid var(--line);}
+  .cta .frase{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(32px,6.4vw,50px);font-weight:400;letter-spacing:-.03em;
+    margin-bottom:32px;line-height:1.04;
+  }
   .botao{
     display:inline-block;text-decoration:none;
-    background:linear-gradient(90deg,var(--roxo),var(--azul));
-    color:#fff;font-size:17px;font-weight:700;
-    padding:17px 34px;letter-spacing:-.2px;
+    background:var(--black);color:var(--paper);
+    font-size:17px;font-weight:500;
+    padding:18px 34px;letter-spacing:-.01em;
+    transition:background .18s ease;
   }
-  .obs{font-size:14px;color:var(--cinza2);margin-top:18px;}
+  .botao:hover{background:var(--red);}
+  .obs{font-size:15px;color:var(--mute);margin-top:20px;}
 
-  footer{padding:52px 0 60px;border-top:1px solid rgba(255,255,255,.07);margin-top:44px;}
-  .slogan{font-size:17px;color:var(--cinza);margin-bottom:22px;line-height:1.5;}
-  .slogan strong{color:var(--branco);font-weight:600;}
-  .site{font-size:16px;font-weight:600;color:var(--branco);text-decoration:none;border-bottom:2px solid var(--roxo);padding-bottom:2px;}
-  .rodape-marca{font-size:14px;color:var(--cinza2);margin-top:26px;}
+  footer{padding:56px 0 64px;border-top:1px solid var(--line);margin-top:48px;}
+  .slogan{font-size:18px;color:var(--mute);margin-bottom:24px;line-height:1.5;}
+  .slogan strong{
+    color:var(--black);font-weight:400;
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:26px;letter-spacing:-.02em;display:block;margin-bottom:6px;
+  }
+  .site{font-size:16px;font-weight:500;color:var(--black);text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px;}
+  .rodape-marca{font-size:14px;color:var(--mute);margin-top:28px;}
+
+  @media (max-width:640px){
+    .passo{gap:16px;}
+    .preco-box{padding:30px 24px;}
+    .palco{padding:26px 0;}
+    .palco img{width:88%;max-width:none;}
+  }
 </style>
 </head>
 <body>
 
-<div class="barra"></div>
-
 <div class="wrap">
 
   <header>
-    <div class="marca">IAieu<span>.</span></div>
+    <a class="marca" href="https://iaieu.com"><img src="imagens/marca/iaieu-logo-claro.png" alt="IAieu" width="1407" height="479"></a>
   </header>
 
   <div class="hero">
     <div class="kicker">Shimano Fest 2026 · 20 a 23 de agosto</div>
-    <h1>Você grava na feira.<br><span class="grad">Eu faço o resto.</span></h1>
+    <h1>Você grava na feira.<br><em>Eu faço o resto.</em></h1>
     <p class="sub">Cinco postagens prontas em 48 horas, a partir do material que você captar no seu estande.</p>
   </div>
 
@@ -132,13 +174,22 @@
     <p class="forte">E não sobra. Sai um carrossel de agradecimento e olhe lá.</p>
   </section>
 
+  <section class="amostra">
+    <h2>Como fica</h2>
+    <div class="filete"></div>
+    <div class="palco">
+      <img src="imagens/shimanofest-amostra.png" alt="Exemplo de postagem pronta para o Shimano Fest 2026" width="1080" height="1350">
+    </div>
+    <p class="legenda"><strong>Exemplo.</strong> Feito para mostrar o formato e o acabamento. A loja é fictícia. Nas suas cinco postagens entram as suas fotos, o seu nome e o assunto do seu estande.</p>
+  </section>
+
   <section>
     <h2>Como funciona</h2>
     <div class="filete"></div>
     <ul class="passos">
       <li class="passo">
         <div class="n">1</div>
-        <div class="passo-txt">Durante os quatro dias, você capta.
+        <div class="passo-txt">Você capta o que der, no tempo que tiver.
           <em>Não precisa ficar bonito. Precisa existir. Vídeo torto de celular serve.</em>
         </div>
       </li>
@@ -161,7 +212,7 @@
     <h2>Quanto custa</h2>
     <div class="filete"></div>
     <div class="preco-box">
-      <div class="valor"><span class="grad">R$300</span></div>
+      <div class="valor">R$300</div>
       <p>Cinco postagens prontas.</p>
       <p>Entrega em 48 horas.</p>
       <p>Você recebe o arquivo pronto e publica onde quiser.</p>
@@ -180,13 +231,13 @@
   </section>
 
   <div class="cta">
-    <div class="frase">Grave tudo na feira.<br>Dia 24 eu te entrego os posts.</div>
+    <div class="frase">Grave tudo na feira.<br>Me manda depois.</div>
     <a class="botao" href="https://wa.me/17542525245?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20Shimano%20Fest%20e%20quero%20as%20cinco%20postagens.">Falar no WhatsApp</a>
-    <p class="obs">Se você precisar de alguma coisa antes, durante os dias de feira, é só chamar.</p>
+    <p class="obs">Se você precisar de alguma coisa antes, ainda durante os dias de feira, é só chamar.</p>
   </div>
 
   <footer>
-    <p class="slogan"><strong>Seu problema não está sem solução. Está sem direção.</strong><br>Meu trabalho é transformar isso em um caminho claro.</p>
+    <p class="slogan"><strong>Seu problema não está sem solução. Está sem direção.</strong>Meu trabalho é transformar isso em um caminho claro.</p>
     <a class="site" href="https://iaieu.com">iaieu.com</a>
     <p class="rodape-marca">IAieu · A inteligência sempre será sua.</p>
   </footer>
