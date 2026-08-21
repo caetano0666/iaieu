@@ -1,6 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRMHLHQNGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Le o codigo do destinatario em ?r=xxx e registra como campanha nativa do GA4.
+  // Assim aparece em Aquisicao > Aquisicao de trafego > Conteudo da campanha,
+  // e tambem no relatorio Tempo real, sem precisar configurar nada no painel.
+  (function(){
+    var r = null;
+    try { r = new URLSearchParams(window.location.search).get('r'); } catch(e) {}
+    if (r) {
+      r = r.replace(/[^a-z0-9_-]/gi,'').slice(0,40);
+      gtag('config', 'G-KRMHLHQNGB', {
+        campaign_source: 'email',
+        campaign_medium: 'prospeccao',
+        campaign_name: 'shimanofest-followup',
+        campaign_content: r
+      });
+      gtag('event', 'clique_lead', { lead: r, campanha: 'shimanofest-followup' });
+    } else {
+      gtag('config', 'G-KRMHLHQNGB');
+    }
+  })();
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Campanha reativada em 21/08/2026, durante a feira.
