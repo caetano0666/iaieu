@@ -2,10 +2,10 @@
    IAieu · Estilo compartilhado por todas as páginas
    Cores oficiais:
    Fundo #0D0B10 · Roxo #7C3AED · Azul #2563EB · Branco #FFFFFF · Cinza #A0A0B8
-   Tipografia: Inter (Google Fonts)
+   Tipografia: Instrument Sans (Google Fonts)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -24,7 +24,7 @@ html{scroll-behavior:smooth}
 body{
   background:var(--preto);
   color:var(--branco);
-  font-family:'Inter','Helvetica Neue',sans-serif;
+  font-family:'Instrument Sans','Helvetica Neue',sans-serif;
   line-height:1.6;
   overflow-x:hidden;
   min-height:100vh;
@@ -52,7 +52,7 @@ nav{
 .nav-logo img{height:30px;width:auto}
 
 /* Wordmark "IAieu." em texto (vetorial, sempre nítido em qualquer tamanho) */
-.wordmark{font-family:'Inter',sans-serif;font-weight:800;font-size:23px;letter-spacing:-0.045em;line-height:1;white-space:nowrap;display:inline-block}
+.wordmark{font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:23px;letter-spacing:-0.045em;line-height:1;white-space:nowrap;display:inline-block}
 .wordmark .w1{color:#F5F2EC}
 .wordmark .w2{background:var(--grad3);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .foot-wordmark{font-size:27px}
@@ -127,7 +127,7 @@ section{padding:114px 40px;max-width:1120px;margin:0 auto;position:relative;z-in
   font-size:14px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
   color:#A78BFA;margin-bottom:16px;display:block;
 }
-.titulo{font-size:clamp(28px,4.4vw,48px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px}
+.titulo{font-size:clamp(28px,4.4vw,48px);font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:18px}
 .titulo em{font-style:normal;background:var(--grad3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .subtitulo{font-size:18px;color:var(--cinza);font-weight:300;line-height:1.7;max-width:640px}
 
