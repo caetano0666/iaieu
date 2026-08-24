@@ -98,6 +98,26 @@
     margin-top:26px;
   }
 
+  /* historia */
+  .historia{margin-top:8px;}
+  .hist-caixa{background:var(--black);border-radius:14px;padding:38px 26px 34px;text-align:center;}
+  .hist-olho{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:30px;}
+  .hist-fio{flex:1;max-width:120px;height:1px;background:rgba(244,241,235,.28);}
+  .hist-olho-txt{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);white-space:nowrap;}
+  .hist-logos{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;}
+  .hist-logos img{display:block;width:auto;}
+  .hist-div{width:1px;height:64px;background:rgba(244,241,235,.28);}
+  .hist-filete{width:56px;height:1px;background:rgba(244,241,235,.28);margin:30px auto 22px;}
+  .hist-titulo{font-family:"Instrument Serif",Georgia,serif;font-size:27px;line-height:1.25;color:var(--paper);margin:0 0 14px;}
+  .hist-titulo em{font-style:italic;}
+  .hist-sub{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,241,235,.62);margin:0;}
+  @media (max-width:520px){
+    .hist-div{display:none;}
+    .hist-logos{flex-direction:column;gap:26px;}
+    .hist-titulo{font-size:23px;}
+    .hist-olho-txt{white-space:normal;}
+  }
+
   /* amostra */
   .palco{
     background:var(--white);
@@ -235,6 +255,22 @@
         </div>
       </li>
     </ul>
+  </section>
+
+  <section class="historia" aria-label="Uma história com a bicicleta">
+    <div class="hist-caixa">
+      <div class="hist-olho"><span class="hist-fio"></span><span class="hist-olho-txt">Uma história com a bicicleta</span><span class="hist-fio"></span></div>
+      <div class="hist-logos">
+        <img src="imagens/marca/bikezone.png" alt="Logotipo da BikeZone, ciclismo extremo" height="60">
+        <span class="hist-div" aria-hidden="true"></span>
+        <img src="imagens/marca/biketech-jardins.png" alt="Logotipo da Bike Tech Jardins" height="104">
+        <span class="hist-div" aria-hidden="true"></span>
+        <img src="imagens/marca/fala-bikezone.png" alt="Logotipo do Fala, BikeZone!" height="88">
+      </div>
+      <div class="hist-filete"></div>
+      <p class="hist-titulo">Três marcas. <em>Uma história que continua.</em></p>
+      <p class="hist-sub">Do balcão à mídia. Do Brasil aos Estados Unidos.</p>
+    </div>
   </section>
 
   <section>
