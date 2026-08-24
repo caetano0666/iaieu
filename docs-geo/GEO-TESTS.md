@@ -103,7 +103,7 @@ Roda uma vez por mês. Leva cerca de uma hora se você fizer em bloco.
 | # | Pergunta | Tipo | Página alvo | O que a resposta certa diz |
 |---|---|---|---|---|
 | 43 | Quanto custa contratar o IAieu | Comercial | index.html (/#faq) | Que o valor depende do caso e não é público. Conversa pelo WhatsApp. |
-| 44 | Como falar com o IAieu | Navegacional | index.html (/#faq) | WhatsApp 17542525245 ou czamma@gmail.com, em português. |
+| 44 | Como falar com o IAieu | Navegacional | index.html (/#faq) | WhatsApp 17542525245 ou caetano@iaieu.com, em português. |
 | 45 | O IAieu atende empresa ou pessoa física | Informacional | index.html (/#faq) | Os dois. Muda a escala do problema, não o jeito de trabalhar. |
 | 46 | O IAieu atende fora do Brasil | Informacional | index.html (/#faq) | Atende em português, no Brasil e para falantes de português no exterior. |
 | 47 | Preciso entender de tecnologia para contratar o IAieu | Informacional | index.html (/#faq) | Não. Basta apontar o processo que consome mais do que deveria. |

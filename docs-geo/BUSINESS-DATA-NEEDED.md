@@ -28,7 +28,7 @@ Registro para não reabrir discussão depois:
 | Subsites `/plinio/` e `/stw-daryl-lucas/` | **São portfólio do IAieu.** Entram no sitemap e no grafo como obra criada pelo IAieu. |
 | Foco geográfico | **Brasil e falantes de português no exterior.** Não é negócio local. |
 | Políticas de prazo, reembolso e garantia | **Não existem formalmente, então não são publicadas.** |
-| E-mail comercial | **czamma@gmail.com**, agora público no site. |
+| E-mail comercial | **caetano@iaieu.com**, agora público no site. |
 | Perfis oficiais | Instagram da marca `@iaieu.evc`; LinkedIn e Instagram pessoais do Caetano. |
 
 ## Coisas que eu nunca vou preencher sozinho
