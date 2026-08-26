@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- As homes /en/ e /es/ entraram em 13/08/2026, quando a home nova foi
+       publicada nos tres idiomas e o noindex saiu delas. Em 26/08/2026 elas
+       estavam listadas duas vezes, aqui e mais abaixo; a copia velha
+       (lastmod 18/08, priority 1.0) foi removida e ficou so esta. -->
   <url>
     <loc>https://iaieu.com/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://iaieu.com/en/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://iaieu.com/es/</loc>
-    <lastmod>2026-08-22</lastmod>
+    <lastmod>2026-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -89,23 +93,6 @@
     <priority>0.7</priority>
   </url>
   -->
-
-  <!-- =========================================================
-       HOMES TRADUZIDAS. Estas duas entraram em 13/08/2026, quando a
-       home nova foi publicada nos tres idiomas e o noindex saiu delas.
-       ========================================================= -->
-  <url>
-    <loc>https://iaieu.com/en/</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://iaieu.com/es/</loc>
-    <lastmod>2026-08-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
 
   <!-- =========================================================
        AS DEMAIS PAGINAS DE /en/ E /es/, prontas e desativadas.

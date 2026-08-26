@@ -417,8 +417,8 @@ def teste_assinatura_visual():
 
     Em 18/08/2026 a marca deixou de ser montada por CSS e passou a ser o
     arquivo oficial. Se alguem devolver a construcao por CSS, apagar um dos
-    arquivos da marca, ou mexer no circulo, no degrade, nas duas linhas ou
-    na foto da pantera, falha aqui.
+    arquivos da marca, mexer nas medidas do logo, tirar o simbolo, as provas
+    ou o slogan do hero, ou apagar uma das capas de projeto, falha aqui.
     """
     import hashlib
     for arq in MARCA_OFICIAL:
@@ -442,10 +442,17 @@ def teste_assinatura_visual():
             else:
                 falha(f"{arq}: {uso} sem a medida esperada", largura)
 
+    # Em 22/08/2026 o hero foi refeito (commit 728b284, "Nova Hero da home +
+    # tipografia Instrument Sans"). O circulo em conic-gradient e as duas
+    # linhas paralelas sairam nesse redesenho: a assinatura do hero deixou de
+    # ser um desenho em CSS e passou a ser o simbolo oficial no canto, com as
+    # tres provas de trabalho e o slogan. Estes testes continuavam cobrando o
+    # hero antigo e falhavam desde entao. Em 26/08/2026 passaram a travar o
+    # hero atual. Se um dia o circulo voltar, e este bloco que muda.
     html = ler("index.html")
-    for trecho, oq in ((".hero-signature", "a assinatura do hero"),
-                       ("conic-gradient", "o contorno em degrade"),
-                       ("box-shadow:34px 0", "a segunda linha, paralela")):
+    for trecho, oq in (('class="hero-mark"', "o simbolo oficial no canto"),
+                       ('class="hero-proofs"', "as tres provas de trabalho"),
+                       ('class="hero-slogan"', "o slogan no alto")):
         if trecho in html:
             ok(f"assinatura: {oq}")
         else:
