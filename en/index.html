@@ -131,7 +131,7 @@ button,a { -webkit-tap-highlight-color:transparent; }
 a { color:inherit; text-decoration:none; }
 .section-pad { padding:120px clamp(24px,5vw,76px); }
 .kicker { margin:0; font-size:11px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; }
-.site-header { position:absolute; z-index:20; top:0; left:0; width:100%; height:92px; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(24px,4vw,60px); color:var(--black); }
+.site-header { position:absolute; z-index:20; top:0; left:0; width:100%; height:92px; display:flex; align-items:center; justify-content:space-between; padding:0 clamp(24px,5vw,76px); color:var(--black); }
 .wordmark,.footer-logo,.modal-brand { display:flex; align-items:center; gap:12px; font-weight:600; font-size:19px; }
 /* ---------- logo oficial, 18/08/2026 ----------
    A marca deixou de ser montada por CSS e passou a ser o arquivo oficial.
@@ -154,7 +154,13 @@ a { color:inherit; text-decoration:none; }
 .hero-top p { margin:0; }.hero-top span { text-align:right; }
 .hero-slogan { display:block; margin-top:10px; font-style:italic; font-weight:450; font-size:16px; letter-spacing:0; text-transform:none; color:rgba(9,9,11,.5); }
 .hero h1 { margin:0; font-weight:560; font-size:clamp(58px,7.6vw,118px); line-height:1.04; letter-spacing:-.025em; }
-.hero h1 > span { display:block; }.hero h1 .accent { color:#C1121F; }
+/* ---------- alinhamento optico do titulo, 26/08/2026 ----------
+   Letra grande parece recuada porque cada desenho de letra tem um respiro
+   proprio antes do traco. O recuo (--ob) esta escrito ao lado de cada linha,
+   no HTML, em em. Se o texto mudar, mude tambem o --ob da linha:
+   V .0296 | N .0668 | Y .0171 | t .0154 | e .0293 | o .0293 | a .0412 | y .0073 */
+.hero h1 > span { display:block; margin-left:calc(var(--ob,0em) * -1); }
+.hero h1 .accent { color:#C1121F; }
 .hero-sub { margin:34px 0 0; font-size:clamp(16px,1.4vw,20px); line-height:1.5; color:rgba(9,9,11,.75); max-width:46ch; }
 .hero-bottom a { font-size:12px; text-transform:uppercase; letter-spacing:.12em; border-bottom:1px solid rgba(9,9,11,.45); padding-bottom:8px; }
 .hero-bottom a span { margin-left:12px; }
@@ -238,11 +244,11 @@ footer { background:var(--black); color:#fff; padding:65px clamp(24px,5vw,76px) 
   .site-header { height:76px; }.site-header nav { display:none; }.site-header nav.nav-open { position:absolute; display:flex; flex-direction:column; align-items:flex-start; top:0; right:0; width:min(350px,90vw); padding:85px 28px 35px; background:#111; font-size:15px; color:#fff; }
 .site-header nav.nav-open .header-contact { color:#fff; border-color:rgba(255,255,255,.45); }
 .menu-toggle[aria-expanded="true"] span { background:#fff; }.menu-toggle { display:block; position:relative; z-index:2; }
-  .hero { padding-top:100px; }.hero h1 { font-size:clamp(44px,10.5vw,78px); }.hero h1 > span { display:inline; }.hero h1 > span + span:before { content:" "; }.hero-mark { display:none; }.hero-end { align-items:flex-start; }.hero-proofs { flex-direction:column; gap:8px; }.hero-proofs .proof-3 { display:none; }
+  .hero { padding-top:100px; }.hero h1 { font-size:clamp(44px,10.5vw,78px); margin-left:calc(var(--ob,0em) * -1); }.hero h1 > span { display:inline; margin-left:0; }.hero h1 > span + span:before { content:" "; }.hero-mark { display:none; }.hero-end { align-items:flex-start; }.hero-proofs { flex-direction:column; gap:8px; }.hero-proofs .proof-3 { display:none; }
   .intro-grid,.range-head,.about-grid { grid-template-columns:1fr; }.intro-grid { gap:45px; }.section-heading { grid-template-columns:1fr; }.project-grid { grid-template-columns:1fr; }.project:nth-child(even) { margin-top:0; }.project-cover { min-height:70vw; }.range-head { gap:40px; }.method-head { grid-template-columns:1fr; }.example-list article { grid-template-columns:45px 1fr; }.example-list p { grid-column:2; }.steps li { grid-template-columns:50px 1fr; }.about-grid { gap:45px; }.quote-grid { grid-template-columns:1fr; }.stats strong { font-size:55px; }footer { grid-template-columns:1fr 1fr; }footer small { grid-column:1/-1; }
 }
 @media (max-width:560px) {
-  .section-pad { padding:86px 20px; }.hero { padding-left:20px; padding-right:20px; }.hero-top span { display:none; }.hero h1 { font-size:11.2vw; }.intro h2 { font-size:47px; }.project-cover { min-height:112vw; }.project-meta { flex-direction:column; gap:12px; }.project-meta b { align-self:flex-start; }.range-head h2,.section-heading h2,.method-head h2,.testimonials h2 { font-size:53px; }.example-list article { grid-template-columns:35px 1fr; }.example-list h3 { font-size:30px; }.steps h3 { font-size:39px; }.stats { grid-template-columns:1fr; }.stats div { border-bottom:1px solid rgba(255,255,255,.3); padding-bottom:20px; }.quote-grid { gap:55px; }.final-cta h2 { font-size:64px; }.form-row { grid-template-columns:1fr; }.lead-modal { padding:34px 20px 22px; }footer { grid-template-columns:1fr; }.footer-links { margin-top:20px; }footer small { grid-column:auto; }
+  .section-pad { padding:86px 20px; }.hero { padding-left:20px; padding-right:20px; }.site-header { padding-left:20px; padding-right:20px; }footer { padding-left:20px; padding-right:20px; }.hero-top span { display:none; }.hero h1 { font-size:11.2vw; }.intro h2 { font-size:47px; }.project-cover { min-height:112vw; }.project-meta { flex-direction:column; gap:12px; }.project-meta b { align-self:flex-start; }.range-head h2,.section-heading h2,.method-head h2,.testimonials h2 { font-size:53px; }.example-list article { grid-template-columns:35px 1fr; }.example-list h3 { font-size:30px; }.steps h3 { font-size:39px; }.stats { grid-template-columns:1fr; }.stats div { border-bottom:1px solid rgba(255,255,255,.3); padding-bottom:20px; }.quote-grid { gap:55px; }.final-cta h2 { font-size:64px; }.form-row { grid-template-columns:1fr; }.lead-modal { padding:34px 20px 22px; }footer { grid-template-columns:1fr; }.footer-links { margin-top:20px; }footer small { grid-column:auto; }
 }
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
 
@@ -251,6 +257,10 @@ footer { background:var(--black); color:#fff; padding:65px clamp(24px,5vw,76px) 
    que precisa vencer o display das classes acima. Nao alteram aparencia. */
 .modal-backdrop[hidden]{display:none}
 .language > div[hidden]{display:none}
+
+/* o recuo optico dos titulos (--ob) fica no fim da folha de estilo
+   para nao ser desfeito por nenhuma regra de margem escrita antes */
+h2[style*="--ob"],h3[style*="--ob"],footer p[style*="--ob"] { margin-left:calc(var(--ob) * -1); }
 </style>
 </head>
 <body>
@@ -262,46 +272,46 @@ footer { background:var(--black); color:#fff; padding:65px clamp(24px,5vw,76px) 
 </header>
 
 <section class="hero" aria-labelledby="hero-title">
-  <div class="hero-top"><p>Websites · Digital presence · Operational solutions</p><span>Brasil · Estados Unidos<em class="hero-slogan">Intelligence will always be yours.</em></span></div>
-  <div><h1 id="hero-title"><span>You don’t have to learn</span><span>everything that <span class="accent">shows up.</span></span></h1>
+  <div class="hero-top"><p>Operational solutions · Analytics · Websites · Digital presence</p><span>Brasil · Estados Unidos<em class="hero-slogan">Intelligence will always be yours.</em></span></div>
+  <div><h1 id="hero-title" style="--ob:.0171em"><span style="--ob:.0171em">You don’t have to learn</span><span style="--ob:.0293em">everything that <span class="accent">shows up.</span></span></h1>
   <p class="hero-sub">You tell me the problem. I deliver the solution.</p></div>
   <div class="hero-bottom"><a href="#work">See what I’ve already solved <span>↓</span></a><div class="hero-end"><div class="hero-proofs"><b>228 rows <span class="arr">→</span> 6 decisions</b><b>74 slides <span class="arr">→</span> 14 errors found</b><b class="proof-3">Full campaign <span class="arr">→</span> under 24 hours</b></div><div class="hero-mark"><img src="/imagens/marca/iaieu-simbolo.png" alt="" aria-hidden="true" width="461" height="645"></div></div></div>
 </section>
 
 <section class="intro section-pad">
   <p class="kicker">01 · What IAieu is</p>
-  <div class="intro-grid"><h2>I identify the problem, design the solution and use artificial intelligence to turn that solution into something concrete.</h2><p>You are not buying artificial intelligence or a menu of tasks. You bring a situation. I combine experience, research, strategy, writing, design and technology to build the answer.</p></div>
+  <div class="intro-grid"><h2 style="--ob:.068em">I identify the problem, design the solution and use artificial intelligence to turn that solution into something concrete.</h2><p>You are not buying artificial intelligence or a menu of tasks. You bring a situation. I combine experience, research, strategy, writing, design and technology to build the answer.</p></div>
 </section>
 
 <section id="work" class="work section-pad">
-  <div class="section-heading"><p class="kicker">02 · Selected work</p><h2>The proof is in the work.</h2></div>
+  <div class="section-heading"><p class="kicker">02 · Selected work</p><h2 style="--ob:.03em">The proof is in the work.</h2></div>
   <div class="project-grid"><a class="project" href="https://efbitapira.org/" target="_blank" rel="noreferrer"><div class="project-cover cover-school"><span class="project-index">01</span><div class="cover-art"><small>Itapira · SP</small><strong>Formando<br />mais que<br />atletas.</strong></div></div><div class="project-meta"><div><p>Institutional website</p><h3>Escolinha Batista</h3><span>A nine-year story turned into a verifiable public presence.</span></div><b>View project ↗</b></div></a><article class="project project-static"><div class="project-cover cover-career"><span class="project-index">02</span><div class="cover-art"><small>Career · Strategy · Execution</small><strong>Direction for a senior career</strong><em>01 → 02</em></div></div><div class="project-meta"><div><p>Career · Strategy · Execution</p><h3>Direction for a senior career</h3><span>A twenty-year career transformed into positioning, application materials, market intelligence and interview preparation.</span></div><b>Work summary</b></div></article><a class="project" href="https://marccycling.com" target="_blank" rel="noreferrer"><div class="project-cover cover-marc"><span class="project-index">03</span><div class="cover-art"><small>Mobile bike repair</small><strong>MARC<br />CYCLING</strong><em>We come to you.</em></div></div><div class="project-meta"><div><p>Brand · Digital service</p><h3>Marc Cycling</h3><span>A mobile operation presented clearly for people who need to decide fast.</span></div><b>View project ↗</b></div></a><article class="project project-static"><div class="project-cover cover-linkedin"><span class="project-index">04</span><div class="cover-art"><span class="linkedin-mark">in</span><strong>A career that needed to become visible</strong></div></div><div class="project-meta"><div><p>LinkedIn · Professional positioning</p><h3>A career that needed to become visible</h3><span>Experience built across two countries and four sectors organized into a clear, coherent profile able to sustain a professional presence.</span></div><b>Work summary</b></div></article><a class="project" href="https://iaieu.com/plinio/" target="_blank" rel="noreferrer"><div class="project-cover cover-plinio"><span class="project-index">05</span><div class="cover-art"><strong>PLÍNIO<br />MARCOS</strong><small>uma voz que não se cala</small></div></div><div class="project-meta"><div><p>Cultural website</p><h3>Plínio Marcos</h3><span>Archive, memory and graphic force organized into a digital experience.</span></div><b>View project ↗</b></div></a><a class="project" href="https://ultra100k.run/" target="_blank" rel="noreferrer"><div class="project-cover cover-ultra"><span class="project-index">06</span><img src="/imagens/panther-eye-ultra.jpg" alt="Ultra 100K" width="1023" height="1537" loading="lazy" decoding="async"><div class="cover-art"><small>Night run · Zerão</small><strong>ULTRA<br />100K</strong></div></div><div class="project-meta"><div><p>Event · Platform</p><h3>Ultra 100K</h3><span>Information, challenge and identity brought together to set a race in motion.</span></div><b>View project ↗</b></div></a></div>
 </section>
 
 <section id="range" class="range section-pad dark-section">
-  <div class="range-head"><div><p class="kicker">03 · What we do</p><h2>The product is not the tool. It is the right answer to each situation.</h2></div><p>IAieu combines capabilities usually spread across different professionals. The work can take many forms without losing the same underlying logic.</p></div>
-  <div class="example-list"><article><span>01</span><h3>Senior career</h3><p>Direction, positioning, application materials, interview preparation and first steps in a new role.</p></article><article><span>02</span><h3>Creator account</h3><p>Data reading, partner audit, platform rules and a visual report in the person’s language.</p></article><article><span>03</span><h3>Content operations</h3><p>Eight repetitive steps mapped into a system from raw briefing to ready plan.</p></article><article><span>04</span><h3>Complex presentation</h3><p>Long-form content shaped into 75 slides with narrative, writing and visual hierarchy.</p></article><article><span>05</span><h3>Store and conversion</h3><p>Brand reading, visual direction, mobile experience, e-commerce and sales-page restructuring.</p></article><article><span>06</span><h3>Commercial proposal</h3><p>A difficult service translated so a non-specialist can understand, present and sell it.</p></article></div>
+  <div class="range-head"><div><p class="kicker">03 · What we do</p><h2 style="--ob:.03em">The product is not the tool. It is the right answer to each situation.</h2></div><p>IAieu combines capabilities usually spread across different professionals. The work can take many forms without losing the same underlying logic.</p></div>
+  <div class="example-list"><article><span>01</span><h3 style="--ob:.033em">Senior career</h3><p>Direction, positioning, application materials, interview preparation and first steps in a new role.</p></article><article><span>02</span><h3 style="--ob:.04em">Creator account</h3><p>Data reading, partner audit, platform rules and a visual report in the person’s language.</p></article><article><span>03</span><h3 style="--ob:.04em">Content operations</h3><p>Eight repetitive steps mapped into a system from raw briefing to ready plan.</p></article><article><span>04</span><h3 style="--ob:.04em">Complex presentation</h3><p>Long-form content shaped into 75 slides with narrative, writing and visual hierarchy.</p></article><article><span>05</span><h3 style="--ob:.033em">Store and conversion</h3><p>Brand reading, visual direction, mobile experience, e-commerce and sales-page restructuring.</p></article><article><span>06</span><h3 style="--ob:.04em">Commercial proposal</h3><p>A difficult service translated so a non-specialist can understand, present and sell it.</p></article></div>
 </section>
 
 <section id="method" class="method section-pad">
-  <div class="method-head"><p class="kicker">04 · How we work</p><h2>First we understand. Then we build.</h2><p>No menu can predict what each person needs. There is a rigorous process for reaching the answer.</p></div>
-  <ol class="steps"><li><span>01</span><div><h3>Understand</h3><p>We read the person, the business, the context and what already exists.</p></div></li><li><span>02</span><div><h3>Identify</h3><p>We separate symptom from problem and find the point that changes direction.</p></div></li><li><span>03</span><div><h3>Develop</h3><p>Research, strategy, writing, design and technology become one line of thought.</p></div></li><li><span>04</span><div><h3>Implement</h3><p>The idea becomes concrete, functional and ready to use.</p></div></li><li><span>05</span><div><h3>Review</h3><p>We challenge the answer with evidence, correct it and document the process.</p></div></li></ol>
+  <div class="method-head"><p class="kicker">04 · How we work</p><h2 style="--ob:.068em">First we understand. Then we build.</h2><p>No menu can predict what each person needs. There is a rigorous process for reaching the answer.</p></div>
+  <ol class="steps"><li><span>01</span><div><h3 style="--ob:.061em">Understand</h3><p>We read the person, the business, the context and what already exists.</p></div></li><li><span>02</span><div><h3 style="--ob:.068em">Identify</h3><p>We separate symptom from problem and find the point that changes direction.</p></div></li><li><span>03</span><div><h3 style="--ob:.068em">Develop</h3><p>Research, strategy, writing, design and technology become one line of thought.</p></div></li><li><span>04</span><div><h3 style="--ob:.068em">Implement</h3><p>The idea becomes concrete, functional and ready to use.</p></div></li><li><span>05</span><div><h3 style="--ob:.066em">Review</h3><p>We challenge the answer with evidence, correct it and document the process.</p></div></li></ol>
 </section>
 
 <section id="about" class="about section-pad">
   <div class="about-mark"><img src="/imagens/marca/iaieu-simbolo-branco.png" alt="" aria-hidden="true" width="461" height="645"></div><p class="kicker">05 · About</p>
-  <div class="about-grid"><h2>Human experience. Amplified intelligence.</h2><p>I’m Caetano Zammataro. After four decades building operations, businesses and relationships, I created IAieu to put artificial intelligence at the service of real problems. I lead every project personally, combining experience, listening and execution with a research and production capacity that once required an entire team.</p></div>
+  <div class="about-grid"><h2 style="--ob:.068em">Human experience. Amplified intelligence.</h2><p>I’m Caetano Zammataro. After four decades building operations, businesses and relationships, I created IAieu to put artificial intelligence at the service of real problems. I lead every project personally, combining experience, listening and execution with a research and production capacity that once required an entire team.</p></div>
   <div class="stats"><div><strong>40+</strong><span>years of experience</span></div><div><strong>2</strong><span>intelligences working together</span></div><div><strong>1</strong><span>person accountable from start to finish</span></div></div>
 </section>
 
 <section class="testimonials section-pad">
-  <p class="kicker">06 · What remains</p><h2>Trust is built through execution.</h2>
+  <p class="kicker">06 · What remains</p><h2 style="--ob:.03em">Trust is built through execution.</h2>
   <div class="quote-grid"><figure><blockquote>“I have known Caetano since 1983. Total dedication to operations, composure under pressure and rare care with execution, from detail to the whole.”</blockquote><figcaption>Andréa Paula Galletti</figcaption></figure><figure><blockquote>“I have closely followed his exemplary work and his consistent commitment to operational excellence. His contribution adds significant value to any operation he is part of.”</blockquote><figcaption>Marcelo Penna</figcaption></figure></div>
 </section>
 
 <section class="final-cta section-pad"><p class="kicker">Does something need to exist?</p><h2>You may not know its name yet. That’s okay.</h2><p>Tell us the situation. The first task is discovering the right question.</p><button data-abrir>Start a conversation ↗</button><p class="direto">Or write directly to <a href="mailto:caetano@iaieu.com">caetano@iaieu.com</a></p></section>
 
-<footer><div><a class="footer-logo" href="/en/" aria-label="IAieu"><img src="/imagens/marca/iaieu-logo-escuro.png" alt="IAieu" width="1407" height="479"></a><p>Intelligence will always be yours.</p></div><div class="footer-links"><a href="mailto:caetano@iaieu.com">caetano@iaieu.com</a><a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noreferrer">LinkedIn</a></div><small>© <span id="ano">2026</span> IAieu. All rights reserved.</small></footer>
+<footer><div><a class="footer-logo" href="/en/" aria-label="IAieu"><img src="/imagens/marca/iaieu-logo-escuro.png" alt="IAieu" width="1407" height="479"></a><p style="--ob:.08em">Intelligence will always be yours.</p></div><div class="footer-links"><a href="mailto:caetano@iaieu.com">caetano@iaieu.com</a><a href="https://www.instagram.com/iaieu.evc/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.linkedin.com/in/caetano-marc-zammataro/" target="_blank" rel="noreferrer">LinkedIn</a></div><small>© <span id="ano">2026</span> IAieu. All rights reserved.</small></footer>
 
 <div class="language"><button id="lang-btn" aria-expanded="false">⌄ EN</button><div id="lang-menu" hidden><a class="" href="/">PT</a><a class="active" href="/en/">EN</a><a class="" href="/es/">ES</a></div></div>
 
@@ -309,7 +319,7 @@ footer { background:var(--black); color:#fff; padding:65px clamp(24px,5vw,76px) 
   <section class="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-title">
     <button class="modal-close" data-fechar aria-label="Close">×</button>
     <div class="modal-brand"><img src="/imagens/marca/iaieu-logo-claro.png" alt="IAieu" width="1407" height="479"></div>
-    <p class="kicker">Let’s begin</p><h2 id="lead-title">Tell us what you need to solve.</h2>
+    <p class="kicker">Let’s begin</p><h2 id="lead-title" style="--ob:.03em">Tell us what you need to solve.</h2>
     <p class="modal-copy">You do not need a brief or the name of a service. A few lines are enough.</p>
     <form id="lead-form"><div class="form-row"><label>Name<input name="name" required></label><label>Email<input name="email" type="email" required></label></div><label>Company or project<input name="company"></label><label>What do you need to solve?<textarea name="need" rows="4" required></textarea></label><button type="submit">Send to IAieu ↗</button></form>
     <button class="later" data-fechar>Not now</button>
