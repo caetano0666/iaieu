@@ -619,7 +619,8 @@ def teste_conteudo_no_html_bruto():
 
 def teste_regras_da_casa():
     for arq in (list(PAGINAS) + list(TRADUZIDAS) + ARQUIVO_HISTORICO
-                + FORA_DO_PERCURSO + ["404.html", "llms.txt"]):
+                + FORA_DO_PERCURSO
+                + ["404.html", "en/404.html", "es/404.html", "llms.txt"]):
         caminho = os.path.join(RAIZ, arq)
         if not os.path.exists(caminho):
             continue
