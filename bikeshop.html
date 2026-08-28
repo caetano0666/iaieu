@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRMHLHQNGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  // Le o codigo do destinatario em ?r=xxx e registra como campanha nativa do GA4.
+  // Aparece em Aquisicao > Aquisicao de trafego > Conteudo da campanha e no Tempo real.
+  (function(){
+    var r = null;
+    try { r = new URLSearchParams(window.location.search).get('r'); } catch(e) {}
+    if (r) {
+      r = r.replace(/[^a-z0-9_-]/gi,'').slice(0,40);
+      gtag('config', 'G-KRMHLHQNGB', {
+        campaign_source: 'email',
+        campaign_medium: 'prospeccao',
+        campaign_name: 'bikeshop-piloto',
+        campaign_content: r
+      });
+      gtag('event', 'clique_lead', { lead: r, campanha: 'bikeshop-piloto' });
+    } else {
+      gtag('config', 'G-KRMHLHQNGB');
+    }
+  })();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<meta name="googlebot" content="noindex, follow">
+<!-- Pagina do piloto de lojistas, criada em 28/08/2026.
+     Identidade alinhada ao site vigente: Instrument Serif + DM Sans, #09090b / #f4f1eb / #d0021a. -->
+<meta name="theme-color" content="#f4f1eb">
+<title>IAieu · Bike Shop</title>
+<meta name="description" content="Quatorze anos atrás de um balcão de loja de bicicleta. O que eu faço hoje começou lá.">
+<link rel="canonical" href="https://iaieu.com/bikeshop.html">
+<meta property="og:title" content="Quatorze anos atrás de um balcão.">
+<meta property="og:description" content="Bike Tech Jardins, São Paulo, 2005 a 2019. O que eu faço hoje começou lá.">
+<meta property="og:url" content="https://iaieu.com/bikeshop.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap">
+<style>
+  :root{
+    --black:#09090b;
+    --paper:#f4f1eb;
+    --white:#fff;
+    --red:#d0021a;
+    --line:rgba(12,12,14,.18);
+    --mute:#6b6a67;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"DM Sans",Arial,sans-serif;
+    background:var(--paper);
+    color:var(--black);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 28px;}
+
+  header{padding:38px 0 0;}
+  .marca{display:inline-block;line-height:0;}
+  .marca img{display:block;width:128px;height:auto;}
+
+  .hero{padding:72px 0 78px;}
+  .kicker{
+    font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--mute);margin-bottom:30px;
+  }
+  h1{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(50px,9.4vw,86px);
+    font-weight:400;line-height:.94;letter-spacing:-.035em;margin-bottom:30px;
+  }
+  h1 em{font-style:italic;color:var(--red);}
+  .sub{font-size:clamp(19px,3.9vw,22px);color:var(--mute);max-width:540px;}
+
+  section{padding:60px 0;border-top:1px solid var(--line);}
+  h2{
+    font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--mute);margin-bottom:32px;
+  }
+  .filete{width:56px;height:3px;background:var(--red);margin:0 0 34px;}
+  .texto p{font-size:clamp(18px,3.6vw,20px);color:var(--mute);margin-bottom:15px;}
+  .texto p.forte{
+    color:var(--black);
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(28px,5.2vw,38px);line-height:1.12;letter-spacing:-.02em;
+    margin-top:26px;
+  }
+
+  /* historia */
+  .historia{margin-top:8px;}
+  .hist-caixa{background:var(--black);border-radius:14px;padding:38px 26px 34px;text-align:center;}
+  .hist-olho{display:flex;align-items:center;gap:16px;justify-content:center;margin-bottom:30px;}
+  .hist-fio{flex:1;max-width:120px;height:1px;background:rgba(244,241,235,.28);}
+  .hist-olho-txt{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--paper);white-space:nowrap;}
+  .hist-logos{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;}
+  .hist-logos img{display:block;width:auto;}
+  .hist-div{width:1px;height:64px;background:rgba(244,241,235,.28);}
+  .hist-filete{width:56px;height:1px;background:rgba(244,241,235,.28);margin:30px auto 22px;}
+  .hist-titulo{font-family:"Instrument Serif",Georgia,serif;font-size:27px;line-height:1.4;color:var(--paper);margin:0 0 18px;}
+  .hist-titulo em{font-style:italic;}
+  .hist-iaieu-inline{height:.78em;width:auto;vertical-align:baseline;position:relative;top:.04em;margin-left:.08em;}
+  .hist-sub{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,241,235,.62);margin:0;}
+  @media (max-width:520px){
+    .hist-div{display:none;}
+    .hist-logos{flex-direction:column;gap:26px;}
+    .hist-titulo{font-size:23px;}
+    .hist-olho-txt{white-space:normal;}
+  }
+
+  .quem p{font-size:clamp(18px,3.6vw,20px);color:var(--mute);margin-bottom:16px;}
+  .assina{margin-top:28px;}
+  .assina .nome{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:26px;font-weight:400;letter-spacing:-.02em;color:var(--black);
+  }
+  .assina .creds{font-size:15px;color:var(--mute);margin-top:8px;}
+
+  .cta{padding:60px 0 14px;border-top:1px solid var(--line);}
+  .cta .frase{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(32px,6.4vw,50px);font-weight:400;letter-spacing:-.03em;
+    margin-bottom:32px;line-height:1.04;
+  }
+  .botao{
+    display:inline-block;text-decoration:none;
+    background:var(--black);color:var(--paper);
+    font-size:17px;font-weight:500;
+    padding:18px 34px;letter-spacing:-.01em;
+    transition:background .18s ease;
+  }
+  .botao:hover{background:var(--red);}
+  .obs{font-size:15px;color:var(--mute);margin-top:20px;}
+
+  footer{padding:56px 0 64px;border-top:1px solid var(--line);margin-top:48px;}
+  .slogan{font-size:18px;color:var(--mute);margin-bottom:24px;line-height:1.5;}
+  .slogan strong{
+    color:var(--black);font-weight:400;
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:26px;letter-spacing:-.02em;display:block;margin-bottom:6px;
+  }
+  .site{font-size:16px;font-weight:500;color:var(--black);text-decoration:none;border-bottom:2px solid var(--red);padding-bottom:2px;}
+  .rodape-marca{font-size:14px;color:var(--mute);margin-top:28px;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <a class="marca" href="https://iaieu.com"><img src="imagens/marca/iaieu-logo-claro.png" alt="IAieu" width="1407" height="479"></a>
+  </header>
+
+  <div class="hero">
+    <div class="kicker">Estúdio IAieu</div>
+    <h1>Quatorze anos<br><em>atrás de um balcão.</em></h1>
+    <p class="sub">Bike Tech Jardins, São Paulo, 2005 a 2019. O que eu faço hoje começou lá.</p>
+  </div>
+
+  <section class="texto">
+    <h2>A vida na loja</h2>
+    <div class="filete"></div>
+    <p>O sábado de movimento que fecha com o caixa ruim. A data comemorativa que enche o estoque antes e esvazia o caixa depois, porque a venda esperada não veio. O produto que você paga à vista na importação, parcela em três no fornecedor, e o cliente pede desconto em dez vezes.</p>
+    <!-- FOTO REAL: entra aqui quando o Caetano subir (balcão da Bike Tech com a equipe).
+         Formato previsto: <div class="palco-foto"><img src="imagens/biketech-balcao.jpg" alt="Caetano e a equipe atrás do balcão da Bike Tech Jardins"></div>
+         <p class="legenda">Bike Tech Jardins · São Paulo</p> -->
+    <p>Eu vivi cada uma dessas por catorze anos. Comprando, vendendo, atendendo, pagando conta e decidindo tudo ao mesmo tempo.</p>
+    <p class="forte">E eu nunca conseguia parar para olhar a minha própria loja.</p>
+  </section>
+
+  <section class="historia" aria-label="Uma história com a bicicleta">
+    <div class="hist-caixa">
+      <div class="hist-olho"><span class="hist-fio"></span><span class="hist-olho-txt">Uma história com a bicicleta</span><span class="hist-fio"></span></div>
+      <div class="hist-logos">
+        <img src="imagens/marca/bikezone.png" alt="Logotipo da BikeZone, ciclismo extremo" height="60">
+        <span class="hist-div" aria-hidden="true"></span>
+        <img src="imagens/marca/biketech-jardins.png" alt="Logotipo da Bike Tech Jardins" height="104">
+        <span class="hist-div" aria-hidden="true"></span>
+        <img src="imagens/marca/fala-bikezone.png" alt="Logotipo do Fala, BikeZone!" height="88">
+      </div>
+      <div class="hist-filete"></div>
+      <p class="hist-titulo">Três marcas contam uma história.<br>O próximo capítulo, quem escreve, é a <img class="hist-iaieu-inline" src="imagens/marca/iaieu-fundo-escuro.png" alt="IAieu"></p>
+      <p class="hist-sub">Do Brasil aos Estados Unidos.</p>
+    </div>
+  </section>
+
+  <section class="texto">
+    <h2>O que eu faço hoje</h2>
+    <div class="filete"></div>
+    <p>Um exemplo recente: um representante comercial me mostrou uma rotina de lançar informações no sistema que levava quatro a cinco dias, porque precisava encaixar o trabalho entre todas as outras tarefas. Eu ouvi como ele fazia tudo, organizei o processo e construí uma automação.</p>
+    <p class="forte">Hoje ele faz em uma hora.</p>
+    <p>Foi aí que eu comecei a perceber onde aqueles 14 anos de loja ainda podiam me levar.</p>
+  </section>
+
+  <section class="quem">
+    <h2>Quem faz</h2>
+    <div class="filete"></div>
+    <p>Toquei a Bike Tech Jardins por 14 anos. Hoje vivo nos Estados Unidos e trabalho à distância.</p>
+    <div class="assina">
+      <div class="nome">Caetano Zammataro</div>
+      <div class="creds">Bike Tech Jardins &nbsp;·&nbsp; BikeZone &nbsp;·&nbsp; podcast Fala, BikeZone!</div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div class="frase">Se alguma dessas cenas<br>ainda é a sua, me chama.</div>
+    <a class="botao" href="https://wa.me/17542525245?text=Ol%C3%A1%2C%20Caetano!%20Recebi%20seu%20email%20e%20vi%20a%20p%C3%A1gina%20da%20bike%20shop.">Falar no WhatsApp</a>
+    <p class="obs">Se preferir email: <a href="mailto:caetano@iaieu.com" style="color:inherit;">caetano@iaieu.com</a></p>
+  </div>
+
+  <footer>
+    <a class="site" href="https://iaieu.com">iaieu.com</a>
+    <p class="rodape-marca">IAieu · A inteligência sempre será sua.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
