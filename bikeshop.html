@@ -32,6 +32,7 @@
 <meta name="robots" content="noindex, follow">
 <meta name="googlebot" content="noindex, follow">
 <!-- Pagina do piloto de lojistas, criada em 28/08/2026.
+     Versao dos cinco pontos, aprovada e publicada em 06/09/2026.
      Identidade alinhada ao site vigente: Instrument Serif + DM Sans, #09090b / #f4f1eb / #d0021a. -->
 <meta name="theme-color" content="#f4f1eb">
 <title>IAieu · Bike Shop</title>
@@ -69,18 +70,18 @@
   .marca{display:inline-block;line-height:0;}
   .marca img{display:block;width:128px;height:auto;}
 
-  .hero{padding:72px 0 78px;}
+  .hero{padding:72px 0 62px;}
   .kicker{
     font-size:13px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
     color:var(--mute);margin-bottom:30px;
   }
   h1{
     font-family:"Instrument Serif",Georgia,serif;
-    font-size:clamp(50px,9.4vw,86px);
-    font-weight:400;line-height:.94;letter-spacing:-.035em;margin-bottom:30px;
+    font-size:clamp(46px,8.6vw,78px);
+    font-weight:400;line-height:.96;letter-spacing:-.035em;margin-bottom:30px;
   }
   h1 em{font-style:italic;color:var(--red);}
-  .sub{font-size:clamp(19px,3.9vw,22px);color:var(--mute);max-width:540px;}
+  .sub{font-size:clamp(19px,3.9vw,22px);color:var(--mute);max-width:600px;}
 
   section{padding:60px 0;border-top:1px solid var(--line);}
   h2{
@@ -95,9 +96,32 @@
     font-size:clamp(28px,5.2vw,38px);line-height:1.12;letter-spacing:-.02em;
     margin-top:26px;
   }
-  .palco-foto{margin:30px 0 0;overflow:hidden;border-radius:12px;}
-  .palco-foto img{display:block;width:100%;height:auto;}
-  .legenda{font-size:13px!important;color:var(--mute)!important;margin:9px 0 28px!important;}
+
+  /* cinco pontos */
+  .pontos{padding-top:0;border-top:none;}
+  .ponto{padding:46px 0;border-top:1px solid var(--line);}
+  .ponto:first-child{border-top:none;padding-top:0;}
+  .ponto-num{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:30px;line-height:1;color:var(--red);
+    display:block;margin-bottom:12px;
+  }
+  .ponto h3{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-weight:400;
+    font-size:clamp(27px,5vw,36px);line-height:1.1;letter-spacing:-.02em;
+    color:var(--black);margin-bottom:22px;
+  }
+  .ponto p{font-size:clamp(18px,3.6vw,20px);color:var(--mute);margin-bottom:14px;}
+  .ponto p:last-child{margin-bottom:0;}
+  .pergunta{
+    font-family:"Instrument Serif",Georgia,serif;
+    font-size:clamp(21px,4vw,26px)!important;
+    line-height:1.25;letter-spacing:-.015em;
+    color:var(--black)!important;
+    border-left:3px solid var(--red);
+    padding-left:18px;margin-top:26px!important;
+  }
 
   /* historia */
   .historia{margin-top:8px;}
@@ -131,9 +155,10 @@
   .cta{padding:60px 0 14px;border-top:1px solid var(--line);}
   .cta .frase{
     font-family:"Instrument Serif",Georgia,serif;
-    font-size:clamp(32px,6.4vw,50px);font-weight:400;letter-spacing:-.03em;
-    margin-bottom:32px;line-height:1.04;
+    font-size:clamp(30px,6vw,46px);font-weight:400;letter-spacing:-.03em;
+    margin-bottom:26px;line-height:1.06;
   }
+  .cta .conversa{font-size:clamp(18px,3.6vw,20px);color:var(--mute);margin-bottom:32px;max-width:600px;}
   .botao{
     display:inline-block;text-decoration:none;
     background:var(--black);color:var(--paper);
@@ -165,18 +190,64 @@
 
   <div class="hero">
     <div class="kicker">Estúdio IAieu</div>
-    <h1>Quatorze anos<br><em>atrás de um balcão.</em></h1>
-    <p class="sub">Bike Tech Jardins, São Paulo, 2005 a 2019. O que eu faço hoje começou lá.</p>
+    <h1>5 pontos que eu olharia<br><em>primeiro na sua loja.</em></h1>
+    <p class="sub">Depois de 14 anos atrás de um balcão, se eu entrasse hoje em uma bicicletaria procurando oportunidades, começaria tentando entender onde o dinheiro está entrando, onde está ficando parado e onde pode estar escapando.</p>
   </div>
 
+  <section class="pontos">
+
+    <article class="ponto">
+      <span class="ponto-num">01</span>
+      <h3>O que você vende e o que realmente deixa dinheiro?</h3>
+      <p>Eu separaria o que deixa dinheiro do que só faz faturamento. Uma bicicleta pode colocar um valor alto no caixa e deixar uma margem apertada. Peça, acessório e serviço contam outra história. E o desconto para fechar a venda muda o que parecia bom no balcão.</p>
+      <p class="pergunta">Você sabe onde sua loja realmente ganha dinheiro?</p>
+    </article>
+
+    <article class="ponto">
+      <span class="ponto-num">02</span>
+      <h3>Quanto dinheiro está parado no seu estoque?</h3>
+      <p>Toda loja acumula alguma coisa.</p>
+      <p>Produto comprado na quantidade errada. Modelo que deixou de girar. Tamanho ou cor que sobrou. Peça que parecia ótima compra e continua ali seis meses depois.</p>
+      <p>Eu procuraria esse dinheiro. Não para liquidar, mas para não repetir a compra.</p>
+      <p class="pergunta">Quanto do seu estoque está trabalhando e quanto está apenas ocupando espaço?</p>
+    </article>
+
+    <article class="ponto">
+      <span class="ponto-num">03</span>
+      <h3>Quantas oportunidades passam pelo balcão e não viram venda?</h3>
+      <p>Cliente pede uma bicicleta que não tem. Procura peça que acabou. Pede outro tamanho. Pergunta preço e vai embora. Diz que vai pensar.</p>
+      <p>Sozinhas, parecem normais. Somadas num mês, mostram o que a loja deixa de vender.</p>
+      <p class="pergunta">Você registra o que seus clientes procuram e não encontram?</p>
+    </article>
+
+    <article class="ponto">
+      <span class="ponto-num">04</span>
+      <h3>Sua oficina gera resultado ou só resolve problema?</h3>
+      <p>Oficina traz cliente de volta, vende peça e cria recorrência.</p>
+      <p>Mas também vira bicicleta parada, orçamento esperando aprovação, serviço mal precificado e mecânico ocupado com serviço de pouca margem.</p>
+      <p>Eu olharia entrada, prazo, ticket e retorno de cada serviço.</p>
+      <p class="pergunta">Você sabe quanto sua oficina realmente produz para a loja?</p>
+    </article>
+
+    <article class="ponto">
+      <span class="ponto-num">05</span>
+      <h3>O que ainda depende de você para acontecer?</h3>
+      <p>Compra. Preço. Funcionário. Cliente. Fornecedor. Oficina. WhatsApp. Problema.</p>
+      <p>Quando a loja é sua, tudo chega em você.</p>
+      <p>Eu procuraria o que depende do dono não porque precisa, mas porque cresceu assim.</p>
+      <p>É aí que dá para organizar, automatizar ou fazer diferente.</p>
+      <p class="pergunta">Se você se afastasse da loja por uma semana, o que pararia?</p>
+    </article>
+
+  </section>
+
   <section class="texto">
-    <h2>A vida na loja</h2>
+    <h2>Quatorze anos atrás de um balcão</h2>
     <div class="filete"></div>
-    <p>O sábado de movimento que fecha com o caixa ruim. A data comemorativa que enche o estoque antes e esvazia o caixa depois, porque a venda esperada não veio. O produto que você paga à vista na importação, parcela em três no fornecedor, e o cliente pede desconto em dez vezes.</p>
-    <div class="palco-foto"><img src="biketech-balcao-2012.jpg" alt="Caetano e a equipe atrás do balcão da Bike Tech Jardins em 2012"></div>
-    <p class="legenda">Bike Tech Jardins · São Paulo · 2012</p>
-    <p>Eu vivi cada uma dessas por catorze anos. Comprando, vendendo, atendendo, pagando conta e decidindo tudo ao mesmo tempo.</p>
-    <p class="forte">E eu nunca conseguia parar para olhar a minha própria loja.</p>
+    <p>Eu não cheguei a essas perguntas olhando uma bicicletaria de fora.</p>
+    <p>Durante 14 anos administrei a Bike Tech Jardins, em São Paulo.</p>
+    <p>Vivi compra, estoque, margem, funcionário, oficina, fornecedor, cliente esperando, sábado cheio e segunda-feira começando tudo outra vez.</p>
+    <p>Hoje moro nos Estados Unidos e uso essa experiência de uma maneira diferente: olhando processos, informações e rotinas para encontrar maneiras mais simples de trabalhar e enxergar o negócio.</p>
   </section>
 
   <section class="historia" aria-label="Uma história com a bicicleta">
@@ -195,33 +266,18 @@
     </div>
   </section>
 
-  <section class="texto">
-    <h2>O que eu faço hoje</h2>
-    <div class="filete"></div>
-    <p>Um exemplo recente: um representante comercial me mostrou uma rotina de lançar informações no sistema que levava quatro a cinco dias, porque precisava encaixar o trabalho entre todas as outras tarefas. Eu ouvi como ele fazia tudo, organizei o processo e construí uma automação.</p>
-    <p class="forte">Hoje ele faz em uma hora.</p>
-    <p>Foi aí que eu comecei a perceber onde aqueles 14 anos de loja ainda podiam me levar.</p>
-  </section>
-
-  <section class="quem">
-    <h2>Quem faz</h2>
-    <div class="filete"></div>
-    <p>Toquei a Bike Tech Jardins por 14 anos. Hoje vivo nos Estados Unidos e trabalho à distância.</p>
+  <div class="cta">
+    <div class="frase">Alguma dessas cinco perguntas<br>fez você pensar na sua loja?</div>
+    <p class="conversa">Me chama. A gente conversa.</p>
+    <a class="botao" href="https://wa.me/17542525245?text=Ol%C3%A1%2C%20Caetano!%20Recebi%20seu%20email%20e%20vi%20a%20p%C3%A1gina%20da%20bike%20shop.">Falar com Caetano &rarr;</a>
     <div class="assina">
       <div class="nome">Caetano Zammataro</div>
-      <div class="creds">Bike Tech Jardins &nbsp;·&nbsp; BikeZone &nbsp;·&nbsp; podcast Fala, BikeZone!</div>
+      <div class="creds">Estúdio IAieu</div>
     </div>
-  </section>
-
-  <div class="cta">
-    <div class="frase">Se alguma dessas cenas<br>ainda é a sua, me chama.</div>
-    <a class="botao" href="https://wa.me/17542525245?text=Ol%C3%A1%2C%20Caetano!%20Recebi%20seu%20email%20e%20vi%20a%20p%C3%A1gina%20da%20bike%20shop.">Falar no WhatsApp</a>
-    <p class="obs">Se preferir email: <a href="mailto:caetano@iaieu.com" style="color:inherit;">caetano@iaieu.com</a></p>
   </div>
 
   <footer>
     <a class="site" href="https://iaieu.com">iaieu.com</a>
-    <p class="rodape-marca">IAieu · A inteligência sempre será sua.</p>
   </footer>
 
 </div>
