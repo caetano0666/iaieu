@@ -1,5 +1,13 @@
 # NEXT
 
+## Ultima sessao: 10/09/2026
+
+**Concluido.** GA4 reinstalado nas tres homes e na /bike/ (tinha saido em 13/08, commit 6fe2592, sem decisao). Eventos novos da home: cta_click, formulario_contato, email_click, trabalho_click, rede_click. Teste `teste_ga4_em_toda_pagina` na bateria. Registro completo em `docs-geo/FUTURE-MAINTENANCE.md`.
+
+**Onde parou.** Publicado e conferido no ar por curl e no navegador.
+
+**Proxima acao.** Caetano confere no GA4 (Tempo real) uma visita propria a iaieu.com e um clique num cartao de trabalho. Depois disso, nada pendente neste assunto.
+
 ## Missão
 
 Construir um sistema de trabalho com IA que funcione mesmo quando eu esquecer onde parei.

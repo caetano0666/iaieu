@@ -330,3 +330,43 @@ A regra de forma foi aplicada ao domínio inteiro. Auditoria feita medindo o val
 - `.mf-final .lead`, com 20px. Declaração **sem efeito visual nenhum**: o elemento não tem fundo, borda nem sombra, então não existe aresta para arredondar. Mexer nele mudaria zero pixel.
 
 **Estado final:** 98 elementos com raio no domínio. Todos os que desenham uma caixa usam 18px. Pílula 999px e círculo 50% intactos.
+
+## GA4 na home: o que aconteceu e o que vale a partir de 10/09/2026
+
+**O incidente.** A tag do GA4 (`G-KRMHLHQNGB`) saiu das tres homes (`/`, `/en/`, `/es/`)
+na reescrita da home em 13/08/2026, commit `6fe2592`, junto com os antigos eventos
+`whatsapp_click`. Nao houve decisao de tirar. A bateria `seo-tests.py` nao conferia GA4,
+entao passou com 0 FAIL em 13/08, 26/08 e 28/08. Em 16/08 o inventario da sessao que
+portou a versao 7 da home devolveu "analytics: 0 ocorrencias" e ninguem levantou.
+A ausencia foi encontrada em 08/09/2026 na recuperacao documental, confirmada no
+navegador (nenhuma chamada a `googletagmanager.com` nem a `google-analytics.com/g/collect`
+nas homes; `/plinio/` e `shimanofest.html` medindo normalmente) e corrigida em 10/09/2026
+por decisao do Caetano. As visitas a home entre 13/08 e 10/09 nao tem registro no GA4 e
+nao ha como recuperar; o Search Console mostra impressoes e cliques do Google, nao sessoes.
+
+**A regra.** Toda pagina publicada carrega a mesma tag, inclusive as noindex de campanha
+(`/bike/`, `bikeshop.html`). O teste `teste_ga4_em_toda_pagina` reprova qualquer pagina
+sem a tag, sem o `gtag('config')` ou com uma segunda propriedade. Quem reescrever uma
+pagina inteira roda a bateria antes de publicar; e isso que ela existe para pegar.
+
+**Dicionario de eventos da home** (PT, EN e ES, separados pelo parametro `pagina`):
+
+| evento | gatilho | parametros | o que comprova | o que nao comprova |
+|---|---|---|---|---|
+| `cta_click` | clique num botao `data-abrir` (abre o formulario) | rotulo, pagina | interesse em iniciar contato | envio |
+| `formulario_contato` | envio do `#lead-form`, que monta o e-mail no cliente de e-mail | rotulo, pagina | tentativa de enviar | que o e-mail saiu ou chegou |
+| `email_click` | clique em `mailto:caetano@iaieu.com` | rotulo, pagina | abertura do canal | mensagem enviada |
+| `trabalho_click` | clique num cartao `a.project` | rotulo, destino, pagina | saida para o site do cliente | nada sobre o cliente |
+| `rede_click` | clique em LinkedIn ou Instagram | rotulo, pagina | saida para a rede | seguir ou interagir |
+
+Na `/bike/` o evento e `whatsapp_click`, com rotulo e pagina, como nas outras campanhas.
+O antigo `whatsapp_click` da home nao voltou: a home nova nao tem WhatsApp nem telefone.
+A abertura automatica do formulario (12 segundos ou 30% de rolagem) nao gera evento, de
+proposito: nao e acao do visitante.
+
+**Como conferir que esta medindo.** Abra a pagina, e no console do navegador digite
+`typeof gtag` (tem que responder `function`) e `dataLayer.length` (maior que zero). Na aba
+Rede, filtre por `collect`: tem que aparecer uma chamada a `google-analytics.com/g/collect`
+com `en=page_view`. No GA4, Relatorios, Tempo real, a sua visita aparece em menos de um
+minuto. Se qualquer um desses falhar, a tag nao esta na pagina ou foi bloqueada por
+extensao do navegador; teste numa janela anonima antes de mexer no codigo.

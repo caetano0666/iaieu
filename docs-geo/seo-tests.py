@@ -733,6 +733,59 @@ def teste_llms():
 
 
 # ---------------------------------------------------------------- main
+# ---------------------------------------------------------------- medicao
+GA4_ID = "G-KRMHLHQNGB"
+GA4_TAG = f"https://www.googletagmanager.com/gtag/js?id={GA4_ID}"
+
+# Paginas de campanha e de servico que nao estao nas listas acima mas
+# tambem precisam medir. A /bike/ e noindex de proposito e mesmo assim
+# mede: campanha sem medicao nao se avalia.
+PAGINAS_DE_CAMPANHA = ["bike/index.html", "bikeshop.html"]
+
+
+def teste_ga4_em_toda_pagina():
+    """Toda pagina publicada carrega a tag do GA4, e e sempre a mesma propriedade.
+
+    A tag saiu das tres homes na reescrita de 13/08/2026 (commit 6fe2592) e
+    ficou fora por 28 dias sem ninguem perceber, porque esta bateria nao
+    conferia isso: passou com 0 FAIL em 13/08, 26/08 e 28/08. Em 16/08 o
+    inventario da sessao devolveu "analytics: 0 ocorrencias" e passou batido.
+    Decisao do Caetano em 10/09/2026: reinstalar e travar aqui.
+
+    Confere tres coisas por pagina: o script do gtag, a chamada de config e
+    que nao existe um segundo ID de propriedade escondido.
+    """
+    for arq in (list(PAGINAS) + list(TRADUZIDAS) + ARQUIVO_HISTORICO
+                + FORA_DO_PERCURSO + PAGINAS_DE_CAMPANHA
+                + ["404.html", "en/404.html", "es/404.html"]):
+        caminho = os.path.join(RAIZ, arq)
+        if not os.path.exists(caminho):
+            continue
+        html = ler(arq)
+        if GA4_TAG not in html:
+            falha(f"{arq}: sem a tag do GA4", "toda pagina publicada mede")
+            continue
+        if f"gtag('config', '{GA4_ID}')" not in html:
+            falha(f"{arq}: gtag/js presente mas sem gtag('config')", "a tag nao envia nada")
+            continue
+        outros = set(re.findall(r"G-[A-Z0-9]{8,12}", html)) - {GA4_ID}
+        if outros:
+            falha(f"{arq}: segunda propriedade GA4 no HTML", ", ".join(sorted(outros)))
+        else:
+            ok(f"{arq}: GA4 {GA4_ID}")
+
+    # A home nova nao tem WhatsApp nem telefone. Se um dia voltar a ter, o
+    # evento precisa vir junto; ate la, o que se mede e o que existe.
+    for arq in list(PAGINAS)[:1] + list(TRADUZIDAS):
+        html = ler(arq)
+        for evento in ("cta_click", "formulario_contato", "email_click",
+                       "trabalho_click", "rede_click"):
+            if f"'{evento}'" in html:
+                ok(f"{arq}: evento {evento}")
+            else:
+                falha(f"{arq}: evento {evento} sumiu", "dicionario em FUTURE-MAINTENANCE.md")
+
+
 def main():
     for teste in (
         teste_arquivos_intocaveis,
@@ -755,6 +808,7 @@ def main():
         teste_admin_noindex,
         teste_indexnow,
         teste_llms,
+        teste_ga4_em_toda_pagina,
     ):
         try:
             teste()

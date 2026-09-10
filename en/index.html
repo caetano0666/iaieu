@@ -4,6 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- Google Analytics (GA4). Reinstalado em 10/09/2026. A tag saiu junto com a
+     reescrita da home em 13/08/2026 (commit 6fe2592), sem decisao registrada, e a
+     bateria nao conferia isso. Propriedade unica do site, a mesma das outras paginas.
+     O teste teste_ga4_em_toda_pagina, em docs-geo/seo-tests.py, trava a volta disso. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KRMHLHQNGB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-KRMHLHQNGB');
+</script>
+
 <title>IAieu · Studio of Solutions</title>
 <meta name="description" content="I identify the problem, design the solution and use artificial intelligence to turn that solution into something concrete.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
@@ -378,6 +390,46 @@ h2[style*="--ob"],h3[style*="--ob"],footer p[style*="--ob"] { margin-left:calc(v
       encodeURIComponent('Novo contato pelo site IAieu')+'&body='+encodeURIComponent(corpo); });
 
   var a=document.getElementById('ano'); if(a) a.textContent=new Date().getFullYear();
+})();
+</script>
+<script>
+// Eventos da home, definidos em 10/09/2026. A home nova nao tem WhatsApp nem
+// telefone: o contato e por e-mail e pelo formulario, e os cartoes de trabalhos
+// levam a sites de clientes. Cada evento leva rotulo e pagina, para separar
+// os tres idiomas no GA4. Dicionario completo em docs-geo/FUTURE-MAINTENANCE.md.
+//
+//   cta_click            botao que abre o formulario (data-abrir)
+//   formulario_contato   envio do formulario, que monta o e-mail
+//   email_click          clique direto em caetano@iaieu.com
+//   trabalho_click       clique num cartao de trabalho, com o destino
+//   rede_click           clique em LinkedIn ou Instagram
+(function(){
+  function envia(nome, dados){
+    var carga = Object.assign({pagina: location.pathname}, dados || {});
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({event: nome}, carga));
+    if (typeof window.gtag === 'function') { window.gtag('event', nome, carga); }
+  }
+  function rotuloDe(el){
+    return (el.getAttribute('aria-label') || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  }
+  document.addEventListener('click', function(e){
+    var alvo = e.target && e.target.closest ? e.target : null;
+    if (!alvo) return;
+    var a = alvo.closest('a[href]');
+    if (a) {
+      var href = a.getAttribute('href') || '';
+      if (/^mailto:/i.test(href)) { envia('email_click', {rotulo: rotuloDe(a)}); return; }
+      if (a.classList.contains('project')) { envia('trabalho_click', {rotulo: rotuloDe(a.querySelector('h3') || a), destino: a.hostname + a.pathname}); return; }
+      if (/linkedin\.com|instagram\.com/i.test(href)) { envia('rede_click', {rotulo: /linkedin/i.test(href) ? 'linkedin' : 'instagram'}); return; }
+      return;
+    }
+    var b = alvo.closest('[data-abrir]');
+    if (b) envia('cta_click', {rotulo: rotuloDe(b)});
+  }, true);
+  document.addEventListener('submit', function(e){
+    if (e.target && e.target.id === 'lead-form') envia('formulario_contato', {rotulo: 'lead-form'});
+  }, true);
 })();
 </script>
 </body>
